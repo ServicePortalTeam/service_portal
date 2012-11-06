@@ -62,7 +62,7 @@ var processingInstance;
 
 function initImageMapEditor(editor,selected){
   $.modal("<div style='width: 640px; height:400px; border: 1px solid black; background: white;' id='imageMapModalDiv'>\
-<div id='imageMapCanvasDiv' style='background: grey; width: 400px; height: 400px; border-right: 1px solid black; float: left; overflow: auto;'>\
+<div id='imageMapCanvasDiv' style='background: grey; width: 380px; height: 400px; border-right: 1px solid black; float: left; overflow: auto;'>\
 </div>\
 <div style='float: left;'>\
   <div style='height: 200px; border-bottom: 1px solid black; width: 238px;'>\
