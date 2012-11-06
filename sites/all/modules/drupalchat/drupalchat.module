@@ -340,6 +340,7 @@ function drupalchat_user_OLD($op, &$edit, &$account, $category = NULL) { }
  * @see http://drupal.org/node/1354
  */
 function drupalchat_init() {
+  die();
   if (drupalchat_verify_access()) {
 	global $user, $base_url;
       if($user->uid > 0) {
