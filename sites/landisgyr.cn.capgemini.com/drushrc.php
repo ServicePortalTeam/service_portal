@@ -2,10 +2,10 @@
 
 
 $options['db_type'] = 'mysql';
-$options['db_user'] = 'root';
-$options['db_host'] = 'localhost';
-$options['db_passwd'] = 'root770826';
-$options['db_name'] = 'landisgyr';
+$options['db_user'] = 'landisgyrcncapge';
+$options['db_host'] = 'bogon';
+$options['db_passwd'] = 'ZLNKWEGaPr';
+$options['db_name'] = 'landisgyrcncapge';
 $options['profile'] = 'standard';
 $options['language'] = 'en';
 $options['installed'] = true;
@@ -258,9 +258,9 @@ $options['packages'] = array (
       'name' => 'apachesolr',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7015',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -307,9 +307,9 @@ $options['packages'] = array (
       'name' => 'apachesolr_access',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -340,9 +340,9 @@ $options['packages'] = array (
       'name' => 'apachesolr_attachments',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7003',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -374,9 +374,9 @@ $options['packages'] = array (
       'name' => 'apachesolr_search',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7005',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -681,9 +681,9 @@ $options['packages'] = array (
       'name' => 'ckeditor',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7004',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -915,9 +915,9 @@ $options['packages'] = array (
       'name' => 'ctools',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '6007',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1004,9 +1004,9 @@ $options['packages'] = array (
       'name' => 'ctools_custom_content',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1131,9 +1131,9 @@ $options['packages'] = array (
       'name' => 'current_search',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7101',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1229,9 +1229,9 @@ $options['packages'] = array (
       'name' => 'date',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7004',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1294,9 +1294,9 @@ $options['packages'] = array (
       'name' => 'date_api',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7001',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1456,9 +1456,9 @@ $options['packages'] = array (
       'name' => 'date_popup',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1665,9 +1665,9 @@ $options['packages'] = array (
       'name' => 'drupalchat',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7001',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -1816,15 +1816,199 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'ds' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/ds.module',
+      'name' => 'ds',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Display suite',
+        'description' => 'Extend the display options for every entity type.',
+        'core' => '7.x',
+        'package' => 'Display suite',
+        'dependencies' => 
+        array (
+          0 => 'ctools',
+        ),
+        'files' => 
+        array (
+          0 => 'views/views_plugin_ds_entity_view.inc',
+          1 => 'views/views_plugin_ds_fields_view.inc',
+          2 => 'tests/ds.base.test',
+          3 => 'tests/ds.search.test',
+          4 => 'tests/ds.entities.test',
+          5 => 'tests/ds.exportables.test',
+          6 => 'tests/ds.panels.test',
+          7 => 'tests/ds.views.test',
+          8 => 'tests/ds.forms.test',
+        ),
+        'configure' => 'admin/structure/ds',
+        'version' => '7.x-1.5',
+        'project' => 'ds',
+        'datestamp' => '1329223541',
+        'php' => '5.2.4',
+      ),
+      'project' => 'ds',
+      'version' => '7.x-1.5',
+    ),
+    'ds_exportables_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/tests/ds_exportables_test/ds_exportables_test.module',
+      'name' => 'ds_exportables_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Display suite exportables test',
+        'description' => 'Tests for exportables with Display Suite.',
+        'package' => 'Display suite',
+        'core' => '7.x',
+        'hidden' => true,
+        'version' => '7.x-1.5',
+        'project' => 'ds',
+        'datestamp' => '1329223541',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'ds',
+      'version' => '7.x-1.5',
+    ),
+    'ds_extras' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/modules/ds_extras/ds_extras.module',
+      'name' => 'ds_extras',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Extras',
+        'description' => 'Contains additional features.',
+        'core' => '7.x',
+        'package' => 'Display suite',
+        'dependencies' => 
+        array (
+          0 => 'ds',
+        ),
+        'configure' => 'admin/structure/ds/extras',
+        'version' => '7.x-1.5',
+        'project' => 'ds',
+        'datestamp' => '1329223541',
+        'php' => '5.2.4',
+      ),
+      'project' => 'ds',
+      'version' => '7.x-1.5',
+    ),
+    'ds_forms' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/modules/ds_forms/ds_forms.module',
+      'name' => 'ds_forms',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Forms',
+        'description' => 'Manage the layout of forms.',
+        'core' => '7.x',
+        'package' => 'Display suite',
+        'dependencies' => 
+        array (
+          0 => 'ds',
+        ),
+        'version' => '7.x-1.5',
+        'project' => 'ds',
+        'datestamp' => '1329223541',
+        'php' => '5.2.4',
+      ),
+      'project' => 'ds',
+      'version' => '7.x-1.5',
+    ),
+    'ds_search' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/modules/ds_search/ds_search.module',
+      'name' => 'ds_search',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Search display',
+        'description' => 'Extend the display options for search results for Drupal Core or Apache Solr.',
+        'core' => '7.x',
+        'package' => 'Display suite',
+        'dependencies' => 
+        array (
+          0 => 'ds',
+        ),
+        'configure' => 'admin/structure/ds/search',
+        'version' => '7.x-1.5',
+        'project' => 'ds',
+        'datestamp' => '1329223541',
+        'php' => '5.2.4',
+      ),
+      'project' => 'ds',
+      'version' => '7.x-1.5',
+    ),
+    'ds_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/tests/ds_test.module',
+      'name' => 'ds_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Display suite Test',
+        'description' => 'Test module for display suite',
+        'core' => '7.x',
+        'package' => 'Display suite',
+        'dependencies' => 
+        array (
+          0 => 'ds_extras',
+        ),
+        'hidden' => true,
+        'version' => '7.x-1.5',
+        'project' => 'ds',
+        'datestamp' => '1329223541',
+        'php' => '5.2.4',
+      ),
+      'project' => 'ds',
+      'version' => '7.x-1.5',
+    ),
     'elfinder' => 
     array (
       'filename' => '/var/aegir/platforms/service/sites/all/modules/elfinder/elfinder.module',
       'name' => 'elfinder',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -2049,9 +2233,9 @@ $options['packages'] = array (
       'name' => 'facetapi',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7103',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -2117,16 +2301,64 @@ $options['packages'] = array (
       'project' => 'facetapi',
       'version' => '7.x-1.1',
     ),
+    'faq' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/faq/faq.module',
+      'name' => 'faq',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Frequently Asked Questions',
+        'description' => 'Manages configuration of questions for a FAQ page.',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'faq.admin.inc',
+          1 => 'faq.install',
+          2 => 'faq.module',
+          3 => 'faq.test',
+          4 => 'includes/faq-category-hide-answer.tpl.php',
+          5 => 'includes/faq-category-new-page.tpl.php',
+          6 => 'includes/faq-category-questions-inline.tpl.php',
+          7 => 'includes/faq-category-questions-top-answers.tpl.php',
+          8 => 'includes/faq-category-questions-top.tpl.php',
+          9 => 'includes/faq-hide-answer.tpl.php',
+          10 => 'includes/faq-new-page.tpl.php',
+          11 => 'includes/faq-questions-inline.tpl.php',
+          12 => 'includes/faq-questions-top.tpl.php',
+          13 => 'includes/faq.hide_answer.inc',
+          14 => 'includes/faq.new_page.inc',
+          15 => 'includes/faq.questions_inline.inc',
+          16 => 'includes/faq.questions_top.inc',
+          17 => 'views/faq.views.inc',
+        ),
+        'configure' => '/admin/config/content/faq',
+        'version' => '7.x-1.0-rc2',
+        'project' => 'faq',
+        'datestamp' => '1329952549',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'faq',
+      'version' => '7.x-1.0-rc2',
+    ),
     'features' => 
     array (
       'filename' => '/var/aegir/platforms/service/sites/all/modules/features/features.module',
       'name' => 'features',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '6101',
-      'weight' => '20',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Features',
@@ -2227,9 +2459,9 @@ $options['packages'] = array (
       'name' => 'fe_block',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -2287,9 +2519,9 @@ $options['packages'] = array (
       'name' => 'fe_profile',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -2601,6 +2833,33 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'filter_perms' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/filter_perms/filter_perms.module',
+      'name' => 'filter_perms',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Filter permissions',
+        'description' => 'Provides role and module filters to simplify the user permissions page.',
+        'package' => 'Administration',
+        'core' => '7.x',
+        'version' => '7.x-1.0',
+        'project' => 'filter_perms',
+        'datestamp' => '1337183755',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'filter_perms',
+      'version' => '7.x-1.0',
+    ),
     'filter_test' => 
     array (
       'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/filter_test.module',
@@ -2735,10 +2994,10 @@ $options['packages'] = array (
       'name' => 'i18n',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
-      'bootstrap' => '1',
-      'schema_version' => '7001',
-      'weight' => '10',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Internationalization',
@@ -2903,10 +3162,10 @@ $options['packages'] = array (
       'name' => 'i18n_menu',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7000',
-      'weight' => '5',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Menu translation',
@@ -2933,15 +3192,47 @@ $options['packages'] = array (
       'project' => 'i18n',
       'version' => '7.x-1.7',
     ),
+    'i18n_menu_node' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n_menu_node/i18n_menu_node.module',
+      'name' => 'i18n_menu_node',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Menu translation (Node)',
+        'description' => 'Allows a single node menu item to point to different node translations depending on the current language.',
+        'dependencies' => 
+        array (
+          0 => 'i18n',
+          1 => 'menu',
+          2 => 'i18n_block',
+          3 => 'i18n_string',
+          4 => 'i18n_menu',
+        ),
+        'package' => 'Multilingual - Internationalization',
+        'core' => '7.x',
+        'version' => '7.x-1.x-dev',
+        'project' => 'i18n_menu_node',
+        'datestamp' => '1342182305',
+        'php' => '5.2.4',
+      ),
+      'project' => 'i18n_menu_node',
+      'version' => '7.x-1.x-dev',
+    ),
     'i18n_node' => 
     array (
       'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_node/i18n_node.module',
       'name' => 'i18n_node',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7000',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3036,9 +3327,9 @@ $options['packages'] = array (
       'name' => 'i18n_select',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3069,10 +3360,10 @@ $options['packages'] = array (
       'name' => 'i18n_string',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7001',
-      'weight' => '10',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'String translation',
@@ -3142,10 +3433,10 @@ $options['packages'] = array (
       'name' => 'i18n_taxonomy',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7004',
-      'weight' => '5',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Taxonomy translation',
@@ -3210,9 +3501,9 @@ $options['packages'] = array (
       'name' => 'i18n_translation',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3371,9 +3662,9 @@ $options['packages'] = array (
       'name' => 'jquery_update',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7000',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3398,15 +3689,43 @@ $options['packages'] = array (
       'project' => 'jquery_update',
       'version' => '7.x-2.2',
     ),
+    'jq_maphilight' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/jq_maphilight/jq_maphilight.module',
+      'name' => 'jq_maphilight',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'jQuery Map Hilight',
+        'description' => 'jQuery Map Hilight adds javascript mouseover highlighting of hotspots to HTML image maps.',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'libraries',
+        ),
+        'configure' => 'admin/config/content/jq_maphilight',
+        'version' => '7.x-1.1',
+        'project' => 'jq_maphilight',
+        'datestamp' => '1336746956',
+        'php' => '5.2.4',
+      ),
+      'project' => 'jq_maphilight',
+      'version' => '7.x-1.1',
+    ),
     'languageicons' => 
     array (
       'filename' => '/var/aegir/platforms/service/sites/all/modules/languageicons/languageicons.module',
       'name' => 'languageicons',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '6200',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3438,9 +3757,9 @@ $options['packages'] = array (
       'name' => 'libraries',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7200',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3597,9 +3916,9 @@ $options['packages'] = array (
       'name' => 'locale',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7004',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3650,6 +3969,37 @@ $options['packages'] = array (
       ),
       'project' => 'drupal',
       'version' => '7.14',
+    ),
+    'masquerade' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/masquerade/masquerade.module',
+      'name' => 'masquerade',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Masquerade',
+        'description' => 'This module allows permitted users to masquerade as other users.',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'masquerade.test',
+        ),
+        'configure' => 'admin/config/people/masquerade',
+        'version' => '7.x-1.0-rc4',
+        'project' => 'masquerade',
+        'datestamp' => '1316220424',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'masquerade',
+      'version' => '7.x-1.0-rc4',
     ),
     'menu' => 
     array (
@@ -3710,6 +4060,45 @@ $options['packages'] = array (
       ),
       'project' => 'drupal',
       'version' => '7.14',
+    ),
+    'module_filter' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/module_filter/module_filter.module',
+      'name' => 'module_filter',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Module filter',
+        'description' => 'Filter the modules list.',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'module_filter.install',
+          1 => 'module_filter.js',
+          2 => 'module_filter.module',
+          3 => 'module_filter.admin.inc',
+          4 => 'module_filter.theme.inc',
+          5 => 'css/module_filter.css',
+          6 => 'css/module_filter_tab.css',
+          7 => 'js/module_filter.js',
+          8 => 'js/module_filter_tab.js',
+        ),
+        'configure' => 'admin/config/user-interface/modulefilter',
+        'version' => '7.x-1.7',
+        'project' => 'module_filter',
+        'datestamp' => '1341518501',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'module_filter',
+      'version' => '7.x-1.7',
     ),
     'module_test' => 
     array (
@@ -3786,9 +4175,9 @@ $options['packages'] = array (
       'name' => 'nodejs',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3818,9 +4207,9 @@ $options['packages'] = array (
       'name' => 'nodejs_actions',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3847,9 +4236,9 @@ $options['packages'] = array (
       'name' => 'nodejs_ajax',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3903,9 +4292,9 @@ $options['packages'] = array (
       'name' => 'nodejs_config',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3931,9 +4320,9 @@ $options['packages'] = array (
       'name' => 'nodejs_notify',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3959,9 +4348,9 @@ $options['packages'] = array (
       'name' => 'nodejs_subscribe',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7000',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -3987,9 +4376,9 @@ $options['packages'] = array (
       'name' => 'nodejs_watchdog',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
-      'bootstrap' => '1',
-      'schema_version' => '0',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4045,9 +4434,9 @@ $options['packages'] = array (
       'name' => 'node_export',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7303',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4078,9 +4467,9 @@ $options['packages'] = array (
       'name' => 'node_export_dependency',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4107,9 +4496,9 @@ $options['packages'] = array (
       'name' => 'node_export_features',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4407,10 +4796,10 @@ $options['packages'] = array (
       'name' => 'page_manager',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
-      'weight' => '99',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Page manager',
@@ -4435,9 +4824,9 @@ $options['packages'] = array (
       'name' => 'panels',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7301',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4472,9 +4861,9 @@ $options['packages'] = array (
       'name' => 'panels_ipe',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4505,9 +4894,9 @@ $options['packages'] = array (
       'name' => 'panels_mini',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4537,10 +4926,10 @@ $options['packages'] = array (
       'name' => 'panels_node',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '6001',
-      'weight' => '11',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Panel nodes',
@@ -4699,9 +5088,9 @@ $options['packages'] = array (
       'name' => 'profile',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7002',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -4939,15 +5328,46 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'securepages' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/securepages/securepages.module',
+      'name' => 'securepages',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Secure Pages',
+        'description' => 'Set which pages are always going to be used in secure mode (SSL) Warning: Do not enable this module without configuring your web server to handle SSL with this installation of Drupal',
+        'core' => '7.x',
+        'configure' => 'admin/config/system/securepages',
+        'files' => 
+        array (
+          0 => 'securepages.test',
+        ),
+        'version' => '7.x-1.x-dev',
+        'project' => 'securepages',
+        'datestamp' => '1337776854',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'securepages',
+      'version' => '7.x-1.x-dev',
+    ),
     'session_api' => 
     array (
       'filename' => '/var/aegir/platforms/service/sites/all/modules/session_api/session_api.module',
       'name' => 'session_api',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7101',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -5105,9 +5525,9 @@ $options['packages'] = array (
       'name' => 'simplesamlphp_auth',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -5204,6 +5624,42 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'smtp' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/smtp/smtp.module',
+      'name' => 'smtp',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'SMTP Authentication Support',
+        'description' => 'Allow for site emails to be sent through an SMTP server of your choice.',
+        'core' => '7.x',
+        'package' => 'Mail',
+        'configure' => 'admin/config/system/smtp',
+        'files' => 
+        array (
+          0 => 'smtp.module',
+          1 => 'smtp.admin.inc',
+          2 => 'smtp.mail.inc',
+          3 => 'smtp.phpmailer.inc',
+          4 => 'smtp.transport.inc',
+        ),
+        'version' => '7.x-1.0-beta2',
+        'project' => 'smtp',
+        'datestamp' => '1348254500',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'smtp',
+      'version' => '7.x-1.0-beta2',
+    ),
     'standard' => 
     array (
       'filename' => '/var/aegir/platforms/service/profiles/standard/standard.profile',
@@ -5283,6 +5739,39 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'strongarm' => 
+    array (
+      'filename' => '/var/aegir/platforms/service/sites/all/modules/strongarm/strongarm.module',
+      'name' => 'strongarm',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Strongarm',
+        'description' => 'Enforces variable values defined by modules that need settings set to operate properly.',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'ctools',
+        ),
+        'files' => 
+        array (
+          0 => 'strongarm.admin.inc',
+          1 => 'strongarm.install',
+          2 => 'strongarm.module',
+        ),
+        'version' => '7.x-2.0',
+        'project' => 'strongarm',
+        'datestamp' => '1339604214',
+        'php' => '5.2.4',
+      ),
+      'project' => 'strongarm',
+      'version' => '7.x-2.0',
+    ),
     'stylizer' => 
     array (
       'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/stylizer/stylizer.module',
@@ -5350,7 +5839,7 @@ $options['packages'] = array (
       'type' => 'module',
       'owner' => '',
       'status' => '1',
-      'bootstrap' => '0',
+      'bootstrap' => '1',
       'schema_version' => '7073',
       'weight' => '0',
       'info' => 
@@ -5596,9 +6085,9 @@ $options['packages'] = array (
       'name' => 'taxonomy_manager',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7002',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -5777,9 +6266,9 @@ $options['packages'] = array (
       'name' => 'translation',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -5837,9 +6326,9 @@ $options['packages'] = array (
       'name' => 'trigger',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7002',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -5897,9 +6386,9 @@ $options['packages'] = array (
       'name' => 'update',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7001',
       'weight' => '0',
       'info' => 
       array (
@@ -6166,9 +6655,9 @@ $options['packages'] = array (
       'name' => 'uuid',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7101',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -6270,9 +6759,9 @@ $options['packages'] = array (
       'name' => 'variable',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
-      'bootstrap' => '1',
-      'schema_version' => '0',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -6499,10 +6988,10 @@ $options['packages'] = array (
       'name' => 'views',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7301',
-      'weight' => '10',
+      'schema_version' => 0,
+      'weight' => '0',
       'info' => 
       array (
         'name' => 'Views',
@@ -6826,9 +7315,9 @@ $options['packages'] = array (
       'name' => 'views_content',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -6861,9 +7350,9 @@ $options['packages'] = array (
       'name' => 'views_slideshow',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -6896,9 +7385,9 @@ $options['packages'] = array (
       'name' => 'views_slideshow_cycle',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -6960,9 +7449,9 @@ $options['packages'] = array (
       'name' => 'views_ui',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '0',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -8145,7 +8634,7 @@ $options['packages'] = array (
       'name' => 'bluemasters',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -8200,7 +8689,7 @@ $options['packages'] = array (
       'name' => 'corolla',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -8513,7 +9002,7 @@ $options['packages'] = array (
       'name' => 'corporateclean',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -9400,6 +9889,7 @@ $options['packages'] = array (
 $options['site_ip_addresses'] = array (
   '@server_master' => '127.0.0.1',
 );
+$options['db_port'] = '3306';
 # Aegir additions
 $_SERVER['db_type'] = $options['db_type'];
 $_SERVER['db_port'] = $options['db_port'];

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the BaseSite feature.
- */
-
-include_once 'basesite.features.inc';
