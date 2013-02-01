@@ -2,9 +2,9 @@
 
 
 $options['db_type'] = 'mysql';
-$options['db_host'] = 'bogon';
+$options['db_host'] = 'km01';
 $options['db_port'] = '3306';
-$options['db_passwd'] = 'kJy8gm8GyR';
+$options['db_passwd'] = 'aGWxtiSP2f';
 $options['db_name'] = 'serviceportalcnc';
 $options['db_user'] = 'serviceportalcnc';
 $options['site_ip_addresses'] = array (
@@ -26,7 +26,7 @@ $options['packages'] = array (
     'standard' => 
     array (
       'name' => 'standard',
-      'filename' => '/var/aegir/platforms/service/profiles/standard/standard.profile',
+      'filename' => '/var/aegir/platforms/service_portal/profiles/standard/standard.profile',
       'project' => 'drupal',
       'info' => 
       array (
@@ -75,7 +75,7 @@ $options['packages'] = array (
   array (
     'aaa_update_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/update/tests/aaa_update_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/aaa_update_test.module',
       'name' => 'aaa_update_test',
       'type' => 'module',
       'owner' => '',
@@ -101,9 +101,31 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'acl' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'acl',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7001',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'actions_loop_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/actions_loop_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/actions_loop_test.module',
       'name' => 'actions_loop_test',
       'type' => 'module',
       'owner' => '',
@@ -131,7 +153,7 @@ $options['packages'] = array (
     ),
     'aggregator' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/aggregator/aggregator.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/aggregator/aggregator.module',
       'name' => 'aggregator',
       'type' => 'module',
       'owner' => '',
@@ -170,7 +192,7 @@ $options['packages'] = array (
     ),
     'aggregator_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/aggregator/tests/aggregator_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/aggregator/tests/aggregator_test.module',
       'name' => 'aggregator_test',
       'type' => 'module',
       'owner' => '',
@@ -198,7 +220,7 @@ $options['packages'] = array (
     ),
     'ajax_forms_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/ajax_forms_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/ajax_forms_test.module',
       'name' => 'ajax_forms_test',
       'type' => 'module',
       'owner' => '',
@@ -226,7 +248,7 @@ $options['packages'] = array (
     ),
     'ajax_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/ajax_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/ajax_test.module',
       'name' => 'ajax_test',
       'type' => 'module',
       'owner' => '',
@@ -254,13 +276,13 @@ $options['packages'] = array (
     ),
     'apachesolr' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/apachesolr/apachesolr.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr.module',
       'name' => 'apachesolr',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7015',
       'weight' => '0',
       'info' => 
       array (
@@ -303,13 +325,13 @@ $options['packages'] = array (
     ),
     'apachesolr_access' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/apachesolr/apachesolr_access/apachesolr_access.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr_access/apachesolr_access.module',
       'name' => 'apachesolr_access',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -336,13 +358,13 @@ $options['packages'] = array (
     ),
     'apachesolr_attachments' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/apachesolr_attachments/apachesolr_attachments.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_attachments/apachesolr_attachments.module',
       'name' => 'apachesolr_attachments',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7003',
       'weight' => '0',
       'info' => 
       array (
@@ -370,13 +392,13 @@ $options['packages'] = array (
     ),
     'apachesolr_search' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/apachesolr/apachesolr_search.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr_search.module',
       'name' => 'apachesolr_search',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7005',
       'weight' => '0',
       'info' => 
       array (
@@ -407,7 +429,7 @@ $options['packages'] = array (
     ),
     'apachesolr_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/apachesolr/tests/apachesolr_test/apachesolr_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/tests/apachesolr_test/apachesolr_test.module',
       'name' => 'apachesolr_test',
       'type' => 'module',
       'owner' => '',
@@ -433,9 +455,44 @@ $options['packages'] = array (
       'project' => 'apachesolr',
       'version' => '7.x-1.0-rc3',
     ),
+    'backup_migrate' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/backup_migrate/backup_migrate.module',
+      'name' => 'backup_migrate',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7203',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Backup and Migrate',
+        'description' => 'Backup or migrate the Drupal Database quickly and without unnecessary data.',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'backup_migrate.module',
+          1 => 'backup_migrate.install',
+          2 => 'includes/destinations.inc',
+          3 => 'includes/profiles.inc',
+          4 => 'includes/schedules.inc',
+        ),
+        'configure' => 'admin/config/system/backup_migrate',
+        'version' => '7.x-2.4',
+        'project' => 'backup_migrate',
+        'datestamp' => '1338903073',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'backup_migrate',
+      'version' => '7.x-2.4',
+    ),
     'batch_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/batch_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/batch_test.module',
       'name' => 'batch_test',
       'type' => 'module',
       'owner' => '',
@@ -463,7 +520,7 @@ $options['packages'] = array (
     ),
     'bbb_update_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/update/tests/bbb_update_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/bbb_update_test.module',
       'name' => 'bbb_update_test',
       'type' => 'module',
       'owner' => '',
@@ -491,7 +548,7 @@ $options['packages'] = array (
     ),
     'block' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/block/block.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/block/block.module',
       'name' => 'block',
       'type' => 'module',
       'owner' => '',
@@ -523,7 +580,7 @@ $options['packages'] = array (
     ),
     'block_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/block/tests/block_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/block/tests/block_test.module',
       'name' => 'block_test',
       'type' => 'module',
       'owner' => '',
@@ -551,7 +608,7 @@ $options['packages'] = array (
     ),
     'blog' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/blog/blog.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/blog/blog.module',
       'name' => 'blog',
       'type' => 'module',
       'owner' => '',
@@ -582,7 +639,7 @@ $options['packages'] = array (
     ),
     'book' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/book/book.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/book/book.module',
       'name' => 'book',
       'type' => 'module',
       'owner' => '',
@@ -621,7 +678,7 @@ $options['packages'] = array (
     ),
     'bulk_export' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/bulk_export/bulk_export.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/bulk_export/bulk_export.module',
       'name' => 'bulk_export',
       'type' => 'module',
       'owner' => '',
@@ -649,7 +706,7 @@ $options['packages'] = array (
     ),
     'ccc_update_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/update/tests/ccc_update_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/ccc_update_test.module',
       'name' => 'ccc_update_test',
       'type' => 'module',
       'owner' => '',
@@ -675,15 +732,75 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'chart' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/chart.module',
+      'name' => 'chart',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Chart API',
+        'description' => 'Google Chart API integration.',
+        'package' => 'Charting',
+        'core' => '7.x',
+        'php' => '5',
+        'version' => '7.x-1.1',
+        'project' => 'chart',
+        'datestamp' => '1314765120',
+        'dependencies' => 
+        array (
+        ),
+      ),
+      'project' => 'chart',
+      'version' => '7.x-1.1',
+    ),
+    'chart_views' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/chart_views/chart_views.module',
+      'name' => 'chart_views',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Chart API Views Integration',
+        'description' => 'Provides a Google Chart API Views style.',
+        'package' => 'Charting',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'views/chart_views_plugin_style_chart.inc',
+        ),
+        'dependencies' => 
+        array (
+          0 => 'chart',
+          1 => 'views',
+        ),
+        'version' => '7.x-1.1',
+        'project' => 'chart',
+        'datestamp' => '1314765120',
+        'php' => '5.2.4',
+      ),
+      'project' => 'chart',
+      'version' => '7.x-1.1',
+    ),
     'ckeditor' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ckeditor/ckeditor.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ckeditor/ckeditor.module',
       'name' => 'ckeditor',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7004',
       'weight' => '0',
       'info' => 
       array (
@@ -709,7 +826,7 @@ $options['packages'] = array (
     ),
     'color' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/color/color.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/color/color.module',
       'name' => 'color',
       'type' => 'module',
       'owner' => '',
@@ -740,7 +857,7 @@ $options['packages'] = array (
     ),
     'comment' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/comment/comment.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/comment/comment.module',
       'name' => 'comment',
       'type' => 'module',
       'owner' => '',
@@ -781,7 +898,7 @@ $options['packages'] = array (
     ),
     'common_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/common_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/common_test.module',
       'name' => 'common_test',
       'type' => 'module',
       'owner' => '',
@@ -820,7 +937,7 @@ $options['packages'] = array (
     ),
     'common_test_cron_helper' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/common_test_cron_helper.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/common_test_cron_helper.module',
       'name' => 'common_test_cron_helper',
       'type' => 'module',
       'owner' => '',
@@ -848,7 +965,7 @@ $options['packages'] = array (
     ),
     'contact' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/contact/contact.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/contact/contact.module',
       'name' => 'contact',
       'type' => 'module',
       'owner' => '',
@@ -878,9 +995,110 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'content_access' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/content_access/content_access.module',
+      'name' => 'content_access',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Content Access',
+        'description' => 'Provides flexible content access control.',
+        'core' => '7.x',
+        'package' => 'Access control',
+        'files' => 
+        array (
+          0 => 'content_access.rules.inc',
+          1 => 'tests/content_access.test',
+          2 => 'tests/content_access_acl.test',
+        ),
+        'version' => '7.x-1.2-beta1',
+        'project' => 'content_access',
+        'datestamp' => '1311517015',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'content_access',
+      'version' => '7.x-1.2-beta1',
+    ),
+    'content_access_rules' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/content_access/content_access_rules/content_access_rules.module',
+      'name' => 'content_access_rules',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Content Access Rules Integrations',
+        'description' => 'Integrates Rules with Content access. Allows to act on access events, conditions, and actions.',
+        'package' => 'Access control',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'content_access',
+          1 => 'rules',
+        ),
+        'files' => 
+        array (
+          0 => 'content_access.rules.inc',
+        ),
+        'version' => '7.x-1.2-beta1',
+        'project' => 'content_access',
+        'datestamp' => '1311517015',
+        'php' => '5.2.4',
+      ),
+      'project' => 'content_access',
+      'version' => '7.x-1.2-beta1',
+    ),
+    'context' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/context/context.module',
+      'name' => 'context',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Context',
+        'dependencies' => 
+        array (
+          0 => 'ctools',
+        ),
+        'description' => 'Provide modules with a cache that lasts for a single page request.',
+        'package' => 'Context',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'context.module',
+          1 => 'tests/context.test',
+          2 => 'tests/context.conditions.test',
+          3 => 'tests/context.reactions.test',
+        ),
+        'version' => '7.x-3.0-beta4',
+        'project' => 'context',
+        'datestamp' => '1344786407',
+        'php' => '5.2.4',
+      ),
+      'project' => 'context',
+      'version' => '7.x-3.0-beta4',
+    ),
     'contextual' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/contextual/contextual.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/contextual/contextual.module',
       'name' => 'contextual',
       'type' => 'module',
       'owner' => '',
@@ -909,15 +1127,77 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
-    'ctools' => 
+    'context_layouts' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/ctools.module',
-      'name' => 'ctools',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/context/context_layouts/context_layouts.module',
+      'name' => 'context_layouts',
       'type' => 'module',
       'owner' => '',
       'status' => '0',
       'bootstrap' => '0',
       'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Context layouts',
+        'description' => 'Allow theme layer to provide multiple region layouts and integrate with context.',
+        'dependencies' => 
+        array (
+          0 => 'context',
+        ),
+        'package' => 'Context',
+        'core' => '7.x',
+        'version' => '7.x-3.0-beta4',
+        'project' => 'context',
+        'datestamp' => '1344786407',
+        'php' => '5.2.4',
+      ),
+      'project' => 'context',
+      'version' => '7.x-3.0-beta4',
+    ),
+    'context_ui' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/context/context_ui/context_ui.module',
+      'name' => 'context_ui',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Context UI',
+        'description' => 'Provides a simple UI for settings up a site structure using Context.',
+        'dependencies' => 
+        array (
+          0 => 'context',
+        ),
+        'package' => 'Context',
+        'core' => '7.x',
+        'configure' => 'admin/structure/context',
+        'files' => 
+        array (
+          0 => 'context.module',
+          1 => 'tests/context_ui.test',
+        ),
+        'version' => '7.x-3.0-beta4',
+        'project' => 'context',
+        'datestamp' => '1344786407',
+        'php' => '5.2.4',
+      ),
+      'project' => 'context',
+      'version' => '7.x-3.0-beta4',
+    ),
+    'ctools' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools.module',
+      'name' => 'ctools',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '6007',
       'weight' => '0',
       'info' => 
       array (
@@ -944,13 +1224,13 @@ $options['packages'] = array (
     ),
     'ctools_access_ruleset' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/ctools_access_ruleset/ctools_access_ruleset.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_access_ruleset/ctools_access_ruleset.module',
       'name' => 'ctools_access_ruleset',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -972,7 +1252,7 @@ $options['packages'] = array (
     ),
     'ctools_ajax_sample' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/ctools_ajax_sample/ctools_ajax_sample.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_ajax_sample/ctools_ajax_sample.module',
       'name' => 'ctools_ajax_sample',
       'type' => 'module',
       'owner' => '',
@@ -1000,13 +1280,13 @@ $options['packages'] = array (
     ),
     'ctools_custom_content' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/ctools_custom_content/ctools_custom_content.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_custom_content/ctools_custom_content.module',
       'name' => 'ctools_custom_content',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -1028,7 +1308,7 @@ $options['packages'] = array (
     ),
     'ctools_export_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/tests/ctools_export_test/ctools_export_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/tests/ctools_export_test/ctools_export_test.module',
       'name' => 'ctools_export_test',
       'type' => 'module',
       'owner' => '',
@@ -1061,7 +1341,7 @@ $options['packages'] = array (
     ),
     'ctools_plugin_example' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/ctools_plugin_example/ctools_plugin_example.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_plugin_example/ctools_plugin_example.module',
       'name' => 'ctools_plugin_example',
       'type' => 'module',
       'owner' => '',
@@ -1092,7 +1372,7 @@ $options['packages'] = array (
     ),
     'ctools_plugin_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/tests/ctools_plugin_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/tests/ctools_plugin_test.module',
       'name' => 'ctools_plugin_test',
       'type' => 'module',
       'owner' => '',
@@ -1127,13 +1407,13 @@ $options['packages'] = array (
     ),
     'current_search' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/facetapi/contrib/current_search/current_search.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/facetapi/contrib/current_search/current_search.module',
       'name' => 'current_search',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7101',
       'weight' => '0',
       'info' => 
       array (
@@ -1164,7 +1444,7 @@ $options['packages'] = array (
     ),
     'dashboard' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/dashboard/dashboard.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/dashboard/dashboard.module',
       'name' => 'dashboard',
       'type' => 'module',
       'owner' => '',
@@ -1195,9 +1475,31 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'data' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'data',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '6002',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'database_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/database_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/database_test.module',
       'name' => 'database_test',
       'type' => 'module',
       'owner' => '',
@@ -1223,15 +1525,125 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'data_entity' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'data_entity',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'data_node' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'data_node',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '6001',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'data_search' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'data_search',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'data_taxonomy' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'data_taxonomy',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'data_ui' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'data_ui',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'date' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date.module',
       'name' => 'date',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7004',
       'weight' => '0',
       'info' => 
       array (
@@ -1261,7 +1673,7 @@ $options['packages'] = array (
     ),
     'date_all_day' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_all_day/date_all_day.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_all_day/date_all_day.module',
       'name' => 'date_all_day',
       'type' => 'module',
       'owner' => '',
@@ -1290,13 +1702,13 @@ $options['packages'] = array (
     ),
     'date_api' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_api/date_api.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_api/date_api.module',
       'name' => 'date_api',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7001',
       'weight' => '0',
       'info' => 
       array (
@@ -1329,7 +1741,7 @@ $options['packages'] = array (
     ),
     'date_context' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_context/date_context.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_context/date_context.module',
       'name' => 'date_context',
       'type' => 'module',
       'owner' => '',
@@ -1363,7 +1775,7 @@ $options['packages'] = array (
     ),
     'date_migrate' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_migrate/date_migrate.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_migrate/date_migrate.module',
       'name' => 'date_migrate',
       'type' => 'module',
       'owner' => '',
@@ -1397,7 +1809,7 @@ $options['packages'] = array (
     ),
     'date_migrate_example' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_migrate/date_migrate_example/date_migrate_example.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_migrate/date_migrate_example/date_migrate_example.module',
       'name' => 'date_migrate_example',
       'type' => 'module',
       'owner' => '',
@@ -1452,13 +1864,13 @@ $options['packages'] = array (
     ),
     'date_popup' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_popup/date_popup.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_popup/date_popup.module',
       'name' => 'date_popup',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -1488,7 +1900,7 @@ $options['packages'] = array (
     ),
     'date_repeat' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_repeat/date_repeat.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_repeat/date_repeat.module',
       'name' => 'date_repeat',
       'type' => 'module',
       'owner' => '',
@@ -1521,7 +1933,7 @@ $options['packages'] = array (
     ),
     'date_repeat_field' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_repeat_field/date_repeat_field.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_repeat_field/date_repeat_field.module',
       'name' => 'date_repeat_field',
       'type' => 'module',
       'owner' => '',
@@ -1558,7 +1970,7 @@ $options['packages'] = array (
     ),
     'date_tools' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_tools/date_tools.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_tools/date_tools.module',
       'name' => 'date_tools',
       'type' => 'module',
       'owner' => '',
@@ -1591,7 +2003,7 @@ $options['packages'] = array (
     ),
     'date_views' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/date/date_views/date_views.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_views/date_views.module',
       'name' => 'date_views',
       'type' => 'module',
       'owner' => '',
@@ -1628,9 +2040,31 @@ $options['packages'] = array (
       'project' => 'date',
       'version' => '7.x-2.6',
     ),
+    'dba' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'dba',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'dblog' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/dblog/dblog.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/dblog/dblog.module',
       'name' => 'dblog',
       'type' => 'module',
       'owner' => '',
@@ -1661,13 +2095,13 @@ $options['packages'] = array (
     ),
     'drupalchat' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/drupalchat/drupalchat.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat.module',
       'name' => 'drupalchat',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7001',
       'weight' => '0',
       'info' => 
       array (
@@ -1696,7 +2130,7 @@ $options['packages'] = array (
     ),
     'drupalchat_nodejs' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/drupalchat/drupalchat_nodejs/drupalchat_nodejs.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat_nodejs/drupalchat_nodejs.module',
       'name' => 'drupalchat_nodejs',
       'type' => 'module',
       'owner' => '',
@@ -1729,7 +2163,7 @@ $options['packages'] = array (
     ),
     'drupalchat_notifications' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/drupalchat/drupalchat_notifications/drupalchat_notifications.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat_notifications/drupalchat_notifications.module',
       'name' => 'drupalchat_notifications',
       'type' => 'module',
       'owner' => '',
@@ -1762,7 +2196,7 @@ $options['packages'] = array (
     ),
     'drupal_system_listing_compatible_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module',
       'name' => 'drupal_system_listing_compatible_test',
       'type' => 'module',
       'owner' => '',
@@ -1790,7 +2224,7 @@ $options['packages'] = array (
     ),
     'drupal_system_listing_incompatible_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.module',
       'name' => 'drupal_system_listing_incompatible_test',
       'type' => 'module',
       'owner' => '',
@@ -1818,14 +2252,14 @@ $options['packages'] = array (
     ),
     'ds' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/ds.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/ds.module',
       'name' => 'ds',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7004',
+      'weight' => '1',
       'info' => 
       array (
         'name' => 'Display suite',
@@ -1859,7 +2293,7 @@ $options['packages'] = array (
     ),
     'ds_exportables_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/tests/ds_exportables_test/ds_exportables_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/tests/ds_exportables_test/ds_exportables_test.module',
       'name' => 'ds_exportables_test',
       'type' => 'module',
       'owner' => '',
@@ -1887,14 +2321,14 @@ $options['packages'] = array (
     ),
     'ds_extras' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/modules/ds_extras/ds_extras.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/modules/ds_extras/ds_extras.module',
       'name' => 'ds_extras',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7005',
+      'weight' => '2',
       'info' => 
       array (
         'name' => 'Extras',
@@ -1916,14 +2350,14 @@ $options['packages'] = array (
     ),
     'ds_forms' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/modules/ds_forms/ds_forms.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/modules/ds_forms/ds_forms.module',
       'name' => 'ds_forms',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '0',
+      'weight' => '20',
       'info' => 
       array (
         'name' => 'Forms',
@@ -1944,13 +2378,13 @@ $options['packages'] = array (
     ),
     'ds_search' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/modules/ds_search/ds_search.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/modules/ds_search/ds_search.module',
       'name' => 'ds_search',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -1973,7 +2407,7 @@ $options['packages'] = array (
     ),
     'ds_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ds/tests/ds_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/tests/ds_test.module',
       'name' => 'ds_test',
       'type' => 'module',
       'owner' => '',
@@ -2002,13 +2436,13 @@ $options['packages'] = array (
     ),
     'elfinder' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/elfinder/elfinder.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/elfinder.module',
       'name' => 'elfinder',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -2030,7 +2464,7 @@ $options['packages'] = array (
     ),
     'elfinder_bueditor' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/elfinder/modules/elfinder_bueditor/elfinder_bueditor.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/modules/elfinder_bueditor/elfinder_bueditor.module',
       'name' => 'elfinder_bueditor',
       'type' => 'module',
       'owner' => '',
@@ -2059,13 +2493,13 @@ $options['packages'] = array (
     ),
     'elfinder_ffsel' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/elfinder/modules/elfinder_ffsel/elfinder_ffsel.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/modules/elfinder_ffsel/elfinder_ffsel.module',
       'name' => 'elfinder_ffsel',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -2086,9 +2520,31 @@ $options['packages'] = array (
       'project' => 'elfinder',
       'version' => '7.x-0.7',
     ),
+    'entity' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'entity',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7002',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'entity_cache_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/entity_cache_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_cache_test.module',
       'name' => 'entity_cache_test',
       'type' => 'module',
       'owner' => '',
@@ -2117,7 +2573,7 @@ $options['packages'] = array (
     ),
     'entity_cache_test_dependency' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/entity_cache_test_dependency.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_cache_test_dependency.module',
       'name' => 'entity_cache_test_dependency',
       'type' => 'module',
       'owner' => '',
@@ -2145,7 +2601,7 @@ $options['packages'] = array (
     ),
     'entity_crud_hook_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/entity_crud_hook_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_crud_hook_test.module',
       'name' => 'entity_crud_hook_test',
       'type' => 'module',
       'owner' => '',
@@ -2173,7 +2629,7 @@ $options['packages'] = array (
     ),
     'entity_query_access_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/entity_query_access_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_query_access_test.module',
       'name' => 'entity_query_access_test',
       'type' => 'module',
       'owner' => '',
@@ -2199,9 +2655,31 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.15',
     ),
+    'entity_token' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'entity_token',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'error_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/error_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/error_test.module',
       'name' => 'error_test',
       'type' => 'module',
       'owner' => '',
@@ -2227,15 +2705,37 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'extlink' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'extlink',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '1',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'facetapi' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/facetapi/facetapi.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/facetapi/facetapi.module',
       'name' => 'facetapi',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7103',
       'weight' => '0',
       'info' => 
       array (
@@ -2274,7 +2774,7 @@ $options['packages'] = array (
     ),
     'facetapi_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/facetapi/tests/facetapi_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/facetapi/tests/facetapi_test.module',
       'name' => 'facetapi_test',
       'type' => 'module',
       'owner' => '',
@@ -2303,13 +2803,13 @@ $options['packages'] = array (
     ),
     'faq' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/faq/faq.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/faq/faq.module',
       'name' => 'faq',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7001',
       'weight' => '0',
       'info' => 
       array (
@@ -2351,14 +2851,14 @@ $options['packages'] = array (
     ),
     'features' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/features/features.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features/features.module',
       'name' => 'features',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '6101',
+      'weight' => '20',
       'info' => 
       array (
         'name' => 'Features',
@@ -2382,7 +2882,7 @@ $options['packages'] = array (
     ),
     'features_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/features/tests/features_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features/tests/features_test.module',
       'name' => 'features_test',
       'type' => 'module',
       'owner' => '',
@@ -2455,13 +2955,13 @@ $options['packages'] = array (
     ),
     'fe_block' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/features_extra/fe_block.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_block.module',
       'name' => 'fe_block',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -2485,7 +2985,7 @@ $options['packages'] = array (
     ),
     'fe_nodequeue' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/features_extra/fe_nodequeue.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_nodequeue.module',
       'name' => 'fe_nodequeue',
       'type' => 'module',
       'owner' => '',
@@ -2515,13 +3015,13 @@ $options['packages'] = array (
     ),
     'fe_profile' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/features_extra/fe_profile.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_profile.module',
       'name' => 'fe_profile',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -2543,7 +3043,7 @@ $options['packages'] = array (
     ),
     'field' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/field.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/field.module',
       'name' => 'field',
       'type' => 'module',
       'owner' => '',
@@ -2585,7 +3085,7 @@ $options['packages'] = array (
     ),
     'field_sql_storage' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/modules/field_sql_storage/field_sql_storage.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/field_sql_storage/field_sql_storage.module',
       'name' => 'field_sql_storage',
       'type' => 'module',
       'owner' => '',
@@ -2618,7 +3118,7 @@ $options['packages'] = array (
     ),
     'field_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/tests/field_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/tests/field_test.module',
       'name' => 'field_test',
       'type' => 'module',
       'owner' => '',
@@ -2650,7 +3150,7 @@ $options['packages'] = array (
     ),
     'field_ui' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field_ui/field_ui.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field_ui/field_ui.module',
       'name' => 'field_ui',
       'type' => 'module',
       'owner' => '',
@@ -2682,7 +3182,7 @@ $options['packages'] = array (
     ),
     'file' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/file/file.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/file/file.module',
       'name' => 'file',
       'type' => 'module',
       'owner' => '',
@@ -2714,14 +3214,14 @@ $options['packages'] = array (
     ),
     'filefield_sources' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/filefield_sources/filefield_sources.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/filefield_sources/filefield_sources.module',
       'name' => 'filefield_sources',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '6001',
+      'weight' => '5',
       'info' => 
       array (
         'name' => 'File Field Sources',
@@ -2742,7 +3242,7 @@ $options['packages'] = array (
     ),
     'file_module_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/file/tests/file_module_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/file/tests/file_module_test.module',
       'name' => 'file_module_test',
       'type' => 'module',
       'owner' => '',
@@ -2770,7 +3270,7 @@ $options['packages'] = array (
     ),
     'file_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/file_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/file_test.module',
       'name' => 'file_test',
       'type' => 'module',
       'owner' => '',
@@ -2802,7 +3302,7 @@ $options['packages'] = array (
     ),
     'filter' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/filter/filter.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/filter/filter.module',
       'name' => 'filter',
       'type' => 'module',
       'owner' => '',
@@ -2835,13 +3335,13 @@ $options['packages'] = array (
     ),
     'filter_perms' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/filter_perms/filter_perms.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/filter_perms/filter_perms.module',
       'name' => 'filter_perms',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -2862,7 +3362,7 @@ $options['packages'] = array (
     ),
     'filter_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/filter_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/filter_test.module',
       'name' => 'filter_test',
       'type' => 'module',
       'owner' => '',
@@ -2890,7 +3390,7 @@ $options['packages'] = array (
     ),
     'form_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/form_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/form_test.module',
       'name' => 'form_test',
       'type' => 'module',
       'owner' => '',
@@ -2918,7 +3418,7 @@ $options['packages'] = array (
     ),
     'forum' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/forum/forum.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/forum/forum.module',
       'name' => 'forum',
       'type' => 'module',
       'owner' => '',
@@ -2957,9 +3457,282 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'fusion_accelerator' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_accelerator.module',
+      'name' => 'fusion_accelerator',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion grid tools',
+        'description' => 'Provides dynamic grid generation for responsive layouts.',
+        'core' => '7.x',
+        'engine' => 'phptemplate',
+        'package' => 'Fusion Accelerator',
+        'files' => 
+        array (
+          0 => 'fusion_accelerator.module',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_apply' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/fusion_apply.module',
+      'name' => 'fusion_apply',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Apply skins',
+        'description' => 'Provides a way to define and skin Drupal UI components, such as blocks and menus.',
+        'package' => 'Fusion Accelerator',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'tests/fusion_apply.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_apply_rules' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/fusion_apply_rules.module',
+      'name' => 'fusion_apply_rules',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Apply skins for pages and regions',
+        'description' => 'Adds a new tab to the administrative interface to edit skins for pages and regions.',
+        'package' => 'Fusion Accelerator',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'fusion_apply',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_apply_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/tests/fusion_apply_test/fusion_apply_test.module',
+      'name' => 'fusion_apply_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion Apply Testing',
+        'description' => 'Applies skins and performs other tests for Fusion Apply.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'fusion_apply',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_apply_test_incompatible' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/tests/fusion_apply_incompatible/fusion_apply_test_incompatible.module',
+      'name' => 'fusion_apply_test_incompatible',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion Apply Incompatible Testing',
+        'description' => 'A test module used for testing incompatible Fusion Apply API implementations.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'fusion_apply',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_apply_ui' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/fusion_apply_ui.module',
+      'name' => 'fusion_apply_ui',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Apply skins UI',
+        'description' => 'Administrative interface to edit skins for Drupal UI components.  Without this module, you cannot edit your skins or rules.',
+        'package' => 'Fusion Accelerator',
+        'core' => '7.x',
+        'configure' => 'admin/appearance/fusion',
+        'dependencies' => 
+        array (
+          0 => 'fusion_apply',
+          1 => 'contextual',
+        ),
+        'files' => 
+        array (
+          0 => 'tests/fusion_apply_ui.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_apply_ui_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/tests/fusion_apply_ui_test/fusion_apply_ui_test.module',
+      'name' => 'fusion_apply_ui_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion Apply UI Testing',
+        'description' => 'A test module used for testing Fusion Apply UI.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'fusion_apply_ui',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_labels' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_labels/fusion_labels.module',
+      'name' => 'fusion_labels',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion labels',
+        'description' => 'Toggle buttons are added for administrators to visualize regions and grids in a theme.',
+        'core' => '7.x',
+        'engine' => 'phptemplate',
+        'package' => 'Fusion Accelerator',
+        'files' => 
+        array (
+          0 => 'fusion_accelerator.module',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'fusion_responsive_ie' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_responsive_ie/fusion_responsive_ie.module',
+      'name' => 'fusion_responsive_ie',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Responsive layouts for IE 6-8',
+        'description' => 'Provides simulated support for CSS media queries in Internet Explorer versions 6-8.',
+        'core' => '7.x',
+        'engine' => 'phptemplate',
+        'package' => 'Fusion Accelerator',
+        'dependencies' => 
+        array (
+          0 => 'libraries',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'fusion_accelerator',
+        'datestamp' => '1332518152',
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion_accelerator',
+      'version' => '7.x-2.0-beta1',
+    ),
     'help' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/help/help.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/help/help.module',
       'name' => 'help',
       'type' => 'module',
       'owner' => '',
@@ -2990,14 +3763,14 @@ $options['packages'] = array (
     ),
     'i18n' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n.module',
       'name' => 'i18n',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
-      'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'status' => '1',
+      'bootstrap' => '1',
+      'schema_version' => '7001',
+      'weight' => '10',
       'info' => 
       array (
         'name' => 'Internationalization',
@@ -3025,16 +3798,38 @@ $options['packages'] = array (
       'project' => 'i18n',
       'version' => '7.x-1.7',
     ),
+    'i18nviews' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'i18nviews',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'i18n_block' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_block/i18n_block.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_block/i18n_block.module',
       'name' => 'i18n_block',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7001',
+      'weight' => '100',
       'info' => 
       array (
         'name' => 'Block languages',
@@ -3061,7 +3856,7 @@ $options['packages'] = array (
     ),
     'i18n_contact' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_contact/i18n_contact.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_contact/i18n_contact.module',
       'name' => 'i18n_contact',
       'type' => 'module',
       'owner' => '',
@@ -3090,13 +3885,13 @@ $options['packages'] = array (
     ),
     'i18n_field' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_field/i18n_field.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_field/i18n_field.module',
       'name' => 'i18n_field',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7000',
       'weight' => '0',
       'info' => 
       array (
@@ -3124,7 +3919,7 @@ $options['packages'] = array (
     ),
     'i18n_forum' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_forum/i18n_forum.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_forum/i18n_forum.module',
       'name' => 'i18n_forum',
       'type' => 'module',
       'owner' => '',
@@ -3158,14 +3953,14 @@ $options['packages'] = array (
     ),
     'i18n_menu' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_menu/i18n_menu.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_menu/i18n_menu.module',
       'name' => 'i18n_menu',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7000',
+      'weight' => '5',
       'info' => 
       array (
         'name' => 'Menu translation',
@@ -3194,14 +3989,14 @@ $options['packages'] = array (
     ),
     'i18n_menu_node' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n_menu_node/i18n_menu_node.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n_menu_node/i18n_menu_node.module',
       'name' => 'i18n_menu_node',
       'type' => 'module',
       'owner' => '',
       'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '0',
+      'weight' => '6',
       'info' => 
       array (
         'name' => 'Menu translation (Node)',
@@ -3226,13 +4021,13 @@ $options['packages'] = array (
     ),
     'i18n_node' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_node/i18n_node.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_node/i18n_node.module',
       'name' => 'i18n_node',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7000',
       'weight' => '0',
       'info' => 
       array (
@@ -3262,7 +4057,7 @@ $options['packages'] = array (
     ),
     'i18n_path' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_path/i18n_path.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_path/i18n_path.module',
       'name' => 'i18n_path',
       'type' => 'module',
       'owner' => '',
@@ -3295,7 +4090,7 @@ $options['packages'] = array (
     ),
     'i18n_redirect' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_redirect/i18n_redirect.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_redirect/i18n_redirect.module',
       'name' => 'i18n_redirect',
       'type' => 'module',
       'owner' => '',
@@ -3323,13 +4118,13 @@ $options['packages'] = array (
     ),
     'i18n_select' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_select/i18n_select.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_select/i18n_select.module',
       'name' => 'i18n_select',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -3356,14 +4151,14 @@ $options['packages'] = array (
     ),
     'i18n_string' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_string/i18n_string.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_string/i18n_string.module',
       'name' => 'i18n_string',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7001',
+      'weight' => '10',
       'info' => 
       array (
         'name' => 'String translation',
@@ -3392,14 +4187,14 @@ $options['packages'] = array (
     ),
     'i18n_sync' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_sync/i18n_sync.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_sync/i18n_sync.module',
       'name' => 'i18n_sync',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7000',
+      'weight' => '100',
       'info' => 
       array (
         'name' => 'Synchronize translations',
@@ -3429,14 +4224,14 @@ $options['packages'] = array (
     ),
     'i18n_taxonomy' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_taxonomy/i18n_taxonomy.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_taxonomy/i18n_taxonomy.module',
       'name' => 'i18n_taxonomy',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7004',
+      'weight' => '5',
       'info' => 
       array (
         'name' => 'Taxonomy translation',
@@ -3466,7 +4261,7 @@ $options['packages'] = array (
     ),
     'i18n_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/tests/i18n_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/tests/i18n_test.module',
       'name' => 'i18n_test',
       'type' => 'module',
       'owner' => '',
@@ -3497,13 +4292,13 @@ $options['packages'] = array (
     ),
     'i18n_translation' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_translation/i18n_translation.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_translation/i18n_translation.module',
       'name' => 'i18n_translation',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -3529,14 +4324,14 @@ $options['packages'] = array (
     ),
     'i18n_variable' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/i18n/i18n_variable/i18n_variable.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_variable/i18n_variable.module',
       'name' => 'i18n_variable',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
-      'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'status' => '1',
+      'bootstrap' => '1',
+      'schema_version' => '7004',
+      'weight' => '-900',
       'info' => 
       array (
         'name' => 'Variable translation',
@@ -3565,7 +4360,7 @@ $options['packages'] = array (
     ),
     'image' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/image/image.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/image/image.module',
       'name' => 'image',
       'type' => 'module',
       'owner' => '',
@@ -3598,7 +4393,7 @@ $options['packages'] = array (
     ),
     'image_module_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/image/tests/image_module_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/image/tests/image_module_test.module',
       'name' => 'image_module_test',
       'type' => 'module',
       'owner' => '',
@@ -3630,7 +4425,7 @@ $options['packages'] = array (
     ),
     'image_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/image_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/image_test.module',
       'name' => 'image_test',
       'type' => 'module',
       'owner' => '',
@@ -3656,15 +4451,48 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
-    'jquery_update' => 
+    'jcarousel' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/jquery_update/jquery_update.module',
-      'name' => 'jquery_update',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jcarousel/jcarousel.module',
+      'name' => 'jcarousel',
       'type' => 'module',
       'owner' => '',
       'status' => '0',
       'bootstrap' => '0',
       'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'jCarousel',
+        'description' => 'Create jQuery-based carousel rotators.',
+        'package' => 'User interface',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'jcarousel.module',
+          1 => 'includes/jcarousel.views.inc',
+          2 => 'includes/jcarousel_style_plugin.inc',
+        ),
+        'version' => '7.x-2.6',
+        'project' => 'jcarousel',
+        'datestamp' => '1322116852',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'jcarousel',
+      'version' => '7.x-2.6',
+    ),
+    'jquery_update' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jquery_update/jquery_update.module',
+      'name' => 'jquery_update',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7000',
       'weight' => '0',
       'info' => 
       array (
@@ -3691,13 +4519,13 @@ $options['packages'] = array (
     ),
     'jq_maphilight' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/jq_maphilight/jq_maphilight.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jq_maphilight/jq_maphilight.module',
       'name' => 'jq_maphilight',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -3719,13 +4547,13 @@ $options['packages'] = array (
     ),
     'languageicons' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/languageicons/languageicons.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/languageicons/languageicons.module',
       'name' => 'languageicons',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '6200',
       'weight' => '0',
       'info' => 
       array (
@@ -3751,15 +4579,44 @@ $options['packages'] = array (
       'project' => 'languageicons',
       'version' => '7.x-1.0',
     ),
-    'libraries' => 
+    'lang_dropdown' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/libraries/libraries.module',
-      'name' => 'libraries',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/lang_dropdown/lang_dropdown.module',
+      'name' => 'lang_dropdown',
       'type' => 'module',
       'owner' => '',
       'status' => '0',
       'bootstrap' => '0',
       'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Language Switcher Dropdown',
+        'package' => 'Multilingual',
+        'description' => 'Provides a dropdown select to switch between available languages.',
+        'dependencies' => 
+        array (
+          0 => 'locale',
+        ),
+        'configure' => 'admin/structure/block',
+        'core' => '7.x',
+        'version' => '7.x-1.5',
+        'project' => 'lang_dropdown',
+        'datestamp' => '1339444196',
+        'php' => '5.2.4',
+      ),
+      'project' => 'lang_dropdown',
+      'version' => '7.x-1.5',
+    ),
+    'libraries' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/libraries/libraries.module',
+      'name' => 'libraries',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7200',
       'weight' => '0',
       'info' => 
       array (
@@ -3783,7 +4640,7 @@ $options['packages'] = array (
     ),
     'libraries_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/libraries/tests/libraries_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/libraries/tests/libraries_test.module',
       'name' => 'libraries_test',
       'type' => 'module',
       'owner' => '',
@@ -3809,9 +4666,44 @@ $options['packages'] = array (
       'project' => 'libraries',
       'version' => '7.x-2.0',
     ),
+    'lightbox2' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/lightbox2/lightbox2.module',
+      'name' => 'lightbox2',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Lightbox2',
+        'description' => 'Enables Lightbox2 for Drupal',
+        'core' => '7.x',
+        'package' => 'User interface',
+        'files' => 
+        array (
+          0 => 'lightbox2.install',
+          1 => 'lightbox2.module',
+          2 => 'lightbox2.formatter.inc',
+          3 => 'lightbox2.admin.inc',
+        ),
+        'configure' => 'admin/config/user-interface/lightbox2',
+        'version' => '7.x-1.0-beta1',
+        'project' => 'lightbox2',
+        'datestamp' => '1318819001',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'lightbox2',
+      'version' => '7.x-1.0-beta1',
+    ),
     'link' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/link/link.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/link/link.module',
       'name' => 'link',
       'type' => 'module',
       'owner' => '',
@@ -3851,7 +4743,7 @@ $options['packages'] = array (
     ),
     'list' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/modules/list/list.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/list/list.module',
       'name' => 'list',
       'type' => 'module',
       'owner' => '',
@@ -3884,7 +4776,7 @@ $options['packages'] = array (
     ),
     'list_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/modules/list/tests/list_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/list/tests/list_test.module',
       'name' => 'list_test',
       'type' => 'module',
       'owner' => '',
@@ -3912,13 +4804,13 @@ $options['packages'] = array (
     ),
     'locale' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/locale/locale.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/locale/locale.module',
       'name' => 'locale',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7004',
       'weight' => '0',
       'info' => 
       array (
@@ -3944,7 +4836,7 @@ $options['packages'] = array (
     ),
     'locale_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/locale/tests/locale_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/locale/tests/locale_test.module',
       'name' => 'locale_test',
       'type' => 'module',
       'owner' => '',
@@ -3972,7 +4864,7 @@ $options['packages'] = array (
     ),
     'masquerade' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/masquerade/masquerade.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/masquerade/masquerade.module',
       'name' => 'masquerade',
       'type' => 'module',
       'owner' => '',
@@ -4003,7 +4895,7 @@ $options['packages'] = array (
     ),
     'menu' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/menu/menu.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/menu/menu.module',
       'name' => 'menu',
       'type' => 'module',
       'owner' => '',
@@ -4035,7 +4927,7 @@ $options['packages'] = array (
     ),
     'menu_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/menu_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/menu_test.module',
       'name' => 'menu_test',
       'type' => 'module',
       'owner' => '',
@@ -4063,13 +4955,13 @@ $options['packages'] = array (
     ),
     'module_filter' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/module_filter/module_filter.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/module_filter/module_filter.module',
       'name' => 'module_filter',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7100',
       'weight' => '0',
       'info' => 
       array (
@@ -4102,7 +4994,7 @@ $options['packages'] = array (
     ),
     'module_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/module_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/module_test.module',
       'name' => 'module_test',
       'type' => 'module',
       'owner' => '',
@@ -4130,7 +5022,7 @@ $options['packages'] = array (
     ),
     'node' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/node/node.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/node/node.module',
       'name' => 'node',
       'type' => 'module',
       'owner' => '',
@@ -4171,13 +5063,13 @@ $options['packages'] = array (
     ),
     'nodejs' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs.module',
       'name' => 'nodejs',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4203,13 +5095,13 @@ $options['packages'] = array (
     ),
     'nodejs_actions' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_actions/nodejs_actions.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_actions/nodejs_actions.module',
       'name' => 'nodejs_actions',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4232,13 +5124,13 @@ $options['packages'] = array (
     ),
     'nodejs_ajax' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_ajax/nodejs_ajax.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_ajax/nodejs_ajax.module',
       'name' => 'nodejs_ajax',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4259,7 +5151,7 @@ $options['packages'] = array (
     ),
     'nodejs_buddylist' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_buddylist/nodejs_buddylist.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_buddylist/nodejs_buddylist.module',
       'name' => 'nodejs_buddylist',
       'type' => 'module',
       'owner' => '',
@@ -4288,13 +5180,13 @@ $options['packages'] = array (
     ),
     'nodejs_config' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_config/nodejs_config.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_config/nodejs_config.module',
       'name' => 'nodejs_config',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4316,13 +5208,13 @@ $options['packages'] = array (
     ),
     'nodejs_notify' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_notify/nodejs_notify.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_notify/nodejs_notify.module',
       'name' => 'nodejs_notify',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4344,13 +5236,13 @@ $options['packages'] = array (
     ),
     'nodejs_subscribe' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_subscribe/nodejs_subscribe.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_subscribe/nodejs_subscribe.module',
       'name' => 'nodejs_subscribe',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7000',
       'weight' => '0',
       'info' => 
       array (
@@ -4372,13 +5264,13 @@ $options['packages'] = array (
     ),
     'nodejs_watchdog' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/nodejs/nodejs_watchdog/nodejs_watchdog.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_watchdog/nodejs_watchdog.module',
       'name' => 'nodejs_watchdog',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
-      'bootstrap' => '0',
-      'schema_version' => 0,
+      'status' => '1',
+      'bootstrap' => '1',
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4402,7 +5294,7 @@ $options['packages'] = array (
     ),
     'node_access_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/node/tests/node_access_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_access_test.module',
       'name' => 'node_access_test',
       'type' => 'module',
       'owner' => '',
@@ -4430,13 +5322,13 @@ $options['packages'] = array (
     ),
     'node_export' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/node_export/node_export.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/node_export.module',
       'name' => 'node_export',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7303',
       'weight' => '0',
       'info' => 
       array (
@@ -4463,13 +5355,13 @@ $options['packages'] = array (
     ),
     'node_export_dependency' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/node_export/modules/node_export_dependency/node_export_dependency.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_dependency/node_export_dependency.module',
       'name' => 'node_export_dependency',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4492,13 +5384,13 @@ $options['packages'] = array (
     ),
     'node_export_features' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/node_export/modules/node_export_features/node_export_features.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_features/node_export_features.module',
       'name' => 'node_export_features',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4522,7 +5414,7 @@ $options['packages'] = array (
     ),
     'node_export_feeds' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/node_export/modules/node_export_feeds/node_export_feeds.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_feeds/node_export_feeds.module',
       'name' => 'node_export_feeds',
       'type' => 'module',
       'owner' => '',
@@ -4556,7 +5448,7 @@ $options['packages'] = array (
     ),
     'node_export_relation' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/node_export/modules/node_export_relation/node_export_relation.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_relation/node_export_relation.module',
       'name' => 'node_export_relation',
       'type' => 'module',
       'owner' => '',
@@ -4585,7 +5477,7 @@ $options['packages'] = array (
     ),
     'node_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/node/tests/node_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_test.module',
       'name' => 'node_test',
       'type' => 'module',
       'owner' => '',
@@ -4613,7 +5505,7 @@ $options['packages'] = array (
     ),
     'node_test_exception' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/node/tests/node_test_exception.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_test_exception.module',
       'name' => 'node_test_exception',
       'type' => 'module',
       'owner' => '',
@@ -4641,7 +5533,7 @@ $options['packages'] = array (
     ),
     'number' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/modules/number/number.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/number/number.module',
       'name' => 'number',
       'type' => 'module',
       'owner' => '',
@@ -4673,7 +5565,7 @@ $options['packages'] = array (
     ),
     'openid' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/openid/openid.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/openid/openid.module',
       'name' => 'openid',
       'type' => 'module',
       'owner' => '',
@@ -4704,7 +5596,7 @@ $options['packages'] = array (
     ),
     'openid_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/openid/tests/openid_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/openid/tests/openid_test.module',
       'name' => 'openid_test',
       'type' => 'module',
       'owner' => '',
@@ -4733,7 +5625,7 @@ $options['packages'] = array (
     ),
     'options' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/modules/options/options.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/options/options.module',
       'name' => 'options',
       'type' => 'module',
       'owner' => '',
@@ -4763,14 +5655,36 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
-    'overlay' => 
+    'otrs' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/overlay/overlay.module',
-      'name' => 'overlay',
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'otrs',
       'type' => 'module',
       'owner' => '',
       'status' => '1',
-      'bootstrap' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'overlay' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/modules/overlay/overlay.module',
+      'name' => 'overlay',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
       'schema_version' => '0',
       'weight' => '0',
       'info' => 
@@ -4792,14 +5706,14 @@ $options['packages'] = array (
     ),
     'page_manager' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/page_manager/page_manager.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/page_manager/page_manager.module',
       'name' => 'page_manager',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '0',
+      'weight' => '99',
       'info' => 
       array (
         'name' => 'Page manager',
@@ -4820,13 +5734,13 @@ $options['packages'] = array (
     ),
     'panels' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/panels/panels.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels.module',
       'name' => 'panels',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7301',
       'weight' => '0',
       'info' => 
       array (
@@ -4857,13 +5771,13 @@ $options['packages'] = array (
     ),
     'panels_ipe' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/panels/panels_ipe/panels_ipe.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_ipe/panels_ipe.module',
       'name' => 'panels_ipe',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4890,13 +5804,13 @@ $options['packages'] = array (
     ),
     'panels_mini' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/panels/panels_mini/panels_mini.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_mini/panels_mini.module',
       'name' => 'panels_mini',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -4922,14 +5836,14 @@ $options['packages'] = array (
     ),
     'panels_node' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/panels/panels_node/panels_node.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_node/panels_node.module',
       'name' => 'panels_node',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '6001',
+      'weight' => '11',
       'info' => 
       array (
         'name' => 'Panel nodes',
@@ -4955,7 +5869,7 @@ $options['packages'] = array (
     ),
     'path' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/path/path.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/path/path.module',
       'name' => 'path',
       'type' => 'module',
       'owner' => '',
@@ -4987,7 +5901,7 @@ $options['packages'] = array (
     ),
     'path_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/path_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/path_test.module',
       'name' => 'path_test',
       'type' => 'module',
       'owner' => '',
@@ -5015,7 +5929,7 @@ $options['packages'] = array (
     ),
     'php' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/php/php.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/php/php.module',
       'name' => 'php',
       'type' => 'module',
       'owner' => '',
@@ -5046,7 +5960,7 @@ $options['packages'] = array (
     ),
     'poll' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/poll/poll.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/poll/poll.module',
       'name' => 'poll',
       'type' => 'module',
       'owner' => '',
@@ -5084,13 +5998,13 @@ $options['packages'] = array (
     ),
     'profile' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/profile/profile.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/profile/profile.module',
       'name' => 'profile',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7002',
       'weight' => '0',
       'info' => 
       array (
@@ -5115,9 +6029,39 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'quant' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/quant/quant.module',
+      'name' => 'quant',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7000',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Quant',
+        'description' => 'Display quantitative analytical charts of your site\'s activity over time periods',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'plugins/Quant.inc',
+        ),
+        'version' => '7.x-1.0-beta4',
+        'project' => 'quant',
+        'datestamp' => '1352297835',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'quant',
+      'version' => '7.x-1.0-beta4',
+    ),
     'rdf' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/rdf/rdf.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/rdf/rdf.module',
       'name' => 'rdf',
       'type' => 'module',
       'owner' => '',
@@ -5148,7 +6092,7 @@ $options['packages'] = array (
     ),
     'rdf_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/rdf/tests/rdf_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/rdf/tests/rdf_test.module',
       'name' => 'rdf_test',
       'type' => 'module',
       'owner' => '',
@@ -5176,7 +6120,7 @@ $options['packages'] = array (
     ),
     'requirements1_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/requirements1_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/requirements1_test.module',
       'name' => 'requirements1_test',
       'type' => 'module',
       'owner' => '',
@@ -5204,7 +6148,7 @@ $options['packages'] = array (
     ),
     'requirements2_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/requirements2_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/requirements2_test.module',
       'name' => 'requirements2_test',
       'type' => 'module',
       'owner' => '',
@@ -5232,9 +6176,97 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'rules' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'rules',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7209',
+      'weight' => '20',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'rules_admin' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'rules_admin',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'rules_scheduler' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'rules_scheduler',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7202',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'schema' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'schema',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'search' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/search/search.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/search/search.module',
       'name' => 'search',
       'type' => 'module',
       'owner' => '',
@@ -5274,7 +6306,7 @@ $options['packages'] = array (
     ),
     'search_embedded_form' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/search/tests/search_embedded_form.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/search/tests/search_embedded_form.module',
       'name' => 'search_embedded_form',
       'type' => 'module',
       'owner' => '',
@@ -5302,7 +6334,7 @@ $options['packages'] = array (
     ),
     'search_extra_type' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/search/tests/search_extra_type.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/search/tests/search_extra_type.module',
       'name' => 'search_extra_type',
       'type' => 'module',
       'owner' => '',
@@ -5330,13 +6362,13 @@ $options['packages'] = array (
     ),
     'securepages' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/securepages/securepages.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/securepages/securepages.module',
       'name' => 'securepages',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -5361,13 +6393,13 @@ $options['packages'] = array (
     ),
     'session_api' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/session_api/session_api.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/session_api/session_api.module',
       'name' => 'session_api',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7101',
       'weight' => '0',
       'info' => 
       array (
@@ -5395,7 +6427,7 @@ $options['packages'] = array (
     ),
     'session_api_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/session_api/tests/session_api_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/session_api/tests/session_api_test.module',
       'name' => 'session_api_test',
       'type' => 'module',
       'owner' => '',
@@ -5428,7 +6460,7 @@ $options['packages'] = array (
     ),
     'session_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/session_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/session_test.module',
       'name' => 'session_test',
       'type' => 'module',
       'owner' => '',
@@ -5456,13 +6488,13 @@ $options['packages'] = array (
     ),
     'shadowbox' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/shadowbox/shadowbox.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/shadowbox/shadowbox.module',
       'name' => 'shadowbox',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7001',
       'weight' => '0',
       'info' => 
       array (
@@ -5489,7 +6521,7 @@ $options['packages'] = array (
     ),
     'shortcut' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/shortcut/shortcut.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/shortcut/shortcut.module',
       'name' => 'shortcut',
       'type' => 'module',
       'owner' => '',
@@ -5521,13 +6553,13 @@ $options['packages'] = array (
     ),
     'simplesamlphp_auth' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/simplesamlphp_auth/simplesamlphp_auth.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/simplesamlphp_auth/simplesamlphp_auth.module',
       'name' => 'simplesamlphp_auth',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -5548,7 +6580,7 @@ $options['packages'] = array (
     ),
     'simpletest' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/simpletest.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/simpletest.module',
       'name' => 'simpletest',
       'type' => 'module',
       'owner' => '',
@@ -5624,9 +6656,353 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'skinr' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr.module',
+      'name' => 'skinr',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr',
+        'description' => 'Provides a way to define and/or skin bits of Drupal output from the UI.',
+        'package' => 'Skinr',
+        'core' => '7.x',
+        'files' => 
+        array (
+          0 => 'tests/skinr.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_context' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_context/skinr_context.module',
+      'name' => 'skinr_context',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Context',
+        'description' => 'Provides Skinr integration with Context.',
+        'package' => 'Skinr',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'context',
+          1 => 'skinr',
+        ),
+        'files' => 
+        array (
+          0 => 'tests/skinr_context.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_context_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_context/tests/skinr_context_test/skinr_context_test.module',
+      'name' => 'skinr_context_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Context Testing',
+        'description' => 'A test module used for testing Skinr Context.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'skinr_context',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_context_ui' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_context/skinr_context_ui.module',
+      'name' => 'skinr_context_ui',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Context UI',
+        'description' => 'Administrative interface for Skinr Context. Without this module, you cannot edit your skins with context.',
+        'package' => 'Skinr',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'context_ui',
+          1 => 'skinr_ui',
+        ),
+        'files' => 
+        array (
+          0 => 'tests/skinr_context_ui.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_panels' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_panels/skinr_panels.module',
+      'name' => 'skinr_panels',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Panels',
+        'description' => 'Provides Skinr integration with Panels.',
+        'package' => 'Skinr',
+        'core' => '7.x',
+        'dependencies' => 
+        array (
+          0 => 'panels',
+        ),
+        'files' => 
+        array (
+          0 => 'tests/skinr_panels.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_panels_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_panels/tests/skinr_panels_test/skinr_panels_test.module',
+      'name' => 'skinr_panels_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Panels Testing',
+        'description' => 'A test module used for testing Skinr Panels.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'skinr_panels',
+          1 => 'skinr_ui',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_test/skinr_test.module',
+      'name' => 'skinr_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Testing',
+        'description' => 'A test module used for testing Skinr.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'skinr',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_test_incompatible' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_test_incompatible/skinr_test_incompatible.module',
+      'name' => 'skinr_test_incompatible',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr Incompatible Testing',
+        'description' => 'A test module used for testing incompatible Skinr API implementations.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'skinr',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_ui' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_ui.module',
+      'name' => 'skinr_ui',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr UI',
+        'description' => 'Administrative interface to skinr. Without this module, you cannot edit your skins.',
+        'package' => 'Skinr',
+        'core' => '7.x',
+        'configure' => 'admin/structure/skinr',
+        'dependencies' => 
+        array (
+          0 => 'skinr',
+        ),
+        'files' => 
+        array (
+          0 => 'tests/skinr_ui.test',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'skinr_ui_test' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_ui_test/skinr_ui_test.module',
+      'name' => 'skinr_ui_test',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Skinr UI Testing',
+        'description' => 'A test module used for testing Skinr UI.',
+        'package' => 'Testing',
+        'core' => '7.x',
+        'hidden' => true,
+        'dependencies' => 
+        array (
+          0 => 'skinr_ui',
+        ),
+        'version' => '7.x-2.0-beta1',
+        'project' => 'skinr',
+        'datestamp' => '1334917632',
+        'php' => '5.2.4',
+      ),
+      'project' => 'skinr',
+      'version' => '7.x-2.0-beta1',
+    ),
+    'smtp' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/smtp/smtp.module',
+      'name' => 'smtp',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7000',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'SMTP Authentication Support',
+        'description' => 'Allow for site emails to be sent through an SMTP server of your choice.',
+        'core' => '7.x',
+        'package' => 'Mail',
+        'configure' => 'admin/config/system/smtp',
+        'files' => 
+        array (
+          0 => 'smtp.module',
+          1 => 'smtp.admin.inc',
+          2 => 'smtp.mail.inc',
+          3 => 'smtp.phpmailer.inc',
+          4 => 'smtp.transport.inc',
+        ),
+        'version' => '7.x-1.0-beta2',
+        'project' => 'smtp',
+        'datestamp' => '1348254500',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'smtp',
+      'version' => '7.x-1.0-beta2',
+    ),
     'standard' => 
     array (
-      'filename' => '/var/aegir/platforms/service/profiles/standard/standard.profile',
+      'filename' => '/var/aegir/platforms/service_portal/profiles/standard/standard.profile',
       'name' => 'standard',
       'type' => 'module',
       'owner' => '',
@@ -5673,7 +7049,7 @@ $options['packages'] = array (
     ),
     'statistics' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/statistics/statistics.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/statistics/statistics.module',
       'name' => 'statistics',
       'type' => 'module',
       'owner' => '',
@@ -5705,7 +7081,7 @@ $options['packages'] = array (
     ),
     'strongarm' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/strongarm/strongarm.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/strongarm/strongarm.module',
       'name' => 'strongarm',
       'type' => 'module',
       'owner' => '',
@@ -5738,7 +7114,7 @@ $options['packages'] = array (
     ),
     'stylizer' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/stylizer/stylizer.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/stylizer/stylizer.module',
       'name' => 'stylizer',
       'type' => 'module',
       'owner' => '',
@@ -5765,9 +7141,39 @@ $options['packages'] = array (
       'project' => 'ctools',
       'version' => '7.x-1.1',
     ),
+    'superfish' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/superfish/superfish.module',
+      'name' => 'superfish',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Superfish',
+        'description' => 'jQuery Superfish plugin for your Drupal menus.',
+        'package' => 'User interface',
+        'dependencies' => 
+        array (
+          0 => 'menu',
+          1 => 'libraries',
+        ),
+        'configure' => 'admin/config/user-interface/superfish',
+        'core' => '7.x',
+        'version' => '7.x-1.9-beta4',
+        'project' => 'superfish',
+        'datestamp' => '1322150145',
+        'php' => '5.2.4',
+      ),
+      'project' => 'superfish',
+      'version' => '7.x-1.9-beta4',
+    ),
     'syslog' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/syslog/syslog.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/syslog/syslog.module',
       'name' => 'syslog',
       'type' => 'module',
       'owner' => '',
@@ -5798,7 +7204,7 @@ $options['packages'] = array (
     ),
     'system' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/system/system.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/system/system.module',
       'name' => 'system',
       'type' => 'module',
       'owner' => '',
@@ -5834,9 +7240,37 @@ $options['packages'] = array (
       'project' => 'drupal',
       'version' => '7.14',
     ),
+    'system_charts' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/system_charts/system_charts.module',
+      'name' => 'system_charts',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Drupal System Charting',
+        'description' => 'Charting for various core modules.',
+        'package' => 'Charting',
+        'core' => '7.x',
+        'php' => '5',
+        'dependencies' => 
+        array (
+          0 => 'chart',
+        ),
+        'version' => '7.x-1.1',
+        'project' => 'chart',
+        'datestamp' => '1314765120',
+      ),
+      'project' => 'chart',
+      'version' => '7.x-1.1',
+    ),
     'system_dependencies_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/system_dependencies_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_dependencies_test.module',
       'name' => 'system_dependencies_test',
       'type' => 'module',
       'owner' => '',
@@ -5865,7 +7299,7 @@ $options['packages'] = array (
     ),
     'system_incompatible_core_version_dependencies_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.module',
       'name' => 'system_incompatible_core_version_dependencies_test',
       'type' => 'module',
       'owner' => '',
@@ -5894,7 +7328,7 @@ $options['packages'] = array (
     ),
     'system_incompatible_core_version_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/system_incompatible_core_version_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_core_version_test.module',
       'name' => 'system_incompatible_core_version_test',
       'type' => 'module',
       'owner' => '',
@@ -5922,7 +7356,7 @@ $options['packages'] = array (
     ),
     'system_incompatible_module_version_dependencies_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module',
       'name' => 'system_incompatible_module_version_dependencies_test',
       'type' => 'module',
       'owner' => '',
@@ -5951,7 +7385,7 @@ $options['packages'] = array (
     ),
     'system_incompatible_module_version_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/system_incompatible_module_version_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_module_version_test.module',
       'name' => 'system_incompatible_module_version_test',
       'type' => 'module',
       'owner' => '',
@@ -5979,7 +7413,7 @@ $options['packages'] = array (
     ),
     'system_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/system_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_test.module',
       'name' => 'system_test',
       'type' => 'module',
       'owner' => '',
@@ -6011,7 +7445,7 @@ $options['packages'] = array (
     ),
     'taxonomy' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/taxonomy/taxonomy.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/taxonomy/taxonomy.module',
       'name' => 'taxonomy',
       'type' => 'module',
       'owner' => '',
@@ -6045,13 +7479,13 @@ $options['packages'] = array (
     ),
     'taxonomy_manager' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/taxonomy_manager/taxonomy_manager.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/taxonomy_manager/taxonomy_manager.module',
       'name' => 'taxonomy_manager',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7002',
       'weight' => '0',
       'info' => 
       array (
@@ -6077,7 +7511,7 @@ $options['packages'] = array (
     ),
     'taxonomy_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/taxonomy_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/taxonomy_test.module',
       'name' => 'taxonomy_test',
       'type' => 'module',
       'owner' => '',
@@ -6106,7 +7540,7 @@ $options['packages'] = array (
     ),
     'text' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/field/modules/text/text.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/text/text.module',
       'name' => 'text',
       'type' => 'module',
       'owner' => '',
@@ -6139,7 +7573,7 @@ $options['packages'] = array (
     ),
     'theme_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/theme_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/theme_test.module',
       'name' => 'theme_test',
       'type' => 'module',
       'owner' => '',
@@ -6167,7 +7601,7 @@ $options['packages'] = array (
     ),
     'toolbar' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/toolbar/toolbar.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/toolbar/toolbar.module',
       'name' => 'toolbar',
       'type' => 'module',
       'owner' => '',
@@ -6194,7 +7628,7 @@ $options['packages'] = array (
     ),
     'tracker' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/tracker/tracker.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/tracker/tracker.module',
       'name' => 'tracker',
       'type' => 'module',
       'owner' => '',
@@ -6226,13 +7660,13 @@ $options['packages'] = array (
     ),
     'translation' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/translation/translation.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/translation/translation.module',
       'name' => 'translation',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -6258,7 +7692,7 @@ $options['packages'] = array (
     ),
     'translation_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/translation/tests/translation_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/translation/tests/translation_test.module',
       'name' => 'translation_test',
       'type' => 'module',
       'owner' => '',
@@ -6286,13 +7720,13 @@ $options['packages'] = array (
     ),
     'trigger' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/trigger/trigger.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/trigger/trigger.module',
       'name' => 'trigger',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7002',
       'weight' => '0',
       'info' => 
       array (
@@ -6318,7 +7752,7 @@ $options['packages'] = array (
     ),
     'trigger_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/trigger/tests/trigger_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/trigger/tests/trigger_test.module',
       'name' => 'trigger_test',
       'type' => 'module',
       'owner' => '',
@@ -6346,13 +7780,13 @@ $options['packages'] = array (
     ),
     'update' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/update/update.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/update/update.module',
       'name' => 'update',
       'type' => 'module',
       'owner' => '',
-      'status' => '1',
+      'status' => '0',
       'bootstrap' => '0',
-      'schema_version' => '7001',
+      'schema_version' => 0,
       'weight' => '0',
       'info' => 
       array (
@@ -6378,7 +7812,7 @@ $options['packages'] = array (
     ),
     'update_script_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/update_script_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_script_test.module',
       'name' => 'update_script_test',
       'type' => 'module',
       'owner' => '',
@@ -6406,7 +7840,7 @@ $options['packages'] = array (
     ),
     'update_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/update/tests/update_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/update_test.module',
       'name' => 'update_test',
       'type' => 'module',
       'owner' => '',
@@ -6434,7 +7868,7 @@ $options['packages'] = array (
     ),
     'update_test_1' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/update_test_1.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_1.module',
       'name' => 'update_test_1',
       'type' => 'module',
       'owner' => '',
@@ -6462,7 +7896,7 @@ $options['packages'] = array (
     ),
     'update_test_2' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/update_test_2.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_2.module',
       'name' => 'update_test_2',
       'type' => 'module',
       'owner' => '',
@@ -6490,7 +7924,7 @@ $options['packages'] = array (
     ),
     'update_test_3' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/update_test_3.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_3.module',
       'name' => 'update_test_3',
       'type' => 'module',
       'owner' => '',
@@ -6518,7 +7952,7 @@ $options['packages'] = array (
     ),
     'url_alter_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/url_alter_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/url_alter_test.module',
       'name' => 'url_alter_test',
       'type' => 'module',
       'owner' => '',
@@ -6546,7 +7980,7 @@ $options['packages'] = array (
     ),
     'user' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/user/user.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/user/user.module',
       'name' => 'user',
       'type' => 'module',
       'owner' => '',
@@ -6587,7 +8021,7 @@ $options['packages'] = array (
     ),
     'user_form_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/user/tests/user_form_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/user/tests/user_form_test.module',
       'name' => 'user_form_test',
       'type' => 'module',
       'owner' => '',
@@ -6615,13 +8049,13 @@ $options['packages'] = array (
     ),
     'uuid' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/uuid/uuid.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid.module',
       'name' => 'uuid',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '7101',
       'weight' => '0',
       'info' => 
       array (
@@ -6647,7 +8081,7 @@ $options['packages'] = array (
     ),
     'uuid_services' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/uuid/uuid_services/uuid_services.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid_services/uuid_services.module',
       'name' => 'uuid_services',
       'type' => 'module',
       'owner' => '',
@@ -6677,7 +8111,7 @@ $options['packages'] = array (
     ),
     'uuid_services_example' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/uuid/uuid_services_example/uuid_services_example.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid_services_example/uuid_services_example.module',
       'name' => 'uuid_services_example',
       'type' => 'module',
       'owner' => '',
@@ -6719,13 +8153,13 @@ $options['packages'] = array (
     ),
     'variable' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable.module',
       'name' => 'variable',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
-      'bootstrap' => '0',
-      'schema_version' => 0,
+      'status' => '1',
+      'bootstrap' => '1',
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -6758,7 +8192,7 @@ $options['packages'] = array (
     ),
     'variable_admin' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable_admin/variable_admin.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_admin/variable_admin.module',
       'name' => 'variable_admin',
       'type' => 'module',
       'owner' => '',
@@ -6786,7 +8220,7 @@ $options['packages'] = array (
     ),
     'variable_advanced' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable_advanced/variable_advanced.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_advanced/variable_advanced.module',
       'name' => 'variable_advanced',
       'type' => 'module',
       'owner' => '',
@@ -6814,7 +8248,7 @@ $options['packages'] = array (
     ),
     'variable_example' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable_example/variable_example.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_example/variable_example.module',
       'name' => 'variable_example',
       'type' => 'module',
       'owner' => '',
@@ -6847,14 +8281,14 @@ $options['packages'] = array (
     ),
     'variable_realm' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable_realm/variable_realm.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_realm/variable_realm.module',
       'name' => 'variable_realm',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
-      'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'status' => '1',
+      'bootstrap' => '1',
+      'schema_version' => '7000',
+      'weight' => '-1000',
       'info' => 
       array (
         'name' => 'Variable realm',
@@ -6880,14 +8314,14 @@ $options['packages'] = array (
     ),
     'variable_store' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable_store/variable_store.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_store/variable_store.module',
       'name' => 'variable_store',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
-      'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'status' => '1',
+      'bootstrap' => '1',
+      'schema_version' => '7000',
+      'weight' => '-1000',
       'info' => 
       array (
         'name' => 'Variable store',
@@ -6913,7 +8347,7 @@ $options['packages'] = array (
     ),
     'variable_views' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/variable/variable_views/variable_views.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_views/variable_views.module',
       'name' => 'variable_views',
       'type' => 'module',
       'owner' => '',
@@ -6948,14 +8382,14 @@ $options['packages'] = array (
     ),
     'views' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/views/views.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/views.module',
       'name' => 'views',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
-      'weight' => '0',
+      'schema_version' => '7301',
+      'weight' => '10',
       'info' => 
       array (
         'name' => 'Views',
@@ -7275,13 +8709,13 @@ $options['packages'] = array (
     ),
     'views_content' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/ctools/views_content/views_content.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/views_content/views_content.module',
       'name' => 'views_content',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -7310,13 +8744,13 @@ $options['packages'] = array (
     ),
     'views_slideshow' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/views_slideshow/views_slideshow.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow/views_slideshow.module',
       'name' => 'views_slideshow',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -7345,13 +8779,13 @@ $options['packages'] = array (
     ),
     'views_slideshow_cycle' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.module',
       'name' => 'views_slideshow_cycle',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -7378,9 +8812,38 @@ $options['packages'] = array (
       'project' => 'views_slideshow',
       'version' => '7.x-3.0',
     ),
+    'views_slideshow_jcarousel' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow_jcarousel/views_slideshow_jcarousel.module',
+      'name' => 'views_slideshow_jcarousel',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Views Slideshow: JCarousel',
+        'description' => 'Adds a jCarousel option to views slideshow',
+        'dependencies' => 
+        array (
+          0 => 'views_slideshow',
+          1 => 'libraries',
+        ),
+        'package' => 'Views',
+        'core' => '7.x',
+        'version' => '7.x-1.x-dev',
+        'project' => 'views_slideshow_jcarousel',
+        'datestamp' => '1328877860',
+        'php' => '5.2.4',
+      ),
+      'project' => 'views_slideshow_jcarousel',
+      'version' => '7.x-1.x-dev',
+    ),
     'views_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/views/tests/views_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/tests/views_test.module',
       'name' => 'views_test',
       'type' => 'module',
       'owner' => '',
@@ -7409,13 +8872,13 @@ $options['packages'] = array (
     ),
     'views_ui' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/modules/views/views_ui.module',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/views_ui.module',
       'name' => 'views_ui',
       'type' => 'module',
       'owner' => '',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
-      'schema_version' => 0,
+      'schema_version' => '0',
       'weight' => '0',
       'info' => 
       array (
@@ -7441,9 +8904,75 @@ $options['packages'] = array (
       'project' => 'views',
       'version' => '7.x-3.4',
     ),
+    'wsclient' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'wsclient',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7101',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'wsclient_soap' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'wsclient_soap',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '0',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
+    'wsclient_ui' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal',
+      'name' => 'wsclient_ui',
+      'type' => 'module',
+      'owner' => '',
+      'status' => '1',
+      'bootstrap' => '0',
+      'schema_version' => '7101',
+      'weight' => '0',
+      'info' => 
+      array (
+        'dependencies' => 
+        array (
+        ),
+        'description' => '',
+        'version' => NULL,
+        'php' => '5.2.4',
+      ),
+      'project' => '',
+      'version' => NULL,
+    ),
     'xmlrpc_test' => 
     array (
-      'filename' => '/var/aegir/platforms/service/modules/simpletest/tests/xmlrpc_test.module',
+      'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/xmlrpc_test.module',
       'name' => 'xmlrpc_test',
       'type' => 'module',
       'owner' => '',
@@ -7474,7 +9003,7 @@ $options['packages'] = array (
   array (
     'acquia_marina' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/acquia_marina/acquia_marina.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/acquia_marina/acquia_marina.info',
       'name' => 'acquia_marina',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -7685,7 +9214,7 @@ $options['packages'] = array (
     ),
     'adaptivetheme' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/adaptivetheme/at_core/adaptivetheme.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_core/adaptivetheme.info',
       'name' => 'adaptivetheme',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -7997,7 +9526,7 @@ $options['packages'] = array (
     ),
     'adaptivetheme_admin' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/adaptivetheme/at_admin/adaptivetheme_admin.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_admin/adaptivetheme_admin.info',
       'name' => 'adaptivetheme_admin',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -8258,7 +9787,7 @@ $options['packages'] = array (
     ),
     'adaptivetheme_subtheme' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/adaptivetheme/at_subtheme/adaptivetheme_subtheme.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_subtheme/adaptivetheme_subtheme.info',
       'name' => 'adaptivetheme_subtheme',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -8530,7 +10059,7 @@ $options['packages'] = array (
     ),
     'bartik' => 
     array (
-      'filename' => '/var/aegir/platforms/service/themes/bartik/bartik.info',
+      'filename' => '/var/aegir/platforms/service_portal/themes/bartik/bartik.info',
       'name' => 'bartik',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -8594,11 +10123,11 @@ $options['packages'] = array (
     ),
     'bluemasters' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/bluemasters/bluemasters.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/bluemasters/bluemasters.info',
       'name' => 'bluemasters',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -8649,7 +10178,7 @@ $options['packages'] = array (
     ),
     'corolla' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/corolla/corolla.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/corolla/corolla.info',
       'name' => 'corolla',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -8962,7 +10491,7 @@ $options['packages'] = array (
     ),
     'corporateclean' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/corporateclean/corporateclean.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/corporateclean/corporateclean.info',
       'name' => 'corporateclean',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -9020,11 +10549,11 @@ $options['packages'] = array (
     ),
     'danblog' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/danland/danblog/danblog.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/danland/danblog/danblog.info',
       'name' => 'danblog',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -9080,11 +10609,11 @@ $options['packages'] = array (
     ),
     'danland' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/danland/danland.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/danland/danland.info',
       'name' => 'danland',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -9143,9 +10672,557 @@ $options['packages'] = array (
       'project' => 'danland',
       'version' => '7.x-1.0',
     ),
+    'fusion_core' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/fusion/fusion_core/fusion_core.info',
+      'name' => 'fusion_core',
+      'type' => 'theme',
+      'owner' => 'themes/engines/phptemplate/phptemplate.engine',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion Core',
+        'description' => '<a href="http://drupal.org/project/fusion">Fusion Core</a> is the grid-enabled base theme for powerful sub-themes.  With the <a href="http://drupal.org/project/fusion_accelerator">Fusion Accelerator</a> module, it enables easy point-and-click theming. By <a href="http://www.topnotchthemes.com">TopNotchThemes</a>',
+        'core' => '7.x',
+        'engine' => 'phptemplate',
+        'stylesheets' => 
+        array (
+          'all' => 
+          array (
+            0 => 'css/fusion-style.css',
+            1 => 'css/fusion-typography.css',
+            2 => 'skins/core/fusion-core-skins.css',
+          ),
+        ),
+        'fusion' => 
+        array (
+          'api' => '2',
+          'directory' => 'skins',
+        ),
+        'scripts' => 
+        array (
+          0 => 'js/script.js',
+        ),
+        'regions' => 
+        array (
+          'sidebar_first' => 'Sidebar first',
+          'sidebar_second' => 'Sidebar second',
+          'header_top' => 'Header top',
+          'header' => 'Header',
+          'main_menu' => 'Main menu',
+          'preface_top' => 'Preface top',
+          'preface_bottom' => 'Preface bottom',
+          'content' => 'Content',
+          'postscript_top' => 'Postscript top',
+          'postscript_bottom' => 'Postscript bottom',
+          'footer' => 'Footer',
+          'node_top' => 'Node top',
+          'node_bottom' => 'Node bottom',
+          'help' => 'Help',
+          'page_top' => 'Page top',
+          'page_bottom' => 'Page bottom',
+        ),
+        'features' => 
+        array (
+          0 => 'logo',
+          1 => 'name',
+          2 => 'slogan',
+          3 => 'node_user_picture',
+          4 => 'comment_user_picture',
+          5 => 'favicon',
+        ),
+        'settings' => 
+        array (
+          'theme_grid' => 'grid16-960',
+          'theme_grid_options' => 
+          array (
+            0 => 'grid16-960',
+            1 => 'grid16-fluid',
+            2 => 'grid12-960',
+            3 => 'grid12-fluid',
+          ),
+          'fluid_grid_width' => 'fluid-100',
+          'sidebar_layout' => 'sidebars-split',
+          'sidebar_first_width' => '3',
+          'sidebar_second_width' => '3',
+          'theme_font' => 'none',
+          'theme_font_size' => 'font-size-13',
+          'breadcrumb_display' => '1',
+          'search_snippet' => '1',
+          'search_info_type' => '1',
+          'search_info_user' => '1',
+          'search_info_date' => '1',
+          'search_info_comment' => '1',
+          'search_info_upload' => '1',
+          'block_config_link' => '1',
+          'grid_mask' => '0',
+          'grid_nested_regions' => 
+          array (
+            0 => 'sidebar_first',
+            1 => 'sidebar_second',
+            2 => 'header',
+            3 => 'preface_bottom',
+            4 => 'content',
+            5 => 'postscript_top',
+            6 => 'node_top',
+            7 => 'node_bottom',
+            8 => 'help',
+          ),
+          'grid_adjusted_regions' => 
+          array (
+            'preface_bottom' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'help' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'content' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'node_top' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'node_bottom' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'postscript_top' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+          ),
+          'grid_adjusted_groups' => 
+          array (
+            'main_group' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'content_group' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_regions_fluid' => 
+          array (
+            'sidebar_second' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'content' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_groups_fluid' => 
+          array (
+            'content_group' => 
+            array (
+              0 => 'sidebar_second',
+            ),
+          ),
+        ),
+        'version' => '7.x-2.0-beta2',
+        'project' => 'fusion',
+        'datestamp' => '1332517846',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion',
+      'version' => '7.x-2.0-beta2',
+    ),
+    'fusion_starter' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/fusion/fusion_starter/fusion_starter.info',
+      'name' => 'fusion_starter',
+      'type' => 'theme',
+      'owner' => 'themes/engines/phptemplate/phptemplate.engine',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion Starter',
+        'description' => 'A fully featured Fusion starter theme.  Requires <a href="http://drupal.org/project/fusion">Fusion Core</a> and the <a href="http://drupal.org/project/fusion_accelerator">Fusion Accelerator</a> suite to enable easy point-and-click theming.',
+        'base theme' => 'fusion_core',
+        'core' => '7.x',
+        'engine' => 'phptemplate',
+        'stylesheets' => 
+        array (
+          'all' => 
+          array (
+            0 => 'css/fusion-starter-style.css',
+          ),
+        ),
+        'fusion' => 
+        array (
+          'api' => '2',
+          'directory' => 'skins',
+        ),
+        'regions' => 
+        array (
+          'sidebar_first' => 'Sidebar first',
+          'sidebar_second' => 'Sidebar second',
+          'header_top' => 'Header top',
+          'header' => 'Header',
+          'main_menu' => 'Main menu',
+          'preface_top' => 'Preface top',
+          'preface_bottom' => 'Preface bottom',
+          'content' => 'Content',
+          'postscript_top' => 'Postscript top',
+          'postscript_bottom' => 'Postscript bottom',
+          'footer' => 'Footer',
+          'node_top' => 'Node top',
+          'node_bottom' => 'Node bottom',
+          'help' => 'Help',
+          'page_top' => 'Page top',
+          'page_bottom' => 'Page bottom',
+        ),
+        'features' => 
+        array (
+          0 => 'logo',
+          1 => 'name',
+          2 => 'slogan',
+          3 => 'node_user_picture',
+          4 => 'comment_user_picture',
+          5 => 'favicon',
+        ),
+        'settings' => 
+        array (
+          'theme_grid' => 'grid12-960',
+          'theme_grid_options' => 
+          array (
+            0 => 'grid16-960',
+            1 => 'grid16-fluid',
+            2 => 'grid12-960',
+            3 => 'grid12-fluid',
+          ),
+          'fluid_grid_width' => 'fluid-100',
+          'theme_font' => 'none',
+          'theme_font_size' => 'font-size-13',
+          'breadcrumb_display' => '1',
+          'search_snippet' => '1',
+          'search_info_type' => '1',
+          'search_info_user' => '1',
+          'search_info_date' => '1',
+          'search_info_comment' => '1',
+          'search_info_upload' => '1',
+          'grid_mask' => '1',
+          'responsive_enabled' => '1',
+          'responsive_ie_shim' => '1',
+          'responsive_columns' => '12',
+          'responsive_displays' => 
+          array (
+            0 => 'sidebar',
+            1 => 'sidebar_tablet_landscape',
+            2 => 'sidebar_tablet_portrait',
+            3 => 'sidebar_phone_landscape',
+          ),
+          'sidebar_enabled' => '1',
+          'sidebar_layout' => 'sidebars-split',
+          'sidebar_first_width' => '3',
+          'sidebar_second_width' => '3',
+          'sidebar_grid_width' => '1200',
+          'sidebar_gutter' => '30',
+          'sidebar_mquery' => 'only screen and (min-width:1200px)',
+          'sidebar_mask' => 'rgba(0, 73, 225, .12)',
+          'sidebar_tablet_landscape_enabled' => '1',
+          'sidebar_tablet_landscape_layout' => 'sidebars-split',
+          'sidebar_tablet_landscape_first_width' => '3',
+          'sidebar_tablet_landscape_second_width' => '3',
+          'sidebar_tablet_landscape_grid_width' => '960',
+          'sidebar_tablet_landscape_gutter' => '20',
+          'sidebar_tablet_landscape_mquery' => 'only screen and (max-device-width: 1024px) and (orientation:landscape), only screen and (min-width:960px) and (max-width:1199px) and (min-device-width: 1100px)',
+          'sidebar_tablet_landscape_mask' => 'rgba(213,95,28,.15)',
+          'sidebar_tablet_portrait_enabled' => '1',
+          'sidebar_tablet_portrait_layout' => 'sidebars-split',
+          'sidebar_tablet_portrait_first_width' => '3',
+          'sidebar_tablet_portrait_second_width' => '3',
+          'sidebar_tablet_portrait_grid_width' => '768',
+          'sidebar_tablet_portrait_gutter' => '20',
+          'sidebar_tablet_portrait_mquery' => 'only screen and (max-device-width: 1024px) and (orientation:portrait), only screen and (min-width:768px) and (max-width:959px) and (min-device-width: 1100px)',
+          'sidebar_tablet_portrait_mask' => 'rgba(11,186,40,.15)',
+          'sidebar_phone_landscape_enabled' => '1',
+          'sidebar_phone_landscape_layout' => 'sidebars-drop',
+          'sidebar_phone_landscape_first_width' => '3',
+          'sidebar_phone_landscape_second_width' => '3',
+          'sidebar_phone_landscape_grid_width' => 'mobile',
+          'sidebar_phone_landscape_gutter' => '10',
+          'sidebar_phone_landscape_mquery' => 'only screen and (max-width:759px)',
+          'sidebar_phone_landscape_mask' => 'rgba(220,220,70,.1)',
+          'grid_nested_regions' => 
+          array (
+            0 => 'sidebar_first',
+            1 => 'sidebar_second',
+            2 => 'header',
+            3 => 'preface_bottom',
+            4 => 'content',
+            5 => 'postscript_top',
+            6 => 'node_top',
+            7 => 'node_bottom',
+            8 => 'help',
+          ),
+          'grid_adjusted_regions' => 
+          array (
+            'preface_bottom' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'help' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'content' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'node_top' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'node_bottom' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'postscript_top' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+          ),
+          'grid_adjusted_groups' => 
+          array (
+            'main_group' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'content_group' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_regions_fluid' => 
+          array (
+            'sidebar_second' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'content' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_groups_fluid' => 
+          array (
+            'content_group' => 
+            array (
+              0 => 'sidebar_second',
+            ),
+          ),
+        ),
+        'version' => '7.x-2.0-beta2',
+        'project' => 'fusion',
+        'datestamp' => '1332517846',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion',
+      'version' => '7.x-2.0-beta2',
+    ),
+    'fusion_starter_lite' => 
+    array (
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/fusion/fusion_starter_lite/fusion_starter_lite.info',
+      'name' => 'fusion_starter_lite',
+      'type' => 'theme',
+      'owner' => 'themes/engines/phptemplate/phptemplate.engine',
+      'status' => '0',
+      'bootstrap' => '0',
+      'schema_version' => 0,
+      'weight' => '0',
+      'info' => 
+      array (
+        'name' => 'Fusion Starter Lite',
+        'description' => 'A Fusion starter theme with fewer regions and less markup.  Requires <a href="http://drupal.org/project/fusion">Fusion Core</a> and the <a href="http://drupal.org/project/fusion_accelerator">Fusion Accelerator</a> suite to enable easy point-and-click theming.',
+        'base theme' => 'fusion_core',
+        'core' => '7.x',
+        'engine' => 'phptemplate',
+        'stylesheets' => 
+        array (
+          'all' => 
+          array (
+            0 => 'css/fusion-starter-lite-style.css',
+          ),
+        ),
+        'fusion' => 
+        array (
+          'api' => '2',
+          'directory' => 'skins',
+        ),
+        'regions' => 
+        array (
+          'sidebar_first' => 'Sidebar first',
+          'sidebar_second' => 'Sidebar second',
+          'header' => 'Header',
+          'main_menu' => 'Main menu',
+          'content' => 'Content',
+          'footer' => 'Footer',
+          'help' => 'Help',
+        ),
+        'features' => 
+        array (
+          0 => 'logo',
+          1 => 'name',
+          2 => 'slogan',
+          3 => 'node_user_picture',
+          4 => 'comment_user_picture',
+          5 => 'favicon',
+        ),
+        'settings' => 
+        array (
+          'theme_grid' => 'grid12-960',
+          'theme_grid_options' => 
+          array (
+            0 => 'grid12-960',
+            1 => 'grid12-fluid',
+          ),
+          'fluid_grid_width' => 'fluid-100',
+          'theme_font' => 'none',
+          'theme_font_size' => 'font-size-13',
+          'breadcrumb_display' => '1',
+          'search_snippet' => '1',
+          'search_info_type' => '1',
+          'search_info_user' => '1',
+          'search_info_date' => '1',
+          'search_info_comment' => '1',
+          'search_info_upload' => '1',
+          'grid_mask' => '1',
+          'responsive_enabled' => '1',
+          'responsive_ie_shim' => '1',
+          'responsive_columns' => '12',
+          'responsive_displays' => 
+          array (
+            0 => 'sidebar',
+            1 => 'sidebar_tablet_landscape',
+            2 => 'sidebar_tablet_portrait',
+            3 => 'sidebar_phone_landscape',
+          ),
+          'sidebar_enabled' => '1',
+          'sidebar_layout' => 'sidebars-split',
+          'sidebar_first_width' => '3',
+          'sidebar_second_width' => '3',
+          'sidebar_grid_width' => '1200',
+          'sidebar_gutter' => '30',
+          'sidebar_mquery' => 'only screen and (min-width:1200px)',
+          'sidebar_mask' => 'rgba(0, 73, 225, .12)',
+          'sidebar_tablet_landscape_enabled' => '1',
+          'sidebar_tablet_landscape_layout' => 'sidebars-split',
+          'sidebar_tablet_landscape_first_width' => '3',
+          'sidebar_tablet_landscape_second_width' => '3',
+          'sidebar_tablet_landscape_grid_width' => '960',
+          'sidebar_tablet_landscape_gutter' => '20',
+          'sidebar_tablet_landscape_mquery' => 'only screen and (max-device-width: 1024px) and (orientation:landscape), only screen and (min-width:960px) and (max-width:1199px) and (min-device-width: 1100px)',
+          'sidebar_tablet_landscape_mask' => 'rgba(213,95,28,.15)',
+          'sidebar_tablet_portrait_enabled' => '1',
+          'sidebar_tablet_portrait_layout' => 'sidebars-split',
+          'sidebar_tablet_portrait_first_width' => '3',
+          'sidebar_tablet_portrait_second_width' => '3',
+          'sidebar_tablet_portrait_grid_width' => '768',
+          'sidebar_tablet_portrait_gutter' => '20',
+          'sidebar_tablet_portrait_mquery' => 'only screen and (max-device-width: 1024px) and (orientation:portrait), only screen and (min-width:768px) and (max-width:959px) and (min-device-width: 1100px)',
+          'sidebar_tablet_portrait_mask' => 'rgba(11,186,40,.15)',
+          'sidebar_phone_landscape_enabled' => '1',
+          'sidebar_phone_landscape_layout' => 'sidebars-drop',
+          'sidebar_phone_landscape_first_width' => '3',
+          'sidebar_phone_landscape_second_width' => '3',
+          'sidebar_phone_landscape_grid_width' => 'mobile',
+          'sidebar_phone_landscape_gutter' => '10',
+          'sidebar_phone_landscape_mquery' => 'only screen and (max-width:759px)',
+          'sidebar_phone_landscape_mask' => 'rgba(220,220,70,.1)',
+          'grid_nested_regions' => 
+          array (
+            0 => 'sidebar_first',
+            1 => 'sidebar_second',
+            2 => 'header',
+            3 => 'content',
+            4 => 'help',
+          ),
+          'grid_adjusted_regions' => 
+          array (
+            'help' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+            'content' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_groups' => 
+          array (
+            'content_group' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_regions_fluid' => 
+          array (
+            'sidebar_second' => 
+            array (
+              0 => 'sidebar_first',
+            ),
+            'content' => 
+            array (
+              0 => 'sidebar_first',
+              1 => 'sidebar_second',
+            ),
+          ),
+          'grid_adjusted_groups_fluid' => 
+          array (
+            'content_group' => 
+            array (
+              0 => 'sidebar_second',
+            ),
+          ),
+        ),
+        'version' => '7.x-2.0-beta2',
+        'project' => 'fusion',
+        'datestamp' => '1332517846',
+        'dependencies' => 
+        array (
+        ),
+        'php' => '5.2.4',
+      ),
+      'project' => 'fusion',
+      'version' => '7.x-2.0-beta2',
+    ),
     'garland' => 
     array (
-      'filename' => '/var/aegir/platforms/service/themes/garland/garland.info',
+      'filename' => '/var/aegir/platforms/service_portal/themes/garland/garland.info',
       'name' => 'garland',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -9187,7 +11264,7 @@ $options['packages'] = array (
     ),
     'marinelli' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/marinelli/marinelli.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/marinelli/marinelli.info',
       'name' => 'marinelli',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -9334,7 +11411,7 @@ $options['packages'] = array (
     ),
     'pixture_reloaded' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/pixture_reloaded/pixture_reloaded.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/pixture_reloaded/pixture_reloaded.info',
       'name' => 'pixture_reloaded',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -9624,11 +11701,11 @@ $options['packages'] = array (
     ),
     'rootcandy' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/rootcandy/rootcandy.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/rootcandy/rootcandy.info',
       'name' => 'rootcandy',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -9697,7 +11774,7 @@ $options['packages'] = array (
     ),
     'seven' => 
     array (
-      'filename' => '/var/aegir/platforms/service/themes/seven/seven.info',
+      'filename' => '/var/aegir/platforms/service_portal/themes/seven/seven.info',
       'name' => 'seven',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -9748,11 +11825,11 @@ $options['packages'] = array (
     ),
     'stark' => 
     array (
-      'filename' => '/var/aegir/platforms/service/themes/stark/stark.info',
+      'filename' => '/var/aegir/platforms/service_portal/themes/stark/stark.info',
       'name' => 'stark',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
-      'status' => '0',
+      'status' => '1',
       'bootstrap' => '0',
       'schema_version' => 0,
       'weight' => '0',
@@ -9782,7 +11859,7 @@ $options['packages'] = array (
     ),
     'zen' => 
     array (
-      'filename' => '/var/aegir/platforms/service/sites/all/themes/zen/zen.info',
+      'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/zen/zen.info',
       'name' => 'zen',
       'type' => 'theme',
       'owner' => 'themes/engines/phptemplate/phptemplate.engine',
@@ -9849,6 +11926,10 @@ $options['packages'] = array (
       'version' => '7.x-5.1',
     ),
   ),
+);
+$options['profile'] = 'standard';
+$options['language'] = 'en';
+$options['aliases'] = array (
 );
 # Aegir additions
 $_SERVER['db_type'] = $options['db_type'];
