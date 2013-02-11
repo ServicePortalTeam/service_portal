@@ -1,0 +1,16 @@
+name = Apache Solr Text Files
+description = Administer Solr configuration files like stopwords.txt or synonyms.txt within drupal
+package = Search Toolkit
+core = "7.x"
+
+dependencies[] = apachesolr_confgen
+dependencies[] = variable
+
+files[] = apachesolr_confgen_textfiles.variable.inc
+
+; Information added by drupal.org packaging script on 2012-09-03
+version = "7.x-1.0-alpha2"
+core = "7.x"
+project = "apachesolr_confgen"
+datestamp = "1346687231"
+

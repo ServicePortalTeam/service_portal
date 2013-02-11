@@ -1,0 +1,16 @@
+name = Apache Solr Advanced Settings
+description = Tweak things like data dir or auto commit time
+package = Search Toolkit
+core = "7.x"
+
+dependencies[] = apachesolr_confgen
+dependencies[] = variable
+
+files[] = apachesolr_confgen_advanced_settings.variable.inc
+
+; Information added by drupal.org packaging script on 2012-09-03
+version = "7.x-1.0-alpha2"
+core = "7.x"
+project = "apachesolr_confgen"
+datestamp = "1346687231"
+
