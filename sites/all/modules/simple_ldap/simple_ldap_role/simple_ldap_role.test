@@ -1,0 +1,552 @@
+<?php
+/**
+ * @file
+ * Tests for Simple LDAP Role module.
+ */
+
+abstract class SimpleLdapRoleTestCase extends SimpleLdapUserTestCase {
+
+  protected $ldapGroup;
+
+  /**
+   * Inherited parent::setUp().
+   */
+  public function setUp() {
+    // Get the live simple_ldap_role configuration.
+    $basedn = variable_get('simple_ldap_role_basedn');
+    $scope = variable_get('simple_ldap_role_scope');
+    $objectclass = variable_get('simple_ldap_role_objectclass');
+    $attribute_name = variable_get('simple_ldap_role_attribute_name');
+    $attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $attribute_member_format = variable_get('simple_ldap_role_attribute_member_format');
+    $attribute_member_default = variable_get('simple_ldap_role_attribute_member_default');
+    $filter = variable_get('simple_ldap_role_filter');
+    $source = variable_get('simple_ldap_role_source');
+    $sync = variable_get('simple_ldap_role_sync');
+    $this->ldapGroup = variable_get('simple_ldap_role_test_group');
+
+    // Make sure the variables from settings.php are written to the database.
+    // Otherwise subsequent tests will not be able to read them. These are
+    // cleaned up in $this->tearDown().
+    variable_set('simple_ldap_role_test_group', $this->ldapGroup);
+
+    // Create the simpletest sandbox.
+    $modules = func_get_args();
+    if (isset($modules[0]) && is_array($modules[0])) {
+      $modules = $modules[0];
+    }
+    parent::setUp($modules);
+
+    // Enable the simple_ldap_role module.
+    $modules = array('simple_ldap_role');
+    $success = module_enable($modules);
+    $this->assertTrue($success, t('Enabled modules: %modules', array('%modules' => implode(', ', $modules))));
+
+    // Configure the sandbox simple_ldap_role instance.
+    variable_set('simple_ldap_role_basedn', $basedn);
+    variable_set('simple_ldap_role_scope', $scope);
+    variable_set('simple_ldap_role_objectclass', $objectclass);
+    variable_set('simple_ldap_role_attribute_name', $attribute_name);
+    variable_set('simple_ldap_role_attribute_member', $attribute_member);
+    variable_set('simple_ldap_role_attribute_member_format', $attribute_member_format);
+    variable_set('simple_ldap_role_attribute_member_default', $attribute_member_default);
+    variable_set('simple_ldap_role_filter', $filter);
+    variable_set('simple_ldap_role_source', $source);
+    variable_set('simple_ldap_role_sync', $sync);
+
+    // Backwards compatibility. @todo
+    variable_set('simple_ldap_test_group', $this->ldapGroup);
+  }
+
+  /**
+   * Inherited parent::tearDown().
+   */
+  protected function tearDown() {
+    // Clean up variables written to the database in setUp().
+    variable_del('simple_ldap_role_test_group');
+
+    parent::tearDown();
+  }
+
+}
+
+class SimpleLdapRoleCreateDrupalRoleTestCase extends SimpleLdapRoleTestCase {
+
+  /**
+   * Inherited parent::getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Create Drupal Role',
+      'description' => 'Tests that LDAP groups are created appropriately when a Drupal role is created.',
+      'group' => 'Simple LDAP Role',
+    );
+  }
+
+  /**
+   * Creates a drupal role, and verifies LDAP.
+   */
+  public function testCreateRole() {
+    // Get module configurations.
+    $role_objectclass = variable_get('simple_ldap_role_objectclass');
+    $role_attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $role_attribute_member_format = variable_get('simple_ldap_role_attribute_member_format');
+    $role_attribute_member_default = variable_get('simple_ldap_role_attribute_member_default');
+
+    // Get an LDAP server object.
+    $server = SimpleLdapServer::singleton();
+
+    // Generate a randome group name.
+    $name = $this->randomName();
+    $dn = simple_ldap_role_dn($name);
+
+    // Log in as User 1.
+    $this->drupalUser1Login();
+
+    // Submit the form to add a new Drupal role.
+    $edit = array(
+      'name' => $name,
+    );
+    $this->drupalPost('admin/people/permissions/roles', $edit, t('Add role'));
+    $this->assertText(t('The role has been added'), t('The @role role was added to Drupal', array('@role' => $name)));
+
+    // Attempt to load the LDAP group.
+    $result = $server->search($dn, 'objectclass=*', 'base', array($role_attribute_member));
+
+    // The LDAP group should have only been created if either there is a default
+    // member configured, or the member attribute is not required (allowing an
+    // empty group).
+    $must = $server->schema->must($role_objectclass, TRUE);
+    if (!in_array($role_attribute_member, $must)) {
+      // Test that the LDAP entry was created.
+      $this->assertEqual($result[0]['dn'], $dn, t('@dn is present in the LDAP directory.', array('@dn' => $dn)));
+      if (!empty($role_attribute_member_default)) {
+        // Test that the default user was added to the LDAP group.
+        $this->assertTrue(in_array($role_attribute_member_default, $result[0][$role_attribute_member]), t('@default is a member of @dn', array('@default' => $role_attribute_member_default, '@dn' => $dn)));
+      }
+    }
+    else {
+      // The member attribute is required, whether the group was created depends
+      // on if there is a default group configured.
+      if (!empty($role_attribute_member_default)) {
+        // Test that the group was created, and the default user was added.
+        $this->assertEqual($result[0]['dn'], $dn, t('@dn is present in the LDAP directory.', array('@dn' => $dn)));
+      }
+      else {
+        // Test that the group was not created.
+        $this->assertTrue($result['count'] == 0, t('The group is not present in the LDAP directory.'));
+      }
+    }
+
+    // Cleanup.
+    if ($result['count'] == 1) {
+      $server->delete($result[0]['dn']);
+    }
+  }
+
+}
+
+class SimpleLdapRoleUpdateDrupalRoleTestCase extends SimpleLdapRoleTestCase {
+
+  /**
+   * Inherited parent::getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Update Drupal Role',
+      'description' => 'Tests that LDAP groups are modified when a Drupal role is updated.',
+      'group' => 'Simple LDAP Role',
+    );
+  }
+
+  /**
+   * Updates a Drupal role, and verifies LDAP.
+   */
+  public function testUpdateRole() {
+    // Get module configurations.
+    $attribute_name = variable_get('simple_ldap_role_attribute_name');
+    $attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $filter = simple_ldap_role_filter();
+
+    // Get an LDAP server object.
+    $server = SimpleLdapServer::singleton();
+
+    // Get the configured existing LDAP group.
+    $ldap_group = variable_get('simple_ldap_test_group');
+
+    // Verify that the LDAP group exists.
+    $result = $server->search($ldap_group['dn'], $filter, 'base', array('dn'));
+    $this->assertEqual($ldap_group['dn'], $result[0]['dn'], t('The @dn test group exists in LDAP.', array('@dn' => $ldap_group['dn'])));
+
+    // Load/Create a Drupal role with the same name.
+    $drupal_role = user_role_load_by_name($ldap_group[$attribute_name]);
+    if (!$drupal_role) {
+      $rid = $this->drupalCreateRole(array(), $ldap_group[$attribute_name]);
+      $drupal_role = user_role_load($rid);
+    }
+
+    // Log in as user 1.
+    $this->drupalUser1Login();
+
+    // Populate the role edit form variables.
+    $edit = array(
+      'name' => $drupal_role->name . ' modified',
+    );
+
+    // Submit the role edit form.
+    $this->drupalPost('admin/people/permissions/roles/edit/' . $drupal_role->rid, $edit, t('Save role'));
+    $this->assertText('The role has been renamed.', t('The drupal role was updated'));
+
+    // Load the group from LDAP and check that it was updated.
+    $dn = simple_ldap_role_dn($drupal_role->name . ' modified');
+    $result = $server->search($dn, $filter, 'base', array('dn'));
+    $this->assertEqual($dn, $result[0]['dn'], t('The @dn test group exists in LDAP.', array('@dn' => $dn)));
+
+    // Repopulate the role edit form variables.
+    $edit = array(
+      'name' => $ldap_group[$attribute_name],
+    );
+
+    // Submit the role edit form to restore the group to its original value.
+    $this->drupalPost('admin/people/permissions/roles/edit/' . $drupal_role->rid, $edit, t('Save role'));
+
+    // Verify that the group was restored.
+    $result = $server->search($ldap_group['dn'], $filter, 'base', array('dn'));
+    $this->assertEqual($ldap_group['dn'], $result[0]['dn'], t('The @dn test group was restored in LDAP.', array('@dn' => $ldap_group['dn'])));
+
+  }
+
+}
+
+class SimpleLdapRoleDeleteDrupalRoleTestCase extends SimpleLdapRoleTestCase {
+
+  /**
+   * Inherited parent::getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Delete Drupal Role',
+      'description' => 'Tests that LDAP groups are deleted when a Drupal role is deleted.',
+      'group' => 'Simple LDAP Role',
+    );
+  }
+
+  /**
+   * Deletes a Drupal role, and checks LDAP.
+   */
+  public function testDeleteRole() {
+    // Get module configurations.
+    $attribute_name = variable_get('simple_ldap_role_attribute_name');
+    $attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $filter = simple_ldap_role_filter();
+
+    // Get an LDAP server object.
+    $server = SimpleLdapServer::singleton();
+
+    // Get the configured existing LDAP group.
+    $ldap_group = variable_get('simple_ldap_test_group');
+
+    // Load the group from LDAP, 1. to verify that it exists, 2. so that it can
+    // be restored after being deleted.
+    $result = $server->search($ldap_group['dn'], $filter, 'base');
+    $this->assertEqual($ldap_group['dn'], $result[0]['dn'], t('The @dn test group exists in LDAP.', array('@dn' => $ldap_group['dn'])));
+
+    // Create a backup of the LDAP group.
+    $backup = SimpleLdap::clean($result);
+
+    // Load/Create a drupal role with the same name.
+    $drupal_role = user_role_load_by_name($ldap_group[$attribute_name]);
+    if (!$drupal_role) {
+      $rid = $this->drupalCreateRole(array(), $ldap_group[$attribute_name]);
+      $drupal_role = user_role_load($rid);
+    }
+
+    // Log in as user 1.
+    $this->drupalUser1Login();
+
+    // Submit the role edit form.
+    $this->drupalPost('admin/people/permissions/roles/edit/' . $drupal_role->rid, array(), t('Delete role'));
+    $this->assertText('Are you sure you want to delete the role ' . $drupal_role->name, t('Proceed to step 2 of deleting a role.'));
+    $this->drupalPost('admin/people/permissions/roles/delete/' . $drupal_role->rid, array(), t('Delete'));
+    $this->assertText('The role has been deleted.', t('The Drupal role was deleted'));
+
+    // Try to load the group from LDAP, and verify that it was deleted.
+    $result = $server->search($ldap_group['dn'], $filter, 'base', array('dn'));
+    $this->assertEqual($result['count'], 0, t('The @dn test group was deleted from LDAP.', array('@dn' => $ldap_group['dn'])));
+
+    // Restore the LDAP group.
+    $server->add($ldap_group['dn'], reset($backup));
+    $error = ldap_err2str($server->error);
+
+    // Verify a successful restore.
+    $result = $server->search($ldap_group['dn'], $filter, 'base');
+    $this->assertEqual($ldap_group['dn'], $result[0]['dn'], t('The @dn test group exists in LDAP.', array('@dn' => $ldap_group['dn'])));
+  }
+
+}
+
+class SimpleLdapRoleChangeDrupalUserRoleTestCase extends SimpleLdapRoleTestCase {
+
+  /**
+   * Inherited parent::getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Change Drupal roles',
+      'description' => 'Changes the roles on a Drupal user, and tests that the LDAP is updated appropriately.',
+      'group' => 'Simple LDAP Role',
+    );
+  }
+
+  /**
+   * Changes a user's drupal roles.
+   */
+  public function testChangeDrupalUserRole() {
+    // Load configuration variables.
+    $test_user = variable_get('simple_ldap_test_user');
+    $test_group = variable_get('simple_ldap_test_group');
+    $user_attribute_name = variable_get('simple_ldap_user_attribute_name');
+    $role_attribute_name = variable_get('simple_ldap_role_attribute_name');
+    $role_attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $role_attribute_member_format = variable_get('simple_ldap_role_attribute_member_format');
+
+    // Get an LDAP server object.
+    $server = SimpleLdapServer::singleton();
+
+    // Initialize a user account object.
+    $account = new stdClass();
+    $account->name = $test_user[$user_attribute_name];
+    $account->pass_raw = $test_user['pass'];
+
+    // Log in with the test user. This should create/sync an LDAP user.
+    $this->drupalLogin($account);
+
+    // Run cron to sync the LDAP groups to Drupal roles.
+    $this->cronRun();
+
+    // Load the Drupal user.
+    $drupal_user = user_load_by_name($test_user[$user_attribute_name]);
+    $this->assertNotIdentical($drupal_user, FALSE, t('@name user exists in Drupal', array('@name' => $test_user[$user_attribute_name])));
+
+    // Load the Drupal role.
+    $drupal_role = user_role_load_by_name($test_group[$role_attribute_name]);
+    $this->assertNotIdentical($drupal_role, FALSE, t('@name role exists in Drupal', array('@name' => $test_group[$role_attribute_name])));
+
+    // Log in as user 1.
+    $this->drupalUser1Login();
+
+    // Populate the user edit form.
+    $edit = array(
+      'roles[' . $drupal_role->rid . ']' => TRUE,
+    );
+
+    // Submit the user edit form.
+    $this->drupalPost('user/' . $drupal_user->uid . '/edit', $edit, t('Save'));
+    $this->assertText(t('The changes have been saved.'), t('The changes have been saved.'));
+
+    // Generate the LDAP search filter.
+    if ($role_attribute_member_format == 'dn') {
+      $ldap_user = SimpleLdapUser::singleton($drupal_user->name);
+      $search = $ldap_user->dn;
+    }
+    else {
+      $search = $test_user[$user_attribute_name];
+    }
+    $filter = '(&' . simple_ldap_role_filter() . '(' . $role_attribute_member . '=' . $search . '))';
+
+    // Verify that the LDAP user is now a member of the LDAP group.
+    $ldap_group = $server->search($test_group['dn'], $filter, 'base');
+    $this->assertEqual($ldap_group['count'], 1, t('@user was added to the @group LDAP group', array('@user' => $search, '@group' => $test_group['dn'])));
+
+    // Repopulate the user edit form.
+    $edit = array(
+      'roles[' . $drupal_role->rid . ']' => FALSE,
+    );
+
+    // Submit the user edit form.
+    $this->drupalPost('user/' . $drupal_user->uid . '/edit', $edit, t('Save'));
+    $this->assertText(t('The changes have been saved.'), t('The changes have been saved.'));
+
+    // Verify that the LDAP user is no longer a member of the LDAP group.
+    $ldap_group = $server->search($test_group['dn'], $filter, 'base');
+    $this->assertEqual($ldap_group['count'], 0, t('@user was removed from the @group LDAP group', array('@user' => $search, '@group' => $test_group['dn'])));
+
+    // Repopulate the user edit form again.
+    $edit = array(
+      'roles[' . $drupal_role->rid . ']' => TRUE,
+    );
+
+    // Submit the user edit form.
+    $this->drupalPost('user/' . $drupal_user->uid . '/edit', $edit, t('Save'));
+    $this->assertText(t('The changes have been saved.'), t('The changes have been saved.'));
+
+    // Verify that the LDAP user is a member of the LDAP group again.
+    $ldap_group = $server->search($test_group['dn'], $filter, 'base');
+    $this->assertEqual($ldap_group['count'], 1, t('@user was added to the @group LDAP group', array('@user' => $search, '@group' => $test_group['dn'])));
+
+  }
+
+}
+
+class SimpleLdapRoleModifyLdapGroup extends SimpleLdapRoleTestCase {
+
+  /**
+   * Inherited public::getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Modify LDAP Groups',
+      'description' => 'Modifies LDAP groups, and verifies that drupal roles are updated on cron runs.',
+      'group' => 'Simple LDAP Role',
+    );
+  }
+
+  /**
+   * Tests creating and modifying a group directly in LDAP.
+   */
+  public function testModifyLdapGroup() {
+    // Load configuration variables.
+    $role_basedn = variable_get('simple_ldap_role_basedn');
+    $role_objectclass = variable_get('simple_ldap_role_objectclass');
+    $role_attribute_name = variable_get('simple_ldap_role_attribute_name');
+    $role_attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $role_attribute_member_format = variable_get('simple_ldap_role_attribute_member_format');
+    $role_attribute_member_default = variable_get('simple_ldap_role_attribute_member_default');
+
+    // Get an LDAP server object.
+    $server = SimpleLdapServer::singleton();
+
+    // Generate a new random role name.
+    $new_role = $this->randomName();
+
+    // Generate a new LDAP object.
+    $dn = $role_attribute_name . '=' . $new_role . ',' . $role_basedn;
+    $attributes = array(
+      'objectclass' => $role_objectclass,
+      $role_attribute_name => $new_role,
+      $role_attribute_member => $role_attribute_member_default,
+    );
+
+    // Add the LDAP object to the directory.
+    $server->add($dn, $attributes);
+
+    // Verify that the LDAP group exists.
+    $ldap_group = $server->search($dn, simple_ldap_role_filter(), 'base');
+    $this->assertEqual($ldap_group['count'], 1, t('@dn exists in LDAP', array('@dn' => $dn)));
+
+    // Verify that the LDAP group does not exist in Drupal.
+    $drupal_role = user_role_load_by_name($new_role);
+    $this->assertFalse($drupal_role, t('The @group LDAP group does not exist as a Drupal role.', array('@group' => $new_role)));
+
+    // Run cron.
+    $this->cronRun();
+
+    // Verify that the test LDAP group exists in Drupal.
+    $drupal_role = user_role_load_by_name($new_role);
+    $this->assertTrue($drupal_role, t('The @group LDAP group exists as a Drupal role.', array('@group' => $new_role)));
+
+    // Modify the LDAP object.
+    $newdn = $role_attribute_name . '=' . $new_role . $new_role . ',' . $role_basedn;
+    $server->move($dn, $newdn);
+
+    // Verify that the original LDAP group does not.
+    $ldap_group = $server->search($dn, simple_ldap_role_filter(), 'base');
+    $this->assertEqual($ldap_group['count'], 0, t('@dn does not exist in LDAP', array('@dn' => $dn)));
+
+    // Verify that the updated LDAP group exists.
+    $ldap_group = $server->search($newdn, simple_ldap_role_filter(), 'base');
+    $this->assertEqual($ldap_group['count'], 1, t('@dn exists in LDAP', array('@dn' => $newdn)));
+
+    // Run cron.
+    $this->cronRun();
+
+    // Verify that the test LDAP group exists in Drupal.
+    $drupal_role = user_role_load_by_name($new_role . $new_role);
+    $this->assertTrue($drupal_role, t('The @group LDAP group exists as a Drupal role.', array('@group' => $new_role . $new_role)));
+
+    // Delete the LDAP group.
+    $server->delete($newdn);
+  }
+
+}
+
+class SimpleLdapRoleChangeLdapGroupMembership extends SimpleLdapRoleTestCase {
+
+  /**
+   * Inherited parent::getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Change LDAP Group Membership',
+      'description' => "Changes an LDAP user's group membership, and verifies that Drupal role membership is updated.",
+      'group' => 'Simple LDAP Role',
+    );
+  }
+
+  /**
+   * Test changing group membership directly in LDAP.
+   */
+  public function testChangeLdapGroupMembership() {
+    // Load configuration variables.
+    $test_user = variable_get('simple_ldap_test_user');
+    $user_attribute_name = variable_get('simple_ldap_user_attribute_name');
+
+    $test_group = variable_get('simple_ldap_test_group');
+    $role_basedn = variable_get('simple_ldap_role_basedn');
+    $role_objectclass = variable_get('simple_ldap_role_objectclass');
+    $role_attribute_name = variable_get('simple_ldap_role_attribute_name');
+    $role_attribute_member = variable_get('simple_ldap_role_attribute_member');
+    $role_attribute_member_format = variable_get('simple_ldap_role_attribute_member_format');
+
+    // Get an LDAP server object.
+    $server = SimpleLdapServer::singleton();
+
+    // Initialize a user account object.
+    $account = new stdClass();
+    $account->name = $test_user[$user_attribute_name];
+    $account->pass_raw = $test_user['pass'];
+
+    // Log in with the test user. This should create/sync an LDAP user.
+    $this->drupalLogin($account);
+
+    // Load the Drupal user.
+    $drupal_user = user_load_by_name($test_user[$user_attribute_name]);
+    $this->assertNotIdentical($drupal_user, FALSE, t('@name user exists in Drupal', array('@name' => $test_user[$user_attribute_name])));
+
+    // Verify that the user is assigned to the test role.
+    $this->assertTrue(in_array($test_group[$role_attribute_name], $drupal_user->roles), t('@user is assigned to the @role role.', array('@user' => $drupal_user->name, '@role' => $test_group[$role_attribute_name])));
+
+    // Generate a new member attribute.
+    if ($role_attribute_member_format == 'dn') {
+      $ldap_user = SimpleLdapUser::singleton($test_group[$role_attribute_name] . $test_group[$role_attribute_name]);
+      $member = $ldap_user->dn;
+    }
+    else {
+      $member = $test_group[$role_attribute_name] . $test_group[$role_attribute_name];
+    }
+
+    // Replace the LDAP member (same as removing the user).
+    $server->modify($test_group['dn'], array($role_attribute_member => $member), 'add');
+    $server->modify($test_group['dn'], array($role_attribute_member => $test_user['dn']), 'del');
+
+    // Reload the drupal user.
+    $drupal_user = user_load_multiple(array(), array('name' => $test_user[$user_attribute_name]), TRUE);
+    $drupal_user = reset($drupal_user);
+
+    // Verify that the user is not assigned to the test role.
+    $this->assertFalse(in_array($test_group[$role_attribute_name], $drupal_user->roles), t('@user is no longer assigned to the @role role.', array('@user' => $drupal_user->name, '@role' => $test_group[$role_attribute_name])));
+
+    // Replace the LDAP member (same as removing the user).
+    $server->modify($test_group['dn'], array($role_attribute_member => $test_user['dn']), 'add');
+    $server->modify($test_group['dn'], array($role_attribute_member => $member), 'del');
+
+    // Reload the drupal user.
+    $drupal_user = user_load_multiple(array(), array('name' => $test_user[$user_attribute_name]), TRUE);
+    $drupal_user = reset($drupal_user);
+
+    // Verify that the user is assigned to the test role.
+    $this->assertTrue(in_array($test_group[$role_attribute_name], $drupal_user->roles), t('@user is assigned to the @role role.', array('@user' => $drupal_user->name, '@role' => $test_group[$role_attribute_name])));
+
+  }
+
+}

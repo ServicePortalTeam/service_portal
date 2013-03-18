@@ -1,0 +1,24 @@
+name = Webform Pager
+description = Enables the use of pagers on webforms
+core = 7.x
+package = Webform
+configure = admin/config/content/webform/pager
+
+stylesheets[all][] = css/webform_pager.css
+stylesheets[all][] = css/style-my-tooltips.css
+
+dependencies[] = webform
+
+; Information added by drupal.org packaging script on 2013-03-07
+version = "7.x-1.1"
+core = "7.x"
+project = "webform_pager"
+datestamp = "1362669474"
+
+
+; Information added by drupal.org packaging script on 2013-03-11
+version = "7.x-1.4"
+core = "7.x"
+project = "webform_pager"
+datestamp = "1363008012"
+

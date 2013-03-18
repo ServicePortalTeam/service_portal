@@ -2,94 +2,26 @@
 
 
 $options['sites'] = array (
-  0 => 'service-portal.cn.capgemini.com',
-  1 => 'alu.cn.capgemini.com',
-  2 => 'landisgyr.cn.capgemini.com',
 );
 $options['profiles'] = array (
-  0 => 'minimal',
-  1 => 'standard',
-  2 => 'testing',
+  0 => 'standard',
+  1 => 'testing',
+  2 => 'minimal',
 );
 $options['packages'] = array (
   'base' => 
   array (
     'modules' => 
     array (
-      'comment' => 
+      'search_embedded_form' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/comment/comment.module',
-        'basename' => 'comment.module',
-        'name' => 'comment',
+        'filename' => '/var/aegir/platforms/service_portal/modules/search/tests/search_embedded_form.module',
+        'basename' => 'search_embedded_form.module',
+        'name' => 'search_embedded_form',
         'info' => 
         array (
-          'name' => 'Comment',
-          'description' => 'Allows users to comment on and discuss published content.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'text',
-          ),
-          'files' => 
-          array (
-            0 => 'comment.module',
-            1 => 'comment.test',
-          ),
-          'configure' => 'admin/content/comment',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'comment.css',
-            ),
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7009',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'menu' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/menu/menu.module',
-        'basename' => 'menu.module',
-        'name' => 'menu',
-        'info' => 
-        array (
-          'name' => 'Menu',
-          'description' => 'Allows administrators to customize the site navigation menu.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'menu.test',
-          ),
-          'configure' => 'admin/structure/menu',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7003',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'rdf_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/rdf/tests/rdf_test.module',
-        'basename' => 'rdf_test.module',
-        'name' => 'rdf_test',
-        'info' => 
-        array (
-          'name' => 'RDF module tests',
-          'description' => 'Support module for RDF module testing.',
+          'name' => 'Search embedded form',
+          'description' => 'Support module for search module testing of embedded forms.',
           'package' => 'Testing',
           'version' => '7.14',
           'core' => '7.x',
@@ -105,22 +37,19 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'rdf' => 
+      'search_extra_type' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/rdf/rdf.module',
-        'basename' => 'rdf.module',
-        'name' => 'rdf',
+        'filename' => '/var/aegir/platforms/service_portal/modules/search/tests/search_extra_type.module',
+        'basename' => 'search_extra_type.module',
+        'name' => 'search_extra_type',
         'info' => 
         array (
-          'name' => 'RDF',
-          'description' => 'Enriches your content with metadata to let other applications (e.g. search engines, aggregators) better understand its relationships and attributes.',
-          'package' => 'Core',
+          'name' => 'Test search type',
+          'description' => 'Support module for search module testing.',
+          'package' => 'Testing',
           'version' => '7.14',
           'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'rdf.test',
-          ),
+          'hidden' => true,
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -132,24 +61,117 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'profile' => 
+      'search' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/profile/profile.module',
-        'basename' => 'profile.module',
-        'name' => 'profile',
+        'filename' => '/var/aegir/platforms/service_portal/modules/search/search.module',
+        'basename' => 'search.module',
+        'name' => 'search',
         'info' => 
         array (
-          'name' => 'Profile',
-          'description' => 'Supports configurable user profiles.',
+          'name' => 'Search',
+          'description' => 'Enables site-wide keyword searching.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'profile.test',
+            0 => 'search.extender.inc',
+            1 => 'search.test',
           ),
-          'configure' => 'admin/config/people/profile',
+          'configure' => 'admin/config/search/settings',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'search.css',
+            ),
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'poll' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/poll/poll.module',
+        'basename' => 'poll.module',
+        'name' => 'poll',
+        'info' => 
+        array (
+          'name' => 'Poll',
+          'description' => 'Allows your site to capture votes on different topics in the form of multiple choice questions.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'poll.test',
+          ),
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'poll.css',
+            ),
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7004',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'trigger_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/trigger/tests/trigger_test.module',
+        'basename' => 'trigger_test.module',
+        'name' => 'trigger_test',
+        'info' => 
+        array (
+          'name' => 'Trigger Test',
+          'description' => 'Support module for Trigger tests.',
+          'package' => 'Testing',
+          'core' => '7.x',
           'hidden' => true,
+          'version' => '7.14',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'trigger' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/trigger/trigger.module',
+        'basename' => 'trigger.module',
+        'name' => 'trigger',
+        'info' => 
+        array (
+          'name' => 'Trigger',
+          'description' => 'Enables actions to be fired on certain system events, such as when new content is created.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'trigger.test',
+          ),
+          'configure' => 'admin/structure/trigger',
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -161,45 +183,50 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'overlay' => 
+      'color' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/overlay/overlay.module',
-        'basename' => 'overlay.module',
-        'name' => 'overlay',
+        'filename' => '/var/aegir/platforms/service_portal/modules/color/color.module',
+        'basename' => 'color.module',
+        'name' => 'color',
         'info' => 
         array (
-          'name' => 'Overlay',
-          'description' => 'Displays the Drupal administration interface in an overlay.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'help' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/help/help.module',
-        'basename' => 'help.module',
-        'name' => 'help',
-        'info' => 
-        array (
-          'name' => 'Help',
-          'description' => 'Manages the display of online help.',
+          'name' => 'Color',
+          'description' => 'Allows administrators to change the color scheme of compatible themes.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'help.test',
+            0 => 'color.test',
           ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'field_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/field/tests/field_test.module',
+        'basename' => 'field_test.module',
+        'name' => 'field_test',
+        'info' => 
+        array (
+          'name' => 'Field API Test',
+          'description' => 'Support module for the Field API tests.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'files' => 
+          array (
+            0 => 'field_test.entity.inc',
+          ),
+          'version' => '7.14',
+          'hidden' => true,
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -211,15 +238,15 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'number' => 
+      'text' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/number/number.module',
-        'basename' => 'number.module',
-        'name' => 'number',
+        'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/text/text.module',
+        'basename' => 'text.module',
+        'name' => 'text',
         'info' => 
         array (
-          'name' => 'Number',
-          'description' => 'Defines numeric field types.',
+          'name' => 'Text',
+          'description' => 'Defines simple text field types.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
@@ -229,13 +256,14 @@ $options['packages'] = array (
           ),
           'files' => 
           array (
-            0 => 'number.test',
+            0 => 'text.test',
           ),
+          'required' => true,
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'php' => '5.2.4',
         ),
-        'schema_version' => 0,
+        'schema_version' => '7000',
         'project' => 'drupal',
         'version' => '7.14',
       ),
@@ -321,6 +349,34 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
+      'number' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/number/number.module',
+        'basename' => 'number.module',
+        'name' => 'number',
+        'info' => 
+        array (
+          'name' => 'Number',
+          'description' => 'Defines numeric field types.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'field',
+          ),
+          'files' => 
+          array (
+            0 => 'number.test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
       'options' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/options/options.module',
@@ -343,63 +399,6 @@ $options['packages'] = array (
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'text' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/field/modules/text/text.module',
-        'basename' => 'text.module',
-        'name' => 'text',
-        'info' => 
-        array (
-          'name' => 'Text',
-          'description' => 'Defines simple text field types.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'field',
-          ),
-          'files' => 
-          array (
-            0 => 'text.test',
-          ),
-          'required' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'field_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/field/tests/field_test.module',
-        'basename' => 'field_test.module',
-        'name' => 'field_test',
-        'info' => 
-        array (
-          'name' => 'Field API Test',
-          'description' => 'Support module for the Field API tests.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'files' => 
-          array (
-            0 => 'field_test.entity.inc',
-          ),
-          'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
@@ -444,68 +443,44 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'locale_test' => 
+      'field_ui' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/locale/tests/locale_test.module',
-        'basename' => 'locale_test.module',
-        'name' => 'locale_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/field_ui/field_ui.module',
+        'basename' => 'field_ui.module',
+        'name' => 'field_ui',
         'info' => 
         array (
-          'name' => 'Locale Test',
-          'description' => 'Support module for the locale layer tests.',
-          'core' => '7.x',
-          'package' => 'Testing',
+          'name' => 'Field UI',
+          'description' => 'User interface for the Field API.',
+          'package' => 'Core',
           'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
+          'core' => '7.x',
           'dependencies' => 
           array (
+            0 => 'field',
           ),
+          'files' => 
+          array (
+            0 => 'field_ui.test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'locale' => 
+      'file_module_test' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/locale/locale.module',
-        'basename' => 'locale.module',
-        'name' => 'locale',
+        'filename' => '/var/aegir/platforms/service_portal/modules/file/tests/file_module_test.module',
+        'basename' => 'file_module_test.module',
+        'name' => 'file_module_test',
         'info' => 
         array (
-          'name' => 'Locale',
-          'description' => 'Adds language handling functionality and enables the translation of the user interface to languages other than English.',
+          'name' => 'File test',
+          'description' => 'Provides hooks for testing File module functionality.',
           'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'locale.test',
-          ),
-          'configure' => 'admin/config/regional/language',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7004',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'block_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/block/tests/block_test.module',
-        'basename' => 'block_test.module',
-        'name' => 'block_test',
-        'info' => 
-        array (
-          'name' => 'Block test',
-          'description' => 'Provides test blocks.',
-          'package' => 'Testing',
           'version' => '7.14',
           'core' => '7.x',
           'hidden' => true,
@@ -520,86 +495,49 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'block' => 
+      'file' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/block/block.module',
-        'basename' => 'block.module',
-        'name' => 'block',
+        'filename' => '/var/aegir/platforms/service_portal/modules/file/file.module',
+        'basename' => 'file.module',
+        'name' => 'file',
         'info' => 
         array (
-          'name' => 'Block',
-          'description' => 'Controls the visual building blocks a page is constructed with. Blocks are boxes of content rendered into an area, or region, of a web page.',
+          'name' => 'File',
+          'description' => 'Defines a file field type.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'block.test',
-          ),
-          'configure' => 'admin/structure/block',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
           'dependencies' => 
           array (
+            0 => 'field',
           ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7008',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'forum' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/forum/forum.module',
-        'basename' => 'forum.module',
-        'name' => 'forum',
-        'info' => 
-        array (
-          'name' => 'Forum',
-          'description' => 'Provides discussion forums.',
-          'dependencies' => 
-          array (
-            0 => 'taxonomy',
-            1 => 'comment',
-          ),
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
           'files' => 
           array (
-            0 => 'forum.test',
-          ),
-          'configure' => 'admin/structure/forum',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'forum.css',
-            ),
+            0 => 'tests/file.test',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'php' => '5.2.4',
         ),
-        'schema_version' => '7011',
+        'schema_version' => 0,
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'syslog' => 
+      'help' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/syslog/syslog.module',
-        'basename' => 'syslog.module',
-        'name' => 'syslog',
+        'filename' => '/var/aegir/platforms/service_portal/modules/help/help.module',
+        'basename' => 'help.module',
+        'name' => 'help',
         'info' => 
         array (
-          'name' => 'Syslog',
-          'description' => 'Logs and records system events to syslog.',
+          'name' => 'Help',
+          'description' => 'Manages the display of online help.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'syslog.test',
+            0 => 'help.test',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
@@ -612,47 +550,51 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'trigger_test' => 
+      'php' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/trigger/tests/trigger_test.module',
-        'basename' => 'trigger_test.module',
-        'name' => 'trigger_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/php/php.module',
+        'basename' => 'php.module',
+        'name' => 'php',
         'info' => 
         array (
-          'name' => 'Trigger Test',
-          'description' => 'Support module for Trigger tests.',
-          'package' => 'Testing',
+          'name' => 'PHP filter',
+          'description' => 'Allows embedded PHP code/snippets to be evaluated.',
+          'package' => 'Core',
+          'version' => '7.14',
           'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'php.test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'profile' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/profile/profile.module',
+        'basename' => 'profile.module',
+        'name' => 'profile',
+        'info' => 
+        array (
+          'name' => 'Profile',
+          'description' => 'Supports configurable user profiles.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'profile.test',
+          ),
+          'configure' => 'admin/config/people/profile',
           'hidden' => true,
-          'version' => '7.14',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'trigger' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/trigger/trigger.module',
-        'basename' => 'trigger.module',
-        'name' => 'trigger',
-        'info' => 
-        array (
-          'name' => 'Trigger',
-          'description' => 'Enables actions to be fired on certain system events, such as when new content is created.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'trigger.test',
-          ),
-          'configure' => 'admin/structure/trigger',
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -664,23 +606,29 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'shortcut' => 
+      'system' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/shortcut/shortcut.module',
-        'basename' => 'shortcut.module',
-        'name' => 'shortcut',
+        'filename' => '/var/aegir/platforms/service_portal/modules/system/system.module',
+        'basename' => 'system.module',
+        'name' => 'system',
         'info' => 
         array (
-          'name' => 'Shortcut',
-          'description' => 'Allows users to manage customizable lists of shortcut links.',
+          'name' => 'System',
+          'description' => 'Handles general site configuration for administrators.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'shortcut.test',
+            0 => 'system.archiver.inc',
+            1 => 'system.mail.inc',
+            2 => 'system.queue.inc',
+            3 => 'system.tar.inc',
+            4 => 'system.updater.inc',
+            5 => 'system.test',
           ),
-          'configure' => 'admin/config/user-interface/shortcut',
+          'required' => true,
+          'configure' => 'admin/config/system',
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -688,23 +636,26 @@ $options['packages'] = array (
           ),
           'php' => '5.2.4',
         ),
-        'schema_version' => 0,
+        'schema_version' => '7073',
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'aaa_update_test' => 
+      'contextual' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/aaa_update_test.module',
-        'basename' => 'aaa_update_test.module',
-        'name' => 'aaa_update_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/contextual/contextual.module',
+        'basename' => 'contextual.module',
+        'name' => 'contextual',
         'info' => 
         array (
-          'name' => 'AAA Update test',
-          'description' => 'Support module for update module testing.',
-          'package' => 'Testing',
-          'core' => '7.x',
-          'hidden' => true,
+          'name' => 'Contextual links',
+          'description' => 'Provides contextual links to perform actions related to elements on a page.',
+          'package' => 'Core',
           'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'contextual.test',
+          ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -716,18 +667,121 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'ccc_update_test' => 
+      'openid_test' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/ccc_update_test.module',
-        'basename' => 'ccc_update_test.module',
-        'name' => 'ccc_update_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/openid/tests/openid_test.module',
+        'basename' => 'openid_test.module',
+        'name' => 'openid_test',
         'info' => 
         array (
-          'name' => 'CCC Update test',
-          'description' => 'Support module for update module testing.',
+          'name' => 'OpenID dummy provider',
+          'description' => 'OpenID provider used for testing.',
           'package' => 'Testing',
+          'version' => '7.14',
           'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'openid',
+          ),
           'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'openid' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/openid/openid.module',
+        'basename' => 'openid.module',
+        'name' => 'openid',
+        'info' => 
+        array (
+          'name' => 'OpenID',
+          'description' => 'Allows users to log into your site using OpenID.',
+          'version' => '7.14',
+          'package' => 'Core',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'openid.test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6000',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'overlay' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/overlay/overlay.module',
+        'basename' => 'overlay.module',
+        'name' => 'overlay',
+        'info' => 
+        array (
+          'name' => 'Overlay',
+          'description' => 'Displays the Drupal administration interface in an overlay.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'filter' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/filter/filter.module',
+        'basename' => 'filter.module',
+        'name' => 'filter',
+        'info' => 
+        array (
+          'name' => 'Filter',
+          'description' => 'Filters content in preparation for display.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'filter.test',
+          ),
+          'required' => true,
+          'configure' => 'admin/config/content/formats',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7010',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'toolbar' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/toolbar/toolbar.module',
+        'basename' => 'toolbar.module',
+        'name' => 'toolbar',
+        'info' => 
+        array (
+          'name' => 'Toolbar',
+          'description' => 'Provides a toolbar that shows the top-level administration menu items and links from other modules.',
+          'core' => '7.x',
+          'package' => 'Core',
           'version' => '7.14',
           'project' => 'drupal',
           'datestamp' => '1335997555',
@@ -764,6 +818,30 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
+      'aaa_update_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/aaa_update_test.module',
+        'basename' => 'aaa_update_test.module',
+        'name' => 'aaa_update_test',
+        'info' => 
+        array (
+          'name' => 'AAA Update test',
+          'description' => 'Support module for update module testing.',
+          'package' => 'Testing',
+          'core' => '7.x',
+          'hidden' => true,
+          'version' => '7.14',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
       'bbb_update_test' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/bbb_update_test.module',
@@ -772,6 +850,30 @@ $options['packages'] = array (
         'info' => 
         array (
           'name' => 'BBB Update test',
+          'description' => 'Support module for update module testing.',
+          'package' => 'Testing',
+          'core' => '7.x',
+          'hidden' => true,
+          'version' => '7.14',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'ccc_update_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/update/tests/ccc_update_test.module',
+        'basename' => 'ccc_update_test.module',
+        'name' => 'ccc_update_test',
+        'info' => 
+        array (
+          'name' => 'CCC Update test',
           'description' => 'Support module for update module testing.',
           'package' => 'Testing',
           'core' => '7.x',
@@ -816,113 +918,21 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'statistics' => 
+      'dblog' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/statistics/statistics.module',
-        'basename' => 'statistics.module',
-        'name' => 'statistics',
+        'filename' => '/var/aegir/platforms/service_portal/modules/dblog/dblog.module',
+        'basename' => 'dblog.module',
+        'name' => 'dblog',
         'info' => 
         array (
-          'name' => 'Statistics',
-          'description' => 'Logs access statistics for your site.',
+          'name' => 'Database logging',
+          'description' => 'Logs and records system events to the database.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'statistics.test',
-          ),
-          'configure' => 'admin/config/system/statistics',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'field_ui' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/field_ui/field_ui.module',
-        'basename' => 'field_ui.module',
-        'name' => 'field_ui',
-        'info' => 
-        array (
-          'name' => 'Field UI',
-          'description' => 'User interface for the Field API.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'field',
-          ),
-          'files' => 
-          array (
-            0 => 'field_ui.test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'contact' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/contact/contact.module',
-        'basename' => 'contact.module',
-        'name' => 'contact',
-        'info' => 
-        array (
-          'name' => 'Contact',
-          'description' => 'Enables the use of both personal and site-wide contact forms.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'contact.test',
-          ),
-          'configure' => 'admin/structure/contact',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7003',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'book' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/book/book.module',
-        'basename' => 'book.module',
-        'name' => 'book',
-        'info' => 
-        array (
-          'name' => 'Book',
-          'description' => 'Allows users to create and organize related content in an outline.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'book.test',
-          ),
-          'configure' => 'admin/content/book/settings',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'book.css',
-            ),
+            0 => 'dblog.test',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
@@ -931,41 +941,7 @@ $options['packages'] = array (
           ),
           'php' => '5.2.4',
         ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/system/system.module',
-        'basename' => 'system.module',
-        'name' => 'system',
-        'info' => 
-        array (
-          'name' => 'System',
-          'description' => 'Handles general site configuration for administrators.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'system.archiver.inc',
-            1 => 'system.mail.inc',
-            2 => 'system.queue.inc',
-            3 => 'system.tar.inc',
-            4 => 'system.updater.inc',
-            5 => 'system.test',
-          ),
-          'required' => true,
-          'configure' => 'admin/config/system',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7073',
+        'schema_version' => '7001',
         'project' => 'drupal',
         'version' => '7.14',
       ),
@@ -1017,580 +993,6 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'error_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/error_test.module',
-        'basename' => 'error_test.module',
-        'name' => 'error_test',
-        'info' => 
-        array (
-          'name' => 'Error test',
-          'description' => 'Support module for error and exception testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'form_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/form_test.module',
-        'basename' => 'form_test.module',
-        'name' => 'form_test',
-        'info' => 
-        array (
-          'name' => 'FormAPI Test',
-          'description' => 'Support module for Form API tests.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system_incompatible_module_version_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_module_version_test.module',
-        'basename' => 'system_incompatible_module_version_test.module',
-        'name' => 'system_incompatible_module_version_test',
-        'info' => 
-        array (
-          'name' => 'System incompatible module version test',
-          'description' => 'Support module for testing system dependencies.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system_dependencies_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_dependencies_test.module',
-        'basename' => 'system_dependencies_test.module',
-        'name' => 'system_dependencies_test',
-        'info' => 
-        array (
-          'name' => 'System dependency test',
-          'description' => 'Support module for testing system dependencies.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => '_missing_dependency',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_test.module',
-        'basename' => 'system_test.module',
-        'name' => 'system_test',
-        'info' => 
-        array (
-          'name' => 'System test',
-          'description' => 'Support module for system testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'system_test.module',
-          ),
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'menu_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/menu_test.module',
-        'basename' => 'menu_test.module',
-        'name' => 'menu_test',
-        'info' => 
-        array (
-          'name' => 'Hook menu tests',
-          'description' => 'Support module for menu hook testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'url_alter_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/url_alter_test.module',
-        'basename' => 'url_alter_test.module',
-        'name' => 'url_alter_test',
-        'info' => 
-        array (
-          'name' => 'Url_alter tests',
-          'description' => 'A support modules for url_alter hook testing.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'file_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/file_test.module',
-        'basename' => 'file_test.module',
-        'name' => 'file_test',
-        'info' => 
-        array (
-          'name' => 'File test',
-          'description' => 'Support module for file handling tests.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'file_test.module',
-          ),
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'requirements2_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/requirements2_test.module',
-        'basename' => 'requirements2_test.module',
-        'name' => 'requirements2_test',
-        'info' => 
-        array (
-          'name' => 'Requirements 2 Test',
-          'description' => 'Tests that a module is not installed when the one it depends on fails hook_requirements(\'install).',
-          'dependencies' => 
-          array (
-            0 => 'requirements1_test',
-            1 => 'comment',
-          ),
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'common_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/common_test.module',
-        'basename' => 'common_test.module',
-        'name' => 'common_test',
-        'info' => 
-        array (
-          'name' => 'Common Test',
-          'description' => 'Support module for Common tests.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'common_test.css',
-            ),
-            'print' => 
-            array (
-              0 => 'common_test.print.css',
-            ),
-          ),
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'update_test_1' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_1.module',
-        'basename' => 'update_test_1.module',
-        'name' => 'update_test_1',
-        'info' => 
-        array (
-          'name' => 'Update test',
-          'description' => 'Support module for update testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7002',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'ajax_forms_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/ajax_forms_test.module',
-        'basename' => 'ajax_forms_test.module',
-        'name' => 'ajax_forms_test',
-        'info' => 
-        array (
-          'name' => 'AJAX form test mock module',
-          'description' => 'Test for AJAX form calls.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'database_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/database_test.module',
-        'basename' => 'database_test.module',
-        'name' => 'database_test',
-        'info' => 
-        array (
-          'name' => 'Database Test',
-          'description' => 'Support module for Database layer tests.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system_incompatible_core_version_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_core_version_test.module',
-        'basename' => 'system_incompatible_core_version_test.module',
-        'name' => 'system_incompatible_core_version_test',
-        'info' => 
-        array (
-          'name' => 'System incompatible core version test',
-          'description' => 'Support module for testing system dependencies.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '5.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'module_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/module_test.module',
-        'basename' => 'module_test.module',
-        'name' => 'module_test',
-        'info' => 
-        array (
-          'name' => 'Module test',
-          'description' => 'Support module for module system testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'common_test_cron_helper' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/common_test_cron_helper.module',
-        'basename' => 'common_test_cron_helper.module',
-        'name' => 'common_test_cron_helper',
-        'info' => 
-        array (
-          'name' => 'Common Test Cron Helper',
-          'description' => 'Helper module for CronRunTestCase::testCronExceptions().',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'requirements1_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/requirements1_test.module',
-        'basename' => 'requirements1_test.module',
-        'name' => 'requirements1_test',
-        'info' => 
-        array (
-          'name' => 'Requirements 1 Test',
-          'description' => 'Tests that a module is not installed when it fails hook_requirements(\'install\').',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'image_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/image_test.module',
-        'basename' => 'image_test.module',
-        'name' => 'image_test',
-        'info' => 
-        array (
-          'name' => 'Image test',
-          'description' => 'Support module for image toolkit tests.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'ajax_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/ajax_test.module',
-        'basename' => 'ajax_test.module',
-        'name' => 'ajax_test',
-        'info' => 
-        array (
-          'name' => 'AJAX Test',
-          'description' => 'Support module for AJAX framework tests.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'session_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/session_test.module',
-        'basename' => 'session_test.module',
-        'name' => 'session_test',
-        'info' => 
-        array (
-          'name' => 'Session test',
-          'description' => 'Support module for session data testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'xmlrpc_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/xmlrpc_test.module',
-        'basename' => 'xmlrpc_test.module',
-        'name' => 'xmlrpc_test',
-        'info' => 
-        array (
-          'name' => 'XML-RPC Test',
-          'description' => 'Support module for XML-RPC tests according to the validator1 specification.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'entity_query_access_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_query_access_test.module',
-        'basename' => 'entity_query_access_test.module',
-        'name' => 'entity_query_access_test',
-        'info' => 
-        array (
-          'name' => 'Entity query access test',
-          'description' => 'Support module for checking entity query results.',
-          'package' => 'Testing',
-          'version' => '7.15',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1343839327',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.15',
-      ),
-      'entity_crud_hook_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_crud_hook_test.module',
-        'basename' => 'entity_crud_hook_test.module',
-        'name' => 'entity_crud_hook_test',
-        'info' => 
-        array (
-          'name' => 'Entity CRUD Hooks Test',
-          'description' => 'Support module for CRUD hook tests.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
       'actions_loop_test' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/actions_loop_test.module',
@@ -1612,202 +1014,6 @@ $options['packages'] = array (
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'update_test_2' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_2.module',
-        'basename' => 'update_test_2.module',
-        'name' => 'update_test_2',
-        'info' => 
-        array (
-          'name' => 'Update test',
-          'description' => 'Support module for update testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7002',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system_incompatible_module_version_dependencies_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module',
-        'basename' => 'system_incompatible_module_version_dependencies_test.module',
-        'name' => 'system_incompatible_module_version_dependencies_test',
-        'info' => 
-        array (
-          'name' => 'System incompatible module version dependencies test',
-          'description' => 'Support module for testing system dependencies.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'system_incompatible_module_version_test (>2.0)',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'batch_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/batch_test.module',
-        'basename' => 'batch_test.module',
-        'name' => 'batch_test',
-        'info' => 
-        array (
-          'name' => 'Batch API test',
-          'description' => 'Support module for Batch API tests.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'system_incompatible_core_version_dependencies_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.module',
-        'basename' => 'system_incompatible_core_version_dependencies_test.module',
-        'name' => 'system_incompatible_core_version_dependencies_test',
-        'info' => 
-        array (
-          'name' => 'System incompatible core version dependencies test',
-          'description' => 'Support module for testing system dependencies.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'system_incompatible_core_version_test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'taxonomy_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/taxonomy_test.module',
-        'basename' => 'taxonomy_test.module',
-        'name' => 'taxonomy_test',
-        'info' => 
-        array (
-          'name' => 'Taxonomy test module',
-          'description' => '"Tests functions and hooks not used in core".',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'taxonomy',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'path_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/path_test.module',
-        'basename' => 'path_test.module',
-        'name' => 'path_test',
-        'info' => 
-        array (
-          'name' => 'Hook path tests',
-          'description' => 'Support module for path hook testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'entity_cache_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_cache_test.module',
-        'basename' => 'entity_cache_test.module',
-        'name' => 'entity_cache_test',
-        'info' => 
-        array (
-          'name' => 'Entity cache test',
-          'description' => 'Support module for testing entity cache.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'entity_cache_test_dependency',
-          ),
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'update_script_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_script_test.module',
-        'basename' => 'update_script_test.module',
-        'name' => 'update_script_test',
-        'info' => 
-        array (
-          'name' => 'Update script test',
-          'description' => 'Support module for update script testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
         'project' => 'drupal',
         'version' => '7.14',
       ),
@@ -1859,15 +1065,306 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'theme_test' => 
+      'update_test_2' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/theme_test.module',
-        'basename' => 'theme_test.module',
-        'name' => 'theme_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_2.module',
+        'basename' => 'update_test_2.module',
+        'name' => 'update_test_2',
         'info' => 
         array (
-          'name' => 'Theme test',
-          'description' => 'Support module for theme system testing.',
+          'name' => 'Update test',
+          'description' => 'Support module for update testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7002',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'image_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/image_test.module',
+        'basename' => 'image_test.module',
+        'name' => 'image_test',
+        'info' => 
+        array (
+          'name' => 'Image test',
+          'description' => 'Support module for image toolkit tests.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'requirements2_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/requirements2_test.module',
+        'basename' => 'requirements2_test.module',
+        'name' => 'requirements2_test',
+        'info' => 
+        array (
+          'name' => 'Requirements 2 Test',
+          'description' => 'Tests that a module is not installed when the one it depends on fails hook_requirements(\'install).',
+          'dependencies' => 
+          array (
+            0 => 'requirements1_test',
+            1 => 'comment',
+          ),
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'system_incompatible_core_version_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_core_version_test.module',
+        'basename' => 'system_incompatible_core_version_test.module',
+        'name' => 'system_incompatible_core_version_test',
+        'info' => 
+        array (
+          'name' => 'System incompatible core version test',
+          'description' => 'Support module for testing system dependencies.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '5.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'common_test_cron_helper' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/common_test_cron_helper.module',
+        'basename' => 'common_test_cron_helper.module',
+        'name' => 'common_test_cron_helper',
+        'info' => 
+        array (
+          'name' => 'Common Test Cron Helper',
+          'description' => 'Helper module for CronRunTestCase::testCronExceptions().',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'xmlrpc_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/xmlrpc_test.module',
+        'basename' => 'xmlrpc_test.module',
+        'name' => 'xmlrpc_test',
+        'info' => 
+        array (
+          'name' => 'XML-RPC Test',
+          'description' => 'Support module for XML-RPC tests according to the validator1 specification.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'menu_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/menu_test.module',
+        'basename' => 'menu_test.module',
+        'name' => 'menu_test',
+        'info' => 
+        array (
+          'name' => 'Hook menu tests',
+          'description' => 'Support module for menu hook testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'session_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/session_test.module',
+        'basename' => 'session_test.module',
+        'name' => 'session_test',
+        'info' => 
+        array (
+          'name' => 'Session test',
+          'description' => 'Support module for session data testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'entity_query_access_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_query_access_test.module',
+        'basename' => 'entity_query_access_test.module',
+        'name' => 'entity_query_access_test',
+        'info' => 
+        array (
+          'name' => 'Entity query access test',
+          'description' => 'Support module for checking entity query results.',
+          'package' => 'Testing',
+          'version' => '7.15',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1343839327',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.15',
+      ),
+      'system_incompatible_module_version_dependencies_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module',
+        'basename' => 'system_incompatible_module_version_dependencies_test.module',
+        'name' => 'system_incompatible_module_version_dependencies_test',
+        'info' => 
+        array (
+          'name' => 'System incompatible module version dependencies test',
+          'description' => 'Support module for testing system dependencies.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'system_incompatible_module_version_test (>2.0)',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'ajax_forms_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/ajax_forms_test.module',
+        'basename' => 'ajax_forms_test.module',
+        'name' => 'ajax_forms_test',
+        'info' => 
+        array (
+          'name' => 'AJAX form test mock module',
+          'description' => 'Test for AJAX form calls.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'entity_crud_hook_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_crud_hook_test.module',
+        'basename' => 'entity_crud_hook_test.module',
+        'name' => 'entity_crud_hook_test',
+        'info' => 
+        array (
+          'name' => 'Entity CRUD Hooks Test',
+          'description' => 'Support module for CRUD hook tests.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'form_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/form_test.module',
+        'basename' => 'form_test.module',
+        'name' => 'form_test',
+        'info' => 
+        array (
+          'name' => 'FormAPI Test',
+          'description' => 'Support module for Form API tests.',
           'package' => 'Testing',
           'version' => '7.14',
           'core' => '7.x',
@@ -1895,6 +1392,485 @@ $options['packages'] = array (
           'package' => 'Testing',
           'version' => '7.14',
           'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'file_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/file_test.module',
+        'basename' => 'file_test.module',
+        'name' => 'file_test',
+        'info' => 
+        array (
+          'name' => 'File test',
+          'description' => 'Support module for file handling tests.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'file_test.module',
+          ),
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'error_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/error_test.module',
+        'basename' => 'error_test.module',
+        'name' => 'error_test',
+        'info' => 
+        array (
+          'name' => 'Error test',
+          'description' => 'Support module for error and exception testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'ajax_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/ajax_test.module',
+        'basename' => 'ajax_test.module',
+        'name' => 'ajax_test',
+        'info' => 
+        array (
+          'name' => 'AJAX Test',
+          'description' => 'Support module for AJAX framework tests.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'update_test_1' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_test_1.module',
+        'basename' => 'update_test_1.module',
+        'name' => 'update_test_1',
+        'info' => 
+        array (
+          'name' => 'Update test',
+          'description' => 'Support module for update testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7002',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'system_incompatible_module_version_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_module_version_test.module',
+        'basename' => 'system_incompatible_module_version_test.module',
+        'name' => 'system_incompatible_module_version_test',
+        'info' => 
+        array (
+          'name' => 'System incompatible module version test',
+          'description' => 'Support module for testing system dependencies.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'database_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/database_test.module',
+        'basename' => 'database_test.module',
+        'name' => 'database_test',
+        'info' => 
+        array (
+          'name' => 'Database Test',
+          'description' => 'Support module for Database layer tests.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'module_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/module_test.module',
+        'basename' => 'module_test.module',
+        'name' => 'module_test',
+        'info' => 
+        array (
+          'name' => 'Module test',
+          'description' => 'Support module for module system testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'taxonomy_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/taxonomy_test.module',
+        'basename' => 'taxonomy_test.module',
+        'name' => 'taxonomy_test',
+        'info' => 
+        array (
+          'name' => 'Taxonomy test module',
+          'description' => '"Tests functions and hooks not used in core".',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'taxonomy',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'requirements1_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/requirements1_test.module',
+        'basename' => 'requirements1_test.module',
+        'name' => 'requirements1_test',
+        'info' => 
+        array (
+          'name' => 'Requirements 1 Test',
+          'description' => 'Tests that a module is not installed when it fails hook_requirements(\'install\').',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'system_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_test.module',
+        'basename' => 'system_test.module',
+        'name' => 'system_test',
+        'info' => 
+        array (
+          'name' => 'System test',
+          'description' => 'Support module for system testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'system_test.module',
+          ),
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'batch_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/batch_test.module',
+        'basename' => 'batch_test.module',
+        'name' => 'batch_test',
+        'info' => 
+        array (
+          'name' => 'Batch API test',
+          'description' => 'Support module for Batch API tests.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'system_dependencies_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_dependencies_test.module',
+        'basename' => 'system_dependencies_test.module',
+        'name' => 'system_dependencies_test',
+        'info' => 
+        array (
+          'name' => 'System dependency test',
+          'description' => 'Support module for testing system dependencies.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => '_missing_dependency',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'entity_cache_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/entity_cache_test.module',
+        'basename' => 'entity_cache_test.module',
+        'name' => 'entity_cache_test',
+        'info' => 
+        array (
+          'name' => 'Entity cache test',
+          'description' => 'Support module for testing entity cache.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'entity_cache_test_dependency',
+          ),
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'theme_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/theme_test.module',
+        'basename' => 'theme_test.module',
+        'name' => 'theme_test',
+        'info' => 
+        array (
+          'name' => 'Theme test',
+          'description' => 'Support module for theme system testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'url_alter_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/url_alter_test.module',
+        'basename' => 'url_alter_test.module',
+        'name' => 'url_alter_test',
+        'info' => 
+        array (
+          'name' => 'Url_alter tests',
+          'description' => 'A support modules for url_alter hook testing.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'system_incompatible_core_version_dependencies_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.module',
+        'basename' => 'system_incompatible_core_version_dependencies_test.module',
+        'name' => 'system_incompatible_core_version_dependencies_test',
+        'info' => 
+        array (
+          'name' => 'System incompatible core version dependencies test',
+          'description' => 'Support module for testing system dependencies.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'system_incompatible_core_version_test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'path_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/path_test.module',
+        'basename' => 'path_test.module',
+        'name' => 'path_test',
+        'info' => 
+        array (
+          'name' => 'Hook path tests',
+          'description' => 'Support module for path hook testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'update_script_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/update_script_test.module',
+        'basename' => 'update_script_test.module',
+        'name' => 'update_script_test',
+        'info' => 
+        array (
+          'name' => 'Update script test',
+          'description' => 'Support module for update script testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'common_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/simpletest/tests/common_test.module',
+        'basename' => 'common_test.module',
+        'name' => 'common_test',
+        'info' => 
+        array (
+          'name' => 'Common Test',
+          'description' => 'Support module for Common tests.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'common_test.css',
+            ),
+            'print' => 
+            array (
+              0 => 'common_test.print.css',
+            ),
+          ),
           'hidden' => true,
           'project' => 'drupal',
           'datestamp' => '1335997555',
@@ -1981,76 +1957,21 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'openid_test' => 
+      'locale_test' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/openid/tests/openid_test.module',
-        'basename' => 'openid_test.module',
-        'name' => 'openid_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/locale/tests/locale_test.module',
+        'basename' => 'locale_test.module',
+        'name' => 'locale_test',
         'info' => 
         array (
-          'name' => 'OpenID dummy provider',
-          'description' => 'OpenID provider used for testing.',
+          'name' => 'Locale Test',
+          'description' => 'Support module for the locale layer tests.',
+          'core' => '7.x',
           'package' => 'Testing',
           'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'openid',
-          ),
           'hidden' => true,
           'project' => 'drupal',
           'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'openid' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/openid/openid.module',
-        'basename' => 'openid.module',
-        'name' => 'openid',
-        'info' => 
-        array (
-          'name' => 'OpenID',
-          'description' => 'Allows users to log into your site using OpenID.',
-          'version' => '7.14',
-          'package' => 'Core',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'openid.test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6000',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'php' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/php/php.module',
-        'basename' => 'php.module',
-        'name' => 'php',
-        'info' => 
-        array (
-          'name' => 'PHP filter',
-          'description' => 'Allows embedded PHP code/snippets to be evaluated.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'php.test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
           'dependencies' => 
           array (
           ),
@@ -2060,22 +1981,23 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'dblog' => 
+      'locale' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/dblog/dblog.module',
-        'basename' => 'dblog.module',
-        'name' => 'dblog',
+        'filename' => '/var/aegir/platforms/service_portal/modules/locale/locale.module',
+        'basename' => 'locale.module',
+        'name' => 'locale',
         'info' => 
         array (
-          'name' => 'Database logging',
-          'description' => 'Logs and records system events to the database.',
+          'name' => 'Locale',
+          'description' => 'Adds language handling functionality and enables the translation of the user interface to languages other than English.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'dblog.test',
+            0 => 'locale.test',
           ),
+          'configure' => 'admin/config/regional/language',
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -2083,64 +2005,7 @@ $options['packages'] = array (
           ),
           'php' => '5.2.4',
         ),
-        'schema_version' => '7001',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'color' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/color/color.module',
-        'basename' => 'color.module',
-        'name' => 'color',
-        'info' => 
-        array (
-          'name' => 'Color',
-          'description' => 'Allows administrators to change the color scheme of compatible themes.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'color.test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'taxonomy' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/taxonomy/taxonomy.module',
-        'basename' => 'taxonomy.module',
-        'name' => 'taxonomy',
-        'info' => 
-        array (
-          'name' => 'Taxonomy',
-          'description' => 'Enables the categorization of content.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'options',
-          ),
-          'files' => 
-          array (
-            0 => 'taxonomy.module',
-            1 => 'taxonomy.test',
-          ),
-          'configure' => 'admin/structure/taxonomy',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7010',
+        'schema_version' => '7004',
         'project' => 'drupal',
         'version' => '7.14',
       ),
@@ -2172,159 +2037,28 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'tracker' => 
+      'book' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/tracker/tracker.module',
-        'basename' => 'tracker.module',
-        'name' => 'tracker',
+        'filename' => '/var/aegir/platforms/service_portal/modules/book/book.module',
+        'basename' => 'book.module',
+        'name' => 'book',
         'info' => 
         array (
-          'name' => 'Tracker',
-          'description' => 'Enables tracking of recent content for users.',
-          'dependencies' => 
-          array (
-            0 => 'comment',
-          ),
+          'name' => 'Book',
+          'description' => 'Allows users to create and organize related content in an outline.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'tracker.test',
+            0 => 'book.test',
           ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'dashboard' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/dashboard/dashboard.module',
-        'basename' => 'dashboard.module',
-        'name' => 'dashboard',
-        'info' => 
-        array (
-          'name' => 'Dashboard',
-          'description' => 'Provides a dashboard page in the administrative interface for organizing administrative tasks and tracking information within your site.',
-          'core' => '7.x',
-          'package' => 'Core',
-          'version' => '7.14',
-          'files' => 
-          array (
-            0 => 'dashboard.test',
-          ),
-          'dependencies' => 
-          array (
-            0 => 'block',
-          ),
-          'configure' => 'admin/dashboard/customize',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'node_access_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_access_test.module',
-        'basename' => 'node_access_test.module',
-        'name' => 'node_access_test',
-        'info' => 
-        array (
-          'name' => 'Node module access tests',
-          'description' => 'Support module for node permission testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'node_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_test.module',
-        'basename' => 'node_test.module',
-        'name' => 'node_test',
-        'info' => 
-        array (
-          'name' => 'Node module tests',
-          'description' => 'Support module for node related testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'node_test_exception' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_test_exception.module',
-        'basename' => 'node_test_exception.module',
-        'name' => 'node_test_exception',
-        'info' => 
-        array (
-          'name' => 'Node module exception tests',
-          'description' => 'Support module for node related exception testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'node' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/node/node.module',
-        'basename' => 'node.module',
-        'name' => 'node',
-        'info' => 
-        array (
-          'name' => 'Node',
-          'description' => 'Allows content to be submitted to the site and displayed on pages.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'node.module',
-            1 => 'node.test',
-          ),
-          'required' => true,
-          'configure' => 'admin/structure/types',
+          'configure' => 'admin/content/book/settings',
           'stylesheets' => 
           array (
             'all' => 
             array (
-              0 => 'node.css',
+              0 => 'book.css',
             ),
           ),
           'project' => 'drupal',
@@ -2334,7 +2068,200 @@ $options['packages'] = array (
           ),
           'php' => '5.2.4',
         ),
-        'schema_version' => '7013',
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'image_module_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/image/tests/image_module_test.module',
+        'basename' => 'image_module_test.module',
+        'name' => 'image_module_test',
+        'info' => 
+        array (
+          'name' => 'Image test',
+          'description' => 'Provides hook implementations for testing Image module functionality.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'image_module_test.module',
+          ),
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'image' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/image/image.module',
+        'basename' => 'image.module',
+        'name' => 'image',
+        'info' => 
+        array (
+          'name' => 'Image',
+          'description' => 'Provides image manipulation tools.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'file',
+          ),
+          'files' => 
+          array (
+            0 => 'image.test',
+          ),
+          'configure' => 'admin/config/media/image-styles',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7004',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'contact' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/contact/contact.module',
+        'basename' => 'contact.module',
+        'name' => 'contact',
+        'info' => 
+        array (
+          'name' => 'Contact',
+          'description' => 'Enables the use of both personal and site-wide contact forms.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'contact.test',
+          ),
+          'configure' => 'admin/structure/contact',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7003',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'statistics' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/statistics/statistics.module',
+        'basename' => 'statistics.module',
+        'name' => 'statistics',
+        'info' => 
+        array (
+          'name' => 'Statistics',
+          'description' => 'Logs access statistics for your site.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'statistics.test',
+          ),
+          'configure' => 'admin/config/system/statistics',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'translation_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/translation/tests/translation_test.module',
+        'basename' => 'translation_test.module',
+        'name' => 'translation_test',
+        'info' => 
+        array (
+          'name' => 'Content Translation Test',
+          'description' => 'Support module for the content translation tests.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'translation' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/translation/translation.module',
+        'basename' => 'translation.module',
+        'name' => 'translation',
+        'info' => 
+        array (
+          'name' => 'Content translation',
+          'description' => 'Allows content to be translated into different languages.',
+          'dependencies' => 
+          array (
+            0 => 'locale',
+          ),
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'translation.test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'shortcut' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/shortcut/shortcut.module',
+        'basename' => 'shortcut.module',
+        'name' => 'shortcut',
+        'info' => 
+        array (
+          'name' => 'Shortcut',
+          'description' => 'Allows users to manage customizable lists of shortcut links.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'shortcut.test',
+          ),
+          'configure' => 'admin/config/user-interface/shortcut',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
         'project' => 'drupal',
         'version' => '7.14',
       ),
@@ -2399,326 +2326,44 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'translation_test' => 
+      'tracker' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/translation/tests/translation_test.module',
-        'basename' => 'translation_test.module',
-        'name' => 'translation_test',
+        'filename' => '/var/aegir/platforms/service_portal/modules/tracker/tracker.module',
+        'basename' => 'tracker.module',
+        'name' => 'tracker',
         'info' => 
         array (
-          'name' => 'Content Translation Test',
-          'description' => 'Support module for the content translation tests.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
+          'name' => 'Tracker',
+          'description' => 'Enables tracking of recent content for users.',
           'dependencies' => 
           array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'translation' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/translation/translation.module',
-        'basename' => 'translation.module',
-        'name' => 'translation',
-        'info' => 
-        array (
-          'name' => 'Content translation',
-          'description' => 'Allows content to be translated into different languages.',
-          'dependencies' => 
-          array (
-            0 => 'locale',
+            0 => 'comment',
           ),
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'translation.test',
+            0 => 'tracker.test',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'contextual' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/contextual/contextual.module',
-        'basename' => 'contextual.module',
-        'name' => 'contextual',
-        'info' => 
-        array (
-          'name' => 'Contextual links',
-          'description' => 'Provides contextual links to perform actions related to elements on a page.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'contextual.test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'filter' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/filter/filter.module',
-        'basename' => 'filter.module',
-        'name' => 'filter',
-        'info' => 
-        array (
-          'name' => 'Filter',
-          'description' => 'Filters content in preparation for display.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'filter.test',
-          ),
-          'required' => true,
-          'configure' => 'admin/config/content/formats',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7010',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'image_module_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/image/tests/image_module_test.module',
-        'basename' => 'image_module_test.module',
-        'name' => 'image_module_test',
-        'info' => 
-        array (
-          'name' => 'Image test',
-          'description' => 'Provides hook implementations for testing Image module functionality.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'image_module_test.module',
-          ),
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'image' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/image/image.module',
-        'basename' => 'image.module',
-        'name' => 'image',
-        'info' => 
-        array (
-          'name' => 'Image',
-          'description' => 'Provides image manipulation tools.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'file',
-          ),
-          'files' => 
-          array (
-            0 => 'image.test',
-          ),
-          'configure' => 'admin/config/media/image-styles',
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7004',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'poll' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/poll/poll.module',
-        'basename' => 'poll.module',
-        'name' => 'poll',
-        'info' => 
-        array (
-          'name' => 'Poll',
-          'description' => 'Allows your site to capture votes on different topics in the form of multiple choice questions.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'poll.test',
-          ),
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'poll.css',
-            ),
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7004',
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'search_embedded_form' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/search/tests/search_embedded_form.module',
-        'basename' => 'search_embedded_form.module',
-        'name' => 'search_embedded_form',
-        'info' => 
-        array (
-          'name' => 'Search embedded form',
-          'description' => 'Support module for search module testing of embedded forms.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'search_extra_type' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/search/tests/search_extra_type.module',
-        'basename' => 'search_extra_type.module',
-        'name' => 'search_extra_type',
-        'info' => 
-        array (
-          'name' => 'Test search type',
-          'description' => 'Support module for search module testing.',
-          'package' => 'Testing',
-          'version' => '7.14',
-          'core' => '7.x',
-          'hidden' => true,
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'search' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/search/search.module',
-        'basename' => 'search.module',
-        'name' => 'search',
-        'info' => 
-        array (
-          'name' => 'Search',
-          'description' => 'Enables site-wide keyword searching.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'search.extender.inc',
-            1 => 'search.test',
-          ),
-          'configure' => 'admin/config/search/settings',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'search.css',
-            ),
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
           'php' => '5.2.4',
         ),
         'schema_version' => '7000',
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'blog' => 
+      'rdf_test' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/blog/blog.module',
-        'basename' => 'blog.module',
-        'name' => 'blog',
+        'filename' => '/var/aegir/platforms/service_portal/modules/rdf/tests/rdf_test.module',
+        'basename' => 'rdf_test.module',
+        'name' => 'rdf_test',
         'info' => 
         array (
-          'name' => 'Blog',
-          'description' => 'Enables multi-user blogs.',
-          'package' => 'Core',
-          'version' => '7.14',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'blog.test',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupal',
-        'version' => '7.14',
-      ),
-      'file_module_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/file/tests/file_module_test.module',
-        'basename' => 'file_module_test.module',
-        'name' => 'file_module_test',
-        'info' => 
-        array (
-          'name' => 'File test',
-          'description' => 'Provides hooks for testing File module functionality.',
-          'package' => 'Core',
+          'name' => 'RDF module tests',
+          'description' => 'Support module for RDF module testing.',
+          'package' => 'Testing',
           'version' => '7.14',
           'core' => '7.x',
           'hidden' => true,
@@ -2733,28 +2378,27 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'file' => 
+      'rdf' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/file/file.module',
-        'basename' => 'file.module',
-        'name' => 'file',
+        'filename' => '/var/aegir/platforms/service_portal/modules/rdf/rdf.module',
+        'basename' => 'rdf.module',
+        'name' => 'rdf',
         'info' => 
         array (
-          'name' => 'File',
-          'description' => 'Defines a file field type.',
+          'name' => 'RDF',
+          'description' => 'Enriches your content with metadata to let other applications (e.g. search engines, aggregators) better understand its relationships and attributes.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'field',
-          ),
           'files' => 
           array (
-            0 => 'tests/file.test',
+            0 => 'rdf.test',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
@@ -2820,18 +2464,22 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'toolbar' => 
+      'syslog' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/modules/toolbar/toolbar.module',
-        'basename' => 'toolbar.module',
-        'name' => 'toolbar',
+        'filename' => '/var/aegir/platforms/service_portal/modules/syslog/syslog.module',
+        'basename' => 'syslog.module',
+        'name' => 'syslog',
         'info' => 
         array (
-          'name' => 'Toolbar',
-          'description' => 'Provides a toolbar that shows the top-level administration menu items and links from other modules.',
-          'core' => '7.x',
+          'name' => 'Syslog',
+          'description' => 'Logs and records system events to syslog.',
           'package' => 'Core',
           'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'syslog.test',
+          ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
           'dependencies' => 
@@ -2843,27 +2491,393 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
+      'block_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/block/tests/block_test.module',
+        'basename' => 'block_test.module',
+        'name' => 'block_test',
+        'info' => 
+        array (
+          'name' => 'Block test',
+          'description' => 'Provides test blocks.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'block' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/block/block.module',
+        'basename' => 'block.module',
+        'name' => 'block',
+        'info' => 
+        array (
+          'name' => 'Block',
+          'description' => 'Controls the visual building blocks a page is constructed with. Blocks are boxes of content rendered into an area, or region, of a web page.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'block.test',
+          ),
+          'configure' => 'admin/structure/block',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7008',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'taxonomy' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/taxonomy/taxonomy.module',
+        'basename' => 'taxonomy.module',
+        'name' => 'taxonomy',
+        'info' => 
+        array (
+          'name' => 'Taxonomy',
+          'description' => 'Enables the categorization of content.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'options',
+          ),
+          'files' => 
+          array (
+            0 => 'taxonomy.module',
+            1 => 'taxonomy.test',
+          ),
+          'configure' => 'admin/structure/taxonomy',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7010',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'dashboard' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/dashboard/dashboard.module',
+        'basename' => 'dashboard.module',
+        'name' => 'dashboard',
+        'info' => 
+        array (
+          'name' => 'Dashboard',
+          'description' => 'Provides a dashboard page in the administrative interface for organizing administrative tasks and tracking information within your site.',
+          'core' => '7.x',
+          'package' => 'Core',
+          'version' => '7.14',
+          'files' => 
+          array (
+            0 => 'dashboard.test',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'block',
+          ),
+          'configure' => 'admin/dashboard/customize',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'blog' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/blog/blog.module',
+        'basename' => 'blog.module',
+        'name' => 'blog',
+        'info' => 
+        array (
+          'name' => 'Blog',
+          'description' => 'Enables multi-user blogs.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'blog.test',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'menu' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/menu/menu.module',
+        'basename' => 'menu.module',
+        'name' => 'menu',
+        'info' => 
+        array (
+          'name' => 'Menu',
+          'description' => 'Allows administrators to customize the site navigation menu.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'menu.test',
+          ),
+          'configure' => 'admin/structure/menu',
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7003',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'node_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_test.module',
+        'basename' => 'node_test.module',
+        'name' => 'node_test',
+        'info' => 
+        array (
+          'name' => 'Node module tests',
+          'description' => 'Support module for node related testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'node_test_exception' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_test_exception.module',
+        'basename' => 'node_test_exception.module',
+        'name' => 'node_test_exception',
+        'info' => 
+        array (
+          'name' => 'Node module exception tests',
+          'description' => 'Support module for node related exception testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'node_access_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/node/tests/node_access_test.module',
+        'basename' => 'node_access_test.module',
+        'name' => 'node_access_test',
+        'info' => 
+        array (
+          'name' => 'Node module access tests',
+          'description' => 'Support module for node permission testing.',
+          'package' => 'Testing',
+          'version' => '7.14',
+          'core' => '7.x',
+          'hidden' => true,
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'node' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/node/node.module',
+        'basename' => 'node.module',
+        'name' => 'node',
+        'info' => 
+        array (
+          'name' => 'Node',
+          'description' => 'Allows content to be submitted to the site and displayed on pages.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'node.module',
+            1 => 'node.test',
+          ),
+          'required' => true,
+          'configure' => 'admin/structure/types',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'node.css',
+            ),
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7013',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'forum' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/forum/forum.module',
+        'basename' => 'forum.module',
+        'name' => 'forum',
+        'info' => 
+        array (
+          'name' => 'Forum',
+          'description' => 'Provides discussion forums.',
+          'dependencies' => 
+          array (
+            0 => 'taxonomy',
+            1 => 'comment',
+          ),
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'forum.test',
+          ),
+          'configure' => 'admin/structure/forum',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'forum.css',
+            ),
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7011',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
+      'comment' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/modules/comment/comment.module',
+        'basename' => 'comment.module',
+        'name' => 'comment',
+        'info' => 
+        array (
+          'name' => 'Comment',
+          'description' => 'Allows users to comment on and discuss published content.',
+          'package' => 'Core',
+          'version' => '7.14',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'text',
+          ),
+          'files' => 
+          array (
+            0 => 'comment.module',
+            1 => 'comment.test',
+          ),
+          'configure' => 'admin/content/comment',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'comment.css',
+            ),
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7009',
+        'project' => 'drupal',
+        'version' => '7.14',
+      ),
     ),
     'themes' => 
     array (
-      'stark' => 
+      'seven' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/themes/stark/stark.info',
-        'basename' => 'stark.info',
-        'name' => 'Stark',
+        'filename' => '/var/aegir/platforms/service_portal/themes/seven/seven.info',
+        'basename' => 'seven.info',
+        'name' => 'Seven',
         'info' => 
         array (
-          'name' => 'Stark',
-          'description' => 'This theme demonstrates Drupal\'s default HTML markup and CSS styles. To learn how to build your own theme and override Drupal\'s default code, see the <a href="http://drupal.org/theme-guide">Theming Guide</a>.',
+          'name' => 'Seven',
+          'description' => 'A simple one-column, tableless, fluid width administration theme.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'stylesheets' => 
           array (
-            'all' => 
+            'screen' => 
             array (
-              0 => 'layout.css',
+              0 => 'reset.css',
+              1 => 'style.css',
             ),
+          ),
+          'settings' => 
+          array (
+            'shortcut_module_link' => '1',
+          ),
+          'regions' => 
+          array (
+            'content' => 'Content',
+            'help' => 'Help',
+            'page_top' => 'Page top',
+            'page_bottom' => 'Page bottom',
+            'sidebar_first' => 'First sidebar',
+          ),
+          'regions_hidden' => 
+          array (
+            0 => 'sidebar_first',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
@@ -2959,41 +2973,24 @@ $options['packages'] = array (
         'project' => 'drupal',
         'version' => '7.14',
       ),
-      'seven' => 
+      'stark' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/themes/seven/seven.info',
-        'basename' => 'seven.info',
-        'name' => 'Seven',
+        'filename' => '/var/aegir/platforms/service_portal/themes/stark/stark.info',
+        'basename' => 'stark.info',
+        'name' => 'Stark',
         'info' => 
         array (
-          'name' => 'Seven',
-          'description' => 'A simple one-column, tableless, fluid width administration theme.',
+          'name' => 'Stark',
+          'description' => 'This theme demonstrates Drupal\'s default HTML markup and CSS styles. To learn how to build your own theme and override Drupal\'s default code, see the <a href="http://drupal.org/theme-guide">Theming Guide</a>.',
           'package' => 'Core',
           'version' => '7.14',
           'core' => '7.x',
           'stylesheets' => 
           array (
-            'screen' => 
+            'all' => 
             array (
-              0 => 'reset.css',
-              1 => 'style.css',
+              0 => 'layout.css',
             ),
-          ),
-          'settings' => 
-          array (
-            'shortcut_module_link' => '1',
-          ),
-          'regions' => 
-          array (
-            'content' => 'Content',
-            'help' => 'Help',
-            'page_top' => 'Page top',
-            'page_bottom' => 'Page bottom',
-            'sidebar_first' => 'First sidebar',
-          ),
-          'regions_hidden' => 
-          array (
-            0 => 'sidebar_first',
           ),
           'project' => 'drupal',
           'datestamp' => '1335997555',
@@ -3013,32 +3010,6 @@ $options['packages'] = array (
     ),
     'profiles' => 
     array (
-      'minimal' => 
-      array (
-        'name' => 'minimal',
-        'filename' => '/var/aegir/platforms/service_portal/profiles/minimal/minimal.profile',
-        'project' => 'drupal',
-        'info' => 
-        array (
-          'name' => 'Minimal',
-          'description' => 'Start with only a few modules enabled.',
-          'version' => '7.14',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'block',
-            1 => 'dblog',
-          ),
-          'project' => 'drupal',
-          'datestamp' => '1335997555',
-          'php' => '5.2.4',
-          'languages' => 
-          array (
-            0 => 'en',
-          ),
-        ),
-        'version' => '7.14',
-      ),
       'standard' => 
       array (
         'name' => 'standard',
@@ -3110,82 +3081,703 @@ $options['packages'] = array (
         ),
         'version' => '7.14',
       ),
+      'minimal' => 
+      array (
+        'name' => 'minimal',
+        'filename' => '/var/aegir/platforms/service_portal/profiles/minimal/minimal.profile',
+        'project' => 'drupal',
+        'info' => 
+        array (
+          'name' => 'Minimal',
+          'description' => 'Start with only a few modules enabled.',
+          'version' => '7.14',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'block',
+            1 => 'dblog',
+          ),
+          'project' => 'drupal',
+          'datestamp' => '1335997555',
+          'php' => '5.2.4',
+          'languages' => 
+          array (
+            0 => 'en',
+          ),
+        ),
+        'version' => '7.14',
+      ),
     ),
   ),
   'sites-all' => 
   array (
     'modules' => 
     array (
-      'masquerade' => 
+      'apachesolr_access' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/masquerade/masquerade.module',
-        'basename' => 'masquerade.module',
-        'name' => 'masquerade',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr_access/apachesolr_access.module',
+        'basename' => 'apachesolr_access.module',
+        'name' => 'apachesolr_access',
         'info' => 
         array (
-          'name' => 'Masquerade',
-          'description' => 'This module allows permitted users to masquerade as other users.',
+          'name' => 'Apache Solr Access',
+          'description' => 'Integrates node access and other permissions with Apache Solr search',
+          'dependencies' => 
+          array (
+            0 => 'apachesolr',
+          ),
+          'package' => 'Search Toolkit',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'masquerade.test',
+            0 => 'apachesolr_access.module',
+            1 => 'tests/apachesolr_access.test',
           ),
-          'configure' => 'admin/config/people/masquerade',
-          'version' => '7.x-1.0-rc4',
-          'project' => 'masquerade',
-          'datestamp' => '1316220424',
-          'dependencies' => 
-          array (
-          ),
+          'version' => '7.x-1.1',
+          'project' => 'apachesolr',
+          'datestamp' => '1350356169',
           'php' => '5.2.4',
         ),
-        'schema_version' => '7001',
-        'project' => 'masquerade',
-        'version' => '7.x-1.0-rc4',
+        'schema_version' => 0,
+        'project' => 'apachesolr',
+        'version' => '7.x-1.1',
       ),
-      'faq' => 
+      'apachesolr_test' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/faq/faq.module',
-        'basename' => 'faq.module',
-        'name' => 'faq',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/tests/apachesolr_test/apachesolr_test.module',
+        'basename' => 'apachesolr_test.module',
+        'name' => 'apachesolr_test',
         'info' => 
         array (
-          'name' => 'Frequently Asked Questions',
-          'description' => 'Manages configuration of questions for a FAQ page.',
+          'name' => 'Apache Solr helper module for tests',
+          'description' => 'Support module for apachesolr module testing.',
+          'package' => 'Search Toolkit',
           'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'apachesolr',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'apachesolr',
+          'datestamp' => '1350356169',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'apachesolr',
+        'version' => '7.x-1.1',
+      ),
+      'apachesolr_search' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr_search.module',
+        'basename' => 'apachesolr_search.module',
+        'name' => 'apachesolr_search',
+        'info' => 
+        array (
+          'name' => 'Apache Solr search',
+          'description' => 'Search with Solr',
+          'dependencies' => 
+          array (
+            0 => 'search',
+            1 => 'apachesolr',
+          ),
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'configure' => 'admin/config/search/apachesolr/search-pages',
           'files' => 
           array (
-            0 => 'faq.admin.inc',
-            1 => 'faq.install',
-            2 => 'faq.module',
-            3 => 'faq.test',
-            4 => 'includes/faq-category-hide-answer.tpl.php',
-            5 => 'includes/faq-category-new-page.tpl.php',
-            6 => 'includes/faq-category-questions-inline.tpl.php',
-            7 => 'includes/faq-category-questions-top-answers.tpl.php',
-            8 => 'includes/faq-category-questions-top.tpl.php',
-            9 => 'includes/faq-hide-answer.tpl.php',
-            10 => 'includes/faq-new-page.tpl.php',
-            11 => 'includes/faq-questions-inline.tpl.php',
-            12 => 'includes/faq-questions-top.tpl.php',
-            13 => 'includes/faq.hide_answer.inc',
-            14 => 'includes/faq.new_page.inc',
-            15 => 'includes/faq.questions_inline.inc',
-            16 => 'includes/faq.questions_top.inc',
-            17 => 'views/faq.views.inc',
+            0 => 'apachesolr_search.install',
+            1 => 'apachesolr_search.module',
+            2 => 'apachesolr_search.admin.inc',
+            3 => 'apachesolr_search.pages.inc',
           ),
-          'configure' => '/admin/config/content/faq',
-          'version' => '7.x-1.0-rc2',
-          'project' => 'faq',
-          'datestamp' => '1329952549',
+          'version' => '7.x-1.1',
+          'project' => 'apachesolr',
+          'datestamp' => '1350356169',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7006',
+        'project' => 'apachesolr',
+        'version' => '7.x-1.1',
+      ),
+      'apachesolr' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr.module',
+        'basename' => 'apachesolr.module',
+        'name' => 'apachesolr',
+        'info' => 
+        array (
+          'name' => 'Apache Solr framework',
+          'description' => 'Framework for searching with Solr',
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'configure' => 'admin/config/search/apachesolr/settings',
+          'files' => 
+          array (
+            0 => 'apachesolr.install',
+            1 => 'apachesolr.module',
+            2 => 'apachesolr.admin.inc',
+            3 => 'apachesolr.index.inc',
+            4 => 'apachesolr.interface.inc',
+            5 => 'Drupal_Apache_Solr_Service.php',
+            6 => 'Apache_Solr_Document.php',
+            7 => 'Solr_Base_Query.php',
+            8 => 'plugins/facetapi/adapter.inc',
+            9 => 'plugins/facetapi/query_type_date.inc',
+            10 => 'plugins/facetapi/query_type_term.inc',
+            11 => 'plugins/facetapi/query_type_numeric_range.inc',
+            12 => 'plugins/facetapi/query_type_geo.inc',
+            13 => 'tests/Dummy_Solr.php',
+            14 => 'tests/apachesolr_base.test',
+            15 => 'tests/solr_index_and_search.test',
+            16 => 'tests/solr_base_query.test',
+            17 => 'tests/solr_base_subquery.test',
+            18 => 'tests/solr_document.test',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'apachesolr',
+          'datestamp' => '1350356169',
           'dependencies' => 
           array (
           ),
           'php' => '5.2.4',
         ),
+        'schema_version' => '7015',
+        'project' => 'apachesolr',
+        'version' => '7.x-1.1',
+      ),
+      'i18n_select' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_select/i18n_select.module',
+        'basename' => 'i18n_select.module',
+        'name' => 'i18n_select',
+        'info' => 
+        array (
+          'name' => 'Multilingual select',
+          'description' => 'API module for multilingual content selection',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'configure' => 'admin/config/regional/i18n/select',
+          'files' => 
+          array (
+            0 => 'i18n_select.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_sync' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_sync/i18n_sync.module',
+        'basename' => 'i18n_sync.module',
+        'name' => 'i18n_sync',
+        'info' => 
+        array (
+          'name' => 'Synchronize translations',
+          'description' => 'Synchronizes taxonomy and fields accross translations of the same content.',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+            1 => 'translation',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_sync.module',
+            1 => 'i18n_sync.install',
+            2 => 'i18n_sync.module.inc',
+            3 => 'i18n_sync.node.inc',
+            4 => 'i18n_sync.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_translation' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_translation/i18n_translation.module',
+        'basename' => 'i18n_translation.module',
+        'name' => 'i18n_translation',
+        'info' => 
+        array (
+          'name' => 'Translation sets',
+          'description' => 'Simple translation sets API for generic objects',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_translation.inc',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/tests/i18n_test.module',
+        'basename' => 'i18n_test.module',
+        'name' => 'i18n_test',
+        'info' => 
+        array (
+          'name' => 'Internationalization tests',
+          'description' => 'Helper module for testing i18n (do not enable manually)',
+          'dependencies' => 
+          array (
+            0 => 'locale',
+            1 => 'translation',
+            2 => 'i18n',
+          ),
+          'package' => 'Testing',
+          'core' => '7.x',
+          'hidden' => true,
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_forum' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_forum/i18n_forum.module',
+        'basename' => 'i18n_forum.module',
+        'name' => 'i18n_forum',
+        'info' => 
+        array (
+          'name' => 'Multilingual forum',
+          'description' => 'Enables multilingual forum, translates names and containers.',
+          'dependencies' => 
+          array (
+            0 => 'forum',
+            1 => 'i18n_taxonomy',
+            2 => 'i18n_node',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_forum.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_taxonomy' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_taxonomy/i18n_taxonomy.module',
+        'basename' => 'i18n_taxonomy.module',
+        'name' => 'i18n_taxonomy',
+        'info' => 
+        array (
+          'name' => 'Taxonomy translation',
+          'description' => 'Enables multilingual taxonomy.',
+          'dependencies' => 
+          array (
+            0 => 'taxonomy',
+            1 => 'i18n_string',
+            2 => 'i18n_translation',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_taxonomy.inc',
+            1 => 'i18n_taxonomy.pages.inc',
+            2 => 'i18n_taxonomy.admin.inc',
+            3 => 'i18n_taxonomy.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7004',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_string' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_string/i18n_string.module',
+        'basename' => 'i18n_string.module',
+        'name' => 'i18n_string',
+        'info' => 
+        array (
+          'name' => 'String translation',
+          'description' => 'Provides support for translation of user defined strings.',
+          'dependencies' => 
+          array (
+            0 => 'locale',
+            1 => 'i18n',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_string.admin.inc',
+            1 => 'i18n_string.inc',
+            2 => 'i18n_string.test',
+          ),
+          'configure' => 'admin/config/regional/i18n/strings',
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
         'schema_version' => '7001',
-        'project' => 'faq',
-        'version' => '7.x-1.0-rc2',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_variable' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_variable/i18n_variable.module',
+        'basename' => 'i18n_variable.module',
+        'name' => 'i18n_variable',
+        'info' => 
+        array (
+          'name' => 'Variable translation',
+          'description' => 'Multilingual variables that switch language depending on page language.',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+            1 => 'variable_store (7.x-2.x)',
+            2 => 'variable_realm (7.x-2.x)',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'configure' => 'admin/config/regional/i18n/variable',
+          'files' => 
+          array (
+            0 => 'i18n_variable.class.inc',
+            1 => 'i18n_variable.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7004',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_field' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_field/i18n_field.module',
+        'basename' => 'i18n_field.module',
+        'name' => 'i18n_field',
+        'info' => 
+        array (
+          'name' => 'Field translation',
+          'description' => 'Translate field properties',
+          'dependencies' => 
+          array (
+            0 => 'field',
+            1 => 'i18n_string',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_field.inc',
+            1 => 'i18n_field.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_contact' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_contact/i18n_contact.module',
+        'basename' => 'i18n_contact.module',
+        'name' => 'i18n_contact',
+        'info' => 
+        array (
+          'name' => 'Contact translation',
+          'description' => 'Makes contact categories and replies available for translation.',
+          'dependencies' => 
+          array (
+            0 => 'contact',
+            1 => 'i18n_string',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_menu' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_menu/i18n_menu.module',
+        'basename' => 'i18n_menu.module',
+        'name' => 'i18n_menu',
+        'info' => 
+        array (
+          'name' => 'Menu translation',
+          'description' => 'Supports translatable custom menu items.',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+            1 => 'menu',
+            2 => 'i18n_string',
+            3 => 'i18n_translation',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_menu.inc',
+            1 => 'i18n_menu.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_block' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_block/i18n_block.module',
+        'basename' => 'i18n_block.module',
+        'name' => 'i18n_block',
+        'info' => 
+        array (
+          'name' => 'Block languages',
+          'description' => 'Enables language selector for blocks and optional block translation.',
+          'dependencies' => 
+          array (
+            0 => 'block',
+            1 => 'i18n_string',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_block.inc',
+            1 => 'i18n_block.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_path' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_path/i18n_path.module',
+        'basename' => 'i18n_path.module',
+        'name' => 'i18n_path',
+        'info' => 
+        array (
+          'name' => 'Path translation',
+          'description' => 'Define translations for generic paths',
+          'dependencies' => 
+          array (
+            0 => 'i18n_translation',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n_path.inc',
+            1 => 'i18n_path.test',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_redirect' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_redirect/i18n_redirect.module',
+        'basename' => 'i18n_redirect.module',
+        'name' => 'i18n_redirect',
+        'info' => 
+        array (
+          'name' => 'Translation redirect',
+          'description' => 'Redirect to translated page when available. SEO for multilingual sites.',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n_node' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_node/i18n_node.module',
+        'basename' => 'i18n_node.module',
+        'name' => 'i18n_node',
+        'info' => 
+        array (
+          'name' => 'Multilingual content',
+          'description' => 'Extended node options for multilingual content',
+          'dependencies' => 
+          array (
+            0 => 'translation',
+            1 => 'i18n',
+            2 => 'i18n_string',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'configure' => 'admin/config/regional/i18n/node',
+          'files' => 
+          array (
+            0 => 'i18n_node.test',
+            1 => 'i18n_node.variable.inc',
+          ),
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'i18n' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n.module',
+        'basename' => 'i18n.module',
+        'name' => 'i18n',
+        'info' => 
+        array (
+          'name' => 'Internationalization',
+          'description' => 'Extends Drupal support for multilingual features.',
+          'dependencies' => 
+          array (
+            0 => 'locale',
+            1 => 'variable',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'i18n.install',
+            1 => 'i18n.admin.inc',
+            2 => 'i18n_object.inc',
+            3 => 'i18n.test',
+          ),
+          'configure' => 'admin/config/regional/i18n',
+          'version' => '7.x-1.7',
+          'project' => 'i18n',
+          'datestamp' => '1341236501',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'i18n',
+        'version' => '7.x-1.7',
+      ),
+      'backup_migrate_files' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/backup_migrate_files/backup_migrate_files.module',
+        'basename' => 'backup_migrate_files.module',
+        'name' => 'backup_migrate_files',
+        'info' => 
+        array (
+          'name' => 'Backup and Migrate Files',
+          'description' => 'Add file backup and restore support to backup and migrate.',
+          'dependencies' => 
+          array (
+            0 => 'backup_migrate',
+          ),
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'backup_migrate_files.install',
+            1 => 'backup_migrate_files.module',
+            2 => 'includes/destinations.filesource.inc',
+          ),
+          'version' => '7.x-1.x-dev',
+          'project' => 'backup_migrate_files',
+          'datestamp' => '1312286657',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'backup_migrate_files',
+        'version' => '7.x-1.x-dev',
+      ),
+      'views_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/tests/views_test.module',
+        'basename' => 'views_test.module',
+        'name' => 'views_test',
+        'info' => 
+        array (
+          'name' => 'Views Test',
+          'description' => 'Test module for Views.',
+          'package' => 'Views',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'views',
+          ),
+          'hidden' => true,
+          'version' => '7.x-3.4',
+          'project' => 'views',
+          'datestamp' => '1345559303',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'views',
+        'version' => '7.x-3.4',
       ),
       'views_export' => 
       array (
@@ -3205,22 +3797,27 @@ $options['packages'] = array (
         'project' => '',
         'version' => NULL,
       ),
-      'views_test' => 
+      'views_ui' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/tests/views_test.module',
-        'basename' => 'views_test.module',
-        'name' => 'views_test',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/views_ui.module',
+        'basename' => 'views_ui.module',
+        'name' => 'views_ui',
         'info' => 
         array (
-          'name' => 'Views Test',
-          'description' => 'Test module for Views.',
+          'name' => 'Views UI',
+          'description' => 'Administrative interface to views. Without this module, you cannot create or edit your views.',
           'package' => 'Views',
           'core' => '7.x',
+          'configure' => 'admin/structure/views',
           'dependencies' => 
           array (
             0 => 'views',
           ),
-          'hidden' => true,
+          'files' => 
+          array (
+            0 => 'views_ui.module',
+            1 => 'plugins/views_wizard/views_ui_base_views_wizard.class.php',
+          ),
           'version' => '7.x-3.4',
           'project' => 'views',
           'datestamp' => '1345559303',
@@ -3553,94 +4150,582 @@ $options['packages'] = array (
         'project' => 'views',
         'version' => '7.x-3.4',
       ),
-      'views_ui' => 
+      'apachesolr_attachments' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views/views_ui.module',
-        'basename' => 'views_ui.module',
-        'name' => 'views_ui',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_attachments/apachesolr_attachments.module',
+        'basename' => 'apachesolr_attachments.module',
+        'name' => 'apachesolr_attachments',
         'info' => 
         array (
-          'name' => 'Views UI',
-          'description' => 'Administrative interface to views. Without this module, you cannot create or edit your views.',
-          'package' => 'Views',
-          'core' => '7.x',
-          'configure' => 'admin/structure/views',
+          'name' => 'Apache Solr search attachments',
+          'description' => 'Search file attachments with Solr',
           'dependencies' => 
           array (
-            0 => 'views',
+            0 => 'apachesolr',
           ),
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
           'files' => 
           array (
-            0 => 'views_ui.module',
-            1 => 'plugins/views_wizard/views_ui_base_views_wizard.class.php',
+            0 => 'apachesolr_attachments.admin.inc',
+            1 => 'apachesolr_attachments.install',
+            2 => 'apachesolr_attachments.module',
           ),
-          'version' => '7.x-3.4',
-          'project' => 'views',
-          'datestamp' => '1345559303',
+          'version' => '7.x-1.2',
+          'project' => 'apachesolr_attachments',
+          'datestamp' => '1341591675',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7003',
+        'project' => 'apachesolr_attachments',
+        'version' => '7.x-1.2',
+      ),
+      'i18n_menu_node' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n_menu_node/i18n_menu_node.module',
+        'basename' => 'i18n_menu_node.module',
+        'name' => 'i18n_menu_node',
+        'info' => 
+        array (
+          'name' => 'Menu translation (Node)',
+          'description' => 'Allows a single node menu item to point to different node translations depending on the current language.',
+          'dependencies' => 
+          array (
+            0 => 'i18n',
+            1 => 'menu',
+            2 => 'i18n_block',
+            3 => 'i18n_string',
+            4 => 'i18n_menu',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'version' => '7.x-1.x-dev',
+          'project' => 'i18n_menu_node',
+          'datestamp' => '1342182305',
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
-        'project' => 'views',
-        'version' => '7.x-3.4',
+        'project' => 'i18n_menu_node',
+        'version' => '7.x-1.x-dev',
       ),
-      'session_api_test' => 
+      'jcarousel' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/session_api/tests/session_api_test.module',
-        'basename' => 'session_api_test.module',
-        'name' => 'session_api_test',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jcarousel/jcarousel.module',
+        'basename' => 'jcarousel.module',
+        'name' => 'jcarousel',
         'info' => 
         array (
-          'name' => 'Session API test',
-          'description' => 'Helper module for Session API testing.',
-          'package' => 'Testing',
-          'version' => '7.x-1.0-beta3',
-          'dependencies' => 
-          array (
-            0 => 'session_api',
-          ),
+          'name' => 'jCarousel',
+          'description' => 'Create jQuery-based carousel rotators.',
+          'package' => 'User interface',
           'core' => '7.x',
           'files' => 
           array (
-            0 => 'session_api_test.module',
+            0 => 'jcarousel.module',
+            1 => 'includes/jcarousel.views.inc',
+            2 => 'includes/jcarousel_style_plugin.inc',
           ),
-          'hidden' => true,
-          'project' => 'session_api',
-          'datestamp' => '1331329247',
+          'version' => '7.x-2.6',
+          'project' => 'jcarousel',
+          'datestamp' => '1322116852',
+          'dependencies' => 
+          array (
+          ),
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
-        'project' => 'session_api',
-        'version' => '7.x-1.0-beta3',
+        'project' => 'jcarousel',
+        'version' => '7.x-2.6',
       ),
-      'session_api' => 
+      'uuid_services_example' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/session_api/session_api.module',
-        'basename' => 'session_api.module',
-        'name' => 'session_api',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid_services_example/uuid_services_example.module',
+        'basename' => 'uuid_services_example.module',
+        'name' => 'uuid_services_example',
         'info' => 
         array (
-          'name' => 'Session API',
-          'description' => 'Provides an interface for storing session information.',
           'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'rest_server',
+            1 => 'services',
+            2 => 'uuid',
+            3 => 'uuid_services',
+          ),
+          'description' => 'Example feature of a UUID service. Works well with the Deploy Example feature as a client.',
+          'features' => 
+          array (
+            'ctools' => 
+            array (
+              0 => 'services:services:3',
+            ),
+            'services_endpoint' => 
+            array (
+              0 => 'uuid_services_example',
+            ),
+          ),
+          'name' => 'UUID Services Example',
+          'package' => 'Features',
+          'php' => '5.2.4',
+          'version' => '7.x-1.0-alpha3',
+          'project' => 'uuid',
+          'datestamp' => '1328017553',
+        ),
+        'schema_version' => 0,
+        'project' => 'uuid',
+        'version' => '7.x-1.0-alpha3',
+      ),
+      'uuid_services' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid_services/uuid_services.module',
+        'basename' => 'uuid_services.module',
+        'name' => 'uuid_services',
+        'info' => 
+        array (
+          'name' => 'UUID Services',
+          'description' => 'Provides integration with the Services module, like exposing a UUID entity resource.',
+          'core' => '7.x',
+          'package' => 'Services - resources',
+          'dependencies' => 
+          array (
+            0 => 'services',
+            1 => 'uuid',
+            2 => 'entity',
+          ),
+          'version' => '7.x-1.0-alpha3',
+          'project' => 'uuid',
+          'datestamp' => '1328017553',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'uuid',
+        'version' => '7.x-1.0-alpha3',
+      ),
+      'uuid' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid.module',
+        'basename' => 'uuid.module',
+        'name' => 'uuid',
+        'info' => 
+        array (
+          'name' => 'Universally Unique ID',
+          'description' => 'Extends the entity functionality and adds support for universally unique identifiers.',
+          'core' => '7.x',
+          'package' => 'UUID',
+          'configure' => 'admin/config/system/uuid',
           'files' => 
           array (
-            0 => 'session_api.module',
-            1 => 'session_api.admin.inc',
-            2 => 'session_api.install',
-            3 => 'session_api.test',
+            0 => 'uuid.test',
           ),
-          'configure' => 'admin/config/development/session-api',
-          'version' => '7.x-1.0-beta3',
-          'project' => 'session_api',
-          'datestamp' => '1331329247',
+          'version' => '7.x-1.0-alpha3',
+          'project' => 'uuid',
+          'datestamp' => '1328017553',
           'dependencies' => 
           array (
           ),
           'php' => '5.2.4',
         ),
         'schema_version' => '7101',
-        'project' => 'session_api',
-        'version' => '7.x-1.0-beta3',
+        'project' => 'uuid',
+        'version' => '7.x-1.0-alpha3',
+      ),
+      'job_scheduler_trigger' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/job_scheduler/modules/job_scheduler_trigger/job_scheduler_trigger.module',
+        'basename' => 'job_scheduler_trigger.module',
+        'name' => 'job_scheduler_trigger',
+        'info' => 
+        array (
+          'name' => 'Job Scheduler Trigger',
+          'description' => 'Creates scheduler triggers that fire up at certain days, times',
+          'core' => '7.x',
+          'php' => '5.2',
+          'dependencies' => 
+          array (
+            0 => 'job_scheduler',
+          ),
+          'version' => '7.x-2.0-alpha3',
+          'project' => 'job_scheduler',
+          'datestamp' => '1336466457',
+        ),
+        'schema_version' => 0,
+        'project' => 'job_scheduler',
+        'version' => '7.x-2.0-alpha3',
+      ),
+      'job_scheduler' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/job_scheduler/job_scheduler.module',
+        'basename' => 'job_scheduler.module',
+        'name' => 'job_scheduler',
+        'info' => 
+        array (
+          'name' => 'Job Scheduler',
+          'description' => 'Scheduler API',
+          'files' => 
+          array (
+            0 => 'job_scheduler.module',
+            1 => 'job_scheduler.install',
+            2 => 'JobScheduler.inc',
+            3 => 'JobSchedulerCronTab.inc',
+          ),
+          'core' => '7.x',
+          'php' => '5.2',
+          'version' => '7.x-2.0-alpha3',
+          'project' => 'job_scheduler',
+          'datestamp' => '1336466457',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => '7101',
+        'project' => 'job_scheduler',
+        'version' => '7.x-2.0-alpha3',
+      ),
+      'quicktabs_tabstyles' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/quicktabs/quicktabs_tabstyles/quicktabs_tabstyles.module',
+        'basename' => 'quicktabs_tabstyles.module',
+        'name' => 'quicktabs_tabstyles',
+        'info' => 
+        array (
+          'name' => 'Quicktabs Styles',
+          'description' => 'Adds predefined tab styles to choose from per Quicktabs instance.',
+          'core' => '7.x',
+          'configure' => 'admin/structure/quicktabs/styles',
+          'dependencies' => 
+          array (
+            0 => 'quicktabs',
+          ),
+          'version' => '7.x-3.4',
+          'project' => 'quicktabs',
+          'datestamp' => '1332980461',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'quicktabs',
+        'version' => '7.x-3.4',
+      ),
+      'quicktabs' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/quicktabs/quicktabs.module',
+        'basename' => 'quicktabs.module',
+        'name' => 'quicktabs',
+        'info' => 
+        array (
+          'name' => 'Quicktabs',
+          'description' => 'Render content with tabs and other display styles',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'quicktabs.module',
+            1 => 'quicktabs.classes.inc',
+            2 => 'includes/quicktabs_style_plugin.inc',
+            3 => 'tests/quicktabs.test',
+          ),
+          'configure' => 'admin/structure/quicktabs',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'version' => '7.x-3.4',
+          'project' => 'quicktabs',
+          'datestamp' => '1332980461',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7302',
+        'project' => 'quicktabs',
+        'version' => '7.x-3.4',
+      ),
+      'qpa' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/querypath/qpa/qpa.module',
+        'basename' => 'qpa.module',
+        'name' => 'qpa',
+        'info' => 
+        array (
+          'name' => 'QueryPath for Arrays',
+          'package' => 'QueryPath',
+          'description' => 'A QueryPath implementation that operates on arrays.',
+          'core' => '7.x',
+          'php' => '5.2',
+          'dependencies' => 
+          array (
+            0 => 'querypath',
+          ),
+          'files' => 
+          array (
+            0 => 'qpa.classes.inc',
+            1 => 'qpa.info',
+            2 => 'qpa.module',
+            3 => 'qpa.phpunit.inc',
+          ),
+          'version' => '7.x-2.1',
+          'project' => 'querypath',
+          'datestamp' => '1347302686',
+        ),
+        'schema_version' => 0,
+        'project' => 'querypath',
+        'version' => '7.x-2.1',
+      ),
+      'qpcache' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/querypath/qpcache/qpcache.module',
+        'basename' => 'qpcache.module',
+        'name' => 'qpcache',
+        'info' => 
+        array (
+          'name' => 'QPCache',
+          'package' => 'QueryPath',
+          'description' => 'An XML caching layer for QueryPath or other tools.',
+          'core' => '7.x',
+          'php' => '5.2',
+          'dependencies' => 
+          array (
+            0 => 'querypath',
+          ),
+          'files' => 
+          array (
+            0 => 'qpcache.info',
+            1 => 'qpcache.install',
+            2 => 'qpcache.module',
+          ),
+          'version' => '7.x-2.1',
+          'project' => 'querypath',
+          'datestamp' => '1347302686',
+        ),
+        'schema_version' => '6101',
+        'project' => 'querypath',
+        'version' => '7.x-2.1',
+      ),
+      'querypath' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/querypath/querypath.module',
+        'basename' => 'querypath.module',
+        'name' => 'querypath',
+        'info' => 
+        array (
+          'name' => 'QueryPath',
+          'description' => 'QueryPath is a developer tool for working with HTML and XML.',
+          'core' => '7.x',
+          'php' => '5.2',
+          'package' => 'QueryPath',
+          'files' => 
+          array (
+            0 => 'querypath.module',
+            1 => 'querypath.admin.inc',
+            2 => 'querypath.classes.inc',
+            3 => 'querypath.info',
+            4 => 'querypath.install',
+          ),
+          'version' => '7.x-2.1',
+          'project' => 'querypath',
+          'datestamp' => '1347302686',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => 0,
+        'project' => 'querypath',
+        'version' => '7.x-2.1',
+      ),
+      'querypath_examples' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/querypath/querypath_examples.module',
+        'basename' => 'querypath_examples.module',
+        'name' => 'querypath_examples',
+        'info' => 
+        array (
+          'name' => 'QueryPath Examples',
+          'package' => 'QueryPath',
+          'description' => 'View and run some examples of QueryPath.',
+          'core' => '7.x',
+          'php' => '5.2',
+          'requires' => 
+          array (
+            0 => 'querypath',
+          ),
+          'files' => 
+          array (
+            0 => 'querypath_examples.info',
+            1 => 'querypath_examples.module',
+          ),
+          'configure' => 'admin/config/qp/examples',
+          'version' => '7.x-2.1',
+          'project' => 'querypath',
+          'datestamp' => '1347302686',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => 0,
+        'project' => 'querypath',
+        'version' => '7.x-2.1',
+      ),
+      'shadowbox' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/shadowbox/shadowbox.module',
+        'basename' => 'shadowbox.module',
+        'name' => 'shadowbox',
+        'info' => 
+        array (
+          'name' => 'Shadowbox',
+          'description' => 'Allows content to be displayed in a JavaScript modal media viewer application.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'shadowbox.module',
+            1 => 'shadowbox.admin.inc',
+            2 => 'shadowbox.install',
+          ),
+          'configure' => 'admin/config/media/shadowbox',
+          'version' => '7.x-3.0-beta8',
+          'project' => 'shadowbox',
+          'datestamp' => '1325619345',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'shadowbox',
+        'version' => '7.x-3.0-beta8',
+      ),
+      'views_slideshow_cycle' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.module',
+        'basename' => 'views_slideshow_cycle.module',
+        'name' => 'views_slideshow_cycle',
+        'info' => 
+        array (
+          'name' => 'Views Slideshow: Cycle',
+          'description' => 'Adds a Rotating slideshow mode to Views Slideshow.',
+          'dependencies' => 
+          array (
+            0 => 'views_slideshow',
+            1 => 'libraries',
+          ),
+          'package' => 'Views',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'views_slideshow_cycle.module',
+            1 => 'views_slideshow_cycle.views_slideshow.inc',
+            2 => 'theme/views_slideshow_cycle.theme.inc',
+          ),
+          'version' => '7.x-3.0',
+          'project' => 'views_slideshow',
+          'datestamp' => '1319589616',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'views_slideshow',
+        'version' => '7.x-3.0',
+      ),
+      'views_slideshow' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow/views_slideshow.module',
+        'basename' => 'views_slideshow.module',
+        'name' => 'views_slideshow',
+        'info' => 
+        array (
+          'name' => 'Views Slideshow',
+          'description' => 'Provides a View style that displays rows as a jQuery slideshow.  This is an API and requires Views Slideshow Cycle or another module that supports the API.',
+          'dependencies' => 
+          array (
+            0 => 'views',
+          ),
+          'package' => 'Views',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'views_slideshow.module',
+            1 => 'theme/views_slideshow.theme.inc',
+            2 => 'views_slideshow.views.inc',
+            3 => 'views_slideshow_plugin_style_slideshow.inc',
+          ),
+          'version' => '7.x-3.0',
+          'project' => 'views_slideshow',
+          'datestamp' => '1319589616',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'views_slideshow',
+        'version' => '7.x-3.0',
+      ),
+      'quant' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/quant/quant.module',
+        'basename' => 'quant.module',
+        'name' => 'quant',
+        'info' => 
+        array (
+          'name' => 'Quant',
+          'description' => 'Display quantitative analytical charts of your site\'s activity over time periods',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'plugins/Quant.inc',
+          ),
+          'version' => '7.x-1.0-beta4',
+          'project' => 'quant',
+          'datestamp' => '1352297835',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'quant',
+        'version' => '7.x-1.0-beta4',
+      ),
+      'ds_exportables_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/tests/ds_exportables_test/ds_exportables_test.module',
+        'basename' => 'ds_exportables_test.module',
+        'name' => 'ds_exportables_test',
+        'info' => 
+        array (
+          'name' => 'Display suite exportables test',
+          'description' => 'Tests for exportables with Display Suite.',
+          'package' => 'Display suite',
+          'core' => '7.x',
+          'hidden' => true,
+          'version' => '7.x-1.5',
+          'project' => 'ds',
+          'datestamp' => '1329223541',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ds',
+        'version' => '7.x-1.5',
+      ),
+      'ds_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/tests/ds_test.module',
+        'basename' => 'ds_test.module',
+        'name' => 'ds_test',
+        'info' => 
+        array (
+          'name' => 'Display suite Test',
+          'description' => 'Test module for display suite',
+          'core' => '7.x',
+          'package' => 'Display suite',
+          'dependencies' => 
+          array (
+            0 => 'ds_extras',
+          ),
+          'hidden' => true,
+          'version' => '7.x-1.5',
+          'project' => 'ds',
+          'datestamp' => '1329223541',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ds',
+        'version' => '7.x-1.5',
       ),
       'ds_extras' => 
       array (
@@ -3716,55 +4801,6 @@ $options['packages'] = array (
         'project' => 'ds',
         'version' => '7.x-1.5',
       ),
-      'ds_exportables_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/tests/ds_exportables_test/ds_exportables_test.module',
-        'basename' => 'ds_exportables_test.module',
-        'name' => 'ds_exportables_test',
-        'info' => 
-        array (
-          'name' => 'Display suite exportables test',
-          'description' => 'Tests for exportables with Display Suite.',
-          'package' => 'Display suite',
-          'core' => '7.x',
-          'hidden' => true,
-          'version' => '7.x-1.5',
-          'project' => 'ds',
-          'datestamp' => '1329223541',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ds',
-        'version' => '7.x-1.5',
-      ),
-      'ds_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/tests/ds_test.module',
-        'basename' => 'ds_test.module',
-        'name' => 'ds_test',
-        'info' => 
-        array (
-          'name' => 'Display suite Test',
-          'description' => 'Test module for display suite',
-          'core' => '7.x',
-          'package' => 'Display suite',
-          'dependencies' => 
-          array (
-            0 => 'ds_extras',
-          ),
-          'hidden' => true,
-          'version' => '7.x-1.5',
-          'project' => 'ds',
-          'datestamp' => '1329223541',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ds',
-        'version' => '7.x-1.5',
-      ),
       'ds' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ds/ds.module',
@@ -3801,369 +4837,6 @@ $options['packages'] = array (
         'schema_version' => '7004',
         'project' => 'ds',
         'version' => '7.x-1.5',
-      ),
-      'filefield_sources' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/filefield_sources/filefield_sources.module',
-        'basename' => 'filefield_sources.module',
-        'name' => 'filefield_sources',
-        'info' => 
-        array (
-          'name' => 'File Field Sources',
-          'description' => 'Extends File fields to allow referencing of existing files, remote files, and server files.',
-          'dependencies' => 
-          array (
-            0 => 'file',
-          ),
-          'package' => 'Fields',
-          'core' => '7.x',
-          'version' => '7.x-1.4',
-          'project' => 'filefield_sources',
-          'datestamp' => '1304045215',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6001',
-        'project' => 'filefield_sources',
-        'version' => '7.x-1.4',
-      ),
-      'link' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/link/link.module',
-        'basename' => 'link.module',
-        'name' => 'link',
-        'info' => 
-        array (
-          'name' => 'Link',
-          'description' => 'Defines simple link field types.',
-          'core' => '7.x',
-          'package' => 'Fields',
-          'files' => 
-          array (
-            0 => 'link.module',
-            1 => 'link.install',
-            2 => 'tests/link.test',
-            3 => 'tests/link.attribute.test',
-            4 => 'tests/link.crud.test',
-            5 => 'tests/link.crud_browser.test',
-            6 => 'tests/link.token.test',
-            7 => 'tests/link.validate.test',
-            8 => 'views/link_views_handler_argument_target.inc',
-            9 => 'views/link_views_handler_filter_protocol.inc',
-          ),
-          'version' => '7.x-1.0',
-          'project' => 'link',
-          'datestamp' => '1319392535',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'link',
-        'version' => '7.x-1.0',
-      ),
-      'backup_migrate' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/backup_migrate/backup_migrate.module',
-        'basename' => 'backup_migrate.module',
-        'name' => 'backup_migrate',
-        'info' => 
-        array (
-          'name' => 'Backup and Migrate',
-          'description' => 'Backup or migrate the Drupal Database quickly and without unnecessary data.',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'backup_migrate.module',
-            1 => 'backup_migrate.install',
-            2 => 'includes/destinations.inc',
-            3 => 'includes/profiles.inc',
-            4 => 'includes/schedules.inc',
-          ),
-          'configure' => 'admin/config/system/backup_migrate',
-          'version' => '7.x-2.4',
-          'project' => 'backup_migrate',
-          'datestamp' => '1338903073',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7203',
-        'project' => 'backup_migrate',
-        'version' => '7.x-2.4',
-      ),
-      'apachesolr_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/tests/apachesolr_test/apachesolr_test.module',
-        'basename' => 'apachesolr_test.module',
-        'name' => 'apachesolr_test',
-        'info' => 
-        array (
-          'name' => 'Apache Solr helper module for tests',
-          'description' => 'Support module for apachesolr module testing.',
-          'package' => 'Search Toolkit',
-          'core' => '7.x',
-          'hidden' => true,
-          'version' => '7.x-1.0-rc3',
-          'project' => 'apachesolr',
-          'datestamp' => '1344627704',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'apachesolr',
-        'version' => '7.x-1.0-rc3',
-      ),
-      'apachesolr_access' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr_access/apachesolr_access.module',
-        'basename' => 'apachesolr_access.module',
-        'name' => 'apachesolr_access',
-        'info' => 
-        array (
-          'name' => 'Apache Solr Access',
-          'description' => 'Integrates node access and other permissions with Apache Solr search',
-          'dependencies' => 
-          array (
-            0 => 'apachesolr',
-          ),
-          'package' => 'Search Toolkit',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'apachesolr_access.module',
-            1 => 'tests/apachesolr_access.test',
-          ),
-          'version' => '7.x-1.0-rc3',
-          'project' => 'apachesolr',
-          'datestamp' => '1344627704',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'apachesolr',
-        'version' => '7.x-1.0-rc3',
-      ),
-      'apachesolr_search' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr_search.module',
-        'basename' => 'apachesolr_search.module',
-        'name' => 'apachesolr_search',
-        'info' => 
-        array (
-          'name' => 'Apache Solr search',
-          'description' => 'Search with Solr',
-          'dependencies' => 
-          array (
-            0 => 'search',
-            1 => 'apachesolr',
-          ),
-          'package' => 'Search Toolkit',
-          'core' => '7.x',
-          'configure' => 'admin/config/search/apachesolr/search-pages',
-          'files' => 
-          array (
-            0 => 'apachesolr_search.install',
-            1 => 'apachesolr_search.module',
-            2 => 'apachesolr_search.admin.inc',
-            3 => 'apachesolr_search.pages.inc',
-          ),
-          'version' => '7.x-1.0-rc3',
-          'project' => 'apachesolr',
-          'datestamp' => '1344627704',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7005',
-        'project' => 'apachesolr',
-        'version' => '7.x-1.0-rc3',
-      ),
-      'apachesolr' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr/apachesolr.module',
-        'basename' => 'apachesolr.module',
-        'name' => 'apachesolr',
-        'info' => 
-        array (
-          'name' => 'Apache Solr framework',
-          'description' => 'Framework for searching with Solr',
-          'package' => 'Search Toolkit',
-          'core' => '7.x',
-          'configure' => 'admin/config/search/apachesolr/settings',
-          'files' => 
-          array (
-            0 => 'apachesolr.install',
-            1 => 'apachesolr.module',
-            2 => 'apachesolr.admin.inc',
-            3 => 'apachesolr.index.inc',
-            4 => 'apachesolr.interface.inc',
-            5 => 'Drupal_Apache_Solr_Service.php',
-            6 => 'Apache_Solr_Document.php',
-            7 => 'Solr_Base_Query.php',
-            8 => 'plugins/facetapi/adapter.inc',
-            9 => 'plugins/facetapi/query_type_date.inc',
-            10 => 'plugins/facetapi/query_type_term.inc',
-            11 => 'plugins/facetapi/query_type_numeric_range.inc',
-            12 => 'tests/Dummy_Solr.php',
-            13 => 'tests/apachesolr_base.test',
-            14 => 'tests/solr_index_and_search.test',
-            15 => 'tests/solr_base_query.test',
-            16 => 'tests/solr_base_subquery.test',
-            17 => 'tests/solr_document.test',
-          ),
-          'version' => '7.x-1.0-rc3',
-          'project' => 'apachesolr',
-          'datestamp' => '1344627704',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7015',
-        'project' => 'apachesolr',
-        'version' => '7.x-1.0-rc3',
-      ),
-      'views_slideshow_cycle' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.module',
-        'basename' => 'views_slideshow_cycle.module',
-        'name' => 'views_slideshow_cycle',
-        'info' => 
-        array (
-          'name' => 'Views Slideshow: Cycle',
-          'description' => 'Adds a Rotating slideshow mode to Views Slideshow.',
-          'dependencies' => 
-          array (
-            0 => 'views_slideshow',
-            1 => 'libraries',
-          ),
-          'package' => 'Views',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'views_slideshow_cycle.module',
-            1 => 'views_slideshow_cycle.views_slideshow.inc',
-            2 => 'theme/views_slideshow_cycle.theme.inc',
-          ),
-          'version' => '7.x-3.0',
-          'project' => 'views_slideshow',
-          'datestamp' => '1319589616',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'views_slideshow',
-        'version' => '7.x-3.0',
-      ),
-      'views_slideshow' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow/views_slideshow.module',
-        'basename' => 'views_slideshow.module',
-        'name' => 'views_slideshow',
-        'info' => 
-        array (
-          'name' => 'Views Slideshow',
-          'description' => 'Provides a View style that displays rows as a jQuery slideshow.  This is an API and requires Views Slideshow Cycle or another module that supports the API.',
-          'dependencies' => 
-          array (
-            0 => 'views',
-          ),
-          'package' => 'Views',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'views_slideshow.module',
-            1 => 'theme/views_slideshow.theme.inc',
-            2 => 'views_slideshow.views.inc',
-            3 => 'views_slideshow_plugin_style_slideshow.inc',
-          ),
-          'version' => '7.x-3.0',
-          'project' => 'views_slideshow',
-          'datestamp' => '1319589616',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'views_slideshow',
-        'version' => '7.x-3.0',
-      ),
-      'strongarm' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/strongarm/strongarm.module',
-        'basename' => 'strongarm.module',
-        'name' => 'strongarm',
-        'info' => 
-        array (
-          'name' => 'Strongarm',
-          'description' => 'Enforces variable values defined by modules that need settings set to operate properly.',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'files' => 
-          array (
-            0 => 'strongarm.admin.inc',
-            1 => 'strongarm.install',
-            2 => 'strongarm.module',
-          ),
-          'version' => '7.x-2.0',
-          'project' => 'strongarm',
-          'datestamp' => '1339604214',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7201',
-        'project' => 'strongarm',
-        'version' => '7.x-2.0',
-      ),
-      'fusion_responsive_ie' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_responsive_ie/fusion_responsive_ie.module',
-        'basename' => 'fusion_responsive_ie.module',
-        'name' => 'fusion_responsive_ie',
-        'info' => 
-        array (
-          'name' => 'Responsive layouts for IE 6-8',
-          'description' => 'Provides simulated support for CSS media queries in Internet Explorer versions 6-8.',
-          'core' => '7.x',
-          'engine' => 'phptemplate',
-          'package' => 'Fusion Accelerator',
-          'dependencies' => 
-          array (
-            0 => 'libraries',
-          ),
-          'version' => '7.x-2.0-beta1',
-          'project' => 'fusion_accelerator',
-          'datestamp' => '1332518152',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'fusion_accelerator',
-        'version' => '7.x-2.0-beta1',
-      ),
-      'fusion_apply_ui_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/tests/fusion_apply_ui_test/fusion_apply_ui_test.module',
-        'basename' => 'fusion_apply_ui_test.module',
-        'name' => 'fusion_apply_ui_test',
-        'info' => 
-        array (
-          'name' => 'Fusion Apply UI Testing',
-          'description' => 'A test module used for testing Fusion Apply UI.',
-          'package' => 'Testing',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'fusion_apply_ui',
-          ),
-          'version' => '7.x-2.0-beta1',
-          'project' => 'fusion_accelerator',
-          'datestamp' => '1332518152',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'fusion_accelerator',
-        'version' => '7.x-2.0-beta1',
       ),
       'fusion_apply_test' => 
       array (
@@ -4215,30 +4888,28 @@ $options['packages'] = array (
         'project' => 'fusion_accelerator',
         'version' => '7.x-2.0-beta1',
       ),
-      'fusion_apply' => 
+      'fusion_apply_ui_test' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/fusion_apply.module',
-        'basename' => 'fusion_apply.module',
-        'name' => 'fusion_apply',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/tests/fusion_apply_ui_test/fusion_apply_ui_test.module',
+        'basename' => 'fusion_apply_ui_test.module',
+        'name' => 'fusion_apply_ui_test',
         'info' => 
         array (
-          'name' => 'Apply skins',
-          'description' => 'Provides a way to define and skin Drupal UI components, such as blocks and menus.',
-          'package' => 'Fusion Accelerator',
+          'name' => 'Fusion Apply UI Testing',
+          'description' => 'A test module used for testing Fusion Apply UI.',
+          'package' => 'Testing',
           'core' => '7.x',
-          'files' => 
+          'hidden' => true,
+          'dependencies' => 
           array (
-            0 => 'tests/fusion_apply.test',
+            0 => 'fusion_apply_ui',
           ),
           'version' => '7.x-2.0-beta1',
           'project' => 'fusion_accelerator',
           'datestamp' => '1332518152',
-          'dependencies' => 
-          array (
-          ),
           'php' => '5.2.4',
         ),
-        'schema_version' => '7001',
+        'schema_version' => 0,
         'project' => 'fusion_accelerator',
         'version' => '7.x-2.0-beta1',
       ),
@@ -4263,6 +4934,33 @@ $options['packages'] = array (
           'php' => '5.2.4',
         ),
         'schema_version' => 0,
+        'project' => 'fusion_accelerator',
+        'version' => '7.x-2.0-beta1',
+      ),
+      'fusion_apply' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_apply/fusion_apply.module',
+        'basename' => 'fusion_apply.module',
+        'name' => 'fusion_apply',
+        'info' => 
+        array (
+          'name' => 'Apply skins',
+          'description' => 'Provides a way to define and skin Drupal UI components, such as blocks and menus.',
+          'package' => 'Fusion Accelerator',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'tests/fusion_apply.test',
+          ),
+          'version' => '7.x-2.0-beta1',
+          'project' => 'fusion_accelerator',
+          'datestamp' => '1332518152',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
         'project' => 'fusion_accelerator',
         'version' => '7.x-2.0-beta1',
       ),
@@ -4324,6 +5022,31 @@ $options['packages'] = array (
         'project' => 'fusion_accelerator',
         'version' => '7.x-2.0-beta1',
       ),
+      'fusion_responsive_ie' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_responsive_ie/fusion_responsive_ie.module',
+        'basename' => 'fusion_responsive_ie.module',
+        'name' => 'fusion_responsive_ie',
+        'info' => 
+        array (
+          'name' => 'Responsive layouts for IE 6-8',
+          'description' => 'Provides simulated support for CSS media queries in Internet Explorer versions 6-8.',
+          'core' => '7.x',
+          'engine' => 'phptemplate',
+          'package' => 'Fusion Accelerator',
+          'dependencies' => 
+          array (
+            0 => 'libraries',
+          ),
+          'version' => '7.x-2.0-beta1',
+          'project' => 'fusion_accelerator',
+          'datestamp' => '1332518152',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'fusion_accelerator',
+        'version' => '7.x-2.0-beta1',
+      ),
       'fusion_accelerator' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/fusion_accelerator/fusion_accelerator.module',
@@ -4352,1669 +5075,6 @@ $options['packages'] = array (
         'project' => 'fusion_accelerator',
         'version' => '7.x-2.0-beta1',
       ),
-      'chart_views' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/chart_views/chart_views.module',
-        'basename' => 'chart_views.module',
-        'name' => 'chart_views',
-        'info' => 
-        array (
-          'name' => 'Chart API Views Integration',
-          'description' => 'Provides a Google Chart API Views style.',
-          'package' => 'Charting',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'views/chart_views_plugin_style_chart.inc',
-          ),
-          'dependencies' => 
-          array (
-            0 => 'chart',
-            1 => 'views',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'chart',
-          'datestamp' => '1314765120',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'chart',
-        'version' => '7.x-1.1',
-      ),
-      'system_charts' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/system_charts/system_charts.module',
-        'basename' => 'system_charts.module',
-        'name' => 'system_charts',
-        'info' => 
-        array (
-          'name' => 'Drupal System Charting',
-          'description' => 'Charting for various core modules.',
-          'package' => 'Charting',
-          'core' => '7.x',
-          'php' => '5',
-          'dependencies' => 
-          array (
-            0 => 'chart',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'chart',
-          'datestamp' => '1314765120',
-        ),
-        'schema_version' => 0,
-        'project' => 'chart',
-        'version' => '7.x-1.1',
-      ),
-      'chart' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/chart.module',
-        'basename' => 'chart.module',
-        'name' => 'chart',
-        'info' => 
-        array (
-          'name' => 'Chart API',
-          'description' => 'Google Chart API integration.',
-          'package' => 'Charting',
-          'core' => '7.x',
-          'php' => '5',
-          'version' => '7.x-1.1',
-          'project' => 'chart',
-          'datestamp' => '1314765120',
-          'dependencies' => 
-          array (
-          ),
-        ),
-        'schema_version' => 0,
-        'project' => 'chart',
-        'version' => '7.x-1.1',
-      ),
-      'jcarousel' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jcarousel/jcarousel.module',
-        'basename' => 'jcarousel.module',
-        'name' => 'jcarousel',
-        'info' => 
-        array (
-          'name' => 'jCarousel',
-          'description' => 'Create jQuery-based carousel rotators.',
-          'package' => 'User interface',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'jcarousel.module',
-            1 => 'includes/jcarousel.views.inc',
-            2 => 'includes/jcarousel_style_plugin.inc',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'jcarousel',
-          'datestamp' => '1322116852',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'jcarousel',
-        'version' => '7.x-2.6',
-      ),
-      'drupalchat_notifications' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat_notifications/drupalchat_notifications.module',
-        'basename' => 'drupalchat_notifications.module',
-        'name' => 'drupalchat_notifications',
-        'info' => 
-        array (
-          'name' => 'DrupalChat Notifications',
-          'package' => 'DrupalChat',
-          'description' => 'An experimental module. DO NOT USE IT ON PRODUCTION SITES.',
-          'core' => '7.x',
-          'php' => '5.1',
-          'dependencies' => 
-          array (
-            0 => 'drupalchat',
-          ),
-          'files' => 
-          array (
-            0 => 'drupalchat_notifications.install',
-            1 => 'drupalchat_notifications.module',
-          ),
-          'version' => '7.x-1.0-beta6',
-          'project' => 'drupalchat',
-          'datestamp' => '1344868027',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupalchat',
-        'version' => '7.x-1.0-beta6',
-      ),
-      'drupalchat_nodejs' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat_nodejs/drupalchat_nodejs.module',
-        'basename' => 'drupalchat_nodejs.module',
-        'name' => 'drupalchat_nodejs',
-        'info' => 
-        array (
-          'name' => 'DrupalChat Nodejs integration',
-          'description' => 'Adds Node.js backend to DrupalChat',
-          'package' => 'DrupalChat',
-          'version' => '7.x-1.0-beta6',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'drupalchat_nodejs.module',
-          ),
-          'dependencies' => 
-          array (
-            0 => 'nodejs',
-            1 => 'drupalchat',
-          ),
-          'project' => 'drupalchat',
-          'datestamp' => '1344868027',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'drupalchat',
-        'version' => '7.x-1.0-beta6',
-      ),
-      'drupalchat' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat.module',
-        'basename' => 'drupalchat.module',
-        'name' => 'drupalchat',
-        'info' => 
-        array (
-          'name' => 'DrupalChat',
-          'package' => 'DrupalChat',
-          'description' => 'Allows users to communicate via instant chat messaging. Provides multiple AJAX implementations.',
-          'core' => '7.x',
-          'php' => '5.1',
-          'files' => 
-          array (
-            0 => 'drupalchat-subpanel.tpl.php',
-            1 => 'drupalchat.admin.inc',
-            2 => 'drupalchat.install',
-            3 => 'drupalchat.module',
-            4 => 'drupalchat.tpl.php',
-          ),
-          'version' => '7.x-1.0-beta6',
-          'project' => 'drupalchat',
-          'datestamp' => '1344868027',
-          'dependencies' => 
-          array (
-          ),
-        ),
-        'schema_version' => '7001',
-        'project' => 'drupalchat',
-        'version' => '7.x-1.0-beta6',
-      ),
-      'jq_maphilight' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jq_maphilight/jq_maphilight.module',
-        'basename' => 'jq_maphilight.module',
-        'name' => 'jq_maphilight',
-        'info' => 
-        array (
-          'name' => 'jQuery Map Hilight',
-          'description' => 'jQuery Map Hilight adds javascript mouseover highlighting of hotspots to HTML image maps.',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'libraries',
-          ),
-          'configure' => 'admin/config/content/jq_maphilight',
-          'version' => '7.x-1.1',
-          'project' => 'jq_maphilight',
-          'datestamp' => '1336746956',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'jq_maphilight',
-        'version' => '7.x-1.1',
-      ),
-      'i18n_menu' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_menu/i18n_menu.module',
-        'basename' => 'i18n_menu.module',
-        'name' => 'i18n_menu',
-        'info' => 
-        array (
-          'name' => 'Menu translation',
-          'description' => 'Supports translatable custom menu items.',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-            1 => 'menu',
-            2 => 'i18n_string',
-            3 => 'i18n_translation',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_menu.inc',
-            1 => 'i18n_menu.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_block' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_block/i18n_block.module',
-        'basename' => 'i18n_block.module',
-        'name' => 'i18n_block',
-        'info' => 
-        array (
-          'name' => 'Block languages',
-          'description' => 'Enables language selector for blocks and optional block translation.',
-          'dependencies' => 
-          array (
-            0 => 'block',
-            1 => 'i18n_string',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_block.inc',
-            1 => 'i18n_block.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_variable' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_variable/i18n_variable.module',
-        'basename' => 'i18n_variable.module',
-        'name' => 'i18n_variable',
-        'info' => 
-        array (
-          'name' => 'Variable translation',
-          'description' => 'Multilingual variables that switch language depending on page language.',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-            1 => 'variable_store (7.x-2.x)',
-            2 => 'variable_realm (7.x-2.x)',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'configure' => 'admin/config/regional/i18n/variable',
-          'files' => 
-          array (
-            0 => 'i18n_variable.class.inc',
-            1 => 'i18n_variable.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7004',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_string' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_string/i18n_string.module',
-        'basename' => 'i18n_string.module',
-        'name' => 'i18n_string',
-        'info' => 
-        array (
-          'name' => 'String translation',
-          'description' => 'Provides support for translation of user defined strings.',
-          'dependencies' => 
-          array (
-            0 => 'locale',
-            1 => 'i18n',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_string.admin.inc',
-            1 => 'i18n_string.inc',
-            2 => 'i18n_string.test',
-          ),
-          'configure' => 'admin/config/regional/i18n/strings',
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_contact' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_contact/i18n_contact.module',
-        'basename' => 'i18n_contact.module',
-        'name' => 'i18n_contact',
-        'info' => 
-        array (
-          'name' => 'Contact translation',
-          'description' => 'Makes contact categories and replies available for translation.',
-          'dependencies' => 
-          array (
-            0 => 'contact',
-            1 => 'i18n_string',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_field' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_field/i18n_field.module',
-        'basename' => 'i18n_field.module',
-        'name' => 'i18n_field',
-        'info' => 
-        array (
-          'name' => 'Field translation',
-          'description' => 'Translate field properties',
-          'dependencies' => 
-          array (
-            0 => 'field',
-            1 => 'i18n_string',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_field.inc',
-            1 => 'i18n_field.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_redirect' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_redirect/i18n_redirect.module',
-        'basename' => 'i18n_redirect.module',
-        'name' => 'i18n_redirect',
-        'info' => 
-        array (
-          'name' => 'Translation redirect',
-          'description' => 'Redirect to translated page when available. SEO for multilingual sites.',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_translation' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_translation/i18n_translation.module',
-        'basename' => 'i18n_translation.module',
-        'name' => 'i18n_translation',
-        'info' => 
-        array (
-          'name' => 'Translation sets',
-          'description' => 'Simple translation sets API for generic objects',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_translation.inc',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_taxonomy' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_taxonomy/i18n_taxonomy.module',
-        'basename' => 'i18n_taxonomy.module',
-        'name' => 'i18n_taxonomy',
-        'info' => 
-        array (
-          'name' => 'Taxonomy translation',
-          'description' => 'Enables multilingual taxonomy.',
-          'dependencies' => 
-          array (
-            0 => 'taxonomy',
-            1 => 'i18n_string',
-            2 => 'i18n_translation',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_taxonomy.inc',
-            1 => 'i18n_taxonomy.pages.inc',
-            2 => 'i18n_taxonomy.admin.inc',
-            3 => 'i18n_taxonomy.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7004',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_sync' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_sync/i18n_sync.module',
-        'basename' => 'i18n_sync.module',
-        'name' => 'i18n_sync',
-        'info' => 
-        array (
-          'name' => 'Synchronize translations',
-          'description' => 'Synchronizes taxonomy and fields accross translations of the same content.',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-            1 => 'translation',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_sync.module',
-            1 => 'i18n_sync.install',
-            2 => 'i18n_sync.module.inc',
-            3 => 'i18n_sync.node.inc',
-            4 => 'i18n_sync.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_node' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_node/i18n_node.module',
-        'basename' => 'i18n_node.module',
-        'name' => 'i18n_node',
-        'info' => 
-        array (
-          'name' => 'Multilingual content',
-          'description' => 'Extended node options for multilingual content',
-          'dependencies' => 
-          array (
-            0 => 'translation',
-            1 => 'i18n',
-            2 => 'i18n_string',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'configure' => 'admin/config/regional/i18n/node',
-          'files' => 
-          array (
-            0 => 'i18n_node.test',
-            1 => 'i18n_node.variable.inc',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/tests/i18n_test.module',
-        'basename' => 'i18n_test.module',
-        'name' => 'i18n_test',
-        'info' => 
-        array (
-          'name' => 'Internationalization tests',
-          'description' => 'Helper module for testing i18n (do not enable manually)',
-          'dependencies' => 
-          array (
-            0 => 'locale',
-            1 => 'translation',
-            2 => 'i18n',
-          ),
-          'package' => 'Testing',
-          'core' => '7.x',
-          'hidden' => true,
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_forum' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_forum/i18n_forum.module',
-        'basename' => 'i18n_forum.module',
-        'name' => 'i18n_forum',
-        'info' => 
-        array (
-          'name' => 'Multilingual forum',
-          'description' => 'Enables multilingual forum, translates names and containers.',
-          'dependencies' => 
-          array (
-            0 => 'forum',
-            1 => 'i18n_taxonomy',
-            2 => 'i18n_node',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_forum.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_path' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_path/i18n_path.module',
-        'basename' => 'i18n_path.module',
-        'name' => 'i18n_path',
-        'info' => 
-        array (
-          'name' => 'Path translation',
-          'description' => 'Define translations for generic paths',
-          'dependencies' => 
-          array (
-            0 => 'i18n_translation',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n_path.inc',
-            1 => 'i18n_path.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n_select' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n_select/i18n_select.module',
-        'basename' => 'i18n_select.module',
-        'name' => 'i18n_select',
-        'info' => 
-        array (
-          'name' => 'Multilingual select',
-          'description' => 'API module for multilingual content selection',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'configure' => 'admin/config/regional/i18n/select',
-          'files' => 
-          array (
-            0 => 'i18n_select.test',
-          ),
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'i18n' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n/i18n.module',
-        'basename' => 'i18n.module',
-        'name' => 'i18n',
-        'info' => 
-        array (
-          'name' => 'Internationalization',
-          'description' => 'Extends Drupal support for multilingual features.',
-          'dependencies' => 
-          array (
-            0 => 'locale',
-            1 => 'variable',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'i18n.install',
-            1 => 'i18n.admin.inc',
-            2 => 'i18n_object.inc',
-            3 => 'i18n.test',
-          ),
-          'configure' => 'admin/config/regional/i18n',
-          'version' => '7.x-1.7',
-          'project' => 'i18n',
-          'datestamp' => '1341236501',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'i18n',
-        'version' => '7.x-1.7',
-      ),
-      'features_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features/tests/features_test.module',
-        'basename' => 'features_test.module',
-        'name' => 'features_test',
-        'info' => 
-        array (
-          'name' => 'Features Tests',
-          'description' => 'Test module for Features testing.',
-          'core' => '7.x',
-          'package' => 'Testing',
-          'php' => '5.2.0',
-          'dependencies' => 
-          array (
-            0 => 'features',
-            1 => 'image',
-            2 => 'strongarm',
-            3 => 'taxonomy',
-            4 => 'views',
-          ),
-          'features' => 
-          array (
-            'ctools' => 
-            array (
-              0 => 'strongarm:strongarm:1',
-              1 => 'views:views_default:3.0',
-            ),
-            'features_api' => 
-            array (
-              0 => 'api:1',
-            ),
-            'field' => 
-            array (
-              0 => 'node-features_test-field_features_test',
-            ),
-            'filter' => 
-            array (
-              0 => 'features_test',
-            ),
-            'image' => 
-            array (
-              0 => 'features_test',
-            ),
-            'node' => 
-            array (
-              0 => 'features_test',
-            ),
-            'taxonomy' => 
-            array (
-              0 => 'taxonomy_features_test',
-            ),
-            'user_permission' => 
-            array (
-              0 => 'create features_test content',
-            ),
-            'views_view' => 
-            array (
-              0 => 'features_test',
-            ),
-          ),
-          'hidden' => true,
-          'version' => '7.x-1.0',
-          'project' => 'features',
-          'datestamp' => '1343240292',
-        ),
-        'schema_version' => 0,
-        'project' => 'features',
-        'version' => '7.x-1.0',
-      ),
-      'features' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features/features.module',
-        'basename' => 'features.module',
-        'name' => 'features',
-        'info' => 
-        array (
-          'name' => 'Features',
-          'description' => 'Provides feature management for Drupal.',
-          'core' => '7.x',
-          'package' => 'Features',
-          'files' => 
-          array (
-            0 => 'tests/features.test',
-          ),
-          'version' => '7.x-1.0',
-          'project' => 'features',
-          'datestamp' => '1343240292',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6101',
-        'project' => 'features',
-        'version' => '7.x-1.0',
-      ),
-      'ckeditor' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ckeditor/ckeditor.module',
-        'basename' => 'ckeditor.module',
-        'name' => 'ckeditor',
-        'info' => 
-        array (
-          'name' => 'CKEditor',
-          'description' => 'Enables CKEditor (WYSIWYG HTML editor) for use instead of plain text fields.',
-          'core' => '7.x',
-          'package' => 'User interface',
-          'configure' => 'admin/config/content/ckeditor',
-          'files' => 
-          array (
-            0 => 'includes/ckeditor.user.inc',
-          ),
-          'version' => '7.x-1.9',
-          'project' => 'ckeditor',
-          'datestamp' => '1334745697',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7004',
-        'project' => 'ckeditor',
-        'version' => '7.x-1.9',
-      ),
-      'date_views' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_views/date_views.module',
-        'basename' => 'date_views.module',
-        'name' => 'date_views',
-        'info' => 
-        array (
-          'name' => 'Date Views',
-          'description' => 'Views integration for date fields and date functionality.',
-          'package' => 'Date/Time',
-          'dependencies' => 
-          array (
-            0 => 'date_api',
-            1 => 'views',
-          ),
-          'core' => '7.x',
-          'php' => '5.2',
-          'files' => 
-          array (
-            0 => 'includes/date_views_argument_handler.inc',
-            1 => 'includes/date_views_argument_handler_simple.inc',
-            2 => 'includes/date_views_filter_handler.inc',
-            3 => 'includes/date_views_filter_handler_simple.inc',
-            4 => 'includes/date_views.views_default.inc',
-            5 => 'includes/date_views.views.inc',
-            6 => 'includes/date_views_plugin_pager.inc',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_api' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_api/date_api.module',
-        'basename' => 'date_api.module',
-        'name' => 'date_api',
-        'info' => 
-        array (
-          'name' => 'Date API',
-          'description' => 'A Date API that can be used by other modules.',
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'php' => '5.2',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'date.css',
-            ),
-          ),
-          'files' => 
-          array (
-            0 => 'date_api.module',
-            1 => 'date_api_sql.inc',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'dependencies' => 
-          array (
-          ),
-        ),
-        'schema_version' => '7001',
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_popup' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_popup/date_popup.module',
-        'basename' => 'date_popup.module',
-        'name' => 'date_popup',
-        'info' => 
-        array (
-          'name' => 'Date Popup',
-          'description' => 'Enables jquery popup calendars and time entry widgets for selecting dates and times.',
-          'dependencies' => 
-          array (
-            0 => 'date_api',
-          ),
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'configure' => 'admin/config/date/date_popup',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'themes/datepicker.1.7.css',
-            ),
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_repeat_field' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_repeat_field/date_repeat_field.module',
-        'basename' => 'date_repeat_field.module',
-        'name' => 'date_repeat_field',
-        'info' => 
-        array (
-          'name' => 'Date Repeat Field',
-          'description' => 'Creates the option of Repeating date fields and manages Date fields that use the Date Repeat API.',
-          'dependencies' => 
-          array (
-            0 => 'date_api',
-            1 => 'date',
-            2 => 'date_repeat',
-          ),
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'date_repeat_field.css',
-            ),
-          ),
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_all_day' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_all_day/date_all_day.module',
-        'basename' => 'date_all_day.module',
-        'name' => 'date_all_day',
-        'info' => 
-        array (
-          'name' => 'Date All Day',
-          'description' => 'Adds \'All Day\' functionality to date fields, including an \'All Day\' theme and \'All Day\' checkboxes for the Date select and Date popup widgets.',
-          'dependencies' => 
-          array (
-            0 => 'date_api',
-            1 => 'date',
-          ),
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_repeat' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_repeat/date_repeat.module',
-        'basename' => 'date_repeat.module',
-        'name' => 'date_repeat',
-        'info' => 
-        array (
-          'name' => 'Date Repeat API',
-          'description' => 'A Date Repeat API to calculate repeating dates and times from iCal rules.',
-          'dependencies' => 
-          array (
-            0 => 'date_api',
-          ),
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'php' => '5.2',
-          'files' => 
-          array (
-            0 => 'tests/date_repeat.test',
-            1 => 'tests/date_repeat_form.test',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_tools' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_tools/date_tools.module',
-        'basename' => 'date_tools.module',
-        'name' => 'date_tools',
-        'info' => 
-        array (
-          'name' => 'Date Tools',
-          'description' => 'Tools to import and auto-create dates and calendars.',
-          'dependencies' => 
-          array (
-            0 => 'date',
-          ),
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'configure' => 'admin/config/date/tools',
-          'files' => 
-          array (
-            0 => 'tests/date_tools.test',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_context' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_context/date_context.module',
-        'basename' => 'date_context.module',
-        'name' => 'date_context',
-        'info' => 
-        array (
-          'name' => 'Date Context',
-          'description' => 'Adds an option to the Context module to set a context condition based on the value of a date field.',
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'date',
-            1 => 'context',
-          ),
-          'files' => 
-          array (
-            0 => 'date_context.module',
-            1 => 'plugins/date_context_date_condition.inc',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_migrate_example' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_migrate/date_migrate_example/date_migrate_example.module',
-        'basename' => 'date_migrate_example.module',
-        'name' => 'date_migrate_example',
-        'info' => 
-        array (
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'date',
-            1 => 'date_repeat',
-            2 => 'date_repeat_field',
-            3 => 'date_migrate',
-            4 => 'features',
-            5 => 'migrate',
-          ),
-          'description' => 'Examples of migrating with the Date module',
-          'features' => 
-          array (
-            'field' => 
-            array (
-              0 => 'node-date_migrate_example-body',
-              1 => 'node-date_migrate_example-field_date',
-              2 => 'node-date_migrate_example-field_date_range',
-              3 => 'node-date_migrate_example-field_date_repeat',
-              4 => 'node-date_migrate_example-field_datestamp',
-              5 => 'node-date_migrate_example-field_datestamp_range',
-              6 => 'node-date_migrate_example-field_datetime',
-              7 => 'node-date_migrate_example-field_datetime_range',
-            ),
-            'node' => 
-            array (
-              0 => 'date_migrate_example',
-            ),
-          ),
-          'files' => 
-          array (
-            0 => 'date_migrate_example.migrate.inc',
-          ),
-          'name' => 'Date Migration Example',
-          'package' => 'Features',
-          'project' => 'date',
-          'version' => '7.x-2.6',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date_migrate' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_migrate/date_migrate.module',
-        'basename' => 'date_migrate.module',
-        'name' => 'date_migrate',
-        'info' => 
-        array (
-          'name' => 'Date Migration',
-          'description' => 'Provides support for importing into date fields with the Migrate module.',
-          'core' => '7.x',
-          'package' => 'Date/Time',
-          'dependencies' => 
-          array (
-            0 => 'migrate',
-            1 => 'date',
-          ),
-          'files' => 
-          array (
-            0 => 'date.migrate.inc',
-            1 => 'date_migrate.test',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'date' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date.module',
-        'basename' => 'date.module',
-        'name' => 'date',
-        'info' => 
-        array (
-          'name' => 'Date',
-          'description' => 'Makes date/time fields available.',
-          'dependencies' => 
-          array (
-            0 => 'date_api',
-          ),
-          'package' => 'Date/Time',
-          'core' => '7.x',
-          'php' => '5.2',
-          'files' => 
-          array (
-            0 => 'tests/date_api.test',
-            1 => 'tests/date.test',
-            2 => 'tests/date_field.test',
-            3 => 'tests/date_validation.test',
-            4 => 'tests/date_timezone.test',
-          ),
-          'version' => '7.x-2.6',
-          'project' => 'date',
-          'datestamp' => '1344850024',
-        ),
-        'schema_version' => '7004',
-        'project' => 'date',
-        'version' => '7.x-2.6',
-      ),
-      'node_export_feeds' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_feeds/node_export_feeds.module',
-        'basename' => 'node_export_feeds.module',
-        'name' => 'node_export_feeds',
-        'info' => 
-        array (
-          'name' => 'Node export feeds',
-          'description' => 'Node export feeds importer.  This is a more advanced importer than the one built into node export, but tricky to use.',
-          'core' => '7.x',
-          'package' => 'Node export',
-          'dependencies' => 
-          array (
-            0 => 'feeds',
-            1 => 'node_export',
-          ),
-          'files' => 
-          array (
-            0 => 'FeedsNodeExportParser.inc',
-            1 => 'FeedsNodeExportProcessor.inc',
-          ),
-          'version' => '7.x-3.0',
-          'project' => 'node_export',
-          'datestamp' => '1345435979',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'node_export',
-        'version' => '7.x-3.0',
-      ),
-      'node_export_relation' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_relation/node_export_relation.module',
-        'basename' => 'node_export_relation.module',
-        'name' => 'node_export_relation',
-        'info' => 
-        array (
-          'name' => 'Node export relation (deprecated)',
-          'description' => 'Helps maintain relationships.  Supports node references, taxonomy, and organic groups.',
-          'dependencies' => 
-          array (
-            0 => 'node_export',
-            1 => 'uuid',
-          ),
-          'core' => '7.x',
-          'package' => 'Node export',
-          'version' => '7.x-3.0',
-          'project' => 'node_export',
-          'datestamp' => '1345435979',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'node_export',
-        'version' => '7.x-3.0',
-      ),
-      'node_export_dependency' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_dependency/node_export_dependency.module',
-        'basename' => 'node_export_dependency.module',
-        'name' => 'node_export_dependency',
-        'info' => 
-        array (
-          'name' => 'Node export dependency (experimental)',
-          'description' => 'Helps maintain relationships to dependent entities.  Intended to make Node export relation obsolete.',
-          'dependencies' => 
-          array (
-            0 => 'node_export',
-            1 => 'uuid',
-          ),
-          'core' => '7.x',
-          'package' => 'Node export',
-          'version' => '7.x-3.0',
-          'project' => 'node_export',
-          'datestamp' => '1345435979',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'node_export',
-        'version' => '7.x-3.0',
-      ),
-      'node_export_features' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_features/node_export_features.module',
-        'basename' => 'node_export_features.module',
-        'name' => 'node_export_features',
-        'info' => 
-        array (
-          'name' => 'Node export features',
-          'description' => 'Adds Features support to Node export, so you can put your exports into Features modules.',
-          'dependencies' => 
-          array (
-            0 => 'node_export',
-            1 => 'uuid',
-            2 => 'features',
-          ),
-          'core' => '7.x',
-          'package' => 'Node export',
-          'version' => '7.x-3.0',
-          'project' => 'node_export',
-          'datestamp' => '1345435979',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'node_export',
-        'version' => '7.x-3.0',
-      ),
-      'node_export' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/node_export.module',
-        'basename' => 'node_export.module',
-        'name' => 'node_export',
-        'info' => 
-        array (
-          'name' => 'Node export',
-          'description' => 'Allows users to export content and then import into another Drupal installation.',
-          'dependencies' => 
-          array (
-            0 => 'uuid',
-          ),
-          'core' => '7.x',
-          'package' => 'Node export',
-          'configure' => 'admin/config/content/node_export',
-          'files' => 
-          array (
-            0 => 'views/views_handler_field_node_link_export.inc',
-          ),
-          'version' => '7.x-3.0',
-          'project' => 'node_export',
-          'datestamp' => '1345435979',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7303',
-        'project' => 'node_export',
-        'version' => '7.x-3.0',
-      ),
-      'libraries_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/libraries/tests/libraries_test.module',
-        'basename' => 'libraries_test.module',
-        'name' => 'libraries_test',
-        'info' => 
-        array (
-          'name' => 'Libraries test module',
-          'description' => 'Tests library detection and loading.',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'libraries',
-          ),
-          'hidden' => true,
-          'version' => '7.x-2.0',
-          'project' => 'libraries',
-          'datestamp' => '1343561873',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'libraries',
-        'version' => '7.x-2.0',
-      ),
-      'libraries' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/libraries/libraries.module',
-        'basename' => 'libraries.module',
-        'name' => 'libraries',
-        'info' => 
-        array (
-          'name' => 'Libraries',
-          'description' => 'Allows version dependent and shared usage of external libraries.',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'tests/libraries.test',
-          ),
-          'version' => '7.x-2.0',
-          'project' => 'libraries',
-          'datestamp' => '1343561873',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7200',
-        'project' => 'libraries',
-        'version' => '7.x-2.0',
-      ),
-      'shadowbox' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/shadowbox/shadowbox.module',
-        'basename' => 'shadowbox.module',
-        'name' => 'shadowbox',
-        'info' => 
-        array (
-          'name' => 'Shadowbox',
-          'description' => 'Allows content to be displayed in a JavaScript modal media viewer application.',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'shadowbox.module',
-            1 => 'shadowbox.admin.inc',
-            2 => 'shadowbox.install',
-          ),
-          'configure' => 'admin/config/media/shadowbox',
-          'version' => '7.x-3.0-beta8',
-          'project' => 'shadowbox',
-          'datestamp' => '1325619345',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7001',
-        'project' => 'shadowbox',
-        'version' => '7.x-3.0-beta8',
-      ),
-      'lightbox2' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/lightbox2/lightbox2.module',
-        'basename' => 'lightbox2.module',
-        'name' => 'lightbox2',
-        'info' => 
-        array (
-          'name' => 'Lightbox2',
-          'description' => 'Enables Lightbox2 for Drupal',
-          'core' => '7.x',
-          'package' => 'User interface',
-          'files' => 
-          array (
-            0 => 'lightbox2.install',
-            1 => 'lightbox2.module',
-            2 => 'lightbox2.formatter.inc',
-            3 => 'lightbox2.admin.inc',
-          ),
-          'configure' => 'admin/config/user-interface/lightbox2',
-          'version' => '7.x-1.0-beta1',
-          'project' => 'lightbox2',
-          'datestamp' => '1318819001',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6003',
-        'project' => 'lightbox2',
-        'version' => '7.x-1.0-beta1',
-      ),
-      'elfinder_bueditor' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/modules/elfinder_bueditor/elfinder_bueditor.module',
-        'basename' => 'elfinder_bueditor.module',
-        'name' => 'elfinder_bueditor',
-        'info' => 
-        array (
-          'name' => 'elFinder BUEditor integration',
-          'description' => 'Adding elFinder to BUEditor Insert Image dialog',
-          'package' => 'User interface',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'bueditor',
-            1 => 'elfinder',
-          ),
-          'version' => '7.x-0.7',
-          'project' => 'elfinder',
-          'datestamp' => '1327272650',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'elfinder',
-        'version' => '7.x-0.7',
-      ),
-      'elfinder_ffsel' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/modules/elfinder_ffsel/elfinder_ffsel.module',
-        'basename' => 'elfinder_ffsel.module',
-        'name' => 'elfinder_ffsel',
-        'info' => 
-        array (
-          'name' => 'elFinder File Field Source',
-          'description' => 'File Field Sources elFinder connector',
-          'package' => 'User interface',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'filefield_sources',
-            1 => 'elfinder',
-          ),
-          'version' => '7.x-0.7',
-          'project' => 'elfinder',
-          'datestamp' => '1327272650',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'elfinder',
-        'version' => '7.x-0.7',
-      ),
-      'elfinder' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/elfinder.module',
-        'basename' => 'elfinder.module',
-        'name' => 'elfinder',
-        'info' => 
-        array (
-          'name' => 'elFinder',
-          'description' => 'AJAX file manager with Wysiwyg API capable editors support.',
-          'package' => 'User interface',
-          'configure' => 'admin/config/elfinder',
-          'core' => '7.x',
-          'version' => '7.x-0.7',
-          'project' => 'elfinder',
-          'datestamp' => '1327272650',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'elfinder',
-        'version' => '7.x-0.7',
-      ),
-      'apachesolr_attachments' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_attachments/apachesolr_attachments.module',
-        'basename' => 'apachesolr_attachments.module',
-        'name' => 'apachesolr_attachments',
-        'info' => 
-        array (
-          'name' => 'Apache Solr search attachments',
-          'description' => 'Search file attachments with Solr',
-          'dependencies' => 
-          array (
-            0 => 'apachesolr',
-          ),
-          'package' => 'Search Toolkit',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'apachesolr_attachments.admin.inc',
-            1 => 'apachesolr_attachments.install',
-            2 => 'apachesolr_attachments.module',
-          ),
-          'version' => '7.x-1.2',
-          'project' => 'apachesolr_attachments',
-          'datestamp' => '1341591675',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7003',
-        'project' => 'apachesolr_attachments',
-        'version' => '7.x-1.2',
-      ),
-      'simplesamlphp_auth' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/simplesamlphp_auth/simplesamlphp_auth.module',
-        'basename' => 'simplesamlphp_auth.module',
-        'name' => 'simplesamlphp_auth',
-        'info' => 
-        array (
-          'name' => 'simpleSAMLphp authentication',
-          'description' => 'Allows users to authenticate to a remote SAML identity provider (IdP) via a locally configured SimpleSAMLphp service point (SP).',
-          'php' => '5.1',
-          'core' => '7.x',
-          'configure' => 'admin/config/people/simplesamlphp_auth',
-          'version' => '7.x-1.3',
-          'project' => 'simplesamlphp_auth',
-          'datestamp' => '1339444267',
-          'dependencies' => 
-          array (
-          ),
-        ),
-        'schema_version' => 0,
-        'project' => 'simplesamlphp_auth',
-        'version' => '7.x-1.3',
-      ),
-      'securepages' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/securepages/securepages.module',
-        'basename' => 'securepages.module',
-        'name' => 'securepages',
-        'info' => 
-        array (
-          'name' => 'Secure Pages',
-          'description' => 'Set which pages are always going to be used in secure mode (SSL) Warning: Do not enable this module without configuring your web server to handle SSL with this installation of Drupal',
-          'core' => '7.x',
-          'configure' => 'admin/config/system/securepages',
-          'files' => 
-          array (
-            0 => 'securepages.test',
-          ),
-          'version' => '7.x-1.x-dev',
-          'project' => 'securepages',
-          'datestamp' => '1337776854',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'securepages',
-        'version' => '7.x-1.x-dev',
-      ),
-      'quant' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/quant/quant.module',
-        'basename' => 'quant.module',
-        'name' => 'quant',
-        'info' => 
-        array (
-          'name' => 'Quant',
-          'description' => 'Display quantitative analytical charts of your site\'s activity over time periods',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'plugins/Quant.inc',
-          ),
-          'version' => '7.x-1.0-beta4',
-          'project' => 'quant',
-          'datestamp' => '1352297835',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'quant',
-        'version' => '7.x-1.0-beta4',
-      ),
-      'smtp' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/smtp/smtp.module',
-        'basename' => 'smtp.module',
-        'name' => 'smtp',
-        'info' => 
-        array (
-          'name' => 'SMTP Authentication Support',
-          'description' => 'Allow for site emails to be sent through an SMTP server of your choice.',
-          'core' => '7.x',
-          'package' => 'Mail',
-          'configure' => 'admin/config/system/smtp',
-          'files' => 
-          array (
-            0 => 'smtp.module',
-            1 => 'smtp.admin.inc',
-            2 => 'smtp.mail.inc',
-            3 => 'smtp.phpmailer.inc',
-            4 => 'smtp.transport.inc',
-          ),
-          'version' => '7.x-1.0-beta2',
-          'project' => 'smtp',
-          'datestamp' => '1348254500',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'smtp',
-        'version' => '7.x-1.0-beta2',
-      ),
-      'context_layouts' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/context/context_layouts/context_layouts.module',
-        'basename' => 'context_layouts.module',
-        'name' => 'context_layouts',
-        'info' => 
-        array (
-          'name' => 'Context layouts',
-          'description' => 'Allow theme layer to provide multiple region layouts and integrate with context.',
-          'dependencies' => 
-          array (
-            0 => 'context',
-          ),
-          'package' => 'Context',
-          'core' => '7.x',
-          'version' => '7.x-3.0-beta4',
-          'project' => 'context',
-          'datestamp' => '1344786407',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'context',
-        'version' => '7.x-3.0-beta4',
-      ),
       'context_ui' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/context/context_ui/context_ui.module',
@@ -6042,6 +5102,30 @@ $options['packages'] = array (
           'php' => '5.2.4',
         ),
         'schema_version' => '6004',
+        'project' => 'context',
+        'version' => '7.x-3.0-beta4',
+      ),
+      'context_layouts' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/context/context_layouts/context_layouts.module',
+        'basename' => 'context_layouts.module',
+        'name' => 'context_layouts',
+        'info' => 
+        array (
+          'name' => 'Context layouts',
+          'description' => 'Allow theme layer to provide multiple region layouts and integrate with context.',
+          'dependencies' => 
+          array (
+            0 => 'context',
+          ),
+          'package' => 'Context',
+          'core' => '7.x',
+          'version' => '7.x-3.0-beta4',
+          'project' => 'context',
+          'datestamp' => '1344786407',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
         'project' => 'context',
         'version' => '7.x-3.0-beta4',
       ),
@@ -6075,1093 +5159,6 @@ $options['packages'] = array (
         'schema_version' => '7000',
         'project' => 'context',
         'version' => '7.x-3.0-beta4',
-      ),
-      'jquery_update' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jquery_update/jquery_update.module',
-        'basename' => 'jquery_update.module',
-        'name' => 'jquery_update',
-        'info' => 
-        array (
-          'name' => 'jQuery Update',
-          'description' => 'Updates jQuery to jQuery 1.5.2 and jQuery UI 1.8.11.',
-          'package' => 'User interface',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'jquery_update.module',
-            1 => 'jquery_update.install',
-          ),
-          'configure' => 'admin/config/development/performance',
-          'version' => '7.x-2.2',
-          'project' => 'jquery_update',
-          'datestamp' => '1301920269',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'jquery_update',
-        'version' => '7.x-2.2',
-      ),
-      'languageicons' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/languageicons/languageicons.module',
-        'basename' => 'languageicons.module',
-        'name' => 'languageicons',
-        'info' => 
-        array (
-          'name' => 'Language icons',
-          'description' => 'Adds icons to language links.',
-          'dependencies' => 
-          array (
-            0 => 'locale',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'languageicons.module',
-            1 => 'languageicons.admin.inc',
-            2 => 'languageicons.install',
-          ),
-          'version' => '7.x-1.0',
-          'project' => 'languageicons',
-          'datestamp' => '1331734546',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6200',
-        'project' => 'languageicons',
-        'version' => '7.x-1.0',
-      ),
-      'lang_dropdown' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/lang_dropdown/lang_dropdown.module',
-        'basename' => 'lang_dropdown.module',
-        'name' => 'lang_dropdown',
-        'info' => 
-        array (
-          'name' => 'Language Switcher Dropdown',
-          'package' => 'Multilingual',
-          'description' => 'Provides a dropdown select to switch between available languages.',
-          'dependencies' => 
-          array (
-            0 => 'locale',
-          ),
-          'configure' => 'admin/structure/block',
-          'core' => '7.x',
-          'version' => '7.x-1.5',
-          'project' => 'lang_dropdown',
-          'datestamp' => '1339444196',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'lang_dropdown',
-        'version' => '7.x-1.5',
-      ),
-      'filter_perms' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/filter_perms/filter_perms.module',
-        'basename' => 'filter_perms.module',
-        'name' => 'filter_perms',
-        'info' => 
-        array (
-          'name' => 'Filter permissions',
-          'description' => 'Provides role and module filters to simplify the user permissions page.',
-          'package' => 'Administration',
-          'core' => '7.x',
-          'version' => '7.x-1.0',
-          'project' => 'filter_perms',
-          'datestamp' => '1337183755',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'filter_perms',
-        'version' => '7.x-1.0',
-      ),
-      'uuid_services' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid_services/uuid_services.module',
-        'basename' => 'uuid_services.module',
-        'name' => 'uuid_services',
-        'info' => 
-        array (
-          'name' => 'UUID Services',
-          'description' => 'Provides integration with the Services module, like exposing a UUID entity resource.',
-          'core' => '7.x',
-          'package' => 'Services - resources',
-          'dependencies' => 
-          array (
-            0 => 'services',
-            1 => 'uuid',
-            2 => 'entity',
-          ),
-          'version' => '7.x-1.0-alpha3',
-          'project' => 'uuid',
-          'datestamp' => '1328017553',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'uuid',
-        'version' => '7.x-1.0-alpha3',
-      ),
-      'uuid_services_example' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid_services_example/uuid_services_example.module',
-        'basename' => 'uuid_services_example.module',
-        'name' => 'uuid_services_example',
-        'info' => 
-        array (
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'rest_server',
-            1 => 'services',
-            2 => 'uuid',
-            3 => 'uuid_services',
-          ),
-          'description' => 'Example feature of a UUID service. Works well with the Deploy Example feature as a client.',
-          'features' => 
-          array (
-            'ctools' => 
-            array (
-              0 => 'services:services:3',
-            ),
-            'services_endpoint' => 
-            array (
-              0 => 'uuid_services_example',
-            ),
-          ),
-          'name' => 'UUID Services Example',
-          'package' => 'Features',
-          'php' => '5.2.4',
-          'version' => '7.x-1.0-alpha3',
-          'project' => 'uuid',
-          'datestamp' => '1328017553',
-        ),
-        'schema_version' => 0,
-        'project' => 'uuid',
-        'version' => '7.x-1.0-alpha3',
-      ),
-      'uuid' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/uuid/uuid.module',
-        'basename' => 'uuid.module',
-        'name' => 'uuid',
-        'info' => 
-        array (
-          'name' => 'Universally Unique ID',
-          'description' => 'Extends the entity functionality and adds support for universally unique identifiers.',
-          'core' => '7.x',
-          'package' => 'UUID',
-          'configure' => 'admin/config/system/uuid',
-          'files' => 
-          array (
-            0 => 'uuid.test',
-          ),
-          'version' => '7.x-1.0-alpha3',
-          'project' => 'uuid',
-          'datestamp' => '1328017553',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7101',
-        'project' => 'uuid',
-        'version' => '7.x-1.0-alpha3',
-      ),
-      'module_filter' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/module_filter/module_filter.module',
-        'basename' => 'module_filter.module',
-        'name' => 'module_filter',
-        'info' => 
-        array (
-          'name' => 'Module filter',
-          'description' => 'Filter the modules list.',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'module_filter.install',
-            1 => 'module_filter.js',
-            2 => 'module_filter.module',
-            3 => 'module_filter.admin.inc',
-            4 => 'module_filter.theme.inc',
-            5 => 'css/module_filter.css',
-            6 => 'css/module_filter_tab.css',
-            7 => 'js/module_filter.js',
-            8 => 'js/module_filter_tab.js',
-          ),
-          'configure' => 'admin/config/user-interface/modulefilter',
-          'version' => '7.x-1.7',
-          'project' => 'module_filter',
-          'datestamp' => '1341518501',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7100',
-        'project' => 'module_filter',
-        'version' => '7.x-1.7',
-      ),
-      'page_manager' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/page_manager/page_manager.module',
-        'basename' => 'page_manager.module',
-        'name' => 'page_manager',
-        'info' => 
-        array (
-          'name' => 'Page manager',
-          'description' => 'Provides a UI and API to manage pages within the site.',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'package' => 'Chaos tool suite',
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools_custom_content' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_custom_content/ctools_custom_content.module',
-        'basename' => 'ctools_custom_content.module',
-        'name' => 'ctools_custom_content',
-        'info' => 
-        array (
-          'name' => 'Custom content panes',
-          'description' => 'Create custom, exportable, reusable content panes for applications like Panels.',
-          'core' => '7.x',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools_plugin_example' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_plugin_example/ctools_plugin_example.module',
-        'basename' => 'ctools_plugin_example.module',
-        'name' => 'ctools_plugin_example',
-        'info' => 
-        array (
-          'name' => 'Chaos Tools (CTools) Plugin Example',
-          'description' => 'Shows how an external module can provide ctools plugins (for Panels, etc.).',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-            1 => 'panels',
-            2 => 'page_manager',
-            3 => 'advanced_help',
-          ),
-          'core' => '7.x',
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools_ajax_sample' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_ajax_sample/ctools_ajax_sample.module',
-        'basename' => 'ctools_ajax_sample.module',
-        'name' => 'ctools_ajax_sample',
-        'info' => 
-        array (
-          'name' => 'Chaos Tools (CTools) AJAX Example',
-          'description' => 'Shows how to use the power of Chaos AJAX.',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'core' => '7.x',
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'views_content' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/views_content/views_content.module',
-        'basename' => 'views_content.module',
-        'name' => 'views_content',
-        'info' => 
-        array (
-          'name' => 'Views content panes',
-          'description' => 'Allows Views content to be used in Panels, Dashboard and other modules which use the CTools Content API.',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-            1 => 'views',
-          ),
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'plugins/views/views_content_plugin_display_ctools_context.inc',
-            1 => 'plugins/views/views_content_plugin_display_panel_pane.inc',
-            2 => 'plugins/views/views_content_plugin_style_ctools_context.inc',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'stylizer' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/stylizer/stylizer.module',
-        'basename' => 'stylizer.module',
-        'name' => 'stylizer',
-        'info' => 
-        array (
-          'name' => 'Stylizer',
-          'description' => 'Create custom styles for applications such as Panels.',
-          'core' => '7.x',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-            1 => 'color',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'bulk_export' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/bulk_export/bulk_export.module',
-        'basename' => 'bulk_export.module',
-        'name' => 'bulk_export',
-        'info' => 
-        array (
-          'name' => 'Bulk Export',
-          'description' => 'Performs bulk exporting of data objects known about by Chaos tools.',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'package' => 'Chaos tool suite',
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools_access_ruleset' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_access_ruleset/ctools_access_ruleset.module',
-        'basename' => 'ctools_access_ruleset.module',
-        'name' => 'ctools_access_ruleset',
-        'info' => 
-        array (
-          'name' => 'Custom rulesets',
-          'description' => 'Create custom, exportable, reusable access rulesets for applications like Panels.',
-          'core' => '7.x',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools_export_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/tests/ctools_export_test/ctools_export_test.module',
-        'basename' => 'ctools_export_test.module',
-        'name' => 'ctools_export_test',
-        'info' => 
-        array (
-          'name' => 'CTools export test',
-          'description' => 'CTools export test module',
-          'core' => '7.x',
-          'package' => 'Chaos tool suite',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'hidden' => true,
-          'files' => 
-          array (
-            0 => 'ctools_export.test',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools_plugin_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/tests/ctools_plugin_test.module',
-        'basename' => 'ctools_plugin_test.module',
-        'name' => 'ctools_plugin_test',
-        'info' => 
-        array (
-          'name' => 'Chaos tools plugins test',
-          'description' => 'Provides hooks for testing ctools plugins.',
-          'package' => 'Chaos tool suite',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'files' => 
-          array (
-            0 => 'ctools.plugins.test',
-            1 => 'object_cache.test',
-            2 => 'css.test',
-          ),
-          'hidden' => true,
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'ctools' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools.module',
-        'basename' => 'ctools.module',
-        'name' => 'ctools',
-        'info' => 
-        array (
-          'name' => 'Chaos tools',
-          'description' => 'A library of helpful tools by Merlin of Chaos.',
-          'core' => '7.x',
-          'package' => 'Chaos tool suite',
-          'files' => 
-          array (
-            0 => 'includes/context.inc',
-            1 => 'includes/math-expr.inc',
-            2 => 'includes/stylizer.inc',
-          ),
-          'version' => '7.x-1.1',
-          'project' => 'ctools',
-          'datestamp' => '1344463011',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6007',
-        'project' => 'ctools',
-        'version' => '7.x-1.1',
-      ),
-      'content_access_rules' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/content_access/content_access_rules/content_access_rules.module',
-        'basename' => 'content_access_rules.module',
-        'name' => 'content_access_rules',
-        'info' => 
-        array (
-          'name' => 'Content Access Rules Integrations',
-          'description' => 'Integrates Rules with Content access. Allows to act on access events, conditions, and actions.',
-          'package' => 'Access control',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'content_access',
-            1 => 'rules',
-          ),
-          'files' => 
-          array (
-            0 => 'content_access.rules.inc',
-          ),
-          'version' => '7.x-1.2-beta1',
-          'project' => 'content_access',
-          'datestamp' => '1311517015',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'content_access',
-        'version' => '7.x-1.2-beta1',
-      ),
-      'content_access' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/content_access/content_access.module',
-        'basename' => 'content_access.module',
-        'name' => 'content_access',
-        'info' => 
-        array (
-          'name' => 'Content Access',
-          'description' => 'Provides flexible content access control.',
-          'core' => '7.x',
-          'package' => 'Access control',
-          'files' => 
-          array (
-            0 => 'content_access.rules.inc',
-            1 => 'tests/content_access.test',
-            2 => 'tests/content_access_acl.test',
-          ),
-          'version' => '7.x-1.2-beta1',
-          'project' => 'content_access',
-          'datestamp' => '1311517015',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'content_access',
-        'version' => '7.x-1.2-beta1',
-      ),
-      'fe_block' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_block.module',
-        'basename' => 'fe_block.module',
-        'name' => 'fe_block',
-        'info' => 
-        array (
-          'name' => 'FE block',
-          'description' => 'Build blocks and block settings as features.',
-          'package' => 'Features extra',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'block',
-            1 => 'features',
-            2 => 'ctools',
-          ),
-          'version' => '7.x-1.x-dev',
-          'project' => 'features_extra',
-          'datestamp' => '1308442976',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'features_extra',
-        'version' => '7.x-1.x-dev',
-      ),
-      'fe_profile' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_profile.module',
-        'basename' => 'fe_profile.module',
-        'name' => 'fe_profile',
-        'info' => 
-        array (
-          'name' => 'Feature Extras Profle',
-          'description' => 'Export profile field using features.',
-          'package' => 'Ideup',
-          'dependencies' => 
-          array (
-            0 => 'profile',
-          ),
-          'core' => '7.x',
-          'version' => '7.x-1.x-dev',
-          'project' => 'features_extra',
-          'datestamp' => '1308442976',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'features_extra',
-        'version' => '7.x-1.x-dev',
-      ),
-      'fe_nodequeue' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_nodequeue.module',
-        'basename' => 'fe_nodequeue.module',
-        'name' => 'fe_nodequeue',
-        'info' => 
-        array (
-          'name' => 'FE nodequeue',
-          'description' => 'Build nodequeues as features.',
-          'package' => 'Features extra',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'nodequeue',
-            1 => 'features',
-            2 => 'ctools',
-          ),
-          'version' => '7.x-1.x-dev',
-          'project' => 'features_extra',
-          'datestamp' => '1308442976',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'features_extra',
-        'version' => '7.x-1.x-dev',
-      ),
-      'views_slideshow_jcarousel' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow_jcarousel/views_slideshow_jcarousel.module',
-        'basename' => 'views_slideshow_jcarousel.module',
-        'name' => 'views_slideshow_jcarousel',
-        'info' => 
-        array (
-          'name' => 'Views Slideshow: JCarousel',
-          'description' => 'Adds a jCarousel option to views slideshow',
-          'dependencies' => 
-          array (
-            0 => 'views_slideshow',
-            1 => 'libraries',
-          ),
-          'package' => 'Views',
-          'core' => '7.x',
-          'version' => '7.x-1.x-dev',
-          'project' => 'views_slideshow_jcarousel',
-          'datestamp' => '1328877860',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'views_slideshow_jcarousel',
-        'version' => '7.x-1.x-dev',
-      ),
-      'variable_realm' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_realm/variable_realm.module',
-        'basename' => 'variable_realm.module',
-        'name' => 'variable_realm',
-        'info' => 
-        array (
-          'name' => 'Variable realm',
-          'description' => 'API to use variable realms from different modules',
-          'dependencies' => 
-          array (
-            0 => 'variable',
-          ),
-          'package' => 'Variable',
-          'core' => '7.x',
-          'version' => '7.x-2.1',
-          'files' => 
-          array (
-            0 => 'variable_realm.class.inc',
-            1 => 'variable_realm_union.class.inc',
-          ),
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'variable_example' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_example/variable_example.module',
-        'basename' => 'variable_example.module',
-        'name' => 'variable_example',
-        'info' => 
-        array (
-          'name' => 'Variable example',
-          'description' => 'An example module showing how to use the Variable API and providing some variables.',
-          'dependencies' => 
-          array (
-            0 => 'variable',
-            1 => 'variable_store',
-          ),
-          'package' => 'Example modules',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'variable_example.variable.inc',
-          ),
-          'version' => '7.x-2.1',
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'variable_views' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_views/variable_views.module',
-        'basename' => 'variable_views.module',
-        'name' => 'variable_views',
-        'info' => 
-        array (
-          'name' => 'Variable views',
-          'description' => 'Provides views integration for variable, included a default variable argument.',
-          'dependencies' => 
-          array (
-            0 => 'variable',
-            1 => 'views',
-          ),
-          'package' => 'Variable',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'includes/views_plugin_argument_default_variable.inc',
-            1 => 'includes/views_handler_field_variable_title.inc',
-            2 => 'includes/views_handler_field_variable_value.inc',
-          ),
-          'version' => '7.x-2.1',
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'variable_admin' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_admin/variable_admin.module',
-        'basename' => 'variable_admin.module',
-        'name' => 'variable_admin',
-        'info' => 
-        array (
-          'name' => 'Variable admin',
-          'description' => 'Variable Administration UI',
-          'dependencies' => 
-          array (
-            0 => 'variable',
-          ),
-          'package' => 'Variable',
-          'core' => '7.x',
-          'version' => '7.x-2.1',
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'variable_advanced' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_advanced/variable_advanced.module',
-        'basename' => 'variable_advanced.module',
-        'name' => 'variable_advanced',
-        'info' => 
-        array (
-          'name' => 'Variable advanced',
-          'description' => 'Provides access to advanced low level variables. By using this you will be able to break your site badly.',
-          'dependencies' => 
-          array (
-            0 => 'variable',
-          ),
-          'package' => 'Variable',
-          'core' => '7.x',
-          'version' => '7.x-2.1',
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'variable_store' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_store/variable_store.module',
-        'basename' => 'variable_store.module',
-        'name' => 'variable_store',
-        'info' => 
-        array (
-          'name' => 'Variable store',
-          'description' => 'Database storage for variable realms. This is an API module.',
-          'dependencies' => 
-          array (
-            0 => 'variable',
-          ),
-          'package' => 'Variable',
-          'core' => '7.x',
-          'version' => '7.x-2.1',
-          'files' => 
-          array (
-            0 => 'variable_store.class.inc',
-            1 => 'variable_store.test',
-          ),
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7000',
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'variable' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable.module',
-        'basename' => 'variable.module',
-        'name' => 'variable',
-        'info' => 
-        array (
-          'name' => 'Variable',
-          'description' => 'Variable Information and basic variable API',
-          'package' => 'Variable',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'includes/forum.variable.inc',
-            1 => 'includes/locale.variable.inc',
-            2 => 'includes/menu.variable.inc',
-            3 => 'includes/node.variable.inc',
-            4 => 'includes/system.variable.inc',
-            5 => 'includes/taxonomy.variable.inc',
-            6 => 'includes/translation.variable.inc',
-            7 => 'includes/user.variable.inc',
-            8 => 'variable.test',
-          ),
-          'version' => '7.x-2.1',
-          'project' => 'variable',
-          'datestamp' => '1341236242',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'variable',
-        'version' => '7.x-2.1',
-      ),
-      'taxonomy_manager' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/taxonomy_manager/taxonomy_manager.module',
-        'basename' => 'taxonomy_manager.module',
-        'name' => 'taxonomy_manager',
-        'info' => 
-        array (
-          'name' => 'Taxonomy Manager',
-          'description' => 'Tool for administrating taxonomy terms.',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'taxonomy',
-          ),
-          'files' => 
-          array (
-            0 => 'taxonomy_manager.admin.inc',
-          ),
-          'package' => 'Taxonomy',
-          'version' => '7.x-1.0-beta3',
-          'project' => 'taxonomy_manager',
-          'datestamp' => '1340208114',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7002',
-        'project' => 'taxonomy_manager',
-        'version' => '7.x-1.0-beta3',
-      ),
-      'panels_mini' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_mini/panels_mini.module',
-        'basename' => 'panels_mini.module',
-        'name' => 'panels_mini',
-        'info' => 
-        array (
-          'name' => 'Mini panels',
-          'description' => 'Create mini panels that can be used as blocks by Drupal and panes by other panel modules.',
-          'package' => 'Panels',
-          'dependencies' => 
-          array (
-            0 => 'panels',
-          ),
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'plugins/export_ui/panels_mini_ui.class.php',
-          ),
-          'version' => '7.x-3.3',
-          'project' => 'panels',
-          'datestamp' => '1345319572',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'panels',
-        'version' => '7.x-3.3',
-      ),
-      'panels_ipe' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_ipe/panels_ipe.module',
-        'basename' => 'panels_ipe.module',
-        'name' => 'panels_ipe',
-        'info' => 
-        array (
-          'name' => 'Panels In-Place Editor',
-          'description' => 'Provide a UI for managing some Panels directly on the frontend, instead of having to use the backend.',
-          'package' => 'Panels',
-          'dependencies' => 
-          array (
-            0 => 'panels',
-          ),
-          'core' => '7.x',
-          'configure' => 'admin/structure/panels',
-          'files' => 
-          array (
-            0 => 'panels_ipe.module',
-          ),
-          'version' => '7.x-3.3',
-          'project' => 'panels',
-          'datestamp' => '1345319572',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'panels',
-        'version' => '7.x-3.3',
-      ),
-      'panels_node' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_node/panels_node.module',
-        'basename' => 'panels_node.module',
-        'name' => 'panels_node',
-        'info' => 
-        array (
-          'name' => 'Panel nodes',
-          'description' => 'Create nodes that are divided into areas with selectable content.',
-          'package' => 'Panels',
-          'dependencies' => 
-          array (
-            0 => 'panels',
-          ),
-          'configure' => 'admin/structure/panels',
-          'core' => '7.x',
-          'files' => 
-          array (
-            0 => 'panels_node.module',
-          ),
-          'version' => '7.x-3.3',
-          'project' => 'panels',
-          'datestamp' => '1345319572',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '6001',
-        'project' => 'panels',
-        'version' => '7.x-3.3',
-      ),
-      'panels' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels.module',
-        'basename' => 'panels.module',
-        'name' => 'panels',
-        'info' => 
-        array (
-          'name' => 'Panels',
-          'description' => 'Core Panels display functions; provides no external UI, at least one other Panels module should be enabled.',
-          'core' => '7.x',
-          'package' => 'Panels',
-          'configure' => 'admin/structure/panels',
-          'dependencies' => 
-          array (
-            0 => 'ctools',
-          ),
-          'files' => 
-          array (
-            0 => 'panels.module',
-            1 => 'includes/common.inc',
-            2 => 'includes/legacy.inc',
-            3 => 'includes/plugins.inc',
-            4 => 'plugins/views/panels_views_plugin_row_fields.inc',
-          ),
-          'version' => '7.x-3.3',
-          'project' => 'panels',
-          'datestamp' => '1345319572',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7301',
-        'project' => 'panels',
-        'version' => '7.x-3.3',
-      ),
-      'i18n_menu_node' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/i18n_menu_node/i18n_menu_node.module',
-        'basename' => 'i18n_menu_node.module',
-        'name' => 'i18n_menu_node',
-        'info' => 
-        array (
-          'name' => 'Menu translation (Node)',
-          'description' => 'Allows a single node menu item to point to different node translations depending on the current language.',
-          'dependencies' => 
-          array (
-            0 => 'i18n',
-            1 => 'menu',
-            2 => 'i18n_block',
-            3 => 'i18n_string',
-            4 => 'i18n_menu',
-          ),
-          'package' => 'Multilingual - Internationalization',
-          'core' => '7.x',
-          'version' => '7.x-1.x-dev',
-          'project' => 'i18n_menu_node',
-          'datestamp' => '1342182305',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'i18n_menu_node',
-        'version' => '7.x-1.x-dev',
-      ),
-      'superfish' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/superfish/superfish.module',
-        'basename' => 'superfish.module',
-        'name' => 'superfish',
-        'info' => 
-        array (
-          'name' => 'Superfish',
-          'description' => 'jQuery Superfish plugin for your Drupal menus.',
-          'package' => 'User interface',
-          'dependencies' => 
-          array (
-            0 => 'menu',
-            1 => 'libraries',
-          ),
-          'configure' => 'admin/config/user-interface/superfish',
-          'core' => '7.x',
-          'version' => '7.x-1.9-beta4',
-          'project' => 'superfish',
-          'datestamp' => '1322150145',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => '7100',
-        'project' => 'superfish',
-        'version' => '7.x-1.9-beta4',
       ),
       'current_search' => 
       array (
@@ -7262,6 +5259,31 @@ $options['packages'] = array (
         'project' => 'facetapi',
         'version' => '7.x-1.1',
       ),
+      'nodejs_actions' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_actions/nodejs_actions.module',
+        'basename' => 'nodejs_actions.module',
+        'name' => 'nodejs_actions',
+        'info' => 
+        array (
+          'name' => 'Nodejs Actions',
+          'description' => 'Provides actions that dispatch realtime user notifications via node.js.',
+          'package' => 'Nodejs',
+          'version' => '7.x-1.0',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'nodejs',
+            1 => 'trigger',
+          ),
+          'project' => 'nodejs',
+          'datestamp' => '1344654738',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'nodejs',
+        'version' => '7.x-1.0',
+      ),
       'nodejs_config' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_config/nodejs_config.module',
@@ -7277,6 +5299,55 @@ $options['packages'] = array (
           'dependencies' => 
           array (
             0 => 'nodejs',
+          ),
+          'project' => 'nodejs',
+          'datestamp' => '1344654738',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'nodejs',
+        'version' => '7.x-1.0',
+      ),
+      'nodejs_ajax' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_ajax/nodejs_ajax.module',
+        'basename' => 'nodejs_ajax.module',
+        'name' => 'nodejs_ajax',
+        'info' => 
+        array (
+          'name' => 'Nodejs/AJAX framework integration',
+          'description' => 'Adds support for the Drupal AJAX framework to the Nodejs module',
+          'package' => 'Nodejs',
+          'version' => '7.x-1.0',
+          'core' => '7.x',
+          'project' => 'nodejs',
+          'datestamp' => '1344654738',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'nodejs',
+        'version' => '7.x-1.0',
+      ),
+      'nodejs_watchdog' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_watchdog/nodejs_watchdog.module',
+        'basename' => 'nodejs_watchdog.module',
+        'name' => 'nodejs_watchdog',
+        'info' => 
+        array (
+          'name' => 'Nodejs Watchdog',
+          'description' => 'Adds watchdog messages to the dblog page in realtime.',
+          'package' => 'Nodejs',
+          'version' => '7.x-1.0',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'nodejs',
+            1 => 'nodejs_ajax',
+            2 => 'dblog',
           ),
           'project' => 'nodejs',
           'datestamp' => '1344654738',
@@ -7310,78 +5381,6 @@ $options['packages'] = array (
         'project' => 'nodejs',
         'version' => '7.x-1.0',
       ),
-      'nodejs_actions' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_actions/nodejs_actions.module',
-        'basename' => 'nodejs_actions.module',
-        'name' => 'nodejs_actions',
-        'info' => 
-        array (
-          'name' => 'Nodejs Actions',
-          'description' => 'Provides actions that dispatch realtime user notifications via node.js.',
-          'package' => 'Nodejs',
-          'version' => '7.x-1.0',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'nodejs',
-            1 => 'trigger',
-          ),
-          'project' => 'nodejs',
-          'datestamp' => '1344654738',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'nodejs',
-        'version' => '7.x-1.0',
-      ),
-      'nodejs_ajax' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_ajax/nodejs_ajax.module',
-        'basename' => 'nodejs_ajax.module',
-        'name' => 'nodejs_ajax',
-        'info' => 
-        array (
-          'name' => 'Nodejs/AJAX framework integration',
-          'description' => 'Adds support for the Drupal AJAX framework to the Nodejs module',
-          'package' => 'Nodejs',
-          'version' => '7.x-1.0',
-          'core' => '7.x',
-          'project' => 'nodejs',
-          'datestamp' => '1344654738',
-          'dependencies' => 
-          array (
-          ),
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'nodejs',
-        'version' => '7.x-1.0',
-      ),
-      'nodejs_notify' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_notify/nodejs_notify.module',
-        'basename' => 'nodejs_notify.module',
-        'name' => 'nodejs_notify',
-        'info' => 
-        array (
-          'name' => 'Nodejs Notifications',
-          'description' => 'Adds a client to pages for displaying realtime notification from node.js.',
-          'package' => 'Nodejs',
-          'version' => '7.x-1.0',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'nodejs',
-          ),
-          'project' => 'nodejs',
-          'datestamp' => '1344654738',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'nodejs',
-        'version' => '7.x-1.0',
-      ),
       'nodejs_buddylist' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_buddylist/nodejs_buddylist.module',
@@ -7407,23 +5406,21 @@ $options['packages'] = array (
         'project' => 'nodejs',
         'version' => '7.x-1.0',
       ),
-      'nodejs_watchdog' => 
+      'nodejs_notify' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_watchdog/nodejs_watchdog.module',
-        'basename' => 'nodejs_watchdog.module',
-        'name' => 'nodejs_watchdog',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/nodejs/nodejs_notify/nodejs_notify.module',
+        'basename' => 'nodejs_notify.module',
+        'name' => 'nodejs_notify',
         'info' => 
         array (
-          'name' => 'Nodejs Watchdog',
-          'description' => 'Adds watchdog messages to the dblog page in realtime.',
+          'name' => 'Nodejs Notifications',
+          'description' => 'Adds a client to pages for displaying realtime notification from node.js.',
           'package' => 'Nodejs',
           'version' => '7.x-1.0',
           'core' => '7.x',
           'dependencies' => 
           array (
             0 => 'nodejs',
-            1 => 'nodejs_ajax',
-            2 => 'dblog',
           ),
           'project' => 'nodejs',
           'datestamp' => '1344654738',
@@ -7461,6 +5458,3068 @@ $options['packages'] = array (
         'project' => 'nodejs',
         'version' => '7.x-1.0',
       ),
+      'ctools_access_ruleset' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_access_ruleset/ctools_access_ruleset.module',
+        'basename' => 'ctools_access_ruleset.module',
+        'name' => 'ctools_access_ruleset',
+        'info' => 
+        array (
+          'name' => 'Custom rulesets',
+          'description' => 'Create custom, exportable, reusable access rulesets for applications like Panels.',
+          'core' => '7.x',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'page_manager' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/page_manager/page_manager.module',
+        'basename' => 'page_manager.module',
+        'name' => 'page_manager',
+        'info' => 
+        array (
+          'name' => 'Page manager',
+          'description' => 'Provides a UI and API to manage pages within the site.',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'package' => 'Chaos tool suite',
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'stylizer' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/stylizer/stylizer.module',
+        'basename' => 'stylizer.module',
+        'name' => 'stylizer',
+        'info' => 
+        array (
+          'name' => 'Stylizer',
+          'description' => 'Create custom styles for applications such as Panels.',
+          'core' => '7.x',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+            1 => 'color',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'ctools_export_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/tests/ctools_export_test/ctools_export_test.module',
+        'basename' => 'ctools_export_test.module',
+        'name' => 'ctools_export_test',
+        'info' => 
+        array (
+          'name' => 'CTools export test',
+          'description' => 'CTools export test module',
+          'core' => '7.x',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'hidden' => true,
+          'files' => 
+          array (
+            0 => 'ctools_export.test',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'ctools_plugin_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/tests/ctools_plugin_test.module',
+        'basename' => 'ctools_plugin_test.module',
+        'name' => 'ctools_plugin_test',
+        'info' => 
+        array (
+          'name' => 'Chaos tools plugins test',
+          'description' => 'Provides hooks for testing ctools plugins.',
+          'package' => 'Chaos tool suite',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'files' => 
+          array (
+            0 => 'ctools.plugins.test',
+            1 => 'object_cache.test',
+            2 => 'css.test',
+          ),
+          'hidden' => true,
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'ctools_ajax_sample' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_ajax_sample/ctools_ajax_sample.module',
+        'basename' => 'ctools_ajax_sample.module',
+        'name' => 'ctools_ajax_sample',
+        'info' => 
+        array (
+          'name' => 'Chaos Tools (CTools) AJAX Example',
+          'description' => 'Shows how to use the power of Chaos AJAX.',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'core' => '7.x',
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'bulk_export' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/bulk_export/bulk_export.module',
+        'basename' => 'bulk_export.module',
+        'name' => 'bulk_export',
+        'info' => 
+        array (
+          'name' => 'Bulk Export',
+          'description' => 'Performs bulk exporting of data objects known about by Chaos tools.',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'package' => 'Chaos tool suite',
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'ctools_plugin_example' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_plugin_example/ctools_plugin_example.module',
+        'basename' => 'ctools_plugin_example.module',
+        'name' => 'ctools_plugin_example',
+        'info' => 
+        array (
+          'name' => 'Chaos Tools (CTools) Plugin Example',
+          'description' => 'Shows how an external module can provide ctools plugins (for Panels, etc.).',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+            1 => 'panels',
+            2 => 'page_manager',
+            3 => 'advanced_help',
+          ),
+          'core' => '7.x',
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'views_content' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/views_content/views_content.module',
+        'basename' => 'views_content.module',
+        'name' => 'views_content',
+        'info' => 
+        array (
+          'name' => 'Views content panes',
+          'description' => 'Allows Views content to be used in Panels, Dashboard and other modules which use the CTools Content API.',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+            1 => 'views',
+          ),
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'plugins/views/views_content_plugin_display_ctools_context.inc',
+            1 => 'plugins/views/views_content_plugin_display_panel_pane.inc',
+            2 => 'plugins/views/views_content_plugin_style_ctools_context.inc',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'ctools_custom_content' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools_custom_content/ctools_custom_content.module',
+        'basename' => 'ctools_custom_content.module',
+        'name' => 'ctools_custom_content',
+        'info' => 
+        array (
+          'name' => 'Custom content panes',
+          'description' => 'Create custom, exportable, reusable content panes for applications like Panels.',
+          'core' => '7.x',
+          'package' => 'Chaos tool suite',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'ctools' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ctools/ctools.module',
+        'basename' => 'ctools.module',
+        'name' => 'ctools',
+        'info' => 
+        array (
+          'name' => 'Chaos tools',
+          'description' => 'A library of helpful tools by Merlin of Chaos.',
+          'core' => '7.x',
+          'package' => 'Chaos tool suite',
+          'files' => 
+          array (
+            0 => 'includes/context.inc',
+            1 => 'includes/math-expr.inc',
+            2 => 'includes/stylizer.inc',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'ctools',
+          'datestamp' => '1344463011',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6007',
+        'project' => 'ctools',
+        'version' => '7.x-1.1',
+      ),
+      'variable_realm' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_realm/variable_realm.module',
+        'basename' => 'variable_realm.module',
+        'name' => 'variable_realm',
+        'info' => 
+        array (
+          'name' => 'Variable realm',
+          'description' => 'API to use variable realms from different modules',
+          'dependencies' => 
+          array (
+            0 => 'variable',
+          ),
+          'package' => 'Variable',
+          'core' => '7.x',
+          'version' => '7.x-2.1',
+          'files' => 
+          array (
+            0 => 'variable_realm.class.inc',
+            1 => 'variable_realm_union.class.inc',
+          ),
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'variable_advanced' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_advanced/variable_advanced.module',
+        'basename' => 'variable_advanced.module',
+        'name' => 'variable_advanced',
+        'info' => 
+        array (
+          'name' => 'Variable advanced',
+          'description' => 'Provides access to advanced low level variables. By using this you will be able to break your site badly.',
+          'dependencies' => 
+          array (
+            0 => 'variable',
+          ),
+          'package' => 'Variable',
+          'core' => '7.x',
+          'version' => '7.x-2.1',
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'variable_store' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_store/variable_store.module',
+        'basename' => 'variable_store.module',
+        'name' => 'variable_store',
+        'info' => 
+        array (
+          'name' => 'Variable store',
+          'description' => 'Database storage for variable realms. This is an API module.',
+          'dependencies' => 
+          array (
+            0 => 'variable',
+          ),
+          'package' => 'Variable',
+          'core' => '7.x',
+          'version' => '7.x-2.1',
+          'files' => 
+          array (
+            0 => 'variable_store.class.inc',
+            1 => 'variable_store.test',
+          ),
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'variable_views' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_views/variable_views.module',
+        'basename' => 'variable_views.module',
+        'name' => 'variable_views',
+        'info' => 
+        array (
+          'name' => 'Variable views',
+          'description' => 'Provides views integration for variable, included a default variable argument.',
+          'dependencies' => 
+          array (
+            0 => 'variable',
+            1 => 'views',
+          ),
+          'package' => 'Variable',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'includes/views_plugin_argument_default_variable.inc',
+            1 => 'includes/views_handler_field_variable_title.inc',
+            2 => 'includes/views_handler_field_variable_value.inc',
+          ),
+          'version' => '7.x-2.1',
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'variable_example' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_example/variable_example.module',
+        'basename' => 'variable_example.module',
+        'name' => 'variable_example',
+        'info' => 
+        array (
+          'name' => 'Variable example',
+          'description' => 'An example module showing how to use the Variable API and providing some variables.',
+          'dependencies' => 
+          array (
+            0 => 'variable',
+            1 => 'variable_store',
+          ),
+          'package' => 'Example modules',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'variable_example.variable.inc',
+          ),
+          'version' => '7.x-2.1',
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'variable_admin' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable_admin/variable_admin.module',
+        'basename' => 'variable_admin.module',
+        'name' => 'variable_admin',
+        'info' => 
+        array (
+          'name' => 'Variable admin',
+          'description' => 'Variable Administration UI',
+          'dependencies' => 
+          array (
+            0 => 'variable',
+          ),
+          'package' => 'Variable',
+          'core' => '7.x',
+          'version' => '7.x-2.1',
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'variable' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/variable/variable.module',
+        'basename' => 'variable.module',
+        'name' => 'variable',
+        'info' => 
+        array (
+          'name' => 'Variable',
+          'description' => 'Variable Information and basic variable API',
+          'package' => 'Variable',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'includes/forum.variable.inc',
+            1 => 'includes/locale.variable.inc',
+            2 => 'includes/menu.variable.inc',
+            3 => 'includes/node.variable.inc',
+            4 => 'includes/system.variable.inc',
+            5 => 'includes/taxonomy.variable.inc',
+            6 => 'includes/translation.variable.inc',
+            7 => 'includes/user.variable.inc',
+            8 => 'variable.test',
+          ),
+          'version' => '7.x-2.1',
+          'project' => 'variable',
+          'datestamp' => '1341236242',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'variable',
+        'version' => '7.x-2.1',
+      ),
+      'languageicons' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/languageicons/languageicons.module',
+        'basename' => 'languageicons.module',
+        'name' => 'languageicons',
+        'info' => 
+        array (
+          'name' => 'Language icons',
+          'description' => 'Adds icons to language links.',
+          'dependencies' => 
+          array (
+            0 => 'locale',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'languageicons.module',
+            1 => 'languageicons.admin.inc',
+            2 => 'languageicons.install',
+          ),
+          'version' => '7.x-1.0',
+          'project' => 'languageicons',
+          'datestamp' => '1331734546',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6200',
+        'project' => 'languageicons',
+        'version' => '7.x-1.0',
+      ),
+      'panels_ipe' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_ipe/panels_ipe.module',
+        'basename' => 'panels_ipe.module',
+        'name' => 'panels_ipe',
+        'info' => 
+        array (
+          'name' => 'Panels In-Place Editor',
+          'description' => 'Provide a UI for managing some Panels directly on the frontend, instead of having to use the backend.',
+          'package' => 'Panels',
+          'dependencies' => 
+          array (
+            0 => 'panels',
+          ),
+          'core' => '7.x',
+          'configure' => 'admin/structure/panels',
+          'files' => 
+          array (
+            0 => 'panels_ipe.module',
+          ),
+          'version' => '7.x-3.3',
+          'project' => 'panels',
+          'datestamp' => '1345319572',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'panels',
+        'version' => '7.x-3.3',
+      ),
+      'panels_node' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_node/panels_node.module',
+        'basename' => 'panels_node.module',
+        'name' => 'panels_node',
+        'info' => 
+        array (
+          'name' => 'Panel nodes',
+          'description' => 'Create nodes that are divided into areas with selectable content.',
+          'package' => 'Panels',
+          'dependencies' => 
+          array (
+            0 => 'panels',
+          ),
+          'configure' => 'admin/structure/panels',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'panels_node.module',
+          ),
+          'version' => '7.x-3.3',
+          'project' => 'panels',
+          'datestamp' => '1345319572',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6001',
+        'project' => 'panels',
+        'version' => '7.x-3.3',
+      ),
+      'panels_mini' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels_mini/panels_mini.module',
+        'basename' => 'panels_mini.module',
+        'name' => 'panels_mini',
+        'info' => 
+        array (
+          'name' => 'Mini panels',
+          'description' => 'Create mini panels that can be used as blocks by Drupal and panes by other panel modules.',
+          'package' => 'Panels',
+          'dependencies' => 
+          array (
+            0 => 'panels',
+          ),
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'plugins/export_ui/panels_mini_ui.class.php',
+          ),
+          'version' => '7.x-3.3',
+          'project' => 'panels',
+          'datestamp' => '1345319572',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'panels',
+        'version' => '7.x-3.3',
+      ),
+      'panels' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/panels/panels.module',
+        'basename' => 'panels.module',
+        'name' => 'panels',
+        'info' => 
+        array (
+          'name' => 'Panels',
+          'description' => 'Core Panels display functions; provides no external UI, at least one other Panels module should be enabled.',
+          'core' => '7.x',
+          'package' => 'Panels',
+          'configure' => 'admin/structure/panels',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'files' => 
+          array (
+            0 => 'panels.module',
+            1 => 'includes/common.inc',
+            2 => 'includes/legacy.inc',
+            3 => 'includes/plugins.inc',
+            4 => 'plugins/views/panels_views_plugin_row_fields.inc',
+          ),
+          'version' => '7.x-3.3',
+          'project' => 'panels',
+          'datestamp' => '1345319572',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7301',
+        'project' => 'panels',
+        'version' => '7.x-3.3',
+      ),
+      'apachesolr_confgen_advanced_settings' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_confgen/apachesolr_confgen_advanced_settings/apachesolr_confgen_advanced_settings.module',
+        'basename' => 'apachesolr_confgen_advanced_settings.module',
+        'name' => 'apachesolr_confgen_advanced_settings',
+        'info' => 
+        array (
+          'name' => 'Apache Solr Advanced Settings',
+          'description' => 'Tweak things like data dir or auto commit time',
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'apachesolr_confgen',
+            1 => 'variable',
+          ),
+          'files' => 
+          array (
+            0 => 'apachesolr_confgen_advanced_settings.variable.inc',
+          ),
+          'version' => '7.x-1.0-alpha2',
+          'project' => 'apachesolr_confgen',
+          'datestamp' => '1346687231',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'apachesolr_confgen',
+        'version' => '7.x-1.0-alpha2',
+      ),
+      'apachesolr_confgen_textfiles' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_confgen/apachesolr_confgen_textfiles/apachesolr_confgen_textfiles.module',
+        'basename' => 'apachesolr_confgen_textfiles.module',
+        'name' => 'apachesolr_confgen_textfiles',
+        'info' => 
+        array (
+          'name' => 'Apache Solr Text Files',
+          'description' => 'Administer Solr configuration files like stopwords.txt or synonyms.txt within drupal',
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'apachesolr_confgen',
+            1 => 'variable',
+          ),
+          'files' => 
+          array (
+            0 => 'apachesolr_confgen_textfiles.variable.inc',
+          ),
+          'version' => '7.x-1.0-alpha2',
+          'project' => 'apachesolr_confgen',
+          'datestamp' => '1346687231',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'apachesolr_confgen',
+        'version' => '7.x-1.0-alpha2',
+      ),
+      'apachesolr_confgen' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_confgen/apachesolr_confgen.module',
+        'basename' => 'apachesolr_confgen.module',
+        'name' => 'apachesolr_confgen',
+        'info' => 
+        array (
+          'name' => 'Apache Solr Config Generator',
+          'description' => 'Generator for Apache Solr Configuration Files',
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'apachesolr',
+            1 => 'apachesolr_search',
+            2 => 'querypath',
+            3 => 'variable_realm',
+          ),
+          'files' => 
+          array (
+            0 => 'apachesolr_confgen.admin.inc',
+            1 => 'apachesolr_confgen.class.inc',
+            2 => 'apachesolr_confgen.variable.inc',
+            3 => 'lib/apachesolr_confgen_zipfile.php',
+          ),
+          'version' => '7.x-1.0-alpha2',
+          'project' => 'apachesolr_confgen',
+          'datestamp' => '1346687231',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'apachesolr_confgen',
+        'version' => '7.x-1.0-alpha2',
+      ),
+      'content_access_rules' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/content_access/content_access_rules/content_access_rules.module',
+        'basename' => 'content_access_rules.module',
+        'name' => 'content_access_rules',
+        'info' => 
+        array (
+          'name' => 'Content Access Rules Integrations',
+          'description' => 'Integrates Rules with Content access. Allows to act on access events, conditions, and actions.',
+          'package' => 'Access control',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'content_access',
+            1 => 'rules',
+          ),
+          'files' => 
+          array (
+            0 => 'content_access.rules.inc',
+          ),
+          'version' => '7.x-1.2-beta1',
+          'project' => 'content_access',
+          'datestamp' => '1311517015',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'content_access',
+        'version' => '7.x-1.2-beta1',
+      ),
+      'content_access' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/content_access/content_access.module',
+        'basename' => 'content_access.module',
+        'name' => 'content_access',
+        'info' => 
+        array (
+          'name' => 'Content Access',
+          'description' => 'Provides flexible content access control.',
+          'core' => '7.x',
+          'package' => 'Access control',
+          'files' => 
+          array (
+            0 => 'content_access.rules.inc',
+            1 => 'tests/content_access.test',
+            2 => 'tests/content_access_acl.test',
+          ),
+          'version' => '7.x-1.2-beta1',
+          'project' => 'content_access',
+          'datestamp' => '1311517015',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'content_access',
+        'version' => '7.x-1.2-beta1',
+      ),
+      'superfish' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/superfish/superfish.module',
+        'basename' => 'superfish.module',
+        'name' => 'superfish',
+        'info' => 
+        array (
+          'name' => 'Superfish',
+          'description' => 'jQuery Superfish plugin for your Drupal menus.',
+          'package' => 'User interface',
+          'dependencies' => 
+          array (
+            0 => 'menu',
+            1 => 'libraries',
+          ),
+          'configure' => 'admin/config/user-interface/superfish',
+          'core' => '7.x',
+          'version' => '7.x-1.9-beta4',
+          'project' => 'superfish',
+          'datestamp' => '1322150145',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7100',
+        'project' => 'superfish',
+        'version' => '7.x-1.9-beta4',
+      ),
+      'ckeditor' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/ckeditor/ckeditor.module',
+        'basename' => 'ckeditor.module',
+        'name' => 'ckeditor',
+        'info' => 
+        array (
+          'name' => 'CKEditor',
+          'description' => 'Enables CKEditor (WYSIWYG HTML editor) for use instead of plain text fields.',
+          'core' => '7.x',
+          'package' => 'User interface',
+          'configure' => 'admin/config/content/ckeditor',
+          'files' => 
+          array (
+            0 => 'includes/ckeditor.user.inc',
+          ),
+          'version' => '7.x-1.9',
+          'project' => 'ckeditor',
+          'datestamp' => '1334745697',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7004',
+        'project' => 'ckeditor',
+        'version' => '7.x-1.9',
+      ),
+      'link' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/link/link.module',
+        'basename' => 'link.module',
+        'name' => 'link',
+        'info' => 
+        array (
+          'name' => 'Link',
+          'description' => 'Defines simple link field types.',
+          'core' => '7.x',
+          'package' => 'Fields',
+          'files' => 
+          array (
+            0 => 'link.module',
+            1 => 'link.install',
+            2 => 'tests/link.test',
+            3 => 'tests/link.attribute.test',
+            4 => 'tests/link.crud.test',
+            5 => 'tests/link.crud_browser.test',
+            6 => 'tests/link.token.test',
+            7 => 'tests/link.validate.test',
+            8 => 'views/link_views_handler_argument_target.inc',
+            9 => 'views/link_views_handler_filter_protocol.inc',
+          ),
+          'version' => '7.x-1.0',
+          'project' => 'link',
+          'datestamp' => '1319392535',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'link',
+        'version' => '7.x-1.0',
+      ),
+      'fe_profile' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_profile.module',
+        'basename' => 'fe_profile.module',
+        'name' => 'fe_profile',
+        'info' => 
+        array (
+          'name' => 'Feature Extras Profle',
+          'description' => 'Export profile field using features.',
+          'package' => 'Ideup',
+          'dependencies' => 
+          array (
+            0 => 'profile',
+          ),
+          'core' => '7.x',
+          'version' => '7.x-1.x-dev',
+          'project' => 'features_extra',
+          'datestamp' => '1308442976',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'features_extra',
+        'version' => '7.x-1.x-dev',
+      ),
+      'fe_nodequeue' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_nodequeue.module',
+        'basename' => 'fe_nodequeue.module',
+        'name' => 'fe_nodequeue',
+        'info' => 
+        array (
+          'name' => 'FE nodequeue',
+          'description' => 'Build nodequeues as features.',
+          'package' => 'Features extra',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'nodequeue',
+            1 => 'features',
+            2 => 'ctools',
+          ),
+          'version' => '7.x-1.x-dev',
+          'project' => 'features_extra',
+          'datestamp' => '1308442976',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'features_extra',
+        'version' => '7.x-1.x-dev',
+      ),
+      'fe_block' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features_extra/fe_block.module',
+        'basename' => 'fe_block.module',
+        'name' => 'fe_block',
+        'info' => 
+        array (
+          'name' => 'FE block',
+          'description' => 'Build blocks and block settings as features.',
+          'package' => 'Features extra',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'block',
+            1 => 'features',
+            2 => 'ctools',
+          ),
+          'version' => '7.x-1.x-dev',
+          'project' => 'features_extra',
+          'datestamp' => '1308442976',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'features_extra',
+        'version' => '7.x-1.x-dev',
+      ),
+      'apachesolr_autocomplete' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_autocomplete/apachesolr_autocomplete.module',
+        'basename' => 'apachesolr_autocomplete.module',
+        'name' => 'apachesolr_autocomplete',
+        'info' => 
+        array (
+          'name' => 'Apache Solr autocomplete',
+          'description' => 'Enables autocomplete on Apache Solr search boxes',
+          'dependencies' => 
+          array (
+            0 => 'apachesolr',
+            1 => 'apachesolr_search',
+          ),
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'version' => '7.x-1.3',
+          'project' => 'apachesolr_autocomplete',
+          'datestamp' => '1346272315',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'apachesolr_autocomplete',
+        'version' => '7.x-1.3',
+      ),
+      'features_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features/tests/features_test.module',
+        'basename' => 'features_test.module',
+        'name' => 'features_test',
+        'info' => 
+        array (
+          'name' => 'Features Tests',
+          'description' => 'Test module for Features testing.',
+          'core' => '7.x',
+          'package' => 'Testing',
+          'php' => '5.2.0',
+          'dependencies' => 
+          array (
+            0 => 'features',
+            1 => 'image',
+            2 => 'strongarm',
+            3 => 'taxonomy',
+            4 => 'views',
+          ),
+          'features' => 
+          array (
+            'ctools' => 
+            array (
+              0 => 'strongarm:strongarm:1',
+              1 => 'views:views_default:3.0',
+            ),
+            'features_api' => 
+            array (
+              0 => 'api:1',
+            ),
+            'field' => 
+            array (
+              0 => 'node-features_test-field_features_test',
+            ),
+            'filter' => 
+            array (
+              0 => 'features_test',
+            ),
+            'image' => 
+            array (
+              0 => 'features_test',
+            ),
+            'node' => 
+            array (
+              0 => 'features_test',
+            ),
+            'taxonomy' => 
+            array (
+              0 => 'taxonomy_features_test',
+            ),
+            'user_permission' => 
+            array (
+              0 => 'create features_test content',
+            ),
+            'views_view' => 
+            array (
+              0 => 'features_test',
+            ),
+          ),
+          'hidden' => true,
+          'version' => '7.x-1.0',
+          'project' => 'features',
+          'datestamp' => '1343240292',
+        ),
+        'schema_version' => 0,
+        'project' => 'features',
+        'version' => '7.x-1.0',
+      ),
+      'features' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/features/features.module',
+        'basename' => 'features.module',
+        'name' => 'features',
+        'info' => 
+        array (
+          'name' => 'Features',
+          'description' => 'Provides feature management for Drupal.',
+          'core' => '7.x',
+          'package' => 'Features',
+          'files' => 
+          array (
+            0 => 'tests/features.test',
+          ),
+          'version' => '7.x-1.0',
+          'project' => 'features',
+          'datestamp' => '1343240292',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6101',
+        'project' => 'features',
+        'version' => '7.x-1.0',
+      ),
+      'views_charts' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_charts/views_charts.module',
+        'basename' => 'views_charts.module',
+        'name' => 'views_charts',
+        'info' => 
+        array (
+          'name' => 'Views Charts',
+          'description' => 'Views Charts provides a new style for views: Charts.',
+          'dependencies' => 
+          array (
+            0 => 'views',
+            1 => 'charts_graphs',
+          ),
+          'package' => 'Views',
+          'core' => '7.x',
+          'php' => '5.1',
+          'files' => 
+          array (
+            0 => 'views_plugin_style_chart.inc',
+          ),
+          'version' => '7.x-1.x-dev',
+          'project' => 'views_charts',
+          'datestamp' => '1347456171',
+        ),
+        'schema_version' => 0,
+        'project' => 'views_charts',
+        'version' => '7.x-1.x-dev',
+      ),
+      'faq' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/faq/faq.module',
+        'basename' => 'faq.module',
+        'name' => 'faq',
+        'info' => 
+        array (
+          'name' => 'Frequently Asked Questions',
+          'description' => 'Manages configuration of questions for a FAQ page.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'faq.admin.inc',
+            1 => 'faq.install',
+            2 => 'faq.module',
+            3 => 'faq.test',
+            4 => 'includes/faq-category-hide-answer.tpl.php',
+            5 => 'includes/faq-category-new-page.tpl.php',
+            6 => 'includes/faq-category-questions-inline.tpl.php',
+            7 => 'includes/faq-category-questions-top-answers.tpl.php',
+            8 => 'includes/faq-category-questions-top.tpl.php',
+            9 => 'includes/faq-hide-answer.tpl.php',
+            10 => 'includes/faq-new-page.tpl.php',
+            11 => 'includes/faq-questions-inline.tpl.php',
+            12 => 'includes/faq-questions-top.tpl.php',
+            13 => 'includes/faq.hide_answer.inc',
+            14 => 'includes/faq.new_page.inc',
+            15 => 'includes/faq.questions_inline.inc',
+            16 => 'includes/faq.questions_top.inc',
+            17 => 'views/faq.views.inc',
+          ),
+          'configure' => '/admin/config/content/faq',
+          'version' => '7.x-1.0-rc2',
+          'project' => 'faq',
+          'datestamp' => '1329952549',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'faq',
+        'version' => '7.x-1.0-rc2',
+      ),
+      'date_repeat' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_repeat/date_repeat.module',
+        'basename' => 'date_repeat.module',
+        'name' => 'date_repeat',
+        'info' => 
+        array (
+          'name' => 'Date Repeat API',
+          'description' => 'A Date Repeat API to calculate repeating dates and times from iCal rules.',
+          'dependencies' => 
+          array (
+            0 => 'date_api',
+          ),
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'php' => '5.2',
+          'files' => 
+          array (
+            0 => 'tests/date_repeat.test',
+            1 => 'tests/date_repeat_form.test',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_repeat_field' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_repeat_field/date_repeat_field.module',
+        'basename' => 'date_repeat_field.module',
+        'name' => 'date_repeat_field',
+        'info' => 
+        array (
+          'name' => 'Date Repeat Field',
+          'description' => 'Creates the option of Repeating date fields and manages Date fields that use the Date Repeat API.',
+          'dependencies' => 
+          array (
+            0 => 'date_api',
+            1 => 'date',
+            2 => 'date_repeat',
+          ),
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'date_repeat_field.css',
+            ),
+          ),
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_views' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_views/date_views.module',
+        'basename' => 'date_views.module',
+        'name' => 'date_views',
+        'info' => 
+        array (
+          'name' => 'Date Views',
+          'description' => 'Views integration for date fields and date functionality.',
+          'package' => 'Date/Time',
+          'dependencies' => 
+          array (
+            0 => 'date_api',
+            1 => 'views',
+          ),
+          'core' => '7.x',
+          'php' => '5.2',
+          'files' => 
+          array (
+            0 => 'includes/date_views_argument_handler.inc',
+            1 => 'includes/date_views_argument_handler_simple.inc',
+            2 => 'includes/date_views_filter_handler.inc',
+            3 => 'includes/date_views_filter_handler_simple.inc',
+            4 => 'includes/date_views.views_default.inc',
+            5 => 'includes/date_views.views.inc',
+            6 => 'includes/date_views_plugin_pager.inc',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_tools' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_tools/date_tools.module',
+        'basename' => 'date_tools.module',
+        'name' => 'date_tools',
+        'info' => 
+        array (
+          'name' => 'Date Tools',
+          'description' => 'Tools to import and auto-create dates and calendars.',
+          'dependencies' => 
+          array (
+            0 => 'date',
+          ),
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'configure' => 'admin/config/date/tools',
+          'files' => 
+          array (
+            0 => 'tests/date_tools.test',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_migrate_example' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_migrate/date_migrate_example/date_migrate_example.module',
+        'basename' => 'date_migrate_example.module',
+        'name' => 'date_migrate_example',
+        'info' => 
+        array (
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'date',
+            1 => 'date_repeat',
+            2 => 'date_repeat_field',
+            3 => 'date_migrate',
+            4 => 'features',
+            5 => 'migrate',
+          ),
+          'description' => 'Examples of migrating with the Date module',
+          'features' => 
+          array (
+            'field' => 
+            array (
+              0 => 'node-date_migrate_example-body',
+              1 => 'node-date_migrate_example-field_date',
+              2 => 'node-date_migrate_example-field_date_range',
+              3 => 'node-date_migrate_example-field_date_repeat',
+              4 => 'node-date_migrate_example-field_datestamp',
+              5 => 'node-date_migrate_example-field_datestamp_range',
+              6 => 'node-date_migrate_example-field_datetime',
+              7 => 'node-date_migrate_example-field_datetime_range',
+            ),
+            'node' => 
+            array (
+              0 => 'date_migrate_example',
+            ),
+          ),
+          'files' => 
+          array (
+            0 => 'date_migrate_example.migrate.inc',
+          ),
+          'name' => 'Date Migration Example',
+          'package' => 'Features',
+          'project' => 'date',
+          'version' => '7.x-2.6',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_migrate' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_migrate/date_migrate.module',
+        'basename' => 'date_migrate.module',
+        'name' => 'date_migrate',
+        'info' => 
+        array (
+          'name' => 'Date Migration',
+          'description' => 'Provides support for importing into date fields with the Migrate module.',
+          'core' => '7.x',
+          'package' => 'Date/Time',
+          'dependencies' => 
+          array (
+            0 => 'migrate',
+            1 => 'date',
+          ),
+          'files' => 
+          array (
+            0 => 'date.migrate.inc',
+            1 => 'date_migrate.test',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_context' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_context/date_context.module',
+        'basename' => 'date_context.module',
+        'name' => 'date_context',
+        'info' => 
+        array (
+          'name' => 'Date Context',
+          'description' => 'Adds an option to the Context module to set a context condition based on the value of a date field.',
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'date',
+            1 => 'context',
+          ),
+          'files' => 
+          array (
+            0 => 'date_context.module',
+            1 => 'plugins/date_context_date_condition.inc',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_api' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_api/date_api.module',
+        'basename' => 'date_api.module',
+        'name' => 'date_api',
+        'info' => 
+        array (
+          'name' => 'Date API',
+          'description' => 'A Date API that can be used by other modules.',
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'php' => '5.2',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'date.css',
+            ),
+          ),
+          'files' => 
+          array (
+            0 => 'date_api.module',
+            1 => 'date_api_sql.inc',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => '7001',
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_popup' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_popup/date_popup.module',
+        'basename' => 'date_popup.module',
+        'name' => 'date_popup',
+        'info' => 
+        array (
+          'name' => 'Date Popup',
+          'description' => 'Enables jquery popup calendars and time entry widgets for selecting dates and times.',
+          'dependencies' => 
+          array (
+            0 => 'date_api',
+          ),
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'configure' => 'admin/config/date/date_popup',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'themes/datepicker.1.7.css',
+            ),
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date_all_day' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date_all_day/date_all_day.module',
+        'basename' => 'date_all_day.module',
+        'name' => 'date_all_day',
+        'info' => 
+        array (
+          'name' => 'Date All Day',
+          'description' => 'Adds \'All Day\' functionality to date fields, including an \'All Day\' theme and \'All Day\' checkboxes for the Date select and Date popup widgets.',
+          'dependencies' => 
+          array (
+            0 => 'date_api',
+            1 => 'date',
+          ),
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'date' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date/date.module',
+        'basename' => 'date.module',
+        'name' => 'date',
+        'info' => 
+        array (
+          'name' => 'Date',
+          'description' => 'Makes date/time fields available.',
+          'dependencies' => 
+          array (
+            0 => 'date_api',
+          ),
+          'package' => 'Date/Time',
+          'core' => '7.x',
+          'php' => '5.2',
+          'files' => 
+          array (
+            0 => 'tests/date_api.test',
+            1 => 'tests/date.test',
+            2 => 'tests/date_field.test',
+            3 => 'tests/date_validation.test',
+            4 => 'tests/date_timezone.test',
+          ),
+          'version' => '7.x-2.6',
+          'project' => 'date',
+          'datestamp' => '1344850024',
+        ),
+        'schema_version' => '7004',
+        'project' => 'date',
+        'version' => '7.x-2.6',
+      ),
+      'apachesolr_multisitesearch' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/apachesolr_multisitesearch/apachesolr_multisitesearch.module',
+        'basename' => 'apachesolr_multisitesearch.module',
+        'name' => 'apachesolr_multisitesearch',
+        'info' => 
+        array (
+          'name' => 'Apache Solr Multisite Search',
+          'description' => 'Search across multiple sites with Solr',
+          'dependencies' => 
+          array (
+            0 => 'apachesolr',
+            1 => 'apachesolr_search',
+          ),
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'version' => '7.x-1.0',
+          'project' => 'apachesolr_multisitesearch',
+          'datestamp' => '1341318377',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'apachesolr_multisitesearch',
+        'version' => '7.x-1.0',
+      ),
+      'libraries_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/libraries/tests/libraries_test.module',
+        'basename' => 'libraries_test.module',
+        'name' => 'libraries_test',
+        'info' => 
+        array (
+          'name' => 'Libraries test module',
+          'description' => 'Tests library detection and loading.',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'libraries',
+          ),
+          'hidden' => true,
+          'version' => '7.x-2.0',
+          'project' => 'libraries',
+          'datestamp' => '1343561873',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'libraries',
+        'version' => '7.x-2.0',
+      ),
+      'libraries' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/libraries/libraries.module',
+        'basename' => 'libraries.module',
+        'name' => 'libraries',
+        'info' => 
+        array (
+          'name' => 'Libraries',
+          'description' => 'Allows version dependent and shared usage of external libraries.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'tests/libraries.test',
+          ),
+          'version' => '7.x-2.0',
+          'project' => 'libraries',
+          'datestamp' => '1343561873',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7200',
+        'project' => 'libraries',
+        'version' => '7.x-2.0',
+      ),
+      'backup_migrate' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/backup_migrate/backup_migrate.module',
+        'basename' => 'backup_migrate.module',
+        'name' => 'backup_migrate',
+        'info' => 
+        array (
+          'name' => 'Backup and Migrate',
+          'description' => 'Backup or migrate the Drupal Database quickly and without unnecessary data.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'backup_migrate.module',
+            1 => 'backup_migrate.install',
+            2 => 'includes/destinations.inc',
+            3 => 'includes/profiles.inc',
+            4 => 'includes/schedules.inc',
+          ),
+          'configure' => 'admin/config/system/backup_migrate',
+          'version' => '7.x-2.4',
+          'project' => 'backup_migrate',
+          'datestamp' => '1338903073',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7203',
+        'project' => 'backup_migrate',
+        'version' => '7.x-2.4',
+      ),
+      'feeds_import' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/feeds/feeds_import/feeds_import.module',
+        'basename' => 'feeds_import.module',
+        'name' => 'feeds_import',
+        'info' => 
+        array (
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'feeds',
+          ),
+          'description' => 'An example of a node importer and a user importer.',
+          'features' => 
+          array (
+            'ctools' => 
+            array (
+              0 => 'feeds:feeds_importer_default:1',
+            ),
+            'feeds_importer' => 
+            array (
+              0 => 'node',
+              1 => 'user',
+            ),
+          ),
+          'files' => 
+          array (
+            0 => 'feeds_import.test',
+          ),
+          'name' => 'Feeds Import',
+          'package' => 'Feeds',
+          'php' => '5.2.4',
+          'version' => '7.x-2.0-alpha7',
+          'project' => 'feeds',
+          'datestamp' => '1351111319',
+        ),
+        'schema_version' => 0,
+        'project' => 'feeds',
+        'version' => '7.x-2.0-alpha7',
+      ),
+      'feeds_tests' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/feeds/tests/feeds_tests.module',
+        'basename' => 'feeds_tests.module',
+        'name' => 'feeds_tests',
+        'info' => 
+        array (
+          'name' => 'Feeds module tests',
+          'description' => 'Support module for Feeds related testing.',
+          'package' => 'Testing',
+          'version' => '7.x-2.0-alpha7',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'feeds_test.module',
+          ),
+          'hidden' => true,
+          'project' => 'feeds',
+          'datestamp' => '1351111319',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'feeds',
+        'version' => '7.x-2.0-alpha7',
+      ),
+      'feeds_news' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/feeds/feeds_news/feeds_news.module',
+        'basename' => 'feeds_news.module',
+        'name' => 'feeds_news',
+        'info' => 
+        array (
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'features',
+            1 => 'feeds',
+            2 => 'views',
+          ),
+          'description' => 'A news aggregator built with feeds, creates nodes from imported feed items. With OPML import.',
+          'features' => 
+          array (
+            'ctools' => 
+            array (
+              0 => 'feeds:feeds_importer_default:1',
+              1 => 'views:views_default:3.0',
+            ),
+            'feeds_importer' => 
+            array (
+              0 => 'feed',
+              1 => 'opml',
+            ),
+            'field' => 
+            array (
+              0 => 'node-feed_item-field_feed_item_description',
+            ),
+            'node' => 
+            array (
+              0 => 'feed',
+              1 => 'feed_item',
+            ),
+            'views_view' => 
+            array (
+              0 => 'feeds_defaults_feed_items',
+            ),
+          ),
+          'files' => 
+          array (
+            0 => 'feeds_news.module',
+            1 => 'feeds_news.test',
+          ),
+          'name' => 'Feeds News',
+          'package' => 'Feeds',
+          'php' => '5.2.4',
+          'version' => '7.x-2.0-alpha7',
+          'project' => 'feeds',
+          'datestamp' => '1351111319',
+        ),
+        'schema_version' => 0,
+        'project' => 'feeds',
+        'version' => '7.x-2.0-alpha7',
+      ),
+      'feeds_ui' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/feeds/feeds_ui/feeds_ui.module',
+        'basename' => 'feeds_ui.module',
+        'name' => 'feeds_ui',
+        'info' => 
+        array (
+          'name' => 'Feeds Admin UI',
+          'description' => 'Administrative UI for Feeds module.',
+          'package' => 'Feeds',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'feeds',
+          ),
+          'configure' => 'admin/structure/feeds',
+          'files' => 
+          array (
+            0 => 'feeds_ui.test',
+          ),
+          'version' => '7.x-2.0-alpha7',
+          'project' => 'feeds',
+          'datestamp' => '1351111319',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'feeds',
+        'version' => '7.x-2.0-alpha7',
+      ),
+      'feeds' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/feeds/feeds.module',
+        'basename' => 'feeds.module',
+        'name' => 'feeds',
+        'info' => 
+        array (
+          'name' => 'Feeds',
+          'description' => 'Aggregates RSS/Atom/RDF feeds, imports CSV files and more.',
+          'package' => 'Feeds',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+            1 => 'job_scheduler',
+          ),
+          'files' => 
+          array (
+            0 => 'includes/FeedsConfigurable.inc',
+            1 => 'includes/FeedsImporter.inc',
+            2 => 'includes/FeedsSource.inc',
+            3 => 'libraries/ParserCSV.inc',
+            4 => 'libraries/http_request.inc',
+            5 => 'libraries/PuSHSubscriber.inc',
+            6 => 'tests/feeds.test',
+            7 => 'tests/feeds_date_time.test',
+            8 => 'tests/feeds_mapper_date.test',
+            9 => 'tests/feeds_mapper_field.test',
+            10 => 'tests/feeds_mapper_file.test',
+            11 => 'tests/feeds_mapper_path.test',
+            12 => 'tests/feeds_mapper_profile.test',
+            13 => 'tests/feeds_mapper.test',
+            14 => 'tests/feeds_mapper_config.test',
+            15 => 'tests/feeds_fetcher_file.test',
+            16 => 'tests/feeds_processor_node.test',
+            17 => 'tests/feeds_processor_term.test',
+            18 => 'tests/feeds_processor_user.test',
+            19 => 'tests/feeds_scheduler.test',
+            20 => 'tests/feeds_mapper_link.test',
+            21 => 'tests/feeds_mapper_taxonomy.test',
+            22 => 'tests/parser_csv.test',
+            23 => 'views/feeds_views_handler_argument_importer_id.inc',
+            24 => 'views/feeds_views_handler_field_importer_name.inc',
+            25 => 'views/feeds_views_handler_field_log_message.inc',
+            26 => 'views/feeds_views_handler_field_severity.inc',
+            27 => 'views/feeds_views_handler_field_source.inc',
+            28 => 'views/feeds_views_handler_filter_severity.inc',
+          ),
+          'version' => '7.x-2.0-alpha7',
+          'project' => 'feeds',
+          'datestamp' => '1351111319',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7207',
+        'project' => 'feeds',
+        'version' => '7.x-2.0-alpha7',
+      ),
+      'masquerade' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/masquerade/masquerade.module',
+        'basename' => 'masquerade.module',
+        'name' => 'masquerade',
+        'info' => 
+        array (
+          'name' => 'Masquerade',
+          'description' => 'This module allows permitted users to masquerade as other users.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'masquerade.test',
+          ),
+          'configure' => 'admin/config/people/masquerade',
+          'version' => '7.x-1.0-rc4',
+          'project' => 'masquerade',
+          'datestamp' => '1316220424',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'masquerade',
+        'version' => '7.x-1.0-rc4',
+      ),
+      'lang_dropdown' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/lang_dropdown/lang_dropdown.module',
+        'basename' => 'lang_dropdown.module',
+        'name' => 'lang_dropdown',
+        'info' => 
+        array (
+          'name' => 'Language Switcher Dropdown',
+          'package' => 'Multilingual',
+          'description' => 'Provides a dropdown select to switch between available languages.',
+          'dependencies' => 
+          array (
+            0 => 'locale',
+          ),
+          'configure' => 'admin/structure/block',
+          'core' => '7.x',
+          'version' => '7.x-1.5',
+          'project' => 'lang_dropdown',
+          'datestamp' => '1339444196',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'lang_dropdown',
+        'version' => '7.x-1.5',
+      ),
+      'filter_perms' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/filter_perms/filter_perms.module',
+        'basename' => 'filter_perms.module',
+        'name' => 'filter_perms',
+        'info' => 
+        array (
+          'name' => 'Filter permissions',
+          'description' => 'Provides role and module filters to simplify the user permissions page.',
+          'package' => 'Administration',
+          'core' => '7.x',
+          'version' => '7.x-1.0',
+          'project' => 'filter_perms',
+          'datestamp' => '1337183755',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'filter_perms',
+        'version' => '7.x-1.0',
+      ),
+      'system_charts' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/system_charts/system_charts.module',
+        'basename' => 'system_charts.module',
+        'name' => 'system_charts',
+        'info' => 
+        array (
+          'name' => 'Drupal System Charting',
+          'description' => 'Charting for various core modules.',
+          'package' => 'Charting',
+          'core' => '7.x',
+          'php' => '5',
+          'dependencies' => 
+          array (
+            0 => 'chart',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'chart',
+          'datestamp' => '1314765120',
+        ),
+        'schema_version' => 0,
+        'project' => 'chart',
+        'version' => '7.x-1.1',
+      ),
+      'chart_views' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/chart_views/chart_views.module',
+        'basename' => 'chart_views.module',
+        'name' => 'chart_views',
+        'info' => 
+        array (
+          'name' => 'Chart API Views Integration',
+          'description' => 'Provides a Google Chart API Views style.',
+          'package' => 'Charting',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'views/chart_views_plugin_style_chart.inc',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'chart',
+            1 => 'views',
+          ),
+          'version' => '7.x-1.1',
+          'project' => 'chart',
+          'datestamp' => '1314765120',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'chart',
+        'version' => '7.x-1.1',
+      ),
+      'chart' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/chart/chart.module',
+        'basename' => 'chart.module',
+        'name' => 'chart',
+        'info' => 
+        array (
+          'name' => 'Chart API',
+          'description' => 'Google Chart API integration.',
+          'package' => 'Charting',
+          'core' => '7.x',
+          'php' => '5',
+          'version' => '7.x-1.1',
+          'project' => 'chart',
+          'datestamp' => '1314765120',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => 0,
+        'project' => 'chart',
+        'version' => '7.x-1.1',
+      ),
+      'taxonomy_manager' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/taxonomy_manager/taxonomy_manager.module',
+        'basename' => 'taxonomy_manager.module',
+        'name' => 'taxonomy_manager',
+        'info' => 
+        array (
+          'name' => 'Taxonomy Manager',
+          'description' => 'Tool for administrating taxonomy terms.',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'taxonomy',
+          ),
+          'files' => 
+          array (
+            0 => 'taxonomy_manager.admin.inc',
+          ),
+          'package' => 'Taxonomy',
+          'version' => '7.x-1.0-beta3',
+          'project' => 'taxonomy_manager',
+          'datestamp' => '1340208114',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7002',
+        'project' => 'taxonomy_manager',
+        'version' => '7.x-1.0-beta3',
+      ),
+      'node_export_relation' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_relation/node_export_relation.module',
+        'basename' => 'node_export_relation.module',
+        'name' => 'node_export_relation',
+        'info' => 
+        array (
+          'name' => 'Node export relation (deprecated)',
+          'description' => 'Helps maintain relationships.  Supports node references, taxonomy, and organic groups.',
+          'dependencies' => 
+          array (
+            0 => 'node_export',
+            1 => 'uuid',
+          ),
+          'core' => '7.x',
+          'package' => 'Node export',
+          'version' => '7.x-3.0',
+          'project' => 'node_export',
+          'datestamp' => '1345435979',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'node_export',
+        'version' => '7.x-3.0',
+      ),
+      'node_export_features' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_features/node_export_features.module',
+        'basename' => 'node_export_features.module',
+        'name' => 'node_export_features',
+        'info' => 
+        array (
+          'name' => 'Node export features',
+          'description' => 'Adds Features support to Node export, so you can put your exports into Features modules.',
+          'dependencies' => 
+          array (
+            0 => 'node_export',
+            1 => 'uuid',
+            2 => 'features',
+          ),
+          'core' => '7.x',
+          'package' => 'Node export',
+          'version' => '7.x-3.0',
+          'project' => 'node_export',
+          'datestamp' => '1345435979',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'node_export',
+        'version' => '7.x-3.0',
+      ),
+      'node_export_dependency' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_dependency/node_export_dependency.module',
+        'basename' => 'node_export_dependency.module',
+        'name' => 'node_export_dependency',
+        'info' => 
+        array (
+          'name' => 'Node export dependency (experimental)',
+          'description' => 'Helps maintain relationships to dependent entities.  Intended to make Node export relation obsolete.',
+          'dependencies' => 
+          array (
+            0 => 'node_export',
+            1 => 'uuid',
+          ),
+          'core' => '7.x',
+          'package' => 'Node export',
+          'version' => '7.x-3.0',
+          'project' => 'node_export',
+          'datestamp' => '1345435979',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'node_export',
+        'version' => '7.x-3.0',
+      ),
+      'node_export_feeds' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/modules/node_export_feeds/node_export_feeds.module',
+        'basename' => 'node_export_feeds.module',
+        'name' => 'node_export_feeds',
+        'info' => 
+        array (
+          'name' => 'Node export feeds',
+          'description' => 'Node export feeds importer.  This is a more advanced importer than the one built into node export, but tricky to use.',
+          'core' => '7.x',
+          'package' => 'Node export',
+          'dependencies' => 
+          array (
+            0 => 'feeds',
+            1 => 'node_export',
+          ),
+          'files' => 
+          array (
+            0 => 'FeedsNodeExportParser.inc',
+            1 => 'FeedsNodeExportProcessor.inc',
+          ),
+          'version' => '7.x-3.0',
+          'project' => 'node_export',
+          'datestamp' => '1345435979',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'node_export',
+        'version' => '7.x-3.0',
+      ),
+      'node_export' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/node_export/node_export.module',
+        'basename' => 'node_export.module',
+        'name' => 'node_export',
+        'info' => 
+        array (
+          'name' => 'Node export',
+          'description' => 'Allows users to export content and then import into another Drupal installation.',
+          'dependencies' => 
+          array (
+            0 => 'uuid',
+          ),
+          'core' => '7.x',
+          'package' => 'Node export',
+          'configure' => 'admin/config/content/node_export',
+          'files' => 
+          array (
+            0 => 'views/views_handler_field_node_link_export.inc',
+          ),
+          'version' => '7.x-3.0',
+          'project' => 'node_export',
+          'datestamp' => '1345435979',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7303',
+        'project' => 'node_export',
+        'version' => '7.x-3.0',
+      ),
+      'module_filter' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/module_filter/module_filter.module',
+        'basename' => 'module_filter.module',
+        'name' => 'module_filter',
+        'info' => 
+        array (
+          'name' => 'Module filter',
+          'description' => 'Filter the modules list.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'module_filter.install',
+            1 => 'module_filter.js',
+            2 => 'module_filter.module',
+            3 => 'module_filter.admin.inc',
+            4 => 'module_filter.theme.inc',
+            5 => 'css/module_filter.css',
+            6 => 'css/module_filter_tab.css',
+            7 => 'js/module_filter.js',
+            8 => 'js/module_filter_tab.js',
+          ),
+          'configure' => 'admin/config/user-interface/modulefilter',
+          'version' => '7.x-1.7',
+          'project' => 'module_filter',
+          'datestamp' => '1341518501',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7100',
+        'project' => 'module_filter',
+        'version' => '7.x-1.7',
+      ),
+      'entity_test_i18n' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/entity/tests/entity_test_i18n.module',
+        'basename' => 'entity_test_i18n.module',
+        'name' => 'entity_test_i18n',
+        'info' => 
+        array (
+          'name' => 'Entity-test type translation',
+          'description' => 'Allows translating entity-test types.',
+          'dependencies' => 
+          array (
+            0 => 'entity_test',
+            1 => 'i18n_string',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'hidden' => true,
+          'version' => '7.x-1.0',
+          'project' => 'entity',
+          'datestamp' => '1356471145',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'entity',
+        'version' => '7.x-1.0',
+      ),
+      'entity_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/entity/tests/entity_test.module',
+        'basename' => 'entity_test.module',
+        'name' => 'entity_test',
+        'info' => 
+        array (
+          'name' => 'Entity CRUD test module',
+          'description' => 'Provides entity types based upon the CRUD API.',
+          'version' => '7.x-1.0',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'entity_test.module',
+            1 => 'entity_test.install',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'entity',
+          ),
+          'hidden' => true,
+          'project' => 'entity',
+          'datestamp' => '1356471145',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'entity',
+        'version' => '7.x-1.0',
+      ),
+      'entity_feature' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/entity/tests/entity_feature.module',
+        'basename' => 'entity_feature.module',
+        'name' => 'entity_feature',
+        'info' => 
+        array (
+          'name' => 'Entity feature module',
+          'description' => 'Provides some entities in code.',
+          'version' => '7.x-1.0',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'entity_feature.module',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'entity_test',
+          ),
+          'hidden' => true,
+          'project' => 'entity',
+          'datestamp' => '1356471145',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'entity',
+        'version' => '7.x-1.0',
+      ),
+      'entity_token' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/entity/entity_token.module',
+        'basename' => 'entity_token.module',
+        'name' => 'entity_token',
+        'info' => 
+        array (
+          'name' => 'Entity tokens',
+          'description' => 'Provides token replacements for all properties that have no tokens and are known to the entity API.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'entity_token.tokens.inc',
+            1 => 'entity_token.module',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'entity',
+          ),
+          'version' => '7.x-1.0',
+          'project' => 'entity',
+          'datestamp' => '1356471145',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'entity',
+        'version' => '7.x-1.0',
+      ),
+      'entity' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/entity/entity.module',
+        'basename' => 'entity.module',
+        'name' => 'entity',
+        'info' => 
+        array (
+          'name' => 'Entity API',
+          'description' => 'Enables modules to work with any entity type and to provide entities.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'entity.features.inc',
+            1 => 'entity.i18n.inc',
+            2 => 'entity.info.inc',
+            3 => 'entity.rules.inc',
+            4 => 'entity.test',
+            5 => 'includes/entity.inc',
+            6 => 'includes/entity.controller.inc',
+            7 => 'includes/entity.ui.inc',
+            8 => 'includes/entity.wrapper.inc',
+            9 => 'views/entity.views.inc',
+            10 => 'views/handlers/entity_views_field_handler_helper.inc',
+            11 => 'views/handlers/entity_views_handler_area_entity.inc',
+            12 => 'views/handlers/entity_views_handler_field_boolean.inc',
+            13 => 'views/handlers/entity_views_handler_field_date.inc',
+            14 => 'views/handlers/entity_views_handler_field_duration.inc',
+            15 => 'views/handlers/entity_views_handler_field_entity.inc',
+            16 => 'views/handlers/entity_views_handler_field_field.inc',
+            17 => 'views/handlers/entity_views_handler_field_numeric.inc',
+            18 => 'views/handlers/entity_views_handler_field_options.inc',
+            19 => 'views/handlers/entity_views_handler_field_text.inc',
+            20 => 'views/handlers/entity_views_handler_field_uri.inc',
+            21 => 'views/handlers/entity_views_handler_relationship_by_bundle.inc',
+            22 => 'views/handlers/entity_views_handler_relationship.inc',
+            23 => 'views/plugins/entity_views_plugin_row_entity_view.inc',
+          ),
+          'version' => '7.x-1.0',
+          'project' => 'entity',
+          'datestamp' => '1356471145',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7002',
+        'project' => 'entity',
+        'version' => '7.x-1.0',
+      ),
+      'acl_node_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/acl/tests/acl_node_test.module',
+        'basename' => 'acl_node_test.module',
+        'name' => 'acl_node_test',
+        'info' => 
+        array (
+          'name' => 'ACL Node module tests',
+          'description' => 'Support module for ACL node related testing.',
+          'package' => 'Testing',
+          'version' => '7.x-1.0',
+          'core' => '7.x',
+          'hidden' => true,
+          'files' => 
+          array (
+            0 => 'acl_node_test.module',
+          ),
+          'project' => 'acl',
+          'datestamp' => '1322308236',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'acl',
+        'version' => '7.x-1.0',
+      ),
+      'acl' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/acl/acl.module',
+        'basename' => 'acl.module',
+        'name' => 'acl',
+        'info' => 
+        array (
+          'name' => 'ACL',
+          'description' => 'Access control list API. Has no features on its own.',
+          'core' => '7.x',
+          'package' => 'Access control',
+          'version' => '7.x-1.0',
+          'project' => 'acl',
+          'datestamp' => '1322308236',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7001',
+        'project' => 'acl',
+        'version' => '7.x-1.0',
+      ),
+      'drupalchat_nodejs' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat_nodejs/drupalchat_nodejs.module',
+        'basename' => 'drupalchat_nodejs.module',
+        'name' => 'drupalchat_nodejs',
+        'info' => 
+        array (
+          'name' => 'DrupalChat Nodejs integration',
+          'description' => 'Adds Node.js backend to DrupalChat',
+          'package' => 'DrupalChat',
+          'version' => '7.x-1.0-beta6',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'drupalchat_nodejs.module',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'nodejs',
+            1 => 'drupalchat',
+          ),
+          'project' => 'drupalchat',
+          'datestamp' => '1344868027',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupalchat',
+        'version' => '7.x-1.0-beta6',
+      ),
+      'drupalchat_notifications' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat_notifications/drupalchat_notifications.module',
+        'basename' => 'drupalchat_notifications.module',
+        'name' => 'drupalchat_notifications',
+        'info' => 
+        array (
+          'name' => 'DrupalChat Notifications',
+          'package' => 'DrupalChat',
+          'description' => 'An experimental module. DO NOT USE IT ON PRODUCTION SITES.',
+          'core' => '7.x',
+          'php' => '5.1',
+          'dependencies' => 
+          array (
+            0 => 'drupalchat',
+          ),
+          'files' => 
+          array (
+            0 => 'drupalchat_notifications.install',
+            1 => 'drupalchat_notifications.module',
+          ),
+          'version' => '7.x-1.0-beta6',
+          'project' => 'drupalchat',
+          'datestamp' => '1344868027',
+        ),
+        'schema_version' => 0,
+        'project' => 'drupalchat',
+        'version' => '7.x-1.0-beta6',
+      ),
+      'drupalchat' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/drupalchat/drupalchat.module',
+        'basename' => 'drupalchat.module',
+        'name' => 'drupalchat',
+        'info' => 
+        array (
+          'name' => 'DrupalChat',
+          'package' => 'DrupalChat',
+          'description' => 'Allows users to communicate via instant chat messaging. Provides multiple AJAX implementations.',
+          'core' => '7.x',
+          'php' => '5.1',
+          'files' => 
+          array (
+            0 => 'drupalchat-subpanel.tpl.php',
+            1 => 'drupalchat.admin.inc',
+            2 => 'drupalchat.install',
+            3 => 'drupalchat.module',
+            4 => 'drupalchat.tpl.php',
+          ),
+          'version' => '7.x-1.0-beta6',
+          'project' => 'drupalchat',
+          'datestamp' => '1344868027',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => '7001',
+        'project' => 'drupalchat',
+        'version' => '7.x-1.0-beta6',
+      ),
+      'elfinder_ffsel' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/modules/elfinder_ffsel/elfinder_ffsel.module',
+        'basename' => 'elfinder_ffsel.module',
+        'name' => 'elfinder_ffsel',
+        'info' => 
+        array (
+          'name' => 'elFinder File Field Source',
+          'description' => 'File Field Sources elFinder connector',
+          'package' => 'User interface',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'filefield_sources',
+            1 => 'elfinder',
+          ),
+          'version' => '7.x-0.7',
+          'project' => 'elfinder',
+          'datestamp' => '1327272650',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'elfinder',
+        'version' => '7.x-0.7',
+      ),
+      'elfinder_bueditor' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/modules/elfinder_bueditor/elfinder_bueditor.module',
+        'basename' => 'elfinder_bueditor.module',
+        'name' => 'elfinder_bueditor',
+        'info' => 
+        array (
+          'name' => 'elFinder BUEditor integration',
+          'description' => 'Adding elFinder to BUEditor Insert Image dialog',
+          'package' => 'User interface',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'bueditor',
+            1 => 'elfinder',
+          ),
+          'version' => '7.x-0.7',
+          'project' => 'elfinder',
+          'datestamp' => '1327272650',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'elfinder',
+        'version' => '7.x-0.7',
+      ),
+      'elfinder' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/elfinder/elfinder.module',
+        'basename' => 'elfinder.module',
+        'name' => 'elfinder',
+        'info' => 
+        array (
+          'name' => 'elFinder',
+          'description' => 'AJAX file manager with Wysiwyg API capable editors support.',
+          'package' => 'User interface',
+          'configure' => 'admin/config/elfinder',
+          'core' => '7.x',
+          'version' => '7.x-0.7',
+          'project' => 'elfinder',
+          'datestamp' => '1327272650',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'elfinder',
+        'version' => '7.x-0.7',
+      ),
+      'lightbox2' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/lightbox2/lightbox2.module',
+        'basename' => 'lightbox2.module',
+        'name' => 'lightbox2',
+        'info' => 
+        array (
+          'name' => 'Lightbox2',
+          'description' => 'Enables Lightbox2 for Drupal',
+          'core' => '7.x',
+          'package' => 'User interface',
+          'files' => 
+          array (
+            0 => 'lightbox2.install',
+            1 => 'lightbox2.module',
+            2 => 'lightbox2.formatter.inc',
+            3 => 'lightbox2.admin.inc',
+          ),
+          'configure' => 'admin/config/user-interface/lightbox2',
+          'version' => '7.x-1.0-beta1',
+          'project' => 'lightbox2',
+          'datestamp' => '1318819001',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6003',
+        'project' => 'lightbox2',
+        'version' => '7.x-1.0-beta1',
+      ),
+      'charts_graphs_open_flash' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/charts_graphs/apis/charts_graphs_open_flash/charts_graphs_open_flash.module',
+        'basename' => 'charts_graphs_open_flash.module',
+        'name' => 'charts_graphs_open_flash',
+        'info' => 
+        array (
+          'name' => 'Charts and Graphs: Open Flash Charts 2',
+          'description' => 'Open Flash Charts 2 implementation for Charts and Graphs.',
+          'dependencies' => 
+          array (
+            0 => 'charts_graphs',
+            1 => 'swftools',
+          ),
+          'package' => 'Charts',
+          'core' => '7.x',
+          'php' => '5.1',
+          'version' => '7.x-1.x-dev',
+          'project' => 'charts_graphs',
+          'datestamp' => '1342051766',
+        ),
+        'schema_version' => 0,
+        'project' => 'charts_graphs',
+        'version' => '7.x-1.x-dev',
+      ),
+      'charts_openflash' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/charts_graphs/apis/charts_openflash/charts_openflash.module',
+        'basename' => 'charts_openflash.module',
+        'name' => 'charts_openflash',
+        'info' => 
+        array (
+          'name' => 'Charts: OpenFlash',
+          'description' => 'Open Flash Charts.',
+          'dependencies' => 
+          array (
+            0 => 'charts_graphs',
+            1 => 'swfobject_api',
+          ),
+          'package' => 'Charts',
+          'core' => '7.x',
+          'php' => '5.1',
+          'version' => '7.x-1.x-dev',
+          'project' => 'charts_graphs',
+          'datestamp' => '1342051766',
+        ),
+        'schema_version' => 0,
+        'project' => 'charts_graphs',
+        'version' => '7.x-1.x-dev',
+      ),
+      'charts_graphs_amcharts' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/charts_graphs/apis/charts_graphs_amcharts/charts_graphs_amcharts.module',
+        'basename' => 'charts_graphs_amcharts.module',
+        'name' => 'charts_graphs_amcharts',
+        'info' => 
+        array (
+          'name' => 'Charts and Graphs: amCharts',
+          'description' => 'amCharts implementation for Charts and Graphs.',
+          'dependencies' => 
+          array (
+            0 => 'charts_graphs',
+            1 => 'swftools',
+          ),
+          'package' => 'Charts',
+          'core' => '7.x',
+          'php' => '5.1',
+          'version' => '7.x-1.x-dev',
+          'project' => 'charts_graphs',
+          'datestamp' => '1342051766',
+        ),
+        'schema_version' => 0,
+        'project' => 'charts_graphs',
+        'version' => '7.x-1.x-dev',
+      ),
+      'charts_graphs_bluff' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/charts_graphs/apis/charts_graphs_bluff/charts_graphs_bluff.module',
+        'basename' => 'charts_graphs_bluff.module',
+        'name' => 'charts_graphs_bluff',
+        'info' => 
+        array (
+          'name' => 'Charts and Graphs: Bluff',
+          'description' => 'Bluff (Beautiful Graphs in JavaScript) implementation for Charts and Graphs.',
+          'dependencies' => 
+          array (
+            0 => 'charts_graphs',
+          ),
+          'package' => 'Charts',
+          'core' => '7.x',
+          'php' => '5.1',
+          'version' => '7.x-1.x-dev',
+          'project' => 'charts_graphs',
+          'datestamp' => '1342051766',
+        ),
+        'schema_version' => 0,
+        'project' => 'charts_graphs',
+        'version' => '7.x-1.x-dev',
+      ),
+      'charts_graphs_google_charts' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/charts_graphs/apis/charts_graphs_google_charts/charts_graphs_google_charts.module',
+        'basename' => 'charts_graphs_google_charts.module',
+        'name' => 'charts_graphs_google_charts',
+        'info' => 
+        array (
+          'name' => 'Charts and Graphs: Google Charts',
+          'description' => 'Google Charts implementation for Charts and Graphs.',
+          'dependencies' => 
+          array (
+            0 => 'charts_graphs',
+          ),
+          'package' => 'Charts',
+          'core' => '7.x',
+          'php' => '5.1',
+          'version' => '7.x-1.x-dev',
+          'project' => 'charts_graphs',
+          'datestamp' => '1342051766',
+        ),
+        'schema_version' => 0,
+        'project' => 'charts_graphs',
+        'version' => '7.x-1.x-dev',
+      ),
+      'charts_graphs' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/charts_graphs/charts_graphs.module',
+        'basename' => 'charts_graphs.module',
+        'name' => 'charts_graphs',
+        'info' => 
+        array (
+          'name' => 'Charts and Graphs',
+          'description' => 'Charts and Graphs Core API.',
+          'package' => 'Charts',
+          'core' => '7.x',
+          'php' => '5.1',
+          'files' => 
+          array (
+            0 => 'charts_graphs_canvas.class.inc',
+            1 => 'charts_graphs_flash_canvas.class.inc',
+          ),
+          'version' => '7.x-1.x-dev',
+          'project' => 'charts_graphs',
+          'datestamp' => '1342051766',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => 0,
+        'project' => 'charts_graphs',
+        'version' => '7.x-1.x-dev',
+      ),
+      'date_facets' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/date_facets/date_facets.module',
+        'basename' => 'date_facets.module',
+        'name' => 'date_facets',
+        'info' => 
+        array (
+          'name' => 'Date Facets',
+          'description' => 'Provides date range facets that are similar to implementations in major search engines.',
+          'dependencies' => 
+          array (
+            0 => 'facetapi',
+          ),
+          'package' => 'Search Toolkit',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'lib/Drupal/Apachesolr/Facetapi/QueryType/DateRangeQueryType.php',
+            1 => 'lib/Drupal/Facetapi/Widget/DateRangeWidget.php',
+            2 => 'lib/Drupal/Search/Facetapi/QueryType/DateRangeQueryType.php',
+          ),
+          'version' => '7.x-1.0-beta1',
+          'project' => 'date_facets',
+          'datestamp' => '1352488856',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'date_facets',
+        'version' => '7.x-1.0-beta1',
+      ),
+      'rules_scheduler' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/rules/rules_scheduler/rules_scheduler.module',
+        'basename' => 'rules_scheduler.module',
+        'name' => 'rules_scheduler',
+        'info' => 
+        array (
+          'name' => 'Rules Scheduler',
+          'description' => 'Schedule the execution of Rules components using actions.',
+          'dependencies' => 
+          array (
+            0 => 'rules',
+          ),
+          'package' => 'Rules',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'rules_scheduler.admin.inc',
+            1 => 'rules_scheduler.module',
+            2 => 'rules_scheduler.install',
+            3 => 'rules_scheduler.rules.inc',
+            4 => 'rules_scheduler.test',
+            5 => 'includes/rules_scheduler.views_default.inc',
+            6 => 'includes/rules_scheduler.views.inc',
+            7 => 'includes/rules_scheduler_views_filter.inc',
+          ),
+          'version' => '7.x-2.2',
+          'project' => 'rules',
+          'datestamp' => '1343980733',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7202',
+        'project' => 'rules',
+        'version' => '7.x-2.2',
+      ),
+      'rules_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/rules/tests/rules_test.module',
+        'basename' => 'rules_test.module',
+        'name' => 'rules_test',
+        'info' => 
+        array (
+          'name' => 'Rules Tests',
+          'description' => 'Support module for the Rules tests.',
+          'package' => 'Testing',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'rules_test.rules.inc',
+            1 => 'rules_test.rules_defaults.inc',
+          ),
+          'hidden' => true,
+          'version' => '7.x-2.2',
+          'project' => 'rules',
+          'datestamp' => '1343980733',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'rules',
+        'version' => '7.x-2.2',
+      ),
+      'rules_admin' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/rules/rules_admin/rules_admin.module',
+        'basename' => 'rules_admin.module',
+        'name' => 'rules_admin',
+        'info' => 
+        array (
+          'name' => 'Rules UI',
+          'description' => 'Administrative interface for managing rules.',
+          'package' => 'Rules',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'rules_admin.module',
+            1 => 'rules_admin.inc',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'rules',
+          ),
+          'version' => '7.x-2.2',
+          'project' => 'rules',
+          'datestamp' => '1343980733',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'rules',
+        'version' => '7.x-2.2',
+      ),
+      'rules_i18n' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/rules/rules_i18n/rules_i18n.module',
+        'basename' => 'rules_i18n.module',
+        'name' => 'rules_i18n',
+        'info' => 
+        array (
+          'name' => 'Rules translation',
+          'description' => 'Allows translating rules.',
+          'dependencies' => 
+          array (
+            0 => 'rules',
+            1 => 'i18n_string',
+          ),
+          'package' => 'Multilingual - Internationalization',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'rules_i18n.i18n.inc',
+            1 => 'rules_i18n.rules.inc',
+            2 => 'rules_i18n.test',
+          ),
+          'version' => '7.x-2.2',
+          'project' => 'rules',
+          'datestamp' => '1343980733',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'rules',
+        'version' => '7.x-2.2',
+      ),
+      'rules' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/rules/rules.module',
+        'basename' => 'rules.module',
+        'name' => 'rules',
+        'info' => 
+        array (
+          'name' => 'Rules',
+          'description' => 'React on events and conditionally evaluate actions.',
+          'package' => 'Rules',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'rules.features.inc',
+            1 => 'tests/rules.test',
+            2 => 'includes/faces.inc',
+            3 => 'includes/rules.core.inc',
+            4 => 'includes/rules.processor.inc',
+            5 => 'includes/rules.plugins.inc',
+            6 => 'includes/rules.state.inc',
+            7 => 'modules/php.eval.inc',
+            8 => 'modules/rules_core.eval.inc',
+            9 => 'modules/system.eval.inc',
+            10 => 'ui/ui.controller.inc',
+            11 => 'ui/ui.core.inc',
+            12 => 'ui/ui.data.inc',
+            13 => 'ui/ui.plugins.inc',
+          ),
+          'dependencies' => 
+          array (
+            0 => 'entity_token',
+            1 => 'entity',
+          ),
+          'version' => '7.x-2.2',
+          'project' => 'rules',
+          'datestamp' => '1343980733',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7209',
+        'project' => 'rules',
+        'version' => '7.x-2.2',
+      ),
+      'jquery_update' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jquery_update/jquery_update.module',
+        'basename' => 'jquery_update.module',
+        'name' => 'jquery_update',
+        'info' => 
+        array (
+          'name' => 'jQuery Update',
+          'description' => 'Updates jQuery to jQuery 1.5.2 and jQuery UI 1.8.11.',
+          'package' => 'User interface',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'jquery_update.module',
+            1 => 'jquery_update.install',
+          ),
+          'configure' => 'admin/config/development/performance',
+          'version' => '7.x-2.2',
+          'project' => 'jquery_update',
+          'datestamp' => '1301920269',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'jquery_update',
+        'version' => '7.x-2.2',
+      ),
+      'securepages' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/securepages/securepages.module',
+        'basename' => 'securepages.module',
+        'name' => 'securepages',
+        'info' => 
+        array (
+          'name' => 'Secure Pages',
+          'description' => 'Set which pages are always going to be used in secure mode (SSL) Warning: Do not enable this module without configuring your web server to handle SSL with this installation of Drupal',
+          'core' => '7.x',
+          'configure' => 'admin/config/system/securepages',
+          'files' => 
+          array (
+            0 => 'securepages.test',
+          ),
+          'version' => '7.x-1.x-dev',
+          'project' => 'securepages',
+          'datestamp' => '1337776854',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'securepages',
+        'version' => '7.x-1.x-dev',
+      ),
+      'skinr_ui_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_ui_test/skinr_ui_test.module',
+        'basename' => 'skinr_ui_test.module',
+        'name' => 'skinr_ui_test',
+        'info' => 
+        array (
+          'name' => 'Skinr UI Testing',
+          'description' => 'A test module used for testing Skinr UI.',
+          'package' => 'Testing',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'skinr_ui',
+          ),
+          'version' => '7.x-2.0-beta1',
+          'project' => 'skinr',
+          'datestamp' => '1334917632',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'skinr',
+        'version' => '7.x-2.0-beta1',
+      ),
+      'skinr_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_test/skinr_test.module',
+        'basename' => 'skinr_test.module',
+        'name' => 'skinr_test',
+        'info' => 
+        array (
+          'name' => 'Skinr Testing',
+          'description' => 'A test module used for testing Skinr.',
+          'package' => 'Testing',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'skinr',
+          ),
+          'version' => '7.x-2.0-beta1',
+          'project' => 'skinr',
+          'datestamp' => '1334917632',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'skinr',
+        'version' => '7.x-2.0-beta1',
+      ),
+      'skinr_test_incompatible' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_test_incompatible/skinr_test_incompatible.module',
+        'basename' => 'skinr_test_incompatible.module',
+        'name' => 'skinr_test_incompatible',
+        'info' => 
+        array (
+          'name' => 'Skinr Incompatible Testing',
+          'description' => 'A test module used for testing incompatible Skinr API implementations.',
+          'package' => 'Testing',
+          'core' => '7.x',
+          'hidden' => true,
+          'dependencies' => 
+          array (
+            0 => 'skinr',
+          ),
+          'version' => '7.x-2.0-beta1',
+          'project' => 'skinr',
+          'datestamp' => '1334917632',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'skinr',
+        'version' => '7.x-2.0-beta1',
+      ),
       'skinr_context_test' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_context/tests/skinr_context_test/skinr_context_test.module',
@@ -7476,35 +8535,6 @@ $options['packages'] = array (
           'dependencies' => 
           array (
             0 => 'skinr_context',
-          ),
-          'version' => '7.x-2.0-beta1',
-          'project' => 'skinr',
-          'datestamp' => '1334917632',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'skinr',
-        'version' => '7.x-2.0-beta1',
-      ),
-      'skinr_context_ui' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_context/skinr_context_ui.module',
-        'basename' => 'skinr_context_ui.module',
-        'name' => 'skinr_context_ui',
-        'info' => 
-        array (
-          'name' => 'Skinr Context UI',
-          'description' => 'Administrative interface for Skinr Context. Without this module, you cannot edit your skins with context.',
-          'package' => 'Skinr',
-          'core' => '7.x',
-          'dependencies' => 
-          array (
-            0 => 'context_ui',
-            1 => 'skinr_ui',
-          ),
-          'files' => 
-          array (
-            0 => 'tests/skinr_context_ui.test',
           ),
           'version' => '7.x-2.0-beta1',
           'project' => 'skinr',
@@ -7534,6 +8564,35 @@ $options['packages'] = array (
           'files' => 
           array (
             0 => 'tests/skinr_context.test',
+          ),
+          'version' => '7.x-2.0-beta1',
+          'project' => 'skinr',
+          'datestamp' => '1334917632',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'skinr',
+        'version' => '7.x-2.0-beta1',
+      ),
+      'skinr_context_ui' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/skinr_context/skinr_context_ui.module',
+        'basename' => 'skinr_context_ui.module',
+        'name' => 'skinr_context_ui',
+        'info' => 
+        array (
+          'name' => 'Skinr Context UI',
+          'description' => 'Administrative interface for Skinr Context. Without this module, you cannot edit your skins with context.',
+          'package' => 'Skinr',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'context_ui',
+            1 => 'skinr_ui',
+          ),
+          'files' => 
+          array (
+            0 => 'tests/skinr_context_ui.test',
           ),
           'version' => '7.x-2.0-beta1',
           'project' => 'skinr',
@@ -7588,81 +8647,6 @@ $options['packages'] = array (
           'files' => 
           array (
             0 => 'tests/skinr_panels.test',
-          ),
-          'version' => '7.x-2.0-beta1',
-          'project' => 'skinr',
-          'datestamp' => '1334917632',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'skinr',
-        'version' => '7.x-2.0-beta1',
-      ),
-      'skinr_test_incompatible' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_test_incompatible/skinr_test_incompatible.module',
-        'basename' => 'skinr_test_incompatible.module',
-        'name' => 'skinr_test_incompatible',
-        'info' => 
-        array (
-          'name' => 'Skinr Incompatible Testing',
-          'description' => 'A test module used for testing incompatible Skinr API implementations.',
-          'package' => 'Testing',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'skinr',
-          ),
-          'version' => '7.x-2.0-beta1',
-          'project' => 'skinr',
-          'datestamp' => '1334917632',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'skinr',
-        'version' => '7.x-2.0-beta1',
-      ),
-      'skinr_ui_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_ui_test/skinr_ui_test.module',
-        'basename' => 'skinr_ui_test.module',
-        'name' => 'skinr_ui_test',
-        'info' => 
-        array (
-          'name' => 'Skinr UI Testing',
-          'description' => 'A test module used for testing Skinr UI.',
-          'package' => 'Testing',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'skinr_ui',
-          ),
-          'version' => '7.x-2.0-beta1',
-          'project' => 'skinr',
-          'datestamp' => '1334917632',
-          'php' => '5.2.4',
-        ),
-        'schema_version' => 0,
-        'project' => 'skinr',
-        'version' => '7.x-2.0-beta1',
-      ),
-      'skinr_test' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/skinr/tests/skinr_test/skinr_test.module',
-        'basename' => 'skinr_test.module',
-        'name' => 'skinr_test',
-        'info' => 
-        array (
-          'name' => 'Skinr Testing',
-          'description' => 'A test module used for testing Skinr.',
-          'package' => 'Testing',
-          'core' => '7.x',
-          'hidden' => true,
-          'dependencies' => 
-          array (
-            0 => 'skinr',
           ),
           'version' => '7.x-2.0-beta1',
           'project' => 'skinr',
@@ -7728,6 +8712,222 @@ $options['packages'] = array (
         'schema_version' => 0,
         'project' => 'skinr',
         'version' => '7.x-2.0-beta1',
+      ),
+      'filefield_sources' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/filefield_sources/filefield_sources.module',
+        'basename' => 'filefield_sources.module',
+        'name' => 'filefield_sources',
+        'info' => 
+        array (
+          'name' => 'File Field Sources',
+          'description' => 'Extends File fields to allow referencing of existing files, remote files, and server files.',
+          'dependencies' => 
+          array (
+            0 => 'file',
+          ),
+          'package' => 'Fields',
+          'core' => '7.x',
+          'version' => '7.x-1.4',
+          'project' => 'filefield_sources',
+          'datestamp' => '1304045215',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '6001',
+        'project' => 'filefield_sources',
+        'version' => '7.x-1.4',
+      ),
+      'strongarm' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/strongarm/strongarm.module',
+        'basename' => 'strongarm.module',
+        'name' => 'strongarm',
+        'info' => 
+        array (
+          'name' => 'Strongarm',
+          'description' => 'Enforces variable values defined by modules that need settings set to operate properly.',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'ctools',
+          ),
+          'files' => 
+          array (
+            0 => 'strongarm.admin.inc',
+            1 => 'strongarm.install',
+            2 => 'strongarm.module',
+          ),
+          'version' => '7.x-2.0',
+          'project' => 'strongarm',
+          'datestamp' => '1339604214',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7201',
+        'project' => 'strongarm',
+        'version' => '7.x-2.0',
+      ),
+      'smtp' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/smtp/smtp.module',
+        'basename' => 'smtp.module',
+        'name' => 'smtp',
+        'info' => 
+        array (
+          'name' => 'SMTP Authentication Support',
+          'description' => 'Allow for site emails to be sent through an SMTP server of your choice.',
+          'core' => '7.x',
+          'package' => 'Mail',
+          'configure' => 'admin/config/system/smtp',
+          'files' => 
+          array (
+            0 => 'smtp.module',
+            1 => 'smtp.admin.inc',
+            2 => 'smtp.mail.inc',
+            3 => 'smtp.phpmailer.inc',
+            4 => 'smtp.transport.inc',
+          ),
+          'version' => '7.x-1.0-beta2',
+          'project' => 'smtp',
+          'datestamp' => '1348254500',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7000',
+        'project' => 'smtp',
+        'version' => '7.x-1.0-beta2',
+      ),
+      'views_slideshow_jcarousel' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/views_slideshow_jcarousel/views_slideshow_jcarousel.module',
+        'basename' => 'views_slideshow_jcarousel.module',
+        'name' => 'views_slideshow_jcarousel',
+        'info' => 
+        array (
+          'name' => 'Views Slideshow: JCarousel',
+          'description' => 'Adds a jCarousel option to views slideshow',
+          'dependencies' => 
+          array (
+            0 => 'views_slideshow',
+            1 => 'libraries',
+          ),
+          'package' => 'Views',
+          'core' => '7.x',
+          'version' => '7.x-1.x-dev',
+          'project' => 'views_slideshow_jcarousel',
+          'datestamp' => '1328877860',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'views_slideshow_jcarousel',
+        'version' => '7.x-1.x-dev',
+      ),
+      'simplesamlphp_auth' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/simplesamlphp_auth/simplesamlphp_auth.module',
+        'basename' => 'simplesamlphp_auth.module',
+        'name' => 'simplesamlphp_auth',
+        'info' => 
+        array (
+          'name' => 'simpleSAMLphp authentication',
+          'description' => 'Allows users to authenticate to a remote SAML identity provider (IdP) via a locally configured SimpleSAMLphp service point (SP).',
+          'php' => '5.1',
+          'core' => '7.x',
+          'configure' => 'admin/config/people/simplesamlphp_auth',
+          'version' => '7.x-1.3',
+          'project' => 'simplesamlphp_auth',
+          'datestamp' => '1339444267',
+          'dependencies' => 
+          array (
+          ),
+        ),
+        'schema_version' => 0,
+        'project' => 'simplesamlphp_auth',
+        'version' => '7.x-1.3',
+      ),
+      'jq_maphilight' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/jq_maphilight/jq_maphilight.module',
+        'basename' => 'jq_maphilight.module',
+        'name' => 'jq_maphilight',
+        'info' => 
+        array (
+          'name' => 'jQuery Map Hilight',
+          'description' => 'jQuery Map Hilight adds javascript mouseover highlighting of hotspots to HTML image maps.',
+          'core' => '7.x',
+          'dependencies' => 
+          array (
+            0 => 'libraries',
+          ),
+          'configure' => 'admin/config/content/jq_maphilight',
+          'version' => '7.x-1.1',
+          'project' => 'jq_maphilight',
+          'datestamp' => '1336746956',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'jq_maphilight',
+        'version' => '7.x-1.1',
+      ),
+      'session_api_test' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/session_api/tests/session_api_test.module',
+        'basename' => 'session_api_test.module',
+        'name' => 'session_api_test',
+        'info' => 
+        array (
+          'name' => 'Session API test',
+          'description' => 'Helper module for Session API testing.',
+          'package' => 'Testing',
+          'version' => '7.x-1.0-beta3',
+          'dependencies' => 
+          array (
+            0 => 'session_api',
+          ),
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'session_api_test.module',
+          ),
+          'hidden' => true,
+          'project' => 'session_api',
+          'datestamp' => '1331329247',
+          'php' => '5.2.4',
+        ),
+        'schema_version' => 0,
+        'project' => 'session_api',
+        'version' => '7.x-1.0-beta3',
+      ),
+      'session_api' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/modules/session_api/session_api.module',
+        'basename' => 'session_api.module',
+        'name' => 'session_api',
+        'info' => 
+        array (
+          'name' => 'Session API',
+          'description' => 'Provides an interface for storing session information.',
+          'core' => '7.x',
+          'files' => 
+          array (
+            0 => 'session_api.module',
+            1 => 'session_api.admin.inc',
+            2 => 'session_api.install',
+            3 => 'session_api.test',
+          ),
+          'configure' => 'admin/config/development/session-api',
+          'version' => '7.x-1.0-beta3',
+          'project' => 'session_api',
+          'datestamp' => '1331329247',
+          'dependencies' => 
+          array (
+          ),
+          'php' => '5.2.4',
+        ),
+        'schema_version' => '7101',
+        'project' => 'session_api',
+        'version' => '7.x-1.0-beta3',
       ),
     ),
     'themes' => 
@@ -7796,6 +8996,356 @@ $options['packages'] = array (
         'project' => 'rootcandy',
         'version' => '7.x-1.0-alpha1',
       ),
+      'corolla' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/corolla/corolla.info',
+        'basename' => 'corolla.info',
+        'name' => 'Corolla',
+        'info' => 
+        array (
+          'name' => 'Corolla',
+          'description' => 'Corolla is a subtheme of <a href="http://drupal.org/project/adaptivetheme">Adaptivetheme 7.x-3.x</a>. To use this theme you must first download and install the 7.x-3.x version of Adaptivetheme. Corolla is colorable and has many theme settings for layout, fonts, headings and much more. Corolla also supports layouts for mobile devices such as tablets and smartphones.',
+          'core' => '7.x',
+          'release' => '7.x-3.x',
+          'engine' => 'phptemplate',
+          'base theme' => 'adaptivetheme',
+          'screenshot' => 'screenshot.png',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'css/html-elements.css',
+              1 => 'css/forms.css',
+              2 => 'css/tables.css',
+              3 => 'css/page.css',
+              4 => 'css/articles.css',
+              5 => 'css/comments.css',
+              6 => 'css/fields.css',
+              7 => 'css/blocks.css',
+              8 => 'css/navigation.css',
+              9 => 'css/fonts.css',
+              10 => 'css/corolla.settings.style.css',
+              11 => 'color/colors.css',
+            ),
+            'print' => 
+            array (
+              0 => 'css/print.css',
+            ),
+          ),
+          'ie_stylesheets' => 
+          array (
+            'screen' => 
+            array (
+              'lte IE 9' => 
+              array (
+                0 => 'css/ie-lte-9.css',
+              ),
+            ),
+          ),
+          'regions' => 
+          array (
+            'sidebar_first' => 'Sidebar first',
+            'sidebar_second' => 'Sidebar second',
+            'header' => 'Header',
+            'menu_bar' => 'Menu Bar',
+            'help' => 'Help',
+            'highlighted' => 'Highlighted',
+            'content' => 'Main content',
+            'content_aside' => 'Content bottom',
+            'secondary_content' => 'Secondary content',
+            'tertiary_content' => 'Tertiary content',
+            'footer' => 'Footer',
+            'page_top' => 'Page top',
+            'page_bottom' => 'Page bottom',
+            'three_33_top' => 'AT Three column 3x33 - top',
+            'three_33_first' => 'AT Three column 3x33 - left',
+            'three_33_second' => 'AT Three column 3x33 - center',
+            'three_33_third' => 'AT Three column 3x33 - right',
+            'three_33_bottom' => 'AT Three column 3x33 - bottom',
+            'four_first' => 'AT Four column 4x25 - 1',
+            'four_second' => 'AT Four column 4x25 - 2',
+            'four_third' => 'AT Four column 4x25 - 3',
+            'four_fourth' => 'AT Four column 4x25 - 4',
+          ),
+          'features' => 
+          array (
+            0 => 'logo',
+            1 => 'name',
+            2 => 'slogan',
+            3 => 'node_user_picture',
+            4 => 'comment_user_picture',
+            5 => 'comment_user_verification',
+            6 => 'favicon',
+          ),
+          'settings' => 
+          array (
+            'toggle_logo' => '1',
+            'toggle_name' => '1',
+            'toggle_slogan' => '1',
+            'toggle_node_user_picture' => '1',
+            'toggle_comment_user_picture' => '1',
+            'toggle_comment_user_verification' => '1',
+            'toggle_favicon' => '1',
+            'bigscreen_layout' => 'three_col_grail',
+            'bigscreen_page_unit' => '%',
+            'bigscreen_sidebar_unit' => '%',
+            'bigscreen_max_width_unit' => 'px',
+            'bigscreen_page_width' => '100',
+            'bigscreen_sidebar_first' => '25',
+            'bigscreen_sidebar_second' => '25',
+            'bigscreen_set_max_width' => '1',
+            'bigscreen_max_width' => '1140',
+            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
+            'tablet_landscape_layout' => 'three_col_grail',
+            'tablet_landscape_page_unit' => '%',
+            'tablet_landscape_sidebar_unit' => '%',
+            'tablet_landscape_page_width' => '100',
+            'tablet_landscape_sidebar_first' => '20',
+            'tablet_landscape_sidebar_second' => '20',
+            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
+            'tablet_portrait_layout' => 'one_col_vert',
+            'tablet_portrait_page_unit' => '%',
+            'tablet_portrait_sidebar_unit' => '%',
+            'tablet_portrait_page_width' => '100',
+            'tablet_portrait_sidebar_first' => '50',
+            'tablet_portrait_sidebar_second' => '50',
+            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
+            'smartphone_landscape_layout' => 'one_col_vert',
+            'smartphone_landscape_page_unit' => '%',
+            'smartphone_landscape_sidebar_unit' => '%',
+            'smartphone_landscape_page_width' => '100',
+            'smartphone_landscape_sidebar_first' => '50',
+            'smartphone_landscape_sidebar_second' => '50',
+            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
+            'smartphone_portrait_layout' => 'one_col_stack',
+            'smartphone_portrait_page_unit' => '%',
+            'smartphone_portrait_sidebar_unit' => '%',
+            'smartphone_portrait_page_width' => '100',
+            'smartphone_portrait_sidebar_first' => '100',
+            'smartphone_portrait_sidebar_second' => '100',
+            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
+            'bigscreen_two_50' => 'two-50',
+            'bigscreen_two_33_66' => 'two-33-66',
+            'bigscreen_two_66_33' => 'two-66-33',
+            'bigscreen_two_brick' => 'two-brick',
+            'bigscreen_three_3x33' => 'three-3x33',
+            'bigscreen_three_25_50_25' => 'three-25-50-25',
+            'bigscreen_three_25_25_50' => 'three-25-25-50',
+            'bigscreen_three_50_25_25' => 'three-50-25-25',
+            'bigscreen_four_4x25' => 'four-4x25',
+            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
+            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
+            'bigscreen_three_inset_left' => 'three-inset-left',
+            'bigscreen_three_inset_right' => 'three-inset-right',
+            'tablet_landscape_two_50' => 'two-50',
+            'tablet_landscape_two_33_66' => 'two-33-66',
+            'tablet_landscape_two_66_33' => 'two-66-33',
+            'tablet_landscape_two_brick' => 'two-brick',
+            'tablet_landscape_three_3x33' => 'three-3x33',
+            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
+            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
+            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
+            'tablet_landscape_four_4x25' => 'four-4x25',
+            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
+            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
+            'tablet_landscape_three_inset_left' => 'three-inset-left',
+            'tablet_landscape_three_inset_right' => 'three-inset-right',
+            'tablet_portrait_two_50' => 'two-50',
+            'tablet_portrait_two_33_66' => 'two-33-66',
+            'tablet_portrait_two_66_33' => 'two-66-33',
+            'tablet_portrait_two_brick' => 'two-brick',
+            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
+            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
+            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
+            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
+            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
+            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
+            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
+            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
+            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
+            'smartphone_landscape_two_50' => 'two-50-stack',
+            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
+            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
+            'smartphone_landscape_two_brick' => 'two-brick-stack',
+            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
+            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
+            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
+            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
+            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
+            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
+            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
+            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
+            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
+            'disable_responsive_styles' => '0',
+            'enable_custom_media_queries' => '0',
+            'global_default_layout' => 'smartphone-portrait',
+            'global_default_layout_toggle' => '0',
+            'global_files_path' => 'public_files',
+            'load_html5js' => '1',
+            'load_respondjs' => '0',
+            'load_ltie8css' => '0',
+            'load_scalefixjs' => '0',
+            'expose_regions' => '0',
+            'load_all_panels' => '0',
+            'load_all_panels_no_sidebars' => '0',
+            'show_window_size' => '0',
+            'rebuild_theme_data' => '0',
+            'enable_extensions' => '1',
+            'enable_font_settings' => '1',
+            'enable_heading_settings' => '1',
+            'enable_image_settings' => '1',
+            'enable_apple_touch_icons' => '0',
+            'enable_exclude_css' => '0',
+            'enable_custom_css' => '0',
+            'enable_context_regions' => '0',
+            'enable_float_region_blocks' => '0',
+            'enable_markup_overides' => '1',
+            'base_font_type' => '',
+            'site_name_font_type' => '',
+            'site_slogan_font_type' => '',
+            'page_title_font_type' => '',
+            'node_title_font_type' => '',
+            'comment_title_font_type' => '',
+            'block_title_font_type' => '',
+            'base_font' => 'bf-sss',
+            'site_name_font' => 'snf-sl',
+            'site_slogan_font' => 'ssf-sl',
+            'main_menu_font' => 'mmf-sl',
+            'page_title_font' => 'ptf-sl',
+            'node_title_font' => 'ntf-sl',
+            'comment_title_font' => 'ctf-sl',
+            'block_title_font' => 'btf-sl',
+            'base_font_size' => '1em',
+            'site_name_font_size' => '3.5em',
+            'site_slogan_font_size' => '1.2em',
+            'page_title_font_size' => '2em',
+            'node_title_font_size' => '1.6em',
+            'comment_title_font_size' => '1.4em',
+            'block_title_font_size' => '1.4em',
+            'h1_font_size' => '2em',
+            'h2_font_size' => '1.6em',
+            'h3_font_size' => '1.4em',
+            'h4_font_size' => '1.2em',
+            'h5_font_size' => '1em',
+            'h6_font_size' => '1em',
+            'page_title_case' => 'ptc-n',
+            'page_title_weight' => 'ptw-b',
+            'page_title_alignment' => 'pta-l',
+            'page_title_shadow' => 'pts-n',
+            'node_title_case' => 'ntc-n',
+            'node_title_weight' => 'ntw-b',
+            'node_title_alignment' => 'nta-l',
+            'node_title_shadow' => 'nts-n',
+            'comment_title_case' => 'ctc-n',
+            'comment_title_weight' => 'ctw-b',
+            'comment_title_alignment' => 'cta-l',
+            'comment_title_shadow' => 'cts-n',
+            'block_title_case' => 'btc-n',
+            'block_title_weight' => 'btw-b',
+            'block_title_alignment' => 'bta-l',
+            'block_title_shadow' => 'bts-n',
+            'image_alignment' => 'ia-n',
+            'image_alignment_teaser' => 'iat-n',
+            'image_caption_full' => '0',
+            'image_caption_teaser' => '0',
+            'image_teaser' => '0',
+            'breadcrumb_display' => '1',
+            'breadcrumb_home' => '0',
+            'breadcrumb_label' => '0',
+            'breadcrumb_title' => '0',
+            'breadcrumb_separator' => ' &#187; ',
+            'horizontal_login_block_enable' => 'on',
+            'horizontal_login_block' => '0',
+            'login_block_remove_links' => '0',
+            'login_block_remove_openid' => '0',
+            'global_gutter_width' => '',
+            'page_full_width_wrappers' => '0',
+            'page_content_type_suggestions' => '0',
+            'menu_item_span_elements' => '0',
+            'extra_page_classes' => '1',
+            'extra_article_classes' => '1',
+            'extra_comment_classes' => '1',
+            'extra_block_classes' => '1',
+            'extra_menu_classes' => '1',
+            'extra_item_list_classes' => '1',
+            'comments_hide_title' => '0',
+            'feed_icons' => '0',
+            'unset_block_system_main_front' => '0',
+            'unset_menu_titles' => '0',
+            'skip_link_target' => '#main-content',
+            'adv_search_extra_fieldsets' => '0',
+            'mobile_friendly_metatags' => '1',
+            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
+            'adaptivetheme_meta_mobileoptimized' => 'width',
+            'adaptivetheme_meta_handheldfriendly' => 'true',
+            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
+            'chrome_edge' => '0',
+            'clear_type' => '0',
+            'apple_touch_icon_enable' => '0',
+            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
+            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
+            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
+            'custom_css' => '',
+            'content_corner_radius' => 'rc-6',
+            'tabs_corner_radius' => 'rct-6',
+            'box_shadows' => 'bs-n',
+            'body_background' => 'bb-n',
+            'menu_bullets' => 'mb-dd',
+            'menu_bar_position' => 'mbp-l',
+          ),
+          'version' => '7.x-3.0-rc1',
+          'project' => 'corolla',
+          'datestamp' => '1343717220',
+        ),
+        'project' => 'corolla',
+        'version' => '7.x-3.0-rc1',
+      ),
+      'bluemasters' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/bluemasters/bluemasters.info',
+        'basename' => 'bluemasters.info',
+        'name' => 'Blue Masters',
+        'info' => 
+        array (
+          'name' => 'Blue Masters',
+          'description' => 'Theme based on Blue Masters PSD template',
+          'version' => '7.x-1.3',
+          'core' => '7.x',
+          'engine' => 'phptemplate',
+          'regions' => 
+          array (
+            'header' => 'Header',
+            'search_area' => 'Search area',
+            'highlighted' => 'Highlighted',
+            'content' => 'Content',
+            'sidebar_first' => 'Sidebar First',
+            'banner' => 'Banner',
+            'home_area_1' => 'Home area 1',
+            'home_area_2' => 'Home area 2',
+            'home_area_3' => 'Home area 3',
+            'home_area_3_b' => 'Home area 3 b',
+            'footer_left_1' => 'Footer left 1',
+            'footer_left_2' => 'Footer left 2',
+            'footer_center' => 'Footer center',
+            'footer_right' => 'Footer right',
+            'footer' => 'Footer',
+            'help' => 'Help',
+            'page_top' => 'Page top',
+            'page_bottom' => 'Page bottom',
+          ),
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'style.css',
+            ),
+          ),
+          'project' => 'bluemasters',
+          'datestamp' => '1321351835',
+        ),
+        'project' => 'bluemasters',
+        'version' => '7.x-1.3',
+      ),
       'zen' => 
       array (
         'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/zen/zen.info',
@@ -7854,6 +9404,909 @@ $options['packages'] = array (
         ),
         'project' => 'zen',
         'version' => '7.x-5.1',
+      ),
+      'pixture_reloaded' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/pixture_reloaded/pixture_reloaded.info',
+        'basename' => 'pixture_reloaded.info',
+        'name' => 'Pixture Reloaded',
+        'info' => 
+        array (
+          'name' => 'Pixture Reloaded',
+          'description' => 'Pixture Reloaded is a recolorable, multi-column theme that supports both liquid and fixed width layouts. This is a subtheme - you must first download and install <a href="http://drupal.org/project/adaptivetheme">Adaptivetheme 7.x-3.x</a>. Once you have everything installed visit the settings page to change the colors, layout (width, sidebar widths, sidebar layout etc), fonts, rounded corners and many other settings. This theme also fully supports the <a href="http://drupal.org/project/noggin">Noggin</a> and <a href="http://drupal.org/project/superfish">Superfish</a> modules and includes special theme settings to help configure Noggin header images - note that you must first install the Noggin module to see these settings.',
+          'core' => '7.x',
+          'release' => '7.x-3.x',
+          'engine' => 'phptemplate',
+          'base theme' => 'adaptivetheme',
+          'screenshot' => 'screenshot.png',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'color/colors.css',
+              1 => 'css/pixture_reloaded.css',
+              2 => 'css/pixture_reloaded.settings.style.css',
+            ),
+          ),
+          'regions' => 
+          array (
+            'sidebar_first' => 'Sidebar first',
+            'sidebar_second' => 'Sidebar second',
+            'header' => 'Header',
+            'menu_bar' => 'Menu Bar',
+            'help' => 'Help',
+            'highlighted' => 'Highlighted',
+            'content' => 'Main content',
+            'content_aside' => 'Content bottom',
+            'secondary_content' => 'Secondary content',
+            'tertiary_content' => 'Tertiary content',
+            'footer' => 'Footer',
+            'page_top' => 'Page top',
+            'page_bottom' => 'Page bottom',
+            'three_33_top' => 'AT Three column 3x33 - top',
+            'three_33_first' => 'AT Three column 3x33 - left',
+            'three_33_second' => 'AT Three column 3x33 - center',
+            'three_33_third' => 'AT Three column 3x33 - right',
+            'three_33_bottom' => 'AT Three column 3x33 - bottom',
+            'four_first' => 'AT Four column 4x25 - 1',
+            'four_second' => 'AT Four column 4x25 - 2',
+            'four_third' => 'AT Four column 4x25 - 3',
+            'four_fourth' => 'AT Four column 4x25 - 4',
+          ),
+          'features' => 
+          array (
+            0 => 'logo',
+            1 => 'name',
+            2 => 'slogan',
+            3 => 'node_user_picture',
+            4 => 'comment_user_picture',
+            5 => 'comment_user_verification',
+            6 => 'favicon',
+          ),
+          'settings' => 
+          array (
+            'toggle_logo' => '1',
+            'toggle_name' => '1',
+            'toggle_slogan' => '1',
+            'toggle_node_user_picture' => '1',
+            'toggle_comment_user_picture' => '1',
+            'toggle_comment_user_verification' => '1',
+            'toggle_favicon' => '1',
+            'bigscreen_layout' => 'three_col_grail',
+            'bigscreen_page_unit' => '%',
+            'bigscreen_sidebar_unit' => '%',
+            'bigscreen_max_width_unit' => 'px',
+            'bigscreen_page_width' => '100',
+            'bigscreen_sidebar_first' => '25',
+            'bigscreen_sidebar_second' => '25',
+            'bigscreen_set_max_width' => '1',
+            'bigscreen_max_width' => '1140',
+            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
+            'tablet_landscape_layout' => 'three_col_grail',
+            'tablet_landscape_page_unit' => '%',
+            'tablet_landscape_sidebar_unit' => '%',
+            'tablet_landscape_page_width' => '100',
+            'tablet_landscape_sidebar_first' => '20',
+            'tablet_landscape_sidebar_second' => '20',
+            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
+            'tablet_portrait_layout' => 'one_col_vert',
+            'tablet_portrait_page_unit' => '%',
+            'tablet_portrait_sidebar_unit' => '%',
+            'tablet_portrait_page_width' => '100',
+            'tablet_portrait_sidebar_first' => '50',
+            'tablet_portrait_sidebar_second' => '50',
+            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
+            'smartphone_landscape_layout' => 'one_col_vert',
+            'smartphone_landscape_page_unit' => '%',
+            'smartphone_landscape_sidebar_unit' => '%',
+            'smartphone_landscape_page_width' => '100',
+            'smartphone_landscape_sidebar_first' => '50',
+            'smartphone_landscape_sidebar_second' => '50',
+            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
+            'smartphone_portrait_layout' => 'one_col_stack',
+            'smartphone_portrait_page_unit' => '%',
+            'smartphone_portrait_sidebar_unit' => '%',
+            'smartphone_portrait_page_width' => '100',
+            'smartphone_portrait_sidebar_first' => '100',
+            'smartphone_portrait_sidebar_second' => '100',
+            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
+            'bigscreen_two_50' => 'two-50',
+            'bigscreen_two_33_66' => 'two-33-66',
+            'bigscreen_two_66_33' => 'two-66-33',
+            'bigscreen_two_brick' => 'two-brick',
+            'bigscreen_three_3x33' => 'three-3x33',
+            'bigscreen_three_25_50_25' => 'three-25-50-25',
+            'bigscreen_three_25_25_50' => 'three-25-25-50',
+            'bigscreen_three_50_25_25' => 'three-50-25-25',
+            'bigscreen_four_4x25' => 'four-4x25',
+            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
+            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
+            'bigscreen_three_inset_left' => 'three-inset-left',
+            'bigscreen_three_inset_right' => 'three-inset-right',
+            'tablet_landscape_two_50' => 'two-50',
+            'tablet_landscape_two_33_66' => 'two-33-66',
+            'tablet_landscape_two_66_33' => 'two-66-33',
+            'tablet_landscape_two_brick' => 'two-brick',
+            'tablet_landscape_three_3x33' => 'three-3x33',
+            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
+            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
+            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
+            'tablet_landscape_four_4x25' => 'four-4x25',
+            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
+            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
+            'tablet_landscape_three_inset_left' => 'three-inset-left',
+            'tablet_landscape_three_inset_right' => 'three-inset-right',
+            'tablet_portrait_two_50' => 'two-50',
+            'tablet_portrait_two_33_66' => 'two-33-66',
+            'tablet_portrait_two_66_33' => 'two-66-33',
+            'tablet_portrait_two_brick' => 'two-brick',
+            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
+            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
+            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
+            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
+            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
+            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
+            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
+            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
+            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
+            'smartphone_landscape_two_50' => 'two-50-stack',
+            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
+            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
+            'smartphone_landscape_two_brick' => 'two-brick-stack',
+            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
+            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
+            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
+            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
+            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
+            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
+            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
+            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
+            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
+            'disable_responsive_styles' => '0',
+            'enable_custom_media_queries' => '0',
+            'global_default_layout' => 'smartphone-portrait',
+            'global_default_layout_toggle' => '0',
+            'global_files_path' => 'public_files',
+            'load_html5js' => '1',
+            'load_respondjs' => '0',
+            'load_ltie8css' => '0',
+            'load_scalefixjs' => '0',
+            'expose_regions' => '0',
+            'load_all_panels' => '0',
+            'load_all_panels_no_sidebars' => '0',
+            'show_window_size' => '0',
+            'rebuild_theme_data' => '0',
+            'enable_extensions' => '1',
+            'enable_font_settings' => '1',
+            'enable_heading_settings' => '1',
+            'enable_image_settings' => '1',
+            'enable_apple_touch_icons' => '0',
+            'enable_exclude_css' => '0',
+            'enable_custom_css' => '0',
+            'enable_context_regions' => '0',
+            'enable_float_region_blocks' => '0',
+            'enable_markup_overides' => '1',
+            'base_font_type' => '',
+            'site_name_font_type' => '',
+            'site_slogan_font_type' => '',
+            'page_title_font_type' => '',
+            'node_title_font_type' => '',
+            'comment_title_font_type' => '',
+            'block_title_font_type' => '',
+            'base_font' => 'bf-sss',
+            'site_name_font' => 'snf-sl',
+            'site_slogan_font' => 'ssf-sl',
+            'main_menu_font' => 'mmf-sl',
+            'page_title_font' => 'ptf-sl',
+            'node_title_font' => 'ntf-sl',
+            'comment_title_font' => 'ctf-sl',
+            'block_title_font' => 'btf-sl',
+            'base_font_size' => '1em',
+            'site_name_font_size' => '2em',
+            'site_slogan_font_size' => '1.2em',
+            'page_title_font_size' => '2em',
+            'node_title_font_size' => '1.6em',
+            'comment_title_font_size' => '1.4em',
+            'block_title_font_size' => '1.4em',
+            'h1_font_size' => '2em',
+            'h2_font_size' => '1.6em',
+            'h3_font_size' => '1.4em',
+            'h4_font_size' => '1.2em',
+            'h5_font_size' => '1em',
+            'h6_font_size' => '1em',
+            'page_title_case' => 'ptc-n',
+            'page_title_weight' => 'ptw-b',
+            'page_title_alignment' => 'pta-l',
+            'page_title_shadow' => 'pts-n',
+            'node_title_case' => 'ntc-n',
+            'node_title_weight' => 'ntw-b',
+            'node_title_alignment' => 'nta-l',
+            'node_title_shadow' => 'nts-n',
+            'comment_title_case' => 'ctc-n',
+            'comment_title_weight' => 'ctw-b',
+            'comment_title_alignment' => 'cta-l',
+            'comment_title_shadow' => 'cts-n',
+            'block_title_case' => 'btc-n',
+            'block_title_weight' => 'btw-b',
+            'block_title_alignment' => 'bta-l',
+            'block_title_shadow' => 'bts-n',
+            'image_alignment' => 'ia-n',
+            'image_alignment_teaser' => 'iat-n',
+            'image_caption_full' => '0',
+            'image_caption_teaser' => '0',
+            'image_teaser' => '0',
+            'breadcrumb_display' => '1',
+            'breadcrumb_home' => '0',
+            'breadcrumb_label' => '0',
+            'breadcrumb_title' => '0',
+            'breadcrumb_separator' => ' &#187; ',
+            'horizontal_login_block_enable' => 'on',
+            'horizontal_login_block' => '0',
+            'login_block_remove_links' => '0',
+            'login_block_remove_openid' => '0',
+            'global_gutter_width' => '',
+            'page_full_width_wrappers' => '0',
+            'page_content_type_suggestions' => '0',
+            'menu_item_span_elements' => '0',
+            'extra_page_classes' => '1',
+            'extra_article_classes' => '1',
+            'extra_comment_classes' => '1',
+            'extra_block_classes' => '1',
+            'extra_menu_classes' => '1',
+            'extra_item_list_classes' => '1',
+            'comments_hide_title' => '0',
+            'feed_icons' => '0',
+            'unset_block_system_main_front' => '0',
+            'unset_menu_titles' => '0',
+            'skip_link_target' => '#main-content',
+            'adv_search_extra_fieldsets' => '0',
+            'mobile_friendly_metatags' => '1',
+            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
+            'adaptivetheme_meta_mobileoptimized' => 'width',
+            'adaptivetheme_meta_handheldfriendly' => 'true',
+            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
+            'chrome_edge' => '0',
+            'clear_type' => '0',
+            'apple_touch_icon_enable' => '0',
+            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
+            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
+            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
+            'custom_css' => '',
+            'content_corner_radius' => 'rc-6',
+            'tabs_corner_radius' => 'rct-6',
+            'box_shadows' => 'bs-n',
+            'body_background' => 'bb-n',
+            'menu_bullets' => 'mb-dd',
+            'menu_bar_position' => 'mbp-l',
+          ),
+          'version' => '7.x-3.0-rc1',
+          'project' => 'pixture_reloaded',
+          'datestamp' => '1343716985',
+        ),
+        'project' => 'pixture_reloaded',
+        'version' => '7.x-3.0-rc1',
+      ),
+      'danblog' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/danland/danblog/danblog.info',
+        'basename' => 'danblog.info',
+        'name' => 'Danblog',
+        'info' => 
+        array (
+          'name' => 'Danblog',
+          'description' => 'Danland sub theme. Danland with no frontpage image banner and slideshow.',
+          'engine' => 'phptemplate',
+          'base theme' => 'danland',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'danblog.css',
+            ),
+          ),
+          'regions' => 
+          array (
+            'search_box' => 'Search region',
+            'superfish_menu' => 'Superfish menu',
+            'page_top' => 'Page top',
+            'highlighted' => 'Highlighted',
+            'preface_first' => 'Preface first',
+            'preface_middle' => 'Preface middle',
+            'preface_last' => 'Preface last',
+            'sidebar_first' => 'Left sidebar',
+            'sidebar_second' => 'Right sidebar',
+            'content_top' => 'Content top',
+            'help' => 'Help',
+            'content' => 'Main content',
+            'content_bottom' => 'Content bottom',
+            'bottom_first' => 'Bottom first',
+            'bottom_middle' => 'Bottom middle',
+            'bottom_last' => 'Bottom last',
+            'bottom_1' => 'Bottom 1',
+            'bottom_2' => 'Bottom 2',
+            'bottom_3' => 'Bottom 3',
+            'bottom_4' => 'Bottom 4',
+            'footer' => 'Footer',
+            'page_bottom' => 'Page bottom',
+          ),
+          'core' => '7.x',
+          'version' => '7.x-1.0',
+          'project' => 'danland',
+          'datestamp' => '1294312858',
+        ),
+        'project' => 'danland',
+        'version' => '7.x-1.0',
+      ),
+      'danland' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/danland/danland.info',
+        'basename' => 'danland.info',
+        'name' => 'Danland',
+        'info' => 
+        array (
+          'name' => 'Danland',
+          'description' => 'Drupal Theme provided by <a href="http://www.danetsoft.com">Danetsoft</a> developed by <a href="http://www.danpros.com">Danang Probo Sayekti</a> inspired by <a href="http://www.maksimer.no">Maksimer</a>.',
+          'engine' => 'phptemplate',
+          'stylesheets' => 
+          array (
+            'all' => 
+            array (
+              0 => 'style.css',
+            ),
+          ),
+          'regions' => 
+          array (
+            'search_box' => 'Search region',
+            'superfish_menu' => 'Superfish menu',
+            'page_top' => 'Page top',
+            'preface' => 'Preface top',
+            'highlighted' => 'Highlighted',
+            'preface_first' => 'Preface first',
+            'preface_middle' => 'Preface middle',
+            'preface_last' => 'Preface last',
+            'sidebar_first' => 'Left sidebar',
+            'sidebar_second' => 'Right sidebar',
+            'content_top' => 'Content top',
+            'help' => 'Help',
+            'content' => 'Main content',
+            'content_bottom' => 'Content bottom',
+            'bottom_first' => 'Bottom first',
+            'bottom_middle' => 'Bottom middle',
+            'bottom_last' => 'Bottom last',
+            'bottom_1' => 'Bottom 1',
+            'bottom_2' => 'Bottom 2',
+            'bottom_3' => 'Bottom 3',
+            'bottom_4' => 'Bottom 4',
+            'footer' => 'Footer',
+            'page_bottom' => 'Page bottom',
+          ),
+          'core' => '7.x',
+          'scripts' => 
+          array (
+            0 => 'scripts/hoverIntent.js',
+            1 => 'scripts/superfish.js',
+          ),
+          'version' => '7.x-1.0',
+          'project' => 'danland',
+          'datestamp' => '1294312858',
+        ),
+        'project' => 'danland',
+        'version' => '7.x-1.0',
+      ),
+      'adaptivetheme_subtheme' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_subtheme/adaptivetheme_subtheme.info',
+        'basename' => 'adaptivetheme_subtheme.info',
+        'name' => 'AT Subtheme',
+        'info' => 
+        array (
+          'name' => 'AT Subtheme',
+          'description' => 'Copy this subtheme to get started - see the <b><a href="http://adaptivethemes.com/documentation/adaptivethemes-documentation" target="_blank" title="Adaptivethemes.com - Rocking the hardest since 2006">documentation</a></b> for guidence or the included README. Drush users can generate a new theme using the command: drush adaptivetheme. If you need help please use the <b><a href="http://drupal.org/project/issues/adaptivetheme" target="_blank">issue queue</a></b> or ask in the IRC channel: <b><a href="irc://irc.freenode.net/drupal-adaptivetheme">#drupal-adaptivetheme</a></b>.',
+          'core' => '7.x',
+          'base theme' => 'adaptivetheme',
+          'release' => '7.x-3.x',
+          'engine' => 'phptemplate',
+          'screenshot' => 'screenshot.png',
+          'stylesheets' => 
+          array (
+            'screen' => 
+            array (
+              0 => 'css/global.base.css',
+              1 => 'css/global.styles.css',
+            ),
+          ),
+          'regions' => 
+          array (
+            'sidebar_first' => 'Sidebar first',
+            'sidebar_second' => 'Sidebar second',
+            'content' => 'Main Content',
+            'highlighted' => 'Highlighted',
+            'content_aside' => 'Aside',
+            'secondary_content' => 'Secondary',
+            'tertiary_content' => 'Tertiary',
+            'footer' => 'Footer',
+            'leaderboard' => 'Leaderboard',
+            'header' => 'Header',
+            'menu_bar' => 'Menu Bar',
+            'help' => 'Help',
+            'page_top' => 'Page top',
+            'page_bottom' => 'Page bottom',
+          ),
+          'features' => 
+          array (
+            0 => 'logo',
+            1 => 'name',
+            2 => 'slogan',
+            3 => 'node_user_picture',
+            4 => 'comment_user_picture',
+            5 => 'comment_user_verification',
+            6 => 'favicon',
+            7 => 'main_menu',
+            8 => 'secondary_menu',
+          ),
+          'settings' => 
+          array (
+            'bigscreen_layout' => 'three_col_grail',
+            'bigscreen_page_unit' => '%',
+            'bigscreen_sidebar_unit' => '%',
+            'bigscreen_max_width_unit' => 'px',
+            'bigscreen_page_width' => '100',
+            'bigscreen_sidebar_first' => '25',
+            'bigscreen_sidebar_second' => '25',
+            'bigscreen_set_max_width' => '1',
+            'bigscreen_max_width' => '1140',
+            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
+            'tablet_landscape_layout' => 'three_col_grail',
+            'tablet_landscape_page_unit' => '%',
+            'tablet_landscape_sidebar_unit' => '%',
+            'tablet_landscape_page_width' => '100',
+            'tablet_landscape_sidebar_first' => '20',
+            'tablet_landscape_sidebar_second' => '20',
+            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
+            'tablet_portrait_layout' => 'one_col_vert',
+            'tablet_portrait_page_unit' => '%',
+            'tablet_portrait_sidebar_unit' => '%',
+            'tablet_portrait_page_width' => '100',
+            'tablet_portrait_sidebar_first' => '50',
+            'tablet_portrait_sidebar_second' => '50',
+            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
+            'smartphone_landscape_layout' => 'one_col_vert',
+            'smartphone_landscape_page_unit' => '%',
+            'smartphone_landscape_sidebar_unit' => '%',
+            'smartphone_landscape_page_width' => '100',
+            'smartphone_landscape_sidebar_first' => '50',
+            'smartphone_landscape_sidebar_second' => '50',
+            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
+            'smartphone_portrait_layout' => 'one_col_stack',
+            'smartphone_portrait_page_unit' => '%',
+            'smartphone_portrait_sidebar_unit' => '%',
+            'smartphone_portrait_page_width' => '100',
+            'smartphone_portrait_sidebar_first' => '100',
+            'smartphone_portrait_sidebar_second' => '100',
+            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
+            'bigscreen_two_50' => 'two-50',
+            'bigscreen_two_33_66' => 'two-33-66',
+            'bigscreen_two_66_33' => 'two-66-33',
+            'bigscreen_two_brick' => 'two-brick',
+            'bigscreen_three_3x33' => 'three-3x33',
+            'bigscreen_three_25_50_25' => 'three-25-50-25',
+            'bigscreen_three_25_25_50' => 'three-25-25-50',
+            'bigscreen_three_50_25_25' => 'three-50-25-25',
+            'bigscreen_four_4x25' => 'four-4x25',
+            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
+            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
+            'bigscreen_three_inset_left' => 'three-inset-left',
+            'bigscreen_three_inset_right' => 'three-inset-right',
+            'tablet_landscape_two_50' => 'two-50',
+            'tablet_landscape_two_33_66' => 'two-33-66',
+            'tablet_landscape_two_66_33' => 'two-66-33',
+            'tablet_landscape_two_brick' => 'two-brick',
+            'tablet_landscape_three_3x33' => 'three-3x33',
+            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
+            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
+            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
+            'tablet_landscape_four_4x25' => 'four-4x25',
+            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
+            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
+            'tablet_landscape_three_inset_left' => 'three-inset-left',
+            'tablet_landscape_three_inset_right' => 'three-inset-right',
+            'tablet_portrait_two_50' => 'two-50',
+            'tablet_portrait_two_33_66' => 'two-33-66',
+            'tablet_portrait_two_66_33' => 'two-66-33',
+            'tablet_portrait_two_brick' => 'two-brick',
+            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
+            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
+            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
+            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
+            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
+            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
+            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
+            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
+            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
+            'smartphone_landscape_two_50' => 'two-50-stack',
+            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
+            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
+            'smartphone_landscape_two_brick' => 'two-brick-stack',
+            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
+            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
+            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
+            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
+            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
+            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
+            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
+            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
+            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
+            'disable_responsive_styles' => '0',
+            'enable_custom_media_queries' => '1',
+            'global_default_layout' => 'smartphone-portrait',
+            'global_default_layout_toggle' => '0',
+            'global_files_path' => 'public_files',
+            'load_html5js' => '1',
+            'load_respondjs' => '0',
+            'load_ltie8css' => '0',
+            'load_scalefixjs' => '0',
+            'expose_regions' => '0',
+            'load_all_panels' => '0',
+            'load_all_panels_no_sidebars' => '0',
+            'show_window_size' => '0',
+            'rebuild_theme_data' => '0',
+            'enable_extensions' => '0',
+            'enable_font_settings' => '0',
+            'enable_heading_settings' => '0',
+            'enable_image_settings' => '0',
+            'enable_apple_touch_icons' => '0',
+            'enable_exclude_css' => '0',
+            'enable_custom_css' => '0',
+            'enable_context_regions' => '0',
+            'enable_float_region_blocks' => '0',
+            'enable_markup_overides' => '0',
+            'base_font_type' => '<none>',
+            'site_name_font_type' => '<none>',
+            'site_slogan_font_type' => '<none>',
+            'page_title_font_type' => '<none>',
+            'node_title_font_type' => '<none>',
+            'comment_title_font_type' => '<none>',
+            'block_title_font_type' => '<none>',
+            'main_menu_font_type' => '<none>',
+            'secondary_menu_font_type' => '<none>',
+            'block_menu_font_type' => '<none>',
+            'selectors_font_type' => '<none>',
+            'content_headings_h1h4_font_type' => '<none>',
+            'content_headings_h5h6_font_type' => '<none>',
+            'base_font_size' => '<none>',
+            'site_name_font_size' => '<none>',
+            'site_slogan_font_size' => '<none>',
+            'page_title_font_size' => '<none>',
+            'node_title_font_size' => '<none>',
+            'comment_title_font_size' => '<none>',
+            'block_title_font_size' => '<none>',
+            'main_menu_font_size' => '<none>',
+            'secondary_menu_font_size' => '<none>',
+            'block_menu_font_size' => '<none>',
+            'h1_font_size' => '2em',
+            'h2_font_size' => '1.6em',
+            'h3_font_size' => '1.4em',
+            'h4_font_size' => '1.2em',
+            'h5_font_size' => '1em',
+            'h6_font_size' => '1em',
+            'page_title_case' => 'ptc-n',
+            'page_title_weight' => 'ptw-b',
+            'page_title_alignment' => 'pta-l',
+            'page_title_shadow' => 'pts-n',
+            'node_title_case' => 'ntc-n',
+            'node_title_weight' => 'ntw-b',
+            'node_title_alignment' => 'nta-l',
+            'node_title_shadow' => 'nts-n',
+            'comment_title_case' => 'ctc-n',
+            'comment_title_weight' => 'ctw-b',
+            'comment_title_alignment' => 'cta-l',
+            'comment_title_shadow' => 'cts-n',
+            'block_title_case' => 'btc-n',
+            'block_title_weight' => 'btw-b',
+            'block_title_alignment' => 'bta-l',
+            'block_title_shadow' => 'bts-n',
+            'image_alignment' => 'ia-n',
+            'image_alignment_teaser' => 'iat-n',
+            'image_caption_full' => '0',
+            'image_caption_teaser' => '0',
+            'image_teaser' => '0',
+            'breadcrumb_display' => '1',
+            'breadcrumb_home' => '0',
+            'breadcrumb_label' => '0',
+            'breadcrumb_title' => '0',
+            'breadcrumb_separator' => ' &#187; ',
+            'horizontal_login_block_enable' => 'on',
+            'horizontal_login_block' => '0',
+            'login_block_remove_links' => '0',
+            'login_block_remove_openid' => '0',
+            'global_gutter_width' => '',
+            'page_full_width_wrappers' => '0',
+            'page_content_type_suggestions' => '0',
+            'menu_item_span_elements' => '0',
+            'extra_page_classes' => '1',
+            'extra_article_classes' => '1',
+            'extra_comment_classes' => '1',
+            'extra_block_classes' => '1',
+            'extra_menu_classes' => '1',
+            'extra_item_list_classes' => '1',
+            'comments_hide_title' => '0',
+            'feed_icons' => '0',
+            'unset_block_system_main_front' => '0',
+            'unset_menu_titles' => '0',
+            'skip_link_target' => '#main-content',
+            'adv_search_extra_fieldsets' => '0',
+            'rel_author' => '0',
+            'mobile_friendly_metatags' => '1',
+            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
+            'adaptivetheme_meta_mobileoptimized' => 'width',
+            'adaptivetheme_meta_handheldfriendly' => 'true',
+            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
+            'chrome_edge' => '0',
+            'clear_type' => '0',
+            'apple_touch_icon_enable' => '0',
+            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
+            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
+            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
+            'custom_css' => '',
+          ),
+          'version' => '7.x-3.1',
+          'project' => 'adaptivetheme',
+          'datestamp' => '1346238662',
+        ),
+        'project' => 'adaptivetheme',
+        'version' => '7.x-3.1',
+      ),
+      'adaptivetheme_admin' => 
+      array (
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_admin/adaptivetheme_admin.info',
+        'basename' => 'adaptivetheme_admin.info',
+        'name' => 'AT Admin',
+        'info' => 
+        array (
+          'name' => 'AT Admin',
+          'description' => 'A better admin theme for Drupal 7. Clean, calm, invisible. Includes left and right sidebars, Overlay support and all AT\'s theme setting goodies.',
+          'core' => '7.x',
+          'base theme' => 'adaptivetheme',
+          'release' => '7.x-3.x',
+          'engine' => 'phptemplate',
+          'screenshot' => 'screenshot.png',
+          'stylesheets' => 
+          array (
+            'screen' => 
+            array (
+              0 => 'css/at_admin.css',
+            ),
+          ),
+          'regions' => 
+          array (
+            'content' => 'Main content',
+            'sidebar_first' => 'Sidebar first',
+            'sidebar_second' => 'Sidebar second',
+            'highlighted' => 'Highlighted',
+            'help' => 'Help',
+            'footer' => 'Footer',
+            'page_top' => 'Page top',
+            'page_bottom' => 'Page bottom',
+          ),
+          'settings' => 
+          array (
+            'shortcut_module_link' => '1',
+            'bigscreen_layout' => 'three_col_grail',
+            'bigscreen_page_unit' => '%',
+            'bigscreen_sidebar_unit' => 'px',
+            'bigscreen_max_width_unit' => 'px',
+            'bigscreen_page_width' => '100',
+            'bigscreen_sidebar_first' => '180',
+            'bigscreen_sidebar_second' => '180',
+            'bigscreen_set_max_width' => '1',
+            'bigscreen_max_width' => '1330',
+            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
+            'tablet_landscape_layout' => 'three_col_grail',
+            'tablet_landscape_page_unit' => '%',
+            'tablet_landscape_sidebar_unit' => '%',
+            'tablet_landscape_page_width' => '100',
+            'tablet_landscape_sidebar_first' => '20',
+            'tablet_landscape_sidebar_second' => '20',
+            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
+            'tablet_portrait_layout' => 'one_col_vert',
+            'tablet_portrait_page_unit' => '%',
+            'tablet_portrait_sidebar_unit' => '%',
+            'tablet_portrait_page_width' => '100',
+            'tablet_portrait_sidebar_first' => '50',
+            'tablet_portrait_sidebar_second' => '50',
+            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
+            'smartphone_landscape_layout' => 'one_col_vert',
+            'smartphone_landscape_page_unit' => '%',
+            'smartphone_landscape_sidebar_unit' => '%',
+            'smartphone_landscape_page_width' => '100',
+            'smartphone_landscape_sidebar_first' => '50',
+            'smartphone_landscape_sidebar_second' => '50',
+            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
+            'smartphone_portrait_layout' => 'one_col_stack',
+            'smartphone_portrait_page_unit' => '%',
+            'smartphone_portrait_sidebar_unit' => '%',
+            'smartphone_portrait_page_width' => '100',
+            'smartphone_portrait_sidebar_first' => '100',
+            'smartphone_portrait_sidebar_second' => '100',
+            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
+            'bigscreen_two_50' => 'two-50',
+            'bigscreen_two_33_66' => 'two-33-66',
+            'bigscreen_two_66_33' => 'two-66-33',
+            'bigscreen_two_brick' => 'two-brick',
+            'bigscreen_three_3x33' => 'three-3x33',
+            'bigscreen_three_25_50_25' => 'three-25-50-25',
+            'bigscreen_three_25_25_50' => 'three-25-25-50',
+            'bigscreen_three_50_25_25' => 'three-50-25-25',
+            'bigscreen_four_4x25' => 'four-4x25',
+            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
+            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
+            'bigscreen_three_inset_left' => 'three-inset-left',
+            'bigscreen_three_inset_right' => 'three-inset-right',
+            'tablet_landscape_two_50' => 'two-50',
+            'tablet_landscape_two_33_66' => 'two-33-66',
+            'tablet_landscape_two_66_33' => 'two-66-33',
+            'tablet_landscape_two_brick' => 'two-brick',
+            'tablet_landscape_three_3x33' => 'three-3x33',
+            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
+            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
+            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
+            'tablet_landscape_four_4x25' => 'four-4x25',
+            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
+            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
+            'tablet_landscape_three_inset_left' => 'three-inset-left',
+            'tablet_landscape_three_inset_right' => 'three-inset-right',
+            'tablet_portrait_two_50' => 'two-50',
+            'tablet_portrait_two_33_66' => 'two-33-66',
+            'tablet_portrait_two_66_33' => 'two-66-33',
+            'tablet_portrait_two_brick' => 'two-brick',
+            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
+            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
+            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
+            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
+            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
+            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
+            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
+            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
+            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
+            'smartphone_landscape_two_50' => 'two-50-stack',
+            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
+            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
+            'smartphone_landscape_two_brick' => 'two-brick-stack',
+            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
+            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
+            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
+            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
+            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
+            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
+            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
+            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
+            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
+            'disable_responsive_styles' => '0',
+            'enable_custom_media_queries' => '0',
+            'global_default_layout' => 'smartphone-portrait',
+            'global_default_layout_toggle' => '0',
+            'global_files_path' => 'public_files',
+            'load_html5js' => '1',
+            'load_onmediaqueryjs' => '0',
+            'load_respondjs' => '0',
+            'load_ltie8css' => '0',
+            'load_scalefixjs' => '0',
+            'expose_regions' => '0',
+            'load_all_panels' => '0',
+            'load_all_panels_no_sidebars' => '0',
+            'show_window_size' => '0',
+            'rebuild_theme_data' => '0',
+            'enable_extensions' => '1',
+            'enable_font_settings' => '0',
+            'enable_heading_settings' => '0',
+            'enable_image_settings' => '0',
+            'enable_apple_touch_icons' => '0',
+            'enable_exclude_css' => '0',
+            'enable_custom_css' => '0',
+            'enable_context_regions' => '0',
+            'enable_float_region_blocks' => '0',
+            'enable_markup_overides' => '1',
+            'base_font_type' => '',
+            'site_name_font_type' => '',
+            'site_slogan_font_type' => '',
+            'page_title_font_type' => '',
+            'node_title_font_type' => '',
+            'comment_title_font_type' => '',
+            'block_title_font_type' => '',
+            'base_font' => 'bf-sss',
+            'site_name_font' => 'snf-sl',
+            'site_slogan_font' => 'ssf-sl',
+            'main_menu_font' => 'mmf-sl',
+            'page_title_font' => 'ptf-sl',
+            'node_title_font' => 'ntf-sl',
+            'comment_title_font' => 'ctf-sl',
+            'block_title_font' => 'btf-sl',
+            'base_font_size' => '1em',
+            'site_name_font_size' => '2em',
+            'site_slogan_font_size' => '1.2em',
+            'page_title_font_size' => '2em',
+            'node_title_font_size' => '1.6em',
+            'comment_title_font_size' => '1.4em',
+            'block_title_font_size' => '1.4em',
+            'h1_font_size' => '2em',
+            'h2_font_size' => '1.6em',
+            'h3_font_size' => '1.4em',
+            'h4_font_size' => '1.2em',
+            'h5_font_size' => '1em',
+            'h6_font_size' => '1em',
+            'page_title_case' => 'ptc-n',
+            'page_title_weight' => 'ptw-b',
+            'page_title_alignment' => 'pta-l',
+            'page_title_shadow' => 'pts-n',
+            'node_title_case' => 'ntc-n',
+            'node_title_weight' => 'ntw-b',
+            'node_title_alignment' => 'nta-l',
+            'node_title_shadow' => 'nts-n',
+            'comment_title_case' => 'ctc-n',
+            'comment_title_weight' => 'ctw-b',
+            'comment_title_alignment' => 'cta-l',
+            'comment_title_shadow' => 'cts-n',
+            'block_title_case' => 'btc-uc',
+            'block_title_weight' => 'btw-b',
+            'block_title_alignment' => 'bta-l',
+            'block_title_shadow' => 'bts-n',
+            'image_alignment' => 'ia-l',
+            'image_alignment_teaser' => 'iat-l',
+            'image_caption_full' => '0',
+            'image_caption_teaser' => '0',
+            'image_teaser' => '1',
+            'breadcrumb_display' => '1',
+            'breadcrumb_home' => '1',
+            'breadcrumb_label' => '0',
+            'breadcrumb_title' => '0',
+            'breadcrumb_separator' => ' &#187; ',
+            'horizontal_login_block_enable' => 'on',
+            'horizontal_login_block' => '0',
+            'login_block_remove_links' => '0',
+            'login_block_remove_openid' => '0',
+            'global_gutter_width' => '',
+            'page_full_width_wrappers' => '0',
+            'page_content_type_suggestions' => '0',
+            'menu_item_span_elements' => '0',
+            'extra_page_classes' => '1',
+            'extra_article_classes' => '1',
+            'extra_comment_classes' => '1',
+            'extra_block_classes' => '1',
+            'extra_menu_classes' => '1',
+            'extra_item_list_classes' => '1',
+            'comments_hide_title' => '0',
+            'feed_icons' => '0',
+            'unset_block_system_main_front' => '0',
+            'skip_link_target' => '#main-content',
+            'adv_search_extra_fieldsets' => '0',
+            'rel_author' => '0',
+            'mobile_friendly_metatags' => '1',
+            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
+            'adaptivetheme_meta_mobileoptimized' => 'width',
+            'adaptivetheme_meta_handheldfriendly' => 'true',
+            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
+            'chrome_edge' => '0',
+            'clear_type' => '0',
+            'apple_touch_icon_enable' => '0',
+            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
+            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
+            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
+            'custom_css' => '',
+          ),
+          'features' => 
+          array (
+            0 => 'logo',
+            1 => 'name',
+            2 => 'favicon',
+            3 => 'main_menu',
+            4 => 'secondary_menu',
+          ),
+          'version' => '7.x-3.1',
+          'project' => 'adaptivetheme',
+          'datestamp' => '1346238662',
+        ),
+        'project' => 'adaptivetheme',
+        'version' => '7.x-3.1',
       ),
       'adaptivetheme' => 
       array (
@@ -8157,940 +10610,6 @@ $options['packages'] = array (
         ),
         'project' => 'adaptivetheme',
         'version' => '7.x-3.1',
-      ),
-      'adaptivetheme_admin' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_admin/adaptivetheme_admin.info',
-        'basename' => 'adaptivetheme_admin.info',
-        'name' => 'AT Admin',
-        'info' => 
-        array (
-          'name' => 'AT Admin',
-          'description' => 'A better admin theme for Drupal 7. Clean, calm, invisible. Includes left and right sidebars, Overlay support and all AT\'s theme setting goodies.',
-          'core' => '7.x',
-          'base theme' => 'adaptivetheme',
-          'release' => '7.x-3.x',
-          'engine' => 'phptemplate',
-          'screenshot' => 'screenshot.png',
-          'stylesheets' => 
-          array (
-            'screen' => 
-            array (
-              0 => 'css/at_admin.css',
-            ),
-          ),
-          'regions' => 
-          array (
-            'content' => 'Main content',
-            'sidebar_first' => 'Sidebar first',
-            'sidebar_second' => 'Sidebar second',
-            'highlighted' => 'Highlighted',
-            'help' => 'Help',
-            'footer' => 'Footer',
-            'page_top' => 'Page top',
-            'page_bottom' => 'Page bottom',
-          ),
-          'settings' => 
-          array (
-            'shortcut_module_link' => '1',
-            'bigscreen_layout' => 'three_col_grail',
-            'bigscreen_page_unit' => '%',
-            'bigscreen_sidebar_unit' => 'px',
-            'bigscreen_max_width_unit' => 'px',
-            'bigscreen_page_width' => '100',
-            'bigscreen_sidebar_first' => '180',
-            'bigscreen_sidebar_second' => '180',
-            'bigscreen_set_max_width' => '1',
-            'bigscreen_max_width' => '1330',
-            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
-            'tablet_landscape_layout' => 'three_col_grail',
-            'tablet_landscape_page_unit' => '%',
-            'tablet_landscape_sidebar_unit' => '%',
-            'tablet_landscape_page_width' => '100',
-            'tablet_landscape_sidebar_first' => '20',
-            'tablet_landscape_sidebar_second' => '20',
-            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
-            'tablet_portrait_layout' => 'one_col_vert',
-            'tablet_portrait_page_unit' => '%',
-            'tablet_portrait_sidebar_unit' => '%',
-            'tablet_portrait_page_width' => '100',
-            'tablet_portrait_sidebar_first' => '50',
-            'tablet_portrait_sidebar_second' => '50',
-            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
-            'smartphone_landscape_layout' => 'one_col_vert',
-            'smartphone_landscape_page_unit' => '%',
-            'smartphone_landscape_sidebar_unit' => '%',
-            'smartphone_landscape_page_width' => '100',
-            'smartphone_landscape_sidebar_first' => '50',
-            'smartphone_landscape_sidebar_second' => '50',
-            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
-            'smartphone_portrait_layout' => 'one_col_stack',
-            'smartphone_portrait_page_unit' => '%',
-            'smartphone_portrait_sidebar_unit' => '%',
-            'smartphone_portrait_page_width' => '100',
-            'smartphone_portrait_sidebar_first' => '100',
-            'smartphone_portrait_sidebar_second' => '100',
-            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
-            'bigscreen_two_50' => 'two-50',
-            'bigscreen_two_33_66' => 'two-33-66',
-            'bigscreen_two_66_33' => 'two-66-33',
-            'bigscreen_two_brick' => 'two-brick',
-            'bigscreen_three_3x33' => 'three-3x33',
-            'bigscreen_three_25_50_25' => 'three-25-50-25',
-            'bigscreen_three_25_25_50' => 'three-25-25-50',
-            'bigscreen_three_50_25_25' => 'three-50-25-25',
-            'bigscreen_four_4x25' => 'four-4x25',
-            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
-            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
-            'bigscreen_three_inset_left' => 'three-inset-left',
-            'bigscreen_three_inset_right' => 'three-inset-right',
-            'tablet_landscape_two_50' => 'two-50',
-            'tablet_landscape_two_33_66' => 'two-33-66',
-            'tablet_landscape_two_66_33' => 'two-66-33',
-            'tablet_landscape_two_brick' => 'two-brick',
-            'tablet_landscape_three_3x33' => 'three-3x33',
-            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
-            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
-            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
-            'tablet_landscape_four_4x25' => 'four-4x25',
-            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
-            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
-            'tablet_landscape_three_inset_left' => 'three-inset-left',
-            'tablet_landscape_three_inset_right' => 'three-inset-right',
-            'tablet_portrait_two_50' => 'two-50',
-            'tablet_portrait_two_33_66' => 'two-33-66',
-            'tablet_portrait_two_66_33' => 'two-66-33',
-            'tablet_portrait_two_brick' => 'two-brick',
-            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
-            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
-            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
-            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
-            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
-            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
-            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
-            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
-            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
-            'smartphone_landscape_two_50' => 'two-50-stack',
-            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
-            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
-            'smartphone_landscape_two_brick' => 'two-brick-stack',
-            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
-            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
-            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
-            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
-            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
-            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
-            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
-            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
-            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
-            'disable_responsive_styles' => '0',
-            'enable_custom_media_queries' => '0',
-            'global_default_layout' => 'smartphone-portrait',
-            'global_default_layout_toggle' => '0',
-            'global_files_path' => 'public_files',
-            'load_html5js' => '1',
-            'load_onmediaqueryjs' => '0',
-            'load_respondjs' => '0',
-            'load_ltie8css' => '0',
-            'load_scalefixjs' => '0',
-            'expose_regions' => '0',
-            'load_all_panels' => '0',
-            'load_all_panels_no_sidebars' => '0',
-            'show_window_size' => '0',
-            'rebuild_theme_data' => '0',
-            'enable_extensions' => '1',
-            'enable_font_settings' => '0',
-            'enable_heading_settings' => '0',
-            'enable_image_settings' => '0',
-            'enable_apple_touch_icons' => '0',
-            'enable_exclude_css' => '0',
-            'enable_custom_css' => '0',
-            'enable_context_regions' => '0',
-            'enable_float_region_blocks' => '0',
-            'enable_markup_overides' => '1',
-            'base_font_type' => '',
-            'site_name_font_type' => '',
-            'site_slogan_font_type' => '',
-            'page_title_font_type' => '',
-            'node_title_font_type' => '',
-            'comment_title_font_type' => '',
-            'block_title_font_type' => '',
-            'base_font' => 'bf-sss',
-            'site_name_font' => 'snf-sl',
-            'site_slogan_font' => 'ssf-sl',
-            'main_menu_font' => 'mmf-sl',
-            'page_title_font' => 'ptf-sl',
-            'node_title_font' => 'ntf-sl',
-            'comment_title_font' => 'ctf-sl',
-            'block_title_font' => 'btf-sl',
-            'base_font_size' => '1em',
-            'site_name_font_size' => '2em',
-            'site_slogan_font_size' => '1.2em',
-            'page_title_font_size' => '2em',
-            'node_title_font_size' => '1.6em',
-            'comment_title_font_size' => '1.4em',
-            'block_title_font_size' => '1.4em',
-            'h1_font_size' => '2em',
-            'h2_font_size' => '1.6em',
-            'h3_font_size' => '1.4em',
-            'h4_font_size' => '1.2em',
-            'h5_font_size' => '1em',
-            'h6_font_size' => '1em',
-            'page_title_case' => 'ptc-n',
-            'page_title_weight' => 'ptw-b',
-            'page_title_alignment' => 'pta-l',
-            'page_title_shadow' => 'pts-n',
-            'node_title_case' => 'ntc-n',
-            'node_title_weight' => 'ntw-b',
-            'node_title_alignment' => 'nta-l',
-            'node_title_shadow' => 'nts-n',
-            'comment_title_case' => 'ctc-n',
-            'comment_title_weight' => 'ctw-b',
-            'comment_title_alignment' => 'cta-l',
-            'comment_title_shadow' => 'cts-n',
-            'block_title_case' => 'btc-uc',
-            'block_title_weight' => 'btw-b',
-            'block_title_alignment' => 'bta-l',
-            'block_title_shadow' => 'bts-n',
-            'image_alignment' => 'ia-l',
-            'image_alignment_teaser' => 'iat-l',
-            'image_caption_full' => '0',
-            'image_caption_teaser' => '0',
-            'image_teaser' => '1',
-            'breadcrumb_display' => '1',
-            'breadcrumb_home' => '1',
-            'breadcrumb_label' => '0',
-            'breadcrumb_title' => '0',
-            'breadcrumb_separator' => ' &#187; ',
-            'horizontal_login_block_enable' => 'on',
-            'horizontal_login_block' => '0',
-            'login_block_remove_links' => '0',
-            'login_block_remove_openid' => '0',
-            'global_gutter_width' => '',
-            'page_full_width_wrappers' => '0',
-            'page_content_type_suggestions' => '0',
-            'menu_item_span_elements' => '0',
-            'extra_page_classes' => '1',
-            'extra_article_classes' => '1',
-            'extra_comment_classes' => '1',
-            'extra_block_classes' => '1',
-            'extra_menu_classes' => '1',
-            'extra_item_list_classes' => '1',
-            'comments_hide_title' => '0',
-            'feed_icons' => '0',
-            'unset_block_system_main_front' => '0',
-            'skip_link_target' => '#main-content',
-            'adv_search_extra_fieldsets' => '0',
-            'rel_author' => '0',
-            'mobile_friendly_metatags' => '1',
-            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
-            'adaptivetheme_meta_mobileoptimized' => 'width',
-            'adaptivetheme_meta_handheldfriendly' => 'true',
-            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
-            'chrome_edge' => '0',
-            'clear_type' => '0',
-            'apple_touch_icon_enable' => '0',
-            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
-            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
-            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
-            'custom_css' => '',
-          ),
-          'features' => 
-          array (
-            0 => 'logo',
-            1 => 'name',
-            2 => 'favicon',
-            3 => 'main_menu',
-            4 => 'secondary_menu',
-          ),
-          'version' => '7.x-3.1',
-          'project' => 'adaptivetheme',
-          'datestamp' => '1346238662',
-        ),
-        'project' => 'adaptivetheme',
-        'version' => '7.x-3.1',
-      ),
-      'adaptivetheme_subtheme' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/adaptivetheme/at_subtheme/adaptivetheme_subtheme.info',
-        'basename' => 'adaptivetheme_subtheme.info',
-        'name' => 'AT Subtheme',
-        'info' => 
-        array (
-          'name' => 'AT Subtheme',
-          'description' => 'Copy this subtheme to get started - see the <b><a href="http://adaptivethemes.com/documentation/adaptivethemes-documentation" target="_blank" title="Adaptivethemes.com - Rocking the hardest since 2006">documentation</a></b> for guidence or the included README. Drush users can generate a new theme using the command: drush adaptivetheme. If you need help please use the <b><a href="http://drupal.org/project/issues/adaptivetheme" target="_blank">issue queue</a></b> or ask in the IRC channel: <b><a href="irc://irc.freenode.net/drupal-adaptivetheme">#drupal-adaptivetheme</a></b>.',
-          'core' => '7.x',
-          'base theme' => 'adaptivetheme',
-          'release' => '7.x-3.x',
-          'engine' => 'phptemplate',
-          'screenshot' => 'screenshot.png',
-          'stylesheets' => 
-          array (
-            'screen' => 
-            array (
-              0 => 'css/global.base.css',
-              1 => 'css/global.styles.css',
-            ),
-          ),
-          'regions' => 
-          array (
-            'sidebar_first' => 'Sidebar first',
-            'sidebar_second' => 'Sidebar second',
-            'content' => 'Main Content',
-            'highlighted' => 'Highlighted',
-            'content_aside' => 'Aside',
-            'secondary_content' => 'Secondary',
-            'tertiary_content' => 'Tertiary',
-            'footer' => 'Footer',
-            'leaderboard' => 'Leaderboard',
-            'header' => 'Header',
-            'menu_bar' => 'Menu Bar',
-            'help' => 'Help',
-            'page_top' => 'Page top',
-            'page_bottom' => 'Page bottom',
-          ),
-          'features' => 
-          array (
-            0 => 'logo',
-            1 => 'name',
-            2 => 'slogan',
-            3 => 'node_user_picture',
-            4 => 'comment_user_picture',
-            5 => 'comment_user_verification',
-            6 => 'favicon',
-            7 => 'main_menu',
-            8 => 'secondary_menu',
-          ),
-          'settings' => 
-          array (
-            'bigscreen_layout' => 'three_col_grail',
-            'bigscreen_page_unit' => '%',
-            'bigscreen_sidebar_unit' => '%',
-            'bigscreen_max_width_unit' => 'px',
-            'bigscreen_page_width' => '100',
-            'bigscreen_sidebar_first' => '25',
-            'bigscreen_sidebar_second' => '25',
-            'bigscreen_set_max_width' => '1',
-            'bigscreen_max_width' => '1140',
-            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
-            'tablet_landscape_layout' => 'three_col_grail',
-            'tablet_landscape_page_unit' => '%',
-            'tablet_landscape_sidebar_unit' => '%',
-            'tablet_landscape_page_width' => '100',
-            'tablet_landscape_sidebar_first' => '20',
-            'tablet_landscape_sidebar_second' => '20',
-            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
-            'tablet_portrait_layout' => 'one_col_vert',
-            'tablet_portrait_page_unit' => '%',
-            'tablet_portrait_sidebar_unit' => '%',
-            'tablet_portrait_page_width' => '100',
-            'tablet_portrait_sidebar_first' => '50',
-            'tablet_portrait_sidebar_second' => '50',
-            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
-            'smartphone_landscape_layout' => 'one_col_vert',
-            'smartphone_landscape_page_unit' => '%',
-            'smartphone_landscape_sidebar_unit' => '%',
-            'smartphone_landscape_page_width' => '100',
-            'smartphone_landscape_sidebar_first' => '50',
-            'smartphone_landscape_sidebar_second' => '50',
-            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
-            'smartphone_portrait_layout' => 'one_col_stack',
-            'smartphone_portrait_page_unit' => '%',
-            'smartphone_portrait_sidebar_unit' => '%',
-            'smartphone_portrait_page_width' => '100',
-            'smartphone_portrait_sidebar_first' => '100',
-            'smartphone_portrait_sidebar_second' => '100',
-            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
-            'bigscreen_two_50' => 'two-50',
-            'bigscreen_two_33_66' => 'two-33-66',
-            'bigscreen_two_66_33' => 'two-66-33',
-            'bigscreen_two_brick' => 'two-brick',
-            'bigscreen_three_3x33' => 'three-3x33',
-            'bigscreen_three_25_50_25' => 'three-25-50-25',
-            'bigscreen_three_25_25_50' => 'three-25-25-50',
-            'bigscreen_three_50_25_25' => 'three-50-25-25',
-            'bigscreen_four_4x25' => 'four-4x25',
-            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
-            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
-            'bigscreen_three_inset_left' => 'three-inset-left',
-            'bigscreen_three_inset_right' => 'three-inset-right',
-            'tablet_landscape_two_50' => 'two-50',
-            'tablet_landscape_two_33_66' => 'two-33-66',
-            'tablet_landscape_two_66_33' => 'two-66-33',
-            'tablet_landscape_two_brick' => 'two-brick',
-            'tablet_landscape_three_3x33' => 'three-3x33',
-            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
-            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
-            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
-            'tablet_landscape_four_4x25' => 'four-4x25',
-            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
-            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
-            'tablet_landscape_three_inset_left' => 'three-inset-left',
-            'tablet_landscape_three_inset_right' => 'three-inset-right',
-            'tablet_portrait_two_50' => 'two-50',
-            'tablet_portrait_two_33_66' => 'two-33-66',
-            'tablet_portrait_two_66_33' => 'two-66-33',
-            'tablet_portrait_two_brick' => 'two-brick',
-            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
-            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
-            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
-            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
-            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
-            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
-            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
-            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
-            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
-            'smartphone_landscape_two_50' => 'two-50-stack',
-            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
-            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
-            'smartphone_landscape_two_brick' => 'two-brick-stack',
-            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
-            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
-            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
-            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
-            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
-            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
-            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
-            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
-            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
-            'disable_responsive_styles' => '0',
-            'enable_custom_media_queries' => '1',
-            'global_default_layout' => 'smartphone-portrait',
-            'global_default_layout_toggle' => '0',
-            'global_files_path' => 'public_files',
-            'load_html5js' => '1',
-            'load_respondjs' => '0',
-            'load_ltie8css' => '0',
-            'load_scalefixjs' => '0',
-            'expose_regions' => '0',
-            'load_all_panels' => '0',
-            'load_all_panels_no_sidebars' => '0',
-            'show_window_size' => '0',
-            'rebuild_theme_data' => '0',
-            'enable_extensions' => '0',
-            'enable_font_settings' => '0',
-            'enable_heading_settings' => '0',
-            'enable_image_settings' => '0',
-            'enable_apple_touch_icons' => '0',
-            'enable_exclude_css' => '0',
-            'enable_custom_css' => '0',
-            'enable_context_regions' => '0',
-            'enable_float_region_blocks' => '0',
-            'enable_markup_overides' => '0',
-            'base_font_type' => '<none>',
-            'site_name_font_type' => '<none>',
-            'site_slogan_font_type' => '<none>',
-            'page_title_font_type' => '<none>',
-            'node_title_font_type' => '<none>',
-            'comment_title_font_type' => '<none>',
-            'block_title_font_type' => '<none>',
-            'main_menu_font_type' => '<none>',
-            'secondary_menu_font_type' => '<none>',
-            'block_menu_font_type' => '<none>',
-            'selectors_font_type' => '<none>',
-            'content_headings_h1h4_font_type' => '<none>',
-            'content_headings_h5h6_font_type' => '<none>',
-            'base_font_size' => '<none>',
-            'site_name_font_size' => '<none>',
-            'site_slogan_font_size' => '<none>',
-            'page_title_font_size' => '<none>',
-            'node_title_font_size' => '<none>',
-            'comment_title_font_size' => '<none>',
-            'block_title_font_size' => '<none>',
-            'main_menu_font_size' => '<none>',
-            'secondary_menu_font_size' => '<none>',
-            'block_menu_font_size' => '<none>',
-            'h1_font_size' => '2em',
-            'h2_font_size' => '1.6em',
-            'h3_font_size' => '1.4em',
-            'h4_font_size' => '1.2em',
-            'h5_font_size' => '1em',
-            'h6_font_size' => '1em',
-            'page_title_case' => 'ptc-n',
-            'page_title_weight' => 'ptw-b',
-            'page_title_alignment' => 'pta-l',
-            'page_title_shadow' => 'pts-n',
-            'node_title_case' => 'ntc-n',
-            'node_title_weight' => 'ntw-b',
-            'node_title_alignment' => 'nta-l',
-            'node_title_shadow' => 'nts-n',
-            'comment_title_case' => 'ctc-n',
-            'comment_title_weight' => 'ctw-b',
-            'comment_title_alignment' => 'cta-l',
-            'comment_title_shadow' => 'cts-n',
-            'block_title_case' => 'btc-n',
-            'block_title_weight' => 'btw-b',
-            'block_title_alignment' => 'bta-l',
-            'block_title_shadow' => 'bts-n',
-            'image_alignment' => 'ia-n',
-            'image_alignment_teaser' => 'iat-n',
-            'image_caption_full' => '0',
-            'image_caption_teaser' => '0',
-            'image_teaser' => '0',
-            'breadcrumb_display' => '1',
-            'breadcrumb_home' => '0',
-            'breadcrumb_label' => '0',
-            'breadcrumb_title' => '0',
-            'breadcrumb_separator' => ' &#187; ',
-            'horizontal_login_block_enable' => 'on',
-            'horizontal_login_block' => '0',
-            'login_block_remove_links' => '0',
-            'login_block_remove_openid' => '0',
-            'global_gutter_width' => '',
-            'page_full_width_wrappers' => '0',
-            'page_content_type_suggestions' => '0',
-            'menu_item_span_elements' => '0',
-            'extra_page_classes' => '1',
-            'extra_article_classes' => '1',
-            'extra_comment_classes' => '1',
-            'extra_block_classes' => '1',
-            'extra_menu_classes' => '1',
-            'extra_item_list_classes' => '1',
-            'comments_hide_title' => '0',
-            'feed_icons' => '0',
-            'unset_block_system_main_front' => '0',
-            'unset_menu_titles' => '0',
-            'skip_link_target' => '#main-content',
-            'adv_search_extra_fieldsets' => '0',
-            'rel_author' => '0',
-            'mobile_friendly_metatags' => '1',
-            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
-            'adaptivetheme_meta_mobileoptimized' => 'width',
-            'adaptivetheme_meta_handheldfriendly' => 'true',
-            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
-            'chrome_edge' => '0',
-            'clear_type' => '0',
-            'apple_touch_icon_enable' => '0',
-            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
-            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
-            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
-            'custom_css' => '',
-          ),
-          'version' => '7.x-3.1',
-          'project' => 'adaptivetheme',
-          'datestamp' => '1346238662',
-        ),
-        'project' => 'adaptivetheme',
-        'version' => '7.x-3.1',
-      ),
-      'pixture_reloaded' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/pixture_reloaded/pixture_reloaded.info',
-        'basename' => 'pixture_reloaded.info',
-        'name' => 'Pixture Reloaded',
-        'info' => 
-        array (
-          'name' => 'Pixture Reloaded',
-          'description' => 'Pixture Reloaded is a recolorable, multi-column theme that supports both liquid and fixed width layouts. This is a subtheme - you must first download and install <a href="http://drupal.org/project/adaptivetheme">Adaptivetheme 7.x-3.x</a>. Once you have everything installed visit the settings page to change the colors, layout (width, sidebar widths, sidebar layout etc), fonts, rounded corners and many other settings. This theme also fully supports the <a href="http://drupal.org/project/noggin">Noggin</a> and <a href="http://drupal.org/project/superfish">Superfish</a> modules and includes special theme settings to help configure Noggin header images - note that you must first install the Noggin module to see these settings.',
-          'core' => '7.x',
-          'release' => '7.x-3.x',
-          'engine' => 'phptemplate',
-          'base theme' => 'adaptivetheme',
-          'screenshot' => 'screenshot.png',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'color/colors.css',
-              1 => 'css/pixture_reloaded.css',
-              2 => 'css/pixture_reloaded.settings.style.css',
-            ),
-          ),
-          'regions' => 
-          array (
-            'sidebar_first' => 'Sidebar first',
-            'sidebar_second' => 'Sidebar second',
-            'header' => 'Header',
-            'menu_bar' => 'Menu Bar',
-            'help' => 'Help',
-            'highlighted' => 'Highlighted',
-            'content' => 'Main content',
-            'content_aside' => 'Content bottom',
-            'secondary_content' => 'Secondary content',
-            'tertiary_content' => 'Tertiary content',
-            'footer' => 'Footer',
-            'page_top' => 'Page top',
-            'page_bottom' => 'Page bottom',
-            'three_33_top' => 'AT Three column 3x33 - top',
-            'three_33_first' => 'AT Three column 3x33 - left',
-            'three_33_second' => 'AT Three column 3x33 - center',
-            'three_33_third' => 'AT Three column 3x33 - right',
-            'three_33_bottom' => 'AT Three column 3x33 - bottom',
-            'four_first' => 'AT Four column 4x25 - 1',
-            'four_second' => 'AT Four column 4x25 - 2',
-            'four_third' => 'AT Four column 4x25 - 3',
-            'four_fourth' => 'AT Four column 4x25 - 4',
-          ),
-          'features' => 
-          array (
-            0 => 'logo',
-            1 => 'name',
-            2 => 'slogan',
-            3 => 'node_user_picture',
-            4 => 'comment_user_picture',
-            5 => 'comment_user_verification',
-            6 => 'favicon',
-          ),
-          'settings' => 
-          array (
-            'toggle_logo' => '1',
-            'toggle_name' => '1',
-            'toggle_slogan' => '1',
-            'toggle_node_user_picture' => '1',
-            'toggle_comment_user_picture' => '1',
-            'toggle_comment_user_verification' => '1',
-            'toggle_favicon' => '1',
-            'bigscreen_layout' => 'three_col_grail',
-            'bigscreen_page_unit' => '%',
-            'bigscreen_sidebar_unit' => '%',
-            'bigscreen_max_width_unit' => 'px',
-            'bigscreen_page_width' => '100',
-            'bigscreen_sidebar_first' => '25',
-            'bigscreen_sidebar_second' => '25',
-            'bigscreen_set_max_width' => '1',
-            'bigscreen_max_width' => '1140',
-            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
-            'tablet_landscape_layout' => 'three_col_grail',
-            'tablet_landscape_page_unit' => '%',
-            'tablet_landscape_sidebar_unit' => '%',
-            'tablet_landscape_page_width' => '100',
-            'tablet_landscape_sidebar_first' => '20',
-            'tablet_landscape_sidebar_second' => '20',
-            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
-            'tablet_portrait_layout' => 'one_col_vert',
-            'tablet_portrait_page_unit' => '%',
-            'tablet_portrait_sidebar_unit' => '%',
-            'tablet_portrait_page_width' => '100',
-            'tablet_portrait_sidebar_first' => '50',
-            'tablet_portrait_sidebar_second' => '50',
-            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
-            'smartphone_landscape_layout' => 'one_col_vert',
-            'smartphone_landscape_page_unit' => '%',
-            'smartphone_landscape_sidebar_unit' => '%',
-            'smartphone_landscape_page_width' => '100',
-            'smartphone_landscape_sidebar_first' => '50',
-            'smartphone_landscape_sidebar_second' => '50',
-            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
-            'smartphone_portrait_layout' => 'one_col_stack',
-            'smartphone_portrait_page_unit' => '%',
-            'smartphone_portrait_sidebar_unit' => '%',
-            'smartphone_portrait_page_width' => '100',
-            'smartphone_portrait_sidebar_first' => '100',
-            'smartphone_portrait_sidebar_second' => '100',
-            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
-            'bigscreen_two_50' => 'two-50',
-            'bigscreen_two_33_66' => 'two-33-66',
-            'bigscreen_two_66_33' => 'two-66-33',
-            'bigscreen_two_brick' => 'two-brick',
-            'bigscreen_three_3x33' => 'three-3x33',
-            'bigscreen_three_25_50_25' => 'three-25-50-25',
-            'bigscreen_three_25_25_50' => 'three-25-25-50',
-            'bigscreen_three_50_25_25' => 'three-50-25-25',
-            'bigscreen_four_4x25' => 'four-4x25',
-            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
-            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
-            'bigscreen_three_inset_left' => 'three-inset-left',
-            'bigscreen_three_inset_right' => 'three-inset-right',
-            'tablet_landscape_two_50' => 'two-50',
-            'tablet_landscape_two_33_66' => 'two-33-66',
-            'tablet_landscape_two_66_33' => 'two-66-33',
-            'tablet_landscape_two_brick' => 'two-brick',
-            'tablet_landscape_three_3x33' => 'three-3x33',
-            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
-            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
-            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
-            'tablet_landscape_four_4x25' => 'four-4x25',
-            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
-            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
-            'tablet_landscape_three_inset_left' => 'three-inset-left',
-            'tablet_landscape_three_inset_right' => 'three-inset-right',
-            'tablet_portrait_two_50' => 'two-50',
-            'tablet_portrait_two_33_66' => 'two-33-66',
-            'tablet_portrait_two_66_33' => 'two-66-33',
-            'tablet_portrait_two_brick' => 'two-brick',
-            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
-            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
-            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
-            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
-            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
-            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
-            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
-            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
-            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
-            'smartphone_landscape_two_50' => 'two-50-stack',
-            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
-            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
-            'smartphone_landscape_two_brick' => 'two-brick-stack',
-            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
-            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
-            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
-            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
-            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
-            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
-            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
-            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
-            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
-            'disable_responsive_styles' => '0',
-            'enable_custom_media_queries' => '0',
-            'global_default_layout' => 'smartphone-portrait',
-            'global_default_layout_toggle' => '0',
-            'global_files_path' => 'public_files',
-            'load_html5js' => '1',
-            'load_respondjs' => '0',
-            'load_ltie8css' => '0',
-            'load_scalefixjs' => '0',
-            'expose_regions' => '0',
-            'load_all_panels' => '0',
-            'load_all_panels_no_sidebars' => '0',
-            'show_window_size' => '0',
-            'rebuild_theme_data' => '0',
-            'enable_extensions' => '1',
-            'enable_font_settings' => '1',
-            'enable_heading_settings' => '1',
-            'enable_image_settings' => '1',
-            'enable_apple_touch_icons' => '0',
-            'enable_exclude_css' => '0',
-            'enable_custom_css' => '0',
-            'enable_context_regions' => '0',
-            'enable_float_region_blocks' => '0',
-            'enable_markup_overides' => '1',
-            'base_font_type' => '',
-            'site_name_font_type' => '',
-            'site_slogan_font_type' => '',
-            'page_title_font_type' => '',
-            'node_title_font_type' => '',
-            'comment_title_font_type' => '',
-            'block_title_font_type' => '',
-            'base_font' => 'bf-sss',
-            'site_name_font' => 'snf-sl',
-            'site_slogan_font' => 'ssf-sl',
-            'main_menu_font' => 'mmf-sl',
-            'page_title_font' => 'ptf-sl',
-            'node_title_font' => 'ntf-sl',
-            'comment_title_font' => 'ctf-sl',
-            'block_title_font' => 'btf-sl',
-            'base_font_size' => '1em',
-            'site_name_font_size' => '2em',
-            'site_slogan_font_size' => '1.2em',
-            'page_title_font_size' => '2em',
-            'node_title_font_size' => '1.6em',
-            'comment_title_font_size' => '1.4em',
-            'block_title_font_size' => '1.4em',
-            'h1_font_size' => '2em',
-            'h2_font_size' => '1.6em',
-            'h3_font_size' => '1.4em',
-            'h4_font_size' => '1.2em',
-            'h5_font_size' => '1em',
-            'h6_font_size' => '1em',
-            'page_title_case' => 'ptc-n',
-            'page_title_weight' => 'ptw-b',
-            'page_title_alignment' => 'pta-l',
-            'page_title_shadow' => 'pts-n',
-            'node_title_case' => 'ntc-n',
-            'node_title_weight' => 'ntw-b',
-            'node_title_alignment' => 'nta-l',
-            'node_title_shadow' => 'nts-n',
-            'comment_title_case' => 'ctc-n',
-            'comment_title_weight' => 'ctw-b',
-            'comment_title_alignment' => 'cta-l',
-            'comment_title_shadow' => 'cts-n',
-            'block_title_case' => 'btc-n',
-            'block_title_weight' => 'btw-b',
-            'block_title_alignment' => 'bta-l',
-            'block_title_shadow' => 'bts-n',
-            'image_alignment' => 'ia-n',
-            'image_alignment_teaser' => 'iat-n',
-            'image_caption_full' => '0',
-            'image_caption_teaser' => '0',
-            'image_teaser' => '0',
-            'breadcrumb_display' => '1',
-            'breadcrumb_home' => '0',
-            'breadcrumb_label' => '0',
-            'breadcrumb_title' => '0',
-            'breadcrumb_separator' => ' &#187; ',
-            'horizontal_login_block_enable' => 'on',
-            'horizontal_login_block' => '0',
-            'login_block_remove_links' => '0',
-            'login_block_remove_openid' => '0',
-            'global_gutter_width' => '',
-            'page_full_width_wrappers' => '0',
-            'page_content_type_suggestions' => '0',
-            'menu_item_span_elements' => '0',
-            'extra_page_classes' => '1',
-            'extra_article_classes' => '1',
-            'extra_comment_classes' => '1',
-            'extra_block_classes' => '1',
-            'extra_menu_classes' => '1',
-            'extra_item_list_classes' => '1',
-            'comments_hide_title' => '0',
-            'feed_icons' => '0',
-            'unset_block_system_main_front' => '0',
-            'unset_menu_titles' => '0',
-            'skip_link_target' => '#main-content',
-            'adv_search_extra_fieldsets' => '0',
-            'mobile_friendly_metatags' => '1',
-            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
-            'adaptivetheme_meta_mobileoptimized' => 'width',
-            'adaptivetheme_meta_handheldfriendly' => 'true',
-            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
-            'chrome_edge' => '0',
-            'clear_type' => '0',
-            'apple_touch_icon_enable' => '0',
-            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
-            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
-            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
-            'custom_css' => '',
-            'content_corner_radius' => 'rc-6',
-            'tabs_corner_radius' => 'rct-6',
-            'box_shadows' => 'bs-n',
-            'body_background' => 'bb-n',
-            'menu_bullets' => 'mb-dd',
-            'menu_bar_position' => 'mbp-l',
-          ),
-          'version' => '7.x-3.0-rc1',
-          'project' => 'pixture_reloaded',
-          'datestamp' => '1343716985',
-        ),
-        'project' => 'pixture_reloaded',
-        'version' => '7.x-3.0-rc1',
-      ),
-      'marinelli' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/marinelli/marinelli.info',
-        'basename' => 'marinelli.info',
-        'name' => 'Marinelli',
-        'info' => 
-        array (
-          'name' => 'Marinelli',
-          'description' => 'A clean theme still usable over 4000m!',
-          'core' => '7.x',
-          'engine' => 'phptemplate',
-          'screenshot' => 'screenshot.png',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'css/common.css',
-              1 => 'css/links.css',
-              2 => 'css/typography.css',
-              3 => 'css/forms.css',
-              4 => 'css/drupal.css',
-              5 => 'css/layout.css',
-              6 => 'css/primary-links.css',
-              7 => 'css/slideshow.css',
-              8 => 'css/secondary-links.css',
-              9 => 'css/blocks.css',
-              10 => 'css/node.css',
-              11 => 'css/comments.css',
-              12 => 'css/pages/maintenance-page.css',
-            ),
-            'print' => 
-            array (
-              0 => 'css/print/print.css',
-            ),
-          ),
-          'scripts' => 
-          array (
-            0 => 'js/marinelli_marinelli.js',
-            1 => 'js/topregion/marinelli_topregion.js',
-          ),
-          'regions' => 
-          array (
-            'topbar' => 'Topbar',
-            'utility_top' => 'Utility Menu (top)',
-            'utility_bottom' => 'Utility Menu (Bottom)',
-            'search' => 'Search Region',
-            'advertise' => 'Advertise',
-            'overcontent' => 'Over Content',
-            'overnode' => 'Over Node',
-            'highlight' => 'Highlight',
-            'content' => 'Content',
-            'undernode' => 'Under Node',
-            'sidebar_first' => 'First Sidebar',
-            'sidebar_second' => 'Second Sidebar',
-            'oversidebars' => 'Over Sidebars',
-            'undersidebars' => 'Under Sidebars',
-            'undercontent' => 'Under Content',
-            'footer' => 'Footer',
-          ),
-          'settings' => 
-          array (
-            'bartext' => 'Slide Down',
-            'bartext2' => 'Slide Up',
-            'breadcrumb_title' => '1',
-            'breadcrumb_title_length' => '50',
-            'layout_width' => '1',
-            'layout_type' => '1',
-            'blocks' => '2',
-            'outside_tags' => '0',
-            'title_tags' => '0',
-            'css' => '1',
-            'css_typo' => '1',
-            'sticky_text' => 'Sticky',
-            'menu_type' => '1',
-            'menu_element' => 'main-menu',
-            'menu_alt_class' => '0',
-            'menu_headings' => '1',
-            'banner_usage' => '1',
-            'banner_type' => '0',
-            'banner_effect' => 'fade',
-            'banner_speed' => '1000',
-            'banner_delay' => '4000',
-            'banner_pause' => '1',
-            'banner_showtext' => '1',
-            'banner_shownavigation' => '1',
-            'default_banners' => 
-            array (
-              1 => 
-              array (
-                'image_path' => 'img/advertise/1.jpg',
-                'image_title' => 'Title for image 1',
-                'image_description' => 'Description for image 1',
-                'image_published' => true,
-              ),
-              2 => 
-              array (
-                'image_path' => 'img/advertise/2.jpg',
-                'image_title' => 'Title for image 2',
-                'image_description' => 'Description for image 2',
-                'image_published' => true,
-              ),
-              3 => 
-              array (
-                'image_path' => 'img/advertise/3.jpg',
-                'image_title' => 'Title for image 3',
-                'image_description' => 'Description for image 3',
-                'image_published' => true,
-              ),
-              4 => 
-              array (
-                'image_path' => 'img/advertise/4.jpg',
-                'image_title' => 'Title for image 4',
-                'image_description' => 'Description for image 4',
-                'image_published' => true,
-              ),
-              5 => 
-              array (
-                'image_path' => 'img/advertise/5.jpg',
-                'image_title' => 'Title for image 5',
-                'image_description' => 'Description for image 5',
-                'image_published' => true,
-              ),
-              6 => 
-              array (
-                'image_path' => 'img/advertise/6.jpg',
-                'image_title' => 'Title for image 6',
-                'image_description' => 'Description for image 6',
-                'image_published' => true,
-              ),
-            ),
-          ),
-          'version' => '7.x-3.0-beta11',
-          'project' => 'marinelli',
-          'datestamp' => '1307567519',
-        ),
-        'project' => 'marinelli',
-        'version' => '7.x-3.0-beta11',
       ),
       'corporateclean' => 
       array (
@@ -9662,51 +11181,143 @@ $options['packages'] = array (
         'project' => 'fusion',
         'version' => '7.x-2.0-beta2',
       ),
-      'bluemasters' => 
+      'marinelli' => 
       array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/bluemasters/bluemasters.info',
-        'basename' => 'bluemasters.info',
-        'name' => 'Blue Masters',
+        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/marinelli/marinelli.info',
+        'basename' => 'marinelli.info',
+        'name' => 'Marinelli',
         'info' => 
         array (
-          'name' => 'Blue Masters',
-          'description' => 'Theme based on Blue Masters PSD template',
-          'version' => '7.x-1.3',
+          'name' => 'Marinelli',
+          'description' => 'A clean theme still usable over 4000m!',
           'core' => '7.x',
           'engine' => 'phptemplate',
-          'regions' => 
-          array (
-            'header' => 'Header',
-            'search_area' => 'Search area',
-            'highlighted' => 'Highlighted',
-            'content' => 'Content',
-            'sidebar_first' => 'Sidebar First',
-            'banner' => 'Banner',
-            'home_area_1' => 'Home area 1',
-            'home_area_2' => 'Home area 2',
-            'home_area_3' => 'Home area 3',
-            'home_area_3_b' => 'Home area 3 b',
-            'footer_left_1' => 'Footer left 1',
-            'footer_left_2' => 'Footer left 2',
-            'footer_center' => 'Footer center',
-            'footer_right' => 'Footer right',
-            'footer' => 'Footer',
-            'help' => 'Help',
-            'page_top' => 'Page top',
-            'page_bottom' => 'Page bottom',
-          ),
+          'screenshot' => 'screenshot.png',
           'stylesheets' => 
           array (
             'all' => 
             array (
-              0 => 'style.css',
+              0 => 'css/common.css',
+              1 => 'css/links.css',
+              2 => 'css/typography.css',
+              3 => 'css/forms.css',
+              4 => 'css/drupal.css',
+              5 => 'css/layout.css',
+              6 => 'css/primary-links.css',
+              7 => 'css/slideshow.css',
+              8 => 'css/secondary-links.css',
+              9 => 'css/blocks.css',
+              10 => 'css/node.css',
+              11 => 'css/comments.css',
+              12 => 'css/pages/maintenance-page.css',
+            ),
+            'print' => 
+            array (
+              0 => 'css/print/print.css',
             ),
           ),
-          'project' => 'bluemasters',
-          'datestamp' => '1321351835',
+          'scripts' => 
+          array (
+            0 => 'js/marinelli_marinelli.js',
+            1 => 'js/topregion/marinelli_topregion.js',
+          ),
+          'regions' => 
+          array (
+            'topbar' => 'Topbar',
+            'utility_top' => 'Utility Menu (top)',
+            'utility_bottom' => 'Utility Menu (Bottom)',
+            'search' => 'Search Region',
+            'advertise' => 'Advertise',
+            'overcontent' => 'Over Content',
+            'overnode' => 'Over Node',
+            'highlight' => 'Highlight',
+            'content' => 'Content',
+            'undernode' => 'Under Node',
+            'sidebar_first' => 'First Sidebar',
+            'sidebar_second' => 'Second Sidebar',
+            'oversidebars' => 'Over Sidebars',
+            'undersidebars' => 'Under Sidebars',
+            'undercontent' => 'Under Content',
+            'footer' => 'Footer',
+          ),
+          'settings' => 
+          array (
+            'bartext' => 'Slide Down',
+            'bartext2' => 'Slide Up',
+            'breadcrumb_title' => '1',
+            'breadcrumb_title_length' => '50',
+            'layout_width' => '1',
+            'layout_type' => '1',
+            'blocks' => '2',
+            'outside_tags' => '0',
+            'title_tags' => '0',
+            'css' => '1',
+            'css_typo' => '1',
+            'sticky_text' => 'Sticky',
+            'menu_type' => '1',
+            'menu_element' => 'main-menu',
+            'menu_alt_class' => '0',
+            'menu_headings' => '1',
+            'banner_usage' => '1',
+            'banner_type' => '0',
+            'banner_effect' => 'fade',
+            'banner_speed' => '1000',
+            'banner_delay' => '4000',
+            'banner_pause' => '1',
+            'banner_showtext' => '1',
+            'banner_shownavigation' => '1',
+            'default_banners' => 
+            array (
+              1 => 
+              array (
+                'image_path' => 'img/advertise/1.jpg',
+                'image_title' => 'Title for image 1',
+                'image_description' => 'Description for image 1',
+                'image_published' => true,
+              ),
+              2 => 
+              array (
+                'image_path' => 'img/advertise/2.jpg',
+                'image_title' => 'Title for image 2',
+                'image_description' => 'Description for image 2',
+                'image_published' => true,
+              ),
+              3 => 
+              array (
+                'image_path' => 'img/advertise/3.jpg',
+                'image_title' => 'Title for image 3',
+                'image_description' => 'Description for image 3',
+                'image_published' => true,
+              ),
+              4 => 
+              array (
+                'image_path' => 'img/advertise/4.jpg',
+                'image_title' => 'Title for image 4',
+                'image_description' => 'Description for image 4',
+                'image_published' => true,
+              ),
+              5 => 
+              array (
+                'image_path' => 'img/advertise/5.jpg',
+                'image_title' => 'Title for image 5',
+                'image_description' => 'Description for image 5',
+                'image_published' => true,
+              ),
+              6 => 
+              array (
+                'image_path' => 'img/advertise/6.jpg',
+                'image_title' => 'Title for image 6',
+                'image_description' => 'Description for image 6',
+                'image_published' => true,
+              ),
+            ),
+          ),
+          'version' => '7.x-3.0-beta11',
+          'project' => 'marinelli',
+          'datestamp' => '1307567519',
         ),
-        'project' => 'bluemasters',
-        'version' => '7.x-1.3',
+        'project' => 'marinelli',
+        'version' => '7.x-3.0-beta11',
       ),
       'acquia_marina' => 
       array (
@@ -9910,430 +11521,10 @@ $options['packages'] = array (
         'project' => 'acquia_marina',
         'version' => '7.x-2.0-beta1',
       ),
-      'corolla' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/corolla/corolla.info',
-        'basename' => 'corolla.info',
-        'name' => 'Corolla',
-        'info' => 
-        array (
-          'name' => 'Corolla',
-          'description' => 'Corolla is a subtheme of <a href="http://drupal.org/project/adaptivetheme">Adaptivetheme 7.x-3.x</a>. To use this theme you must first download and install the 7.x-3.x version of Adaptivetheme. Corolla is colorable and has many theme settings for layout, fonts, headings and much more. Corolla also supports layouts for mobile devices such as tablets and smartphones.',
-          'core' => '7.x',
-          'release' => '7.x-3.x',
-          'engine' => 'phptemplate',
-          'base theme' => 'adaptivetheme',
-          'screenshot' => 'screenshot.png',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'css/html-elements.css',
-              1 => 'css/forms.css',
-              2 => 'css/tables.css',
-              3 => 'css/page.css',
-              4 => 'css/articles.css',
-              5 => 'css/comments.css',
-              6 => 'css/fields.css',
-              7 => 'css/blocks.css',
-              8 => 'css/navigation.css',
-              9 => 'css/fonts.css',
-              10 => 'css/corolla.settings.style.css',
-              11 => 'color/colors.css',
-            ),
-            'print' => 
-            array (
-              0 => 'css/print.css',
-            ),
-          ),
-          'ie_stylesheets' => 
-          array (
-            'screen' => 
-            array (
-              'lte IE 9' => 
-              array (
-                0 => 'css/ie-lte-9.css',
-              ),
-            ),
-          ),
-          'regions' => 
-          array (
-            'sidebar_first' => 'Sidebar first',
-            'sidebar_second' => 'Sidebar second',
-            'header' => 'Header',
-            'menu_bar' => 'Menu Bar',
-            'help' => 'Help',
-            'highlighted' => 'Highlighted',
-            'content' => 'Main content',
-            'content_aside' => 'Content bottom',
-            'secondary_content' => 'Secondary content',
-            'tertiary_content' => 'Tertiary content',
-            'footer' => 'Footer',
-            'page_top' => 'Page top',
-            'page_bottom' => 'Page bottom',
-            'three_33_top' => 'AT Three column 3x33 - top',
-            'three_33_first' => 'AT Three column 3x33 - left',
-            'three_33_second' => 'AT Three column 3x33 - center',
-            'three_33_third' => 'AT Three column 3x33 - right',
-            'three_33_bottom' => 'AT Three column 3x33 - bottom',
-            'four_first' => 'AT Four column 4x25 - 1',
-            'four_second' => 'AT Four column 4x25 - 2',
-            'four_third' => 'AT Four column 4x25 - 3',
-            'four_fourth' => 'AT Four column 4x25 - 4',
-          ),
-          'features' => 
-          array (
-            0 => 'logo',
-            1 => 'name',
-            2 => 'slogan',
-            3 => 'node_user_picture',
-            4 => 'comment_user_picture',
-            5 => 'comment_user_verification',
-            6 => 'favicon',
-          ),
-          'settings' => 
-          array (
-            'toggle_logo' => '1',
-            'toggle_name' => '1',
-            'toggle_slogan' => '1',
-            'toggle_node_user_picture' => '1',
-            'toggle_comment_user_picture' => '1',
-            'toggle_comment_user_verification' => '1',
-            'toggle_favicon' => '1',
-            'bigscreen_layout' => 'three_col_grail',
-            'bigscreen_page_unit' => '%',
-            'bigscreen_sidebar_unit' => '%',
-            'bigscreen_max_width_unit' => 'px',
-            'bigscreen_page_width' => '100',
-            'bigscreen_sidebar_first' => '25',
-            'bigscreen_sidebar_second' => '25',
-            'bigscreen_set_max_width' => '1',
-            'bigscreen_max_width' => '1140',
-            'bigscreen_media_query' => 'only screen and (min-width:1025px)',
-            'tablet_landscape_layout' => 'three_col_grail',
-            'tablet_landscape_page_unit' => '%',
-            'tablet_landscape_sidebar_unit' => '%',
-            'tablet_landscape_page_width' => '100',
-            'tablet_landscape_sidebar_first' => '20',
-            'tablet_landscape_sidebar_second' => '20',
-            'tablet_landscape_media_query' => 'only screen and (min-width:769px) and (max-width:1024px)',
-            'tablet_portrait_layout' => 'one_col_vert',
-            'tablet_portrait_page_unit' => '%',
-            'tablet_portrait_sidebar_unit' => '%',
-            'tablet_portrait_page_width' => '100',
-            'tablet_portrait_sidebar_first' => '50',
-            'tablet_portrait_sidebar_second' => '50',
-            'tablet_portrait_media_query' => 'only screen and (min-width:481px) and (max-width:768px)',
-            'smartphone_landscape_layout' => 'one_col_vert',
-            'smartphone_landscape_page_unit' => '%',
-            'smartphone_landscape_sidebar_unit' => '%',
-            'smartphone_landscape_page_width' => '100',
-            'smartphone_landscape_sidebar_first' => '50',
-            'smartphone_landscape_sidebar_second' => '50',
-            'smartphone_landscape_media_query' => 'only screen and (min-width:321px) and (max-width:480px)',
-            'smartphone_portrait_layout' => 'one_col_stack',
-            'smartphone_portrait_page_unit' => '%',
-            'smartphone_portrait_sidebar_unit' => '%',
-            'smartphone_portrait_page_width' => '100',
-            'smartphone_portrait_sidebar_first' => '100',
-            'smartphone_portrait_sidebar_second' => '100',
-            'smartphone_portrait_media_query' => 'only screen and (max-width:320px)',
-            'bigscreen_two_50' => 'two-50',
-            'bigscreen_two_33_66' => 'two-33-66',
-            'bigscreen_two_66_33' => 'two-66-33',
-            'bigscreen_two_brick' => 'two-brick',
-            'bigscreen_three_3x33' => 'three-3x33',
-            'bigscreen_three_25_50_25' => 'three-25-50-25',
-            'bigscreen_three_25_25_50' => 'three-25-25-50',
-            'bigscreen_three_50_25_25' => 'three-50-25-25',
-            'bigscreen_four_4x25' => 'four-4x25',
-            'bigscreen_five_5x20' => 'five-5x20-2x3-grid',
-            'bigscreen_six_6x16' => 'six-6x16-3x2-grid',
-            'bigscreen_three_inset_left' => 'three-inset-left',
-            'bigscreen_three_inset_right' => 'three-inset-right',
-            'tablet_landscape_two_50' => 'two-50',
-            'tablet_landscape_two_33_66' => 'two-33-66',
-            'tablet_landscape_two_66_33' => 'two-66-33',
-            'tablet_landscape_two_brick' => 'two-brick',
-            'tablet_landscape_three_3x33' => 'three-3x33',
-            'tablet_landscape_three_25_50_25' => 'three-25-50-25',
-            'tablet_landscape_three_25_25_50' => 'three-25-25-50',
-            'tablet_landscape_three_50_25_25' => 'three-50-25-25',
-            'tablet_landscape_four_4x25' => 'four-4x25',
-            'tablet_landscape_five_5x20' => 'five-5x20-2x3-grid',
-            'tablet_landscape_six_6x16' => 'six-6x16-3x2-grid',
-            'tablet_landscape_three_inset_left' => 'three-inset-left',
-            'tablet_landscape_three_inset_right' => 'three-inset-right',
-            'tablet_portrait_two_50' => 'two-50',
-            'tablet_portrait_two_33_66' => 'two-33-66',
-            'tablet_portrait_two_66_33' => 'two-66-33',
-            'tablet_portrait_two_brick' => 'two-brick',
-            'tablet_portrait_three_3x33' => 'three-3x33-stack-top',
-            'tablet_portrait_three_25_50_25' => 'three-25-50-25-stack-top',
-            'tablet_portrait_three_25_25_50' => 'three-25-25-50-stack-top',
-            'tablet_portrait_three_50_25_25' => 'three-50-25-25-stack-top',
-            'tablet_portrait_four_4x25' => 'four-4x25-2x2-grid',
-            'tablet_portrait_five_5x20' => 'five-5x20-1x2x2-grid',
-            'tablet_portrait_six_6x16' => 'six-6x16-2x3-grid',
-            'tablet_portrait_three_inset_left' => 'three-inset-left-wrap',
-            'tablet_portrait_three_inset_right' => 'three-inset-right-wrap',
-            'smartphone_landscape_two_50' => 'two-50-stack',
-            'smartphone_landscape_two_33_66' => 'two-33-66-stack',
-            'smartphone_landscape_two_66_33' => 'two-66-33-stack',
-            'smartphone_landscape_two_brick' => 'two-brick-stack',
-            'smartphone_landscape_three_3x33' => 'three-3x33-stack',
-            'smartphone_landscape_three_25_50_25' => 'three-25-50-25-stack',
-            'smartphone_landscape_three_25_25_50' => 'three-25-25-50-stack',
-            'smartphone_landscape_three_50_25_25' => 'three-50-25-25-stack',
-            'smartphone_landscape_four_4x25' => 'four-4x25-stack',
-            'smartphone_landscape_five_5x20' => 'five-5x20-stack',
-            'smartphone_landscape_six_6x16' => 'six-6x16-stack',
-            'smartphone_landscape_three_inset_left' => 'three-inset-left-stack',
-            'smartphone_landscape_three_inset_right' => 'three-inset-right-stack',
-            'disable_responsive_styles' => '0',
-            'enable_custom_media_queries' => '0',
-            'global_default_layout' => 'smartphone-portrait',
-            'global_default_layout_toggle' => '0',
-            'global_files_path' => 'public_files',
-            'load_html5js' => '1',
-            'load_respondjs' => '0',
-            'load_ltie8css' => '0',
-            'load_scalefixjs' => '0',
-            'expose_regions' => '0',
-            'load_all_panels' => '0',
-            'load_all_panels_no_sidebars' => '0',
-            'show_window_size' => '0',
-            'rebuild_theme_data' => '0',
-            'enable_extensions' => '1',
-            'enable_font_settings' => '1',
-            'enable_heading_settings' => '1',
-            'enable_image_settings' => '1',
-            'enable_apple_touch_icons' => '0',
-            'enable_exclude_css' => '0',
-            'enable_custom_css' => '0',
-            'enable_context_regions' => '0',
-            'enable_float_region_blocks' => '0',
-            'enable_markup_overides' => '1',
-            'base_font_type' => '',
-            'site_name_font_type' => '',
-            'site_slogan_font_type' => '',
-            'page_title_font_type' => '',
-            'node_title_font_type' => '',
-            'comment_title_font_type' => '',
-            'block_title_font_type' => '',
-            'base_font' => 'bf-sss',
-            'site_name_font' => 'snf-sl',
-            'site_slogan_font' => 'ssf-sl',
-            'main_menu_font' => 'mmf-sl',
-            'page_title_font' => 'ptf-sl',
-            'node_title_font' => 'ntf-sl',
-            'comment_title_font' => 'ctf-sl',
-            'block_title_font' => 'btf-sl',
-            'base_font_size' => '1em',
-            'site_name_font_size' => '3.5em',
-            'site_slogan_font_size' => '1.2em',
-            'page_title_font_size' => '2em',
-            'node_title_font_size' => '1.6em',
-            'comment_title_font_size' => '1.4em',
-            'block_title_font_size' => '1.4em',
-            'h1_font_size' => '2em',
-            'h2_font_size' => '1.6em',
-            'h3_font_size' => '1.4em',
-            'h4_font_size' => '1.2em',
-            'h5_font_size' => '1em',
-            'h6_font_size' => '1em',
-            'page_title_case' => 'ptc-n',
-            'page_title_weight' => 'ptw-b',
-            'page_title_alignment' => 'pta-l',
-            'page_title_shadow' => 'pts-n',
-            'node_title_case' => 'ntc-n',
-            'node_title_weight' => 'ntw-b',
-            'node_title_alignment' => 'nta-l',
-            'node_title_shadow' => 'nts-n',
-            'comment_title_case' => 'ctc-n',
-            'comment_title_weight' => 'ctw-b',
-            'comment_title_alignment' => 'cta-l',
-            'comment_title_shadow' => 'cts-n',
-            'block_title_case' => 'btc-n',
-            'block_title_weight' => 'btw-b',
-            'block_title_alignment' => 'bta-l',
-            'block_title_shadow' => 'bts-n',
-            'image_alignment' => 'ia-n',
-            'image_alignment_teaser' => 'iat-n',
-            'image_caption_full' => '0',
-            'image_caption_teaser' => '0',
-            'image_teaser' => '0',
-            'breadcrumb_display' => '1',
-            'breadcrumb_home' => '0',
-            'breadcrumb_label' => '0',
-            'breadcrumb_title' => '0',
-            'breadcrumb_separator' => ' &#187; ',
-            'horizontal_login_block_enable' => 'on',
-            'horizontal_login_block' => '0',
-            'login_block_remove_links' => '0',
-            'login_block_remove_openid' => '0',
-            'global_gutter_width' => '',
-            'page_full_width_wrappers' => '0',
-            'page_content_type_suggestions' => '0',
-            'menu_item_span_elements' => '0',
-            'extra_page_classes' => '1',
-            'extra_article_classes' => '1',
-            'extra_comment_classes' => '1',
-            'extra_block_classes' => '1',
-            'extra_menu_classes' => '1',
-            'extra_item_list_classes' => '1',
-            'comments_hide_title' => '0',
-            'feed_icons' => '0',
-            'unset_block_system_main_front' => '0',
-            'unset_menu_titles' => '0',
-            'skip_link_target' => '#main-content',
-            'adv_search_extra_fieldsets' => '0',
-            'mobile_friendly_metatags' => '1',
-            'adaptivetheme_meta_viewport' => 'width=device-width, initial-scale=1',
-            'adaptivetheme_meta_mobileoptimized' => 'width',
-            'adaptivetheme_meta_handheldfriendly' => 'true',
-            'adaptivetheme_meta_apple_mobile_web_app_capable' => 'yes',
-            'chrome_edge' => '0',
-            'clear_type' => '0',
-            'apple_touch_icon_enable' => '0',
-            'apple_touch_icon_path_l' => 'images/touch-icon-l.png',
-            'apple_touch_icon_path_m' => 'images/touch-icon-m.png',
-            'apple_touch_icon_path_h' => 'images/touch-icon-h.png',
-            'custom_css' => '',
-            'content_corner_radius' => 'rc-6',
-            'tabs_corner_radius' => 'rct-6',
-            'box_shadows' => 'bs-n',
-            'body_background' => 'bb-n',
-            'menu_bullets' => 'mb-dd',
-            'menu_bar_position' => 'mbp-l',
-          ),
-          'version' => '7.x-3.0-rc1',
-          'project' => 'corolla',
-          'datestamp' => '1343717220',
-        ),
-        'project' => 'corolla',
-        'version' => '7.x-3.0-rc1',
-      ),
-      'danblog' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/danland/danblog/danblog.info',
-        'basename' => 'danblog.info',
-        'name' => 'Danblog',
-        'info' => 
-        array (
-          'name' => 'Danblog',
-          'description' => 'Danland sub theme. Danland with no frontpage image banner and slideshow.',
-          'engine' => 'phptemplate',
-          'base theme' => 'danland',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'danblog.css',
-            ),
-          ),
-          'regions' => 
-          array (
-            'search_box' => 'Search region',
-            'superfish_menu' => 'Superfish menu',
-            'page_top' => 'Page top',
-            'highlighted' => 'Highlighted',
-            'preface_first' => 'Preface first',
-            'preface_middle' => 'Preface middle',
-            'preface_last' => 'Preface last',
-            'sidebar_first' => 'Left sidebar',
-            'sidebar_second' => 'Right sidebar',
-            'content_top' => 'Content top',
-            'help' => 'Help',
-            'content' => 'Main content',
-            'content_bottom' => 'Content bottom',
-            'bottom_first' => 'Bottom first',
-            'bottom_middle' => 'Bottom middle',
-            'bottom_last' => 'Bottom last',
-            'bottom_1' => 'Bottom 1',
-            'bottom_2' => 'Bottom 2',
-            'bottom_3' => 'Bottom 3',
-            'bottom_4' => 'Bottom 4',
-            'footer' => 'Footer',
-            'page_bottom' => 'Page bottom',
-          ),
-          'core' => '7.x',
-          'version' => '7.x-1.0',
-          'project' => 'danland',
-          'datestamp' => '1294312858',
-        ),
-        'project' => 'danland',
-        'version' => '7.x-1.0',
-      ),
-      'danland' => 
-      array (
-        'filename' => '/var/aegir/platforms/service_portal/sites/all/themes/danland/danland.info',
-        'basename' => 'danland.info',
-        'name' => 'Danland',
-        'info' => 
-        array (
-          'name' => 'Danland',
-          'description' => 'Drupal Theme provided by <a href="http://www.danetsoft.com">Danetsoft</a> developed by <a href="http://www.danpros.com">Danang Probo Sayekti</a> inspired by <a href="http://www.maksimer.no">Maksimer</a>.',
-          'engine' => 'phptemplate',
-          'stylesheets' => 
-          array (
-            'all' => 
-            array (
-              0 => 'style.css',
-            ),
-          ),
-          'regions' => 
-          array (
-            'search_box' => 'Search region',
-            'superfish_menu' => 'Superfish menu',
-            'page_top' => 'Page top',
-            'preface' => 'Preface top',
-            'highlighted' => 'Highlighted',
-            'preface_first' => 'Preface first',
-            'preface_middle' => 'Preface middle',
-            'preface_last' => 'Preface last',
-            'sidebar_first' => 'Left sidebar',
-            'sidebar_second' => 'Right sidebar',
-            'content_top' => 'Content top',
-            'help' => 'Help',
-            'content' => 'Main content',
-            'content_bottom' => 'Content bottom',
-            'bottom_first' => 'Bottom first',
-            'bottom_middle' => 'Bottom middle',
-            'bottom_last' => 'Bottom last',
-            'bottom_1' => 'Bottom 1',
-            'bottom_2' => 'Bottom 2',
-            'bottom_3' => 'Bottom 3',
-            'bottom_4' => 'Bottom 4',
-            'footer' => 'Footer',
-            'page_bottom' => 'Page bottom',
-          ),
-          'core' => '7.x',
-          'scripts' => 
-          array (
-            0 => 'scripts/hoverIntent.js',
-            1 => 'scripts/superfish.js',
-          ),
-          'version' => '7.x-1.0',
-          'project' => 'danland',
-          'datestamp' => '1294312858',
-        ),
-        'project' => 'danland',
-        'version' => '7.x-1.0',
-      ),
     ),
   ),
   'profiles' => 
   array (
-    'minimal' => 
-    array (
-      'modules' => 
-      array (
-      ),
-      'themes' => 
-      array (
-      ),
-    ),
     'standard' => 
     array (
       'modules' => 
@@ -10399,6 +11590,15 @@ $options['packages'] = array (
           'project' => 'drupal',
           'version' => '7.14',
         ),
+      ),
+      'themes' => 
+      array (
+      ),
+    ),
+    'minimal' => 
+    array (
+      'modules' => 
+      array (
       ),
       'themes' => 
       array (
