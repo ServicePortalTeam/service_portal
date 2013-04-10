@@ -1,0 +1,14 @@
+name = Service Portal Themes
+description = Service Portal Themes
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = service_portal_themes
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[variable][] = acquia_marina_responsive_css
+features[variable][] = acquia_marina_responsive_path
+features[variable][] = theme_acquia_marina_settings
+features[variable][] = theme_default

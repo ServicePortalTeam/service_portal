@@ -1,0 +1,9 @@
+name = Service Portal Images Style
+description = Service Portal Images Style
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = service_portal_images_style
+dependencies[] = image
+features[features_api][] = api:1
+features[image][] = slideshow

@@ -1,0 +1,11 @@
+name = Service Portal Language
+description = Service Portal Language
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = service_portal_language
+dependencies[] = features
+dependencies[] = locale
+features[features_api][] = api:1
+features[language][] = en
+features[language][] = zh-hans

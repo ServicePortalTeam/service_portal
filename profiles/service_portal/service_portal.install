@@ -1,0 +1,466 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the the minimal install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Performs actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function service_portal_install() {
+  // Add text formats.
+  $filtered_html_format = array(
+      'format' => 'filtered_html',
+      'name' => 'Filtered HTML',
+      'weight' => 0,
+      'filters' => array(
+          // URL filter.
+          'filter_url' => array(
+              'weight' => 0,
+              'status' => 1,
+          ),
+          // HTML filter.
+          'filter_html' => array(
+              'weight' => 1,
+              'status' => 1,
+          ),
+          // Line break filter.
+          'filter_autop' => array(
+              'weight' => 2,
+              'status' => 1,
+          ),
+          // HTML corrector filter.
+          'filter_htmlcorrector' => array(
+              'weight' => 10,
+              'status' => 1,
+          ),
+      ),
+  );
+  $filtered_html_format = (object) $filtered_html_format;
+  filter_format_save($filtered_html_format);
+
+  $full_html_format = array(
+      'format' => 'full_html',
+      'name' => 'Full HTML',
+      'weight' => 1,
+      'filters' => array(
+          // URL filter.
+          'filter_url' => array(
+              'weight' => 0,
+              'status' => 1,
+          ),
+          // Line break filter.
+          'filter_autop' => array(
+              'weight' => 1,
+              'status' => 1,
+          ),
+          // HTML corrector filter.
+          'filter_htmlcorrector' => array(
+              'weight' => 10,
+              'status' => 1,
+          ),
+      ),
+  );
+  $full_html_format = (object) $full_html_format;
+  filter_format_save($full_html_format);
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
+  // Enable the front theme
+  theme_enable(array('acquia_marina'));
+  variable_set('theme_default', 'acquia_marina');
+  // Enable some standard blocks.
+  $default_theme = variable_get('theme_default', 'bartik');
+  $admin_theme = 'seven';
+  $blocks = array(
+      /*array(
+          'module' => 'system',
+          'delta' => 'main',
+          'theme' => $default_theme,
+          'status' => 1,
+          'weight' => 0,
+          'region' => 'content',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'search',
+          'delta' => 'form',
+          'theme' => $default_theme,
+          'status' => 1,
+          'weight' => -1,
+          'region' => 'branding',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'system',
+          'delta' => 'main-menu',
+          'theme' => $default_theme,
+          'status' => 1,
+          'weight' => 0,
+          'region' => 'header',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '<none>',
+      ),
+      array(
+          'module' => 'alu_accordion',
+          'delta' => 'taxonomy_accordion_block',
+          'theme' => $default_theme,
+          'status' => 1,
+          'weight' => 10,
+          'region' => 'footer',
+          'pages' => '',
+          'cache' => -1,
+      ),*/
+      array(
+          'module' => 'node',
+          'delta' => 'recent',
+          'theme' => $admin_theme,
+          'status' => 1,
+          'weight' => 10,
+          'region' => 'dashboard_main',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'system',
+          'delta' => 'main',
+          'theme' => $admin_theme,
+          'status' => 1,
+          'weight' => 0,
+          'region' => 'content',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'system',
+          'delta' => 'help',
+          'theme' => $admin_theme,
+          'status' => 1,
+          'weight' => 0,
+          'region' => 'help',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'user',
+          'delta' => 'login',
+          'theme' => $admin_theme,
+          'status' => 1,
+          'weight' => 10,
+          'region' => 'content',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'user',
+          'delta' => 'new',
+          'theme' => $admin_theme,
+          'status' => 1,
+          'weight' => 0,
+          'region' => 'dashboard_sidebar',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+      array(
+          'module' => 'search',
+          'delta' => 'form',
+          'theme' => $admin_theme,
+          'status' => 1,
+          'weight' => -10,
+          'region' => 'dashboard_sidebar',
+          'pages' => '',
+          'cache' => -1,
+          'title' => '',
+      ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache', 'title'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+
+  // Insert default pre-defined node types into the database. For a complete
+  // list of available node type attributes, refer to the node type API
+  // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
+  $types = array(
+      array(
+          'type' => 'page',
+          'name' => st('Basic page'),
+          'base' => 'node_content',
+          'description' => st("Use <em>basic pages</em> for your static content, such as an 'About us' page."),
+          'custom' => 1,
+          'modified' => 1,
+          'locked' => 0,
+      ),
+  );
+
+  foreach ($types as $type) {
+    $type = node_type_set_defaults($type);
+    node_type_save($type);
+    node_add_body_field($type);
+  }
+
+  // Insert default pre-defined RDF mapping into the database.
+  $rdf_mappings = array(
+      array(
+          'type' => 'node',
+          'bundle' => 'page',
+          'mapping' => array(
+              'rdftype' => array('foaf:Document'),
+          ),
+      ),
+  );
+  foreach ($rdf_mappings as $rdf_mapping) {
+    rdf_mapping_save($rdf_mapping);
+  }
+
+  // Default "Basic page" to not be promoted and have comments disabled.
+  variable_set('node_options_page', array('status'));
+  variable_set('comment_page', COMMENT_NODE_HIDDEN);
+
+  // Don't display date and author information for "Basic page" nodes by default.
+  variable_set('node_submitted_page', FALSE);
+
+  // Enable user picture support and set the default to a square thumbnail option.
+  variable_set('user_pictures', '1');
+  variable_set('user_picture_dimensions', '1024x1024');
+  variable_set('user_picture_file_size', '800');
+  variable_set('user_picture_style', 'thumbnail');
+
+  // Only administrators can create user accounts.
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
+  // Set token level for the performance issue
+  variable_set('token_tree_recursion_limit', 1);
+
+  // Enable default permissions for system roles.
+  $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'search content'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'search content'));
+
+  // Create a default role for site administrators, with all available permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+  //Setup Brightcove
+  if(module_exists('brightcove') && module_exists('brightcove_media')){
+    
+    $player = new stdclass();
+    
+    $player->name = "Chromeless Video Player";
+    $player->player_id = "1497052558001";
+    $player->player_key = "AQ~~,AAABXG87AYk~,Mesms6FZBOwNi4TM1v2q2jxmyWwAQanV";
+    
+    db_insert('brightcove_player')
+    ->fields(array(
+    'name' => $player->name,
+    'player_id' => $player->player_id,
+    'player_key' => $player->player_key,
+    ))
+    ->execute();
+     
+    $player->name = "Chromeless Video Player - Autoplay";
+    $player->player_id = "1626508995001";
+    $player->player_key = "AQ~~,AAABXG87AYk~,Mesms6FZBOy-Vp9ahpBZvYk-MOflTYKd";
+    
+    db_insert('brightcove_player')
+    ->fields(array(
+    'name' => $player->name,
+    'player_id' => $player->player_id,
+    'player_key' => $player->player_key,
+    ))
+    ->execute();
+    
+    variable_set('brightcove_read_api_key', 'EMar8j0LYRpudrpbiNtxhw9-3vy5hwRygEXU4PvSSsCeGd_llEqfdQ..');
+    variable_set('brightcove_write_api_key', 'EMar8j0LYRpudrpbiNtxhw9-3vy5hwRyfH6La6fcFiANvqW8IpHgCg..');
+    
+    //Setup file type for brightcove
+    $object = file_display_new('video','default','brightcove_media_video');
+    $object->status = 1;
+    $object->settings = array(
+        'player' => 1,
+        'width' => '',
+        'height' => '',
+    );
+    file_display_save($object);
+  }  
+
+  // Create a Home link in the main menu.
+  $item = array(
+      'link_title' => st('Home'),
+      'link_path' => '<front>',
+      'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+  
+  // Update the menu router information.
+  menu_rebuild();
+  
+  // Enable the admin theme.
+  db_update('system')
+  ->fields(array('status' => 1))
+  ->condition('type', 'theme')
+  ->condition('name', 'seven')
+  ->execute();
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
+  
+  //Setup image style
+  //save dynamic_lead_in
+  $style = array(
+    'name' => 'dynamic_lead_in',
+  );
+  image_style_save($style);
+
+  $result = image_style_load('dynamic_lead_in');
+
+  $effect=array(
+    'isid' => $result['isid'] ,
+    'weight' => 1,
+    'name' =>  'image_crop',
+    'data' => array('width'=>1020, 'height'=>486, 'anchor'=>'center-center')
+  );
+
+  image_effect_save($effect);
+
+  //save product_image
+  $style = array(
+    'name' => 'product_image',
+  );
+  image_style_save($style);
+
+  $result = image_style_load('product_image');
+
+  $effect=array(
+    'isid' => $result['isid'] ,
+    'weight' => 1,
+    'name' =>  'image_scale_and_crop',
+    'data' => array('width'=>250, 'height'=>200)
+  );
+
+  image_effect_save($effect);
+
+  //save product_spotlight
+  $style = array(
+    'name' => 'product_spotlight',
+  );
+  image_style_save($style);
+
+  $result = image_style_load('product_spotlight');
+
+  $effect=array(
+    'isid' => $result['isid'] ,
+    'weight' => 1,
+    'name' =>  'image_scale_and_crop',
+    'data' => array('width'=>256, 'height'=>85)
+  );
+
+  image_effect_save($effect);
+
+  //save product_thumbnail
+  $style = array(
+    'name' => 'product_thumbnail',
+  );
+  image_style_save($style);
+
+  $result = image_style_load('product_thumbnail');
+
+  $effect=array(
+    'isid' => $result['isid'] ,
+    'weight' => 1,
+    'name' =>  'image_scale_and_crop',
+    'data' => array('width'=>85, 'height'=>68)
+  );
+
+  image_effect_save($effect);
+	
+  //save factoids_image
+  $style = array(
+    'name' => 'factoids_image',
+  );
+  image_style_save($style);
+
+  $result = image_style_load('factoids_image');
+
+  $effect=array(
+    'isid' => $result['isid'] ,
+    'weight' => 1,
+    'name' =>  'image_scale_and_crop',
+    'data' => array('width'=>593, 'height'=>171)
+  );
+
+  image_effect_save($effect);
+  
+  //save related_video
+  $style = array(
+    'name' => 'related_video',
+  );
+  image_style_save($style);
+
+  $result = image_style_load('related_video');
+
+  $effect=array(
+    'isid' => $result['isid'] ,
+    'weight' => 1,
+    'name' =>  'image_scale_and_crop',
+    'data' => array('width'=>189, 'height'=>101)
+  );
+
+  image_effect_save($effect);
+  
+  //Save share this configurations
+  if(module_exists('sharethis')){
+    $shareComponent = array(
+  		'sharethis_widget_option' => 'st_direct',
+  		'sharethis_button_option' => 'stbc_button',
+  		'sharethis_service_option' => "\"Tweet:twitter\",\"Facebook:facebook\",\"LinkedIn:linkedin\"",
+  		'sharethis_option_extras' => array(
+  				'Google Plus One:plusone' => 'Google Plus One:plusone',
+  				'Facebook Like:fblike' => 0,
+  		),
+  		'additional_settings__active_tab' => '',
+  		'sharethis_node_option' => 'product,product_family,service,solution,0,0,0,0',
+  		'sharethis_teaser_option' => 0,
+  		'sharethis_location' => 'block',
+  		'sharethis_weight' => 10,
+  		'sharethis_publisherID' => 'dr-7add251c-5e01-8192-d796-1c15b79f1ac3',
+  		'sharethis_twitter_suffix' => ''
+    );
+    foreach ($shareComponent as $key => $value) {
+  	  if (is_array($value) && isset($shareComponent['array_filter'])) {
+  		$value = array_keys(array_filter($value));
+  	  }
+  	  variable_set($key, $value);
+    }  	
+  }
+    
+  // Revert features which status is still 'FEATURES_OVERRIDDEN' after first feature module install
+  if(module_exists('features')){  
+    features_revert();
+  }
+  //Rebuild permissions.
+  node_access_rebuild(TRUE);
+}

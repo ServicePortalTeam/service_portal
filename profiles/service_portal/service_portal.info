@@ -1,0 +1,12 @@
+name = Service_Portal
+description = The installation profile for the alcatel lucent project <b>staging</b> envrionment.
+version = VERSION
+core = 7.x
+;the core modules
+
+dependencies[] = service_portal_dependencies
+version = "7.14"
+project = "Service Portal"
+
+
+

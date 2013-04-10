@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Service Portal Nodes feature.
+ */
+
+include_once 'service_portal_nodes.features.inc';

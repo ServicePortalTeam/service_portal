@@ -1,0 +1,16 @@
+name = Service Portal Filters
+description = Service Portal Filters
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.0
+project = service_portal_filters
+dependencies[] = ckeditor
+dependencies[] = features
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
+features[features_api][] = api:1
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[filter][] = plain_text

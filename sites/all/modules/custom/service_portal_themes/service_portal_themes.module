@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Service Portal Themes feature.
+ */
+
+include_once 'service_portal_themes.features.inc';
